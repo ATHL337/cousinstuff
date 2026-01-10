@@ -92,7 +92,7 @@ tags: ['pasta', 'spicy', 'seafood']
 - **Side:** Simple green salad or roasted veggies  
 - **Bread:** Toasted Vault garlic flatbread  
 - **Drink:** Sweet tea, lemonade, or chilled Franzia Sunset Blush  
-- **Dessert:** [[Vault-Cherry-Blue-Ration-Dump-Cake-(Fresh-Harvest-Variant)]]
+- **Dessert:** Vault-Cherry-Blue-Ration-Dump-Cake-(Fresh-Harvest-Variant)
 
 ## Timeline (≈ 40 min total)
 
