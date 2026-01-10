@@ -1,0 +1,22 @@
+baseURL = "https://example.com/"
+languageCode = "en-us"
+title = "CousinStuff"
+enableRobotsTXT = true
+
+[taxonomies]
+  tag = "tags"
+
+[params]
+  description = "Family recipes, shared simply."
+  brand = "CousinStuff"
+
+[outputs]
+  home = ["HTML"]
+  section = ["HTML", "JSON"]
+  taxonomy = ["HTML"]
+  term = ["HTML"]
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = false

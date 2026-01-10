@@ -1,0 +1,20 @@
+{{ define "main" }}
+  <div class="grid" style="gap:16px; padding-top:14px;">
+    <h1>Welcome to CousinStuff</h1>
+    <div class="card">
+      <div class="meta">A family recipe book you can search, tag, and print.</div>
+      <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+        <a class="btn" href="/recipes/">Browse recipes</a>
+        <a class="btn secondary" href="/tags/">Explore tags</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 style="margin-top:0;">Quick search</h2>
+      <input id="searchInput" type="search" placeholder="Search recipes (e.g., shrimp cajun pasta)..." />
+      <div id="recipeList" class="grid" style="margin-top:12px;"></div>
+    </div>
+  </div>
+
+  <script src="/js/search.js" defer></script>
+{{ end }}

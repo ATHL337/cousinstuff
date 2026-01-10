@@ -1,0 +1,34 @@
+{{ define "main" }}
+  <div class="recipe-hero">
+    <div style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; align-items:flex-start;">
+      <div>
+        <h1>{{ .Title }}</h1>
+        <div class="meta">
+          {{ with .Params.servings }}<span>{{ . }} servings</span>{{ end }}
+          {{ with .Params.prepTime }}<span>Prep: {{ . }}</span>{{ end }}
+          {{ with .Params.totalTime }}<span>Total: {{ . }}</span>{{ end }}
+        </div>
+        {{ with .Params.tags }}
+          <div class="chips">
+            {{ range . }}
+              <a class="chip" href="/tags/{{ . | urlize }}/">{{ . }}</a>
+            {{ end }}
+          </div>
+        {{ end }}
+      </div>
+
+      <div class="no-print" style="display:flex; gap:10px;">
+        <button type="button" onclick="window.print()">Print</button>
+        <a class="btn secondary" href="/recipes/">Back</a>
+      </div>
+    </div>
+
+    {{ with .Params.image }}
+      <img class="recipe-photo" alt="Recipe image" src="{{ . }}" loading="lazy" />
+    {{ end }}
+
+    <div class="card">
+      {{ .Content }}
+    </div>
+  </div>
+{{ end }}

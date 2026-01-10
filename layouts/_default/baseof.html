@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    <link rel="stylesheet" href="/css/site.css" />
+    <script src="/js/theme.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="nav no-print">
+        <div class="brand">
+          <a class="title" href="/">{{ .Site.Params.brand }}</a>
+          <span class="tagline">{{ .Site.Params.description }}</span>
+        </div>
+        <div class="actions">
+          <a class="btn secondary" href="/recipes/">Recipes</a>
+          <a class="btn secondary" href="/tags/">Tags</a>
+          <button id="themeToggle" class="secondary" type="button" aria-label="Toggle dark mode">Dark mode</button>
+        </div>
+      </div>
+
+      <main>
+        {{ block "main" . }}{{ end }}
+      </main>
+
+      <footer class="meta" style="padding:26px 0 8px;">
+        <span>© {{ now.Year }} {{ .Site.Params.brand }}</span>
+        <span>•</span>
+        <span>Built with Hugo + GitHub Pages</span>
+      </footer>
+    </div>
+  </body>
+</html>

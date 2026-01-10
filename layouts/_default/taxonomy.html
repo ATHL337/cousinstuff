@@ -1,0 +1,14 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  <div class="grid cols-2" style="margin-top:12px;">
+    {{ range .Pages }}
+      <div class="card">
+        <a href="{{ .RelPermalink }}" style="font-size:18px; font-weight:800;">{{ .Title }}</a>
+        <div class="meta" style="margin-top:6px;">
+          {{ with .Params.servings }}{{ . }} servings{{ end }}
+          {{ with .Params.totalTime }} • Total: {{ . }}{{ end }}
+        </div>
+      </div>
+    {{ end }}
+  </div>
+{{ end }}
