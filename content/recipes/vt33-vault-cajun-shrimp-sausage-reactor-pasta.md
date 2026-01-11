@@ -1,6 +1,7 @@
 ---
 title: "VT33 - Vault Cajun Shrimp & Sausage Reactor Pasta"
 slug: "vt33-vault-cajun-shrimp-sausage-reactor-pasta"
+slot: 1
 date: "2025-11-12"
 servings: 6
 prepTime: "10 min"
