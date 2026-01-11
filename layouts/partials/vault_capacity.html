@@ -1,0 +1,12 @@
+{{/* Vault Capacity: recipes loaded out of 33 */}}
+{{ $recipes := where .Site.RegularPages "Section" "recipes" }}
+{{ $count := len $recipes }}
+{{ $max := 33 }}
+
+<div class="vt-capacity" aria-label="Vault capacity">
+  <span class="vt-capacity-label">Vault Capacity</span>
+  <span class="vt-capacity-value">{{ $count }} / {{ $max }}</span>
+  {{ if gt $count $max }}
+    <span class="vt-capacity-warn">Over capacity</span>
+  {{ end }}
+</div>
