@@ -1,0 +1,11 @@
+{{ $slot := .Params.slot | default 0 }}
+{{ $slotLabel := cond (gt $slot 0) (printf "VT-%02d" $slot) "VT-??" }}
+{{ $subtitle := .Params.subtitle | default "Vault 33 Canon Recipe" }}
+
+<div class="vt-placard">
+  <div class="vt-placard-top">
+    <span class="vt-placard-chip">{{ $slotLabel }}</span>
+    <span class="vt-placard-title">{{ .Title }}</span>
+  </div>
+  <div class="vt-placard-sub">{{ $subtitle }}</div>
+</div>
