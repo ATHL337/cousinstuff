@@ -1,0 +1,152 @@
+/* CousinStuff — Vault-Tec corporate inspired (clean, blue/yellow, poster-like) */
+/* No copyrighted assets. Pure CSS/typography/layout language. */
+
+:root {
+  /* Brand palette */
+  --vt-blue: #0b3a78;
+  --vt-blue-2: #082a57;
+  --vt-yellow: #f2c230;
+  --vt-yellow-2: #d8a50f;
+  --paper: #fbf7ea;
+
+  /* Override site tokens */
+  --bg: var(--paper);
+  --fg: #0b1020;
+  --muted: #4b5563;
+  --card: #ffffff;
+  --border: #e6dcc1;
+  --link: var(--vt-blue);
+
+  --chip: #fff1c4;
+  --chip-fg: #1f2937;
+
+  --btn: var(--vt-blue);
+  --btn-fg: #ffffff;
+
+  --radius: 18px;
+  --shadow: 0 14px 32px rgba(11, 58, 120, 0.10);
+}
+
+/* Dark mode stays “corporate” — blue panels, yellow accents */
+:root[data-theme="dark"] {
+  --bg: #061226;
+  --fg: #f8fafc;
+  --muted: #cbd5e1;
+  --card: #0b1e3c;
+  --border: #12315d;
+  --link: #8bb7ff;
+
+  --chip: #0f2a52;
+  --chip-fg: #e5e7eb;
+
+  --btn: var(--vt-yellow);
+  --btn-fg: #0b1020;
+
+  --shadow: 0 14px 32px rgba(0,0,0,0.35);
+}
+
+body {
+  background:
+    radial-gradient(1100px 650px at 18% 10%, rgba(242, 194, 48, 0.22), transparent 58%),
+    radial-gradient(950px 560px at 86% 0%, rgba(11, 58, 120, 0.22), transparent 58%),
+    linear-gradient(180deg, rgba(11, 58, 120, 0.04), transparent 40%),
+    var(--bg);
+}
+
+/* HEADER: “poster stripe” feel */
+.nav {
+  border-bottom: 0;
+  padding: 16px 0 18px;
+  position: relative;
+}
+.nav::after{
+  content:"";
+  position:absolute;
+  left:0; right:0; bottom:-1px;
+  height:6px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--vt-blue), var(--vt-yellow));
+  opacity: 0.95;
+}
+
+/* Brand lockup */
+.brand { gap: 12px; }
+.brand .title {
+  font-weight: 950;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--vt-blue);
+}
+:root[data-theme="dark"] .brand .title { color: var(--vt-yellow); }
+
+.brand .tagline {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+/* Cards: thick border, soft shadow, “printed sign” vibe */
+.card {
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* Buttons: corporate pill buttons */
+button, .btn {
+  border: 2px solid var(--border);
+  border-radius: 999px;
+  padding: 9px 14px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  box-shadow: 0 10px 18px rgba(0,0,0,0.08);
+  transition: transform 0.05s ease, filter 0.15s ease;
+}
+button:hover, .btn:hover { filter: brightness(1.04); }
+button:active, .btn:active { transform: translateY(1px); }
+
+.btn.secondary, button.secondary {
+  background: transparent;
+  color: var(--fg);
+}
+
+/* Chips: “label stickers” */
+.chip {
+  border: 2px solid var(--border);
+  border-radius: 999px;
+  background: var(--chip);
+  font-weight: 800;
+}
+
+/* Links */
+a { text-decoration-thickness: 2px; text-underline-offset: 3px; }
+
+/* Inputs */
+input[type="search"]{
+  border: 2px solid var(--border);
+  border-radius: 999px;
+  padding: 12px 14px;
+  background: rgba(255,255,255,0.55);
+}
+:root[data-theme="dark"] input[type="search"]{
+  background: rgba(0,0,0,0.15);
+}
+
+/* Headings: poster-like */
+h1 {
+  text-transform: uppercase;
+  letter-spacing: 0.9px;
+}
+h2 { letter-spacing: 0.2px; }
+
+/* Recipe photo: “print frame” */
+.recipe-photo {
+  border: 2px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+/* Print: keep it clean */
+@media print {
+  body { background: #fff !important; }
+  .card { box-shadow: none; border: 1px solid #ddd; }
+  .nav::after { display:none; }
+}
