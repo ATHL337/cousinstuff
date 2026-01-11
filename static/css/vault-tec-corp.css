@@ -504,3 +504,100 @@ h2 { letter-spacing: 0.2px; }
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+/* ================================
+   Mobile Pack — CousinStuff
+   Highest ROI: spacing, grid, tap targets
+   ================================ */
+
+/* 1) Safer default sizing on small screens */
+html { -webkit-text-size-adjust: 100%; }
+body { overflow-x: hidden; }
+
+/* 2) Containers: prevent edge-to-edge crowding */
+.vt-wrap,
+main,
+.container {
+  padding-left: max(14px, env(safe-area-inset-left));
+  padding-right: max(14px, env(safe-area-inset-right));
+}
+
+/* 3) Registry grid: responsive cards without cramped columns */
+.vt-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 980px) { .vt-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .vt-grid { grid-template-columns: 1fr; } }
+
+/* 4) Cards: better readability on phones */
+@media (max-width: 640px) {
+  .vt-card {
+    padding: 0.95rem 0.95rem 0.9rem;
+    border-radius: 16px;
+  }
+  .vt-card__title { font-size: 1.05rem; }
+  .vt-card__subtitle { font-size: 0.95rem; line-height: 1.35; }
+  .vt-card__meta { font-size: 0.92rem; }
+}
+
+/* 5) Badge collision fix (mobile + desktop safe) */
+.vt-card { padding-right: 4.6rem; }
+.vt-card__title { margin-right: 3.6rem; line-height: 1.22; }
+
+/* Clamp long titles so they don’t run into badge */
+.vt-card__title,
+.vt-card__link {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* 6) Filters: wrap cleanly and stay tappable */
+.vt-filters { gap: 0.5rem; }
+.vt-filter {
+  min-height: 44px; /* thumb-friendly */
+  padding: 10px 12px;
+}
+
+/* On small screens, keep “Dispense” full width for big tap target */
+@media (max-width: 640px) {
+  .vt-filters { flex-direction: column; align-items: stretch; }
+  .vt-filters__spacer { display: none; }
+  .vt-filter { width: 100%; text-align: center; }
+}
+
+/* 7) Section titles: reduce visual bulk on mobile */
+@media (max-width: 640px) {
+  .vt-section { margin-top: 1.25rem; }
+  .vt-section__title { font-size: 1.05rem; }
+}
+
+/* 8) Recipe pages: improve reading comfort */
+@media (max-width: 640px) {
+  h1 { font-size: 1.6rem; }
+  h2 { font-size: 1.2rem; }
+  p, li { line-height: 1.55; }
+}
+
+/* 9) Nav/header spacing: prevent tall header on phones */
+@media (max-width: 640px) {
+  .nav { padding: 12px 0 14px; }
+  .brand .title { font-size: 1.05rem; }
+  .brand .tagline { font-size: 0.9rem; }
+}
+
+/* 10) Footer readability: give it breathing room */
+footer, .footer {
+  padding: 18px 0 28px;
+}
+@media (max-width: 640px) {
+  footer, .footer {
+    font-size: 0.95rem;
+    padding: 18px 0 34px;
+  }
+}
+
+/* 11) Optional: make cards feel “pressable” on touch devices */
+@media (hover: none) {
+  .vt-card, .card { transition: transform 0.08s ease; }
+  .vt-card:active, .card:active { transform: translateY(1px); }
+}
