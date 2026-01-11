@@ -757,3 +757,104 @@ footer, .footer {
     background: rgba(0,0,0,0.28);
   }
 }
+/* ================================
+   Mobile Nav Fix — prevent off-screen buttons
+   ================================ */
+@media (max-width: 640px) {
+
+  /* Force any “hero header” multi-column wrapper into 1 column */
+  .nav,
+  header,
+  .header,
+  .hero,
+  .masthead,
+  .home-hero,
+  .intro,
+  .top {
+    display: block !important;
+  }
+
+  /* Catch common two-column patterns */
+  .nav .container,
+  header .container,
+  .header .container,
+  .hero .container,
+  .masthead .container,
+  .home-hero .container,
+  .intro .container {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+    align-items: start !important;
+  }
+
+  /* If your theme uses a grid/flex wrapper for the header row, collapse it */
+  .nav .row,
+  header .row,
+  .header .row,
+  .hero .row,
+  .masthead .row,
+  .home-hero .row {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  /* Make sure the right-side nav area can’t stay narrow/offscreen */
+  nav,
+  .menu,
+  .nav-links,
+  .nav-buttons,
+  .nav-actions {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* The actual buttons/links: full-width, centered text */
+  nav a,
+  nav button,
+  .nav a,
+  .nav button,
+  .nav-links a,
+  .nav-buttons a,
+  .nav-buttons button,
+  .menu a,
+  .menu button {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    text-align: center !important;
+    min-height: 46px;
+  }
+
+  /* If the nav list is an <ul>, remove the side indent and force stack */
+  nav ul {
+    list-style: none;
+    padding-left: 0 !important;
+    margin: 8px 0 0 !important;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  /* Remove awkward extra margins from desktop spacing */
+  .brand,
+  .brand + *,
+  .tagline,
+  .hero p,
+  .masthead p {
+    margin: 0 !important;
+  }
+
+  /* Vault capacity: keep it in the flow, centered, not floating right */
+  .vt-capacity {
+    width: 100% !important;
+    max-width: 420px;
+    margin: 10px auto 0 !important;
+  }
+}
+@media (max-width: 640px) {
+  .vt-registry-header { margin-bottom: 12px !important; }
+  .vt-section { margin-top: 16px !important; }
+  hr { margin: 12px 0 !important; }
+}
