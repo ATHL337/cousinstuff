@@ -2,14 +2,14 @@
   {{ $max := 33 }}
   {{ $recipes := where .Site.RegularPages "Section" "recipes" }}
 
-  {{/* Build a map: "1" -> Page, "2" -> Page, ... */}}
   {{ $slotMap := dict }}
   {{ range $recipes }}
-    {{ with .Params.slot }}
-      {{ $key := printf "%d" . }}
+    {{ if and (isset .Params "slot") (ne .Title "") }}
+      {{ $key := printf "%d" .Params.slot }}
       {{ $slotMap = merge $slotMap (dict $key $) }}
     {{ end }}
   {{ end }}
+
 
   {{/* Count loaded slots */}}
   {{ $loaded := 0 }}
