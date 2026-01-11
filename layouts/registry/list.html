@@ -2,11 +2,12 @@
   {{ $max := 33 }}
   {{ $recipes := where .Site.RegularPages "Section" "recipes" }}
 
-  {{/* Build a map slot -> page */}}
+  {{/* Build a map: "1" -> Page, "2" -> Page, ... */}}
   {{ $slotMap := dict }}
   {{ range $recipes }}
     {{ with .Params.slot }}
-      {{ $slotMap = merge $slotMap (dict (printf "%d" .) .) }}
+      {{ $key := printf "%d" . }}
+      {{ $slotMap = merge $slotMap (dict $key $) }}
     {{ end }}
   {{ end }}
 
