@@ -6,7 +6,7 @@
   {{ range $recipes }}
     {{ if and (isset .Params "slot") (ne .Title "") }}
       {{ $key := printf "%d" .Params.slot }}
-      {{ $slotMap = merge $slotMap (dict $key $) }}
+      {{ $slotMap = merge $slotMap (dict $key .) }}
     {{ end }}
   {{ end }}
 
