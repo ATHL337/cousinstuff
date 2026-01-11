@@ -27,11 +27,13 @@
         {{ block "main" . }}{{ end }}
       </main>
 
-      <footer class="meta" style="padding:26px 0 8px;">
-        <span>© {{ now.Year }} {{ .Site.Params.brand }}</span>
-        <span>•</span>
-        <span>A Fallout fansite built with love</span>
+      <footer class="meta" style="padding:26px 0 8px; text-align:center; line-height:1.6;">
+        <div>© {{ now.Year }} {{ .Site.Params.brand }} • Built with love and retro-future flair</div>
+        <div style="font-size:12px; opacity:0.85;">
+          Fallout-inspired aesthetic • Unofficial fan project • Not affiliated with or endorsed by Bethesda Softworks
+        </div>
       </footer>
+
     </div>
   </body>
 </html>
