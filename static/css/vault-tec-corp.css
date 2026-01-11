@@ -471,3 +471,31 @@ h2 { letter-spacing: 0.2px; }
 .vt-card__subtitle{ margin: 0.4rem 0 0.6rem; opacity: 0.9; font-weight: 700; }
 .vt-card__meta{ margin: 0; opacity: 0.85; font-size: 0.92rem; }
 .vt-card__meta-sep{ margin: 0 0.35rem; opacity: 0.6; }
+/* Prevent title from colliding with VT-## badge */
+.vt-card {
+  padding-right: 4.5rem; /* reserves space for badge */
+}
+
+/* Badge spacing */
+.vt-card__badge {
+  top: 0.7rem;
+  right: 0.7rem;
+  max-width: 3.5rem;
+  text-align: right;
+}
+
+/* Title wrapping control */
+.vt-card__title {
+  margin-right: 3.5rem; /* keeps text clear of badge */
+  line-height: 1.25;
+}
+
+/* Clamp long titles to 2 lines */
+.vt-card__title,
+.vt-card__link {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
