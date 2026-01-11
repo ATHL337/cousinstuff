@@ -44,6 +44,9 @@
 
             {{ if $p }}
               <a href="{{ $p.RelPermalink }}" style="font-size:16px; font-weight:900;">{{ $p.Title }}</a>
+			  {{ with $p.Params.subtitle }}
+				<div class="meta" style="margin-left:80px; margin-top:4px;">{{ . }}</div>
+			{{ end }}
             {{ else }}
               <span style="font-size:14px; font-weight:900; opacity:0.6;">[ EMPTY SLOT ]</span>
             {{ end }}
