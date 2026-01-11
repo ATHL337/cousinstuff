@@ -601,3 +601,148 @@ footer, .footer {
   .vt-card, .card { transition: transform 0.08s ease; }
   .vt-card:active, .card:active { transform: translateY(1px); }
 }
+
+/* ================================
+   Mobile App-Style Patch (<= 640px)
+   ================================ */
+
+@media (max-width: 640px) {
+
+  /* Reduce “hero” vertical waste (covers common wrappers) */
+  header,
+  .header,
+  .hero,
+  .masthead,
+  .home-hero,
+  .intro,
+  .top,
+  .nav {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+  }
+
+  /* Brand row: keep it compact */
+  .brand {
+    gap: 10px;
+    align-items: center;
+  }
+  .brand .title {
+    font-size: 1.05rem;
+    line-height: 1.05;
+  }
+  .brand .tagline {
+    font-size: 0.9rem;
+    line-height: 1.2;
+  }
+
+  /* If the homepage has a left text + right buttons layout, kill the two-column feel */
+  .home-hero,
+  .hero,
+  .masthead,
+  .intro {
+    display: block !important;
+  }
+
+  /* Welcome headline: smaller + tighter */
+  h1,
+  .hero h1,
+  .masthead h1,
+  .home-hero h1 {
+    font-size: 1.55rem !important;
+    line-height: 1.1 !important;
+    letter-spacing: 0.04em;
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+  }
+
+  /* Paragraph copy: readable but not tall */
+  p,
+  .hero p,
+  .masthead p,
+  .home-hero p {
+    font-size: 0.98rem !important;
+    line-height: 1.45 !important;
+    margin-top: 6px !important;
+    margin-bottom: 10px !important;
+  }
+
+  /* Nav buttons (Registry / Recipes / Tags / Dark mode): full-width app buttons */
+  .nav-buttons,
+  .menu,
+  .nav-links,
+  nav ul,
+  nav .links {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+    margin-top: 10px !important;
+  }
+
+  /* Make links/buttons thumb-friendly */
+  nav a,
+  nav button,
+  .nav a,
+  .nav button,
+  .btn,
+  button {
+    min-height: 46px;
+  }
+
+  /* Home action buttons: put them in a 2-up grid if present */
+  .hero .btn-row,
+  .cta,
+  .cta-row,
+  .home-actions,
+  .actions {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+  }
+
+  /* If you only have one CTA, it should span */
+  .hero .btn-row > :only-child,
+  .cta > :only-child,
+  .cta-row > :only-child,
+  .home-actions > :only-child,
+  .actions > :only-child {
+    grid-column: 1 / -1 !important;
+  }
+
+  /* Vault capacity: dock + shrink so it doesn’t fight nav */
+  .vt-capacity {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 360px;
+    margin: 10px auto 6px !important;
+    padding: 10px 12px;
+    border-radius: 16px;
+    text-transform: uppercase;
+  }
+
+  /* If your capacity has a yellow “coin” / circle, keep it tight */
+  .vt-capacity-value,
+  .vt-capacity .value,
+  .vt-capacity .badge,
+  .vt-capacity .coin {
+    padding: 6px 10px !important;
+    border-radius: 999px !important;
+    font-size: 0.95rem !important;
+    line-height: 1 !important;
+    white-space: nowrap;
+  }
+
+  /* Keep the decorative stripe from eating vertical space */
+  .nav::after {
+    height: 5px;
+  }
+
+  /* Cards/sections on the homepage: reduce big gaps */
+  .card,
+  .vt-placard,
+  .section,
+  section {
+    margin-top: 12px !important;
+  }
+}
