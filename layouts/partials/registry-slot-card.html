@@ -1,0 +1,35 @@
+{{- $slot := .Slot -}}
+{{- $p := .Page -}}
+{{- $vt := printf "VT-%02d" $slot -}}
+
+<article class="vt-card" data-slot="{{ $slot }}" data-has-page="{{ if $p }}true{{ else }}false{{ end }}">
+  <div class="vt-card__badge" aria-hidden="true">{{ $vt }}</div>
+
+  {{ if $p }}
+    <h3 class="vt-card__title">
+      <a class="vt-card__link" href="{{ $p.RelPermalink }}">
+        <span class="sr-only">{{ $vt }} </span>{{ $p.Title }}
+      </a>
+    </h3>
+
+    {{ with $p.Params.subtitle }}
+      <p class="vt-card__subtitle">{{ . }}</p>
+    {{ end }}
+
+    <p class="vt-card__meta">
+      <span class="vt-card__meta-item">Slot {{ $slot }}</span>
+      {{ with $p.Params.tags }}
+        <span class="vt-card__meta-sep" aria-hidden="true">•</span>
+        <span class="vt-card__meta-item">{{ delimit . ", " }}</span>
+      {{ end }}
+    </p>
+  {{ else }}
+    <h3 class="vt-card__title">
+      <span class="sr-only">{{ $vt }} </span>[ EMPTY SLOT ]
+    </h3>
+    <p class="vt-card__subtitle">Available</p>
+    <p class="vt-card__meta">
+      Assign this slot by adding <code>slot: {{ $slot }}</code> to a recipe.
+    </p>
+  {{ end }}
+</article>

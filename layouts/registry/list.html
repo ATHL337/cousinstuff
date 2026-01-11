@@ -1,83 +1,105 @@
 {{ define "main" }}
-  {{ $max := 33 }}
-  {{ $recipes := where .Site.RegularPages "Section" "recipes" }}
+<main class="vt-wrap">
 
-  {{ $slotMap := dict }}
-  {{ range $recipes }}
-    {{ if and (isset .Params "slot") (ne .Title "") }}
-      {{ $key := printf "%d" .Params.slot }}
-      {{ $slotMap = merge $slotMap (dict $key .) }}
-    {{ end }}
-  {{ end }}
+  {{/* --- Collect slotted recipes --- */}}
+  {{ $all := where .Site.RegularPages "Section" "recipes" }}
+  {{ $slotted := where $all ".Params.slot" "ne" nil }}
 
+  {{/* --- Vault capacity panel --- */}}
+  {{ $loaded := len $slotted }}
+  {{ $capacity := 33 }}
 
-  {{/* Count loaded slots */}}
-  {{ $loaded := 0 }}
-  {{ range $i := seq 1 $max }}
-    {{ $k := printf "%d" $i }}
-    {{ if index $slotMap $k }}
-      {{ $loaded = add $loaded 1 }}
-    {{ end }}
-  {{ end }}
+  <header class="vt-registry-header">
+    <div class="vt-placard">
+      <div class="vt-placard__top">
+        <h1 class="vt-title">Vault Registry</h1>
+        <p class="vt-subtitle">Vault 33 Registry • <span id="vt-loaded">{{ $loaded }}</span> / {{ $capacity }} slots loaded</p>
+      </div>
 
-  <h1>Vault Registry</h1>
-
-  <div class="card">
-    <div class="meta" style="font-weight:800;">
-      Vault 33 Registry • {{ $loaded }} / {{ $max }} slots loaded
-    </div>
-    <div class="meta" style="margin-top:6px;">
-      Slots are explicit. Assign <code>slot: 1</code> through <code>slot: 33</code> in recipe front matter.
-    </div>
-  </div>
-
-  <div class="card" style="margin-top:14px;">
-    <div class="grid" style="gap:10px;">
-      {{ range $i := seq 1 $max }}
-        {{ $k := printf "%d" $i }}
-        {{ $slot := printf "%02d" $i }}
-        {{ $p := index $slotMap $k }}
-
-        <div style="display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap;">
-          <div style="display:flex; gap:10px; align-items:baseline; flex-wrap:wrap;">
-            <span class="chip" style="min-width:70px; justify-content:center;">VT-{{ $slot }}</span>
-
-            {{ if $p }}
-              <a href="{{ $p.RelPermalink }}" style="font-size:16px; font-weight:900;">{{ $p.Title }}</a>
-			  {{ with $p.Params.subtitle }}
-				<div class="meta" style="margin-left:80px; margin-top:4px;">{{ . }}</div>
-			{{ end }}
-            {{ else }}
-              <span style="font-size:14px; font-weight:900; opacity:0.6;">[ EMPTY SLOT ]</span>
-            {{ end }}
-          </div>
-
-          <div class="meta">
-            {{ if $p }}
-              {{ with $p.Params.servings }}{{ . }} servings{{ end }}
-              {{ with $p.Params.totalTime }} • Total: {{ . }}{{ end }}
-            {{ else }}
-              <span style="opacity:0.6;">Available</span>
-            {{ end }}
-          </div>
+      <div class="vt-capacity" role="status" aria-live="polite">
+        <div class="vt-capacity__label">
+          <span class="vt-capacity__text">Capacity</span>
+          <span class="vt-capacity__count"><span id="vt-loaded-2">{{ $loaded }}</span> / {{ $capacity }}</span>
         </div>
+        <div class="vt-capacity__bar" aria-hidden="true">
+          <div class="vt-capacity__fill" style="width: calc(({{ $loaded }} / {{ $capacity }}) * 100%);"></div>
+        </div>
+      </div>
 
-        {{ if $p }}
-          {{ with $p.Params.tags }}
-            <div class="chips" style="margin:-2px 0 10px 80px;">
-              {{ range . }}
-                <a class="chip" href="/tags/{{ . | urlize }}/">{{ . }}</a>
-              {{ end }}
-            </div>
-          {{ end }}
-        {{ else }}
-          <div class="meta" style="margin:-2px 0 10px 80px; opacity:0.6;">
-            Assign this slot by adding <code>slot: {{ $i }}</code> to a recipe.
-          </div>
-        {{ end }}
+      <nav class="vt-filters" aria-label="Registry filters">
+        <button class="vt-filter is-active" type="button" data-filter="all">
+          All <span class="sr-only">recipes</span>
+        </button>
+        <button class="vt-filter" type="button" data-filter="core">Core Rations</button>
+        <button class="vt-filter" type="button" data-filter="specialty">Specialty Modules</button>
+        <button class="vt-filter" type="button" data-filter="legacy">Legacy Recipes</button>
+        <button class="vt-filter" type="button" data-filter="desserts">Desserts &amp; Treats</button>
+        <button class="vt-filter" type="button" data-filter="wildcards">Wildcards</button>
 
-        {{ if lt $i $max }}<hr />{{ end }}
+        <div class="vt-filters__spacer" aria-hidden="true"></div>
+
+        <button class="vt-filter vt-filter--primary" type="button" id="vt-random">
+          Dispense Random Ration
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  {{/* --- Helper: render a category section by slot range --- */}}
+  {{/* Note: we keep slot ranges canonical per your plan */}}
+
+  <section class="vt-section" data-category="core" id="core">
+    <h2 class="vt-section__title">Core Rations <span class="vt-section__range">(VT-01 → VT-10)</span></h2>
+    <div class="vt-grid">
+      {{ range $slot := seq 1 10 }}
+        {{ $p := index (where $slotted ".Params.slot" $slot) 0 }}
+        {{ partial "registry-slot-card.html" (dict "Slot" $slot "Page" $p) }}
       {{ end }}
     </div>
-  </div>
+  </section>
+
+  <section class="vt-section" data-category="specialty" id="specialty">
+    <h2 class="vt-section__title">Specialty Modules <span class="vt-section__range">(VT-11 → VT-18)</span></h2>
+    <div class="vt-grid">
+      {{ range $slot := seq 11 18 }}
+        {{ $p := index (where $slotted ".Params.slot" $slot) 0 }}
+        {{ partial "registry-slot-card.html" (dict "Slot" $slot "Page" $p) }}
+      {{ end }}
+    </div>
+  </section>
+
+  <section class="vt-section" data-category="legacy" id="legacy">
+    <h2 class="vt-section__title">Legacy Recipes <span class="vt-section__range">(VT-19 → VT-25)</span></h2>
+    <div class="vt-grid">
+      {{ range $slot := seq 19 25 }}
+        {{ $p := index (where $slotted ".Params.slot" $slot) 0 }}
+        {{ partial "registry-slot-card.html" (dict "Slot" $slot "Page" $p) }}
+      {{ end }}
+    </div>
+  </section>
+
+  <section class="vt-section" data-category="desserts" id="desserts">
+    <h2 class="vt-section__title">Desserts &amp; Treats <span class="vt-section__range">(VT-26 → VT-30)</span></h2>
+    <div class="vt-grid">
+      {{ range $slot := seq 26 30 }}
+        {{ $p := index (where $slotted ".Params.slot" $slot) 0 }}
+        {{ partial "registry-slot-card.html" (dict "Slot" $slot "Page" $p) }}
+      {{ end }}
+    </div>
+  </section>
+
+  <section class="vt-section" data-category="wildcards" id="wildcards">
+    <h2 class="vt-section__title">Wildcards <span class="vt-section__range">(VT-31 → VT-33)</span></h2>
+    <div class="vt-grid">
+      {{ range $slot := seq 31 33 }}
+        {{ $p := index (where $slotted ".Params.slot" $slot) 0 }}
+        {{ partial "registry-slot-card.html" (dict "Slot" $slot "Page" $p) }}
+      {{ end }}
+    </div>
+  </section>
+
+</main>
+
+{{/* Registry behavior */}}
+<script defer src="/js/registry.js"></script>
 {{ end }}
