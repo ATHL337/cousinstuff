@@ -746,3 +746,14 @@ footer, .footer {
     margin-top: 12px !important;
   }
 }
+@media (max-width: 640px) {
+  /* Slight readability boost for mobile without changing the theme */
+  .vt-placard,
+  .card {
+    background: rgba(255,255,255,0.82);
+  }
+  :root[data-theme="dark"] .vt-placard,
+  :root[data-theme="dark"] .card {
+    background: rgba(0,0,0,0.28);
+  }
+}
