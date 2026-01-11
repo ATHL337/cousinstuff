@@ -65,9 +65,14 @@ body {
   left:0; right:0; bottom:-1px;
   height:6px;
   border-radius: 999px;
-  background: linear-gradient(90deg, var(--vt-blue), var(--vt-yellow));
+  background: linear-gradient(90deg,
+    var(--vt-blue) 0%,
+    var(--vt-blue) 55%,
+    var(--vt-yellow) 100%
+  );
   opacity: 0.95;
 }
+
 
 /* Brand lockup */
 .brand { gap: 12px; }
