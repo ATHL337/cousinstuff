@@ -1,6 +1,10 @@
 /* CousinStuff — Vault-Tec corporate inspired (clean, blue/yellow, poster-like) */
 /* No copyrighted assets. Pure CSS/typography/layout language. */
 
+/* ================================
+   Global Tokens
+   ================================ */
+
 :root {
   /* Brand palette */
   --vt-blue: #0b3a78;
@@ -42,15 +46,19 @@
   --btn: var(--vt-blue);
   --btn-fg: #ffffff;
 
-  .btn.accent, button.accent {
+  --shadow: 0 14px 32px rgba(0,0,0,0.35);
+}
+
+/* Accent button (TOP-LEVEL; do not nest inside :root[data-theme="dark"]) */
+.btn.accent, button.accent {
   background: var(--vt-yellow);
   color: #0b1020;
   border-color: rgba(216,165,15,0.65);
 }
 
-
-  --shadow: 0 14px 32px rgba(0,0,0,0.35);
-}
+/* ================================
+   Base Layout / Background
+   ================================ */
 
 body {
   background:
@@ -59,6 +67,10 @@ body {
     linear-gradient(180deg, rgba(11, 58, 120, 0.04), transparent 40%),
     var(--bg);
 }
+
+/* ================================
+   Header / Nav
+   ================================ */
 
 /* HEADER: “poster stripe” feel */
 .nav {
@@ -80,7 +92,6 @@ body {
   opacity: 0.95;
 }
 
-
 /* Brand lockup */
 .brand { gap: 12px; }
 .brand .title {
@@ -95,6 +106,10 @@ body {
   color: var(--muted);
   font-weight: 600;
 }
+
+/* ================================
+   Core Components
+   ================================ */
 
 /* Cards: thick border, soft shadow, “printed sign” vibe */
 .card {
@@ -156,50 +171,36 @@ h2 { letter-spacing: 0.2px; }
   box-shadow: var(--shadow);
 }
 
-/* Print: keep it clean */
+/* ================================
+   Print
+   ================================ */
+
 @media print {
   body { background: #fff !important; }
   .card { box-shadow: none; border: 1px solid #ddd; }
   .nav::after { display:none; }
 }
 
-/* Vault Capacity placard */
-.vt-capacity{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  padding: 8px 12px;
-  border-radius: 999px;
-  border: 2px solid var(--border);
-  background: rgba(255,255,255,0.55);
-  box-shadow: 0 10px 18px rgba(0,0,0,0.06);
-  font-weight: 900;
-  letter-spacing: 0.4px;
-  text-transform: uppercase;
-  font-size: 12px;
-}
-:root[data-theme="dark"] .vt-capacity{
-  background: rgba(0,0,0,0.18);
+/* ================================
+   Accessibility
+   ================================ */
+
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
 }
 
-.vt-capacity-label{ opacity: 0.8; }
-.vt-capacity-value{
-  padding: 4px 10px;
-  border-radius: 999px;
-  border: 2px solid var(--border);
-  background: linear-gradient(90deg, var(--vt-blue) 0%, var(--vt-blue) 65%, var(--vt-yellow) 100%);
-  color: #fff;
-}
-:root[data-theme="dark"] .vt-capacity-value{
-  color: #0b1020;
-  background: linear-gradient(90deg, var(--vt-yellow) 0%, var(--vt-yellow) 35%, var(--vt-blue) 100%);
-}
+/* ================================
+   Vault Placard Header (Recipes)
+   ================================ */
 
-.vt-capacity-warn{
-  color: var(--vt-yellow-2);
-  font-weight: 950;
-}
-/* Vault placard header (recipes) */
 .vt-placard{
   border: 2px solid var(--border);
   border-radius: var(--radius);
@@ -254,14 +255,219 @@ h2 { letter-spacing: 0.2px; }
   font-size: 12px;
   text-transform: uppercase;
 }
-.sr-only {
-  position: absolute !important;
-  width: 1px !important;
-  height: 1px !important;
-  padding: 0 !important;
-  margin: -1px !important;
-  overflow: hidden !important;
-  clip: rect(0, 0, 0, 0) !important;
-  white-space: nowrap !important;
-  border: 0 !important;
+
+/* ================================
+   Vault Capacity Pill (Generic)
+   ================================ */
+
+.vt-capacity{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 2px solid var(--border);
+  background: rgba(255,255,255,0.55);
+  box-shadow: 0 10px 18px rgba(0,0,0,0.06);
+  font-weight: 900;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  font-size: 12px;
 }
+:root[data-theme="dark"] .vt-capacity{
+  background: rgba(0,0,0,0.18);
+}
+
+.vt-capacity-label{ opacity: 0.8; }
+.vt-capacity-value{
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 2px solid var(--border);
+  background: linear-gradient(90deg, var(--vt-blue) 0%, var(--vt-blue) 65%, var(--vt-yellow) 100%);
+  color: #fff;
+}
+:root[data-theme="dark"] .vt-capacity-value{
+  color: #0b1020;
+  background: linear-gradient(90deg, var(--vt-yellow) 0%, var(--vt-yellow) 35%, var(--vt-blue) 100%);
+}
+
+.vt-capacity-warn{
+  color: var(--vt-yellow-2);
+  font-weight: 950;
+}
+
+/* ================================
+   Vault Registry — Corporate Placard
+   ================================ */
+
+/* Registry shell */
+.vt-wrap { max-width: 1100px; margin: 0 auto; padding: 1.25rem; }
+.vt-registry-header { margin-bottom: 1.25rem; }
+
+/* Registry Placard */
+.vt-registry-header .vt-placard{
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,0.72);
+  box-shadow: var(--shadow);
+  padding: 14px 14px 12px;
+  text-align: left;
+}
+:root[data-theme="dark"] .vt-registry-header .vt-placard{
+  background: rgba(0,0,0,0.22);
+}
+
+/* Headline */
+.vt-title {
+  margin: 0;
+  font-size: 1.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--vt-blue);
+}
+:root[data-theme="dark"] .vt-title { color: var(--vt-yellow); }
+
+.vt-subtitle {
+  margin: 0.25rem 0 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  opacity: 0.85;
+}
+
+/* Capacity (Registry variant) */
+.vt-capacity{
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 2px solid var(--border);
+  background: rgba(255,255,255,0.55);
+  box-shadow: 0 10px 18px rgba(0,0,0,0.06);
+  margin: 0.5rem 0 0.75rem;
+}
+:root[data-theme="dark"] .vt-capacity{
+  background: rgba(0,0,0,0.18);
+}
+
+.vt-capacity__label{
+  display:flex;
+  align-items:baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 12px;
+}
+
+/* Disable bar visuals if HTML includes them */
+.vt-capacity__bar{ display:none; }
+.vt-capacity__fill{ display:none; }
+
+/* Filters */
+.vt-filters{
+  display:flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items:center;
+  margin-top: 0.25rem;
+}
+.vt-filters__spacer{ flex: 1 1 auto; }
+
+.vt-filter{
+  border: 2px solid var(--border);
+  background: rgba(255,255,255,0.45);
+  color: var(--fg);
+  padding: 9px 12px;
+  border-radius: 999px;
+  cursor:pointer;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  box-shadow: 0 10px 18px rgba(0,0,0,0.06);
+}
+:root[data-theme="dark"] .vt-filter{
+  background: rgba(0,0,0,0.18);
+}
+
+.vt-filter.is-active{
+  border-color: rgba(11,58,120,0.45);
+  background: linear-gradient(90deg, rgba(11,58,120,0.12), rgba(242,194,48,0.14));
+}
+:root[data-theme="dark"] .vt-filter.is-active{
+  border-color: rgba(242,194,48,0.55);
+  background: linear-gradient(90deg, rgba(242,194,48,0.22), rgba(11,58,120,0.18));
+}
+
+.vt-filter--primary{
+  background: linear-gradient(90deg, var(--vt-blue) 0%, var(--vt-blue) 70%, var(--vt-yellow) 100%);
+  color: #fff;
+  border-color: rgba(11,58,120,0.35);
+}
+:root[data-theme="dark"] .vt-filter--primary{
+  background: linear-gradient(90deg, var(--vt-yellow) 0%, var(--vt-yellow) 40%, var(--vt-blue) 100%);
+  color: #0b1020;
+  border-color: rgba(242,194,48,0.5);
+}
+
+/* Sections + grid */
+.vt-section{ margin-top: 1.75rem; }
+
+.vt-section__title{
+  margin: 0 0 0.75rem;
+  font-size: 1.25rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--vt-blue);
+}
+:root[data-theme="dark"] .vt-section__title{ color: var(--vt-yellow); }
+
+.vt-section__range{
+  opacity: 0.7;
+  font-weight: 800;
+  margin-left: 0.25rem;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.vt-grid{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+@media (max-width: 950px) { .vt-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .vt-grid { grid-template-columns: 1fr; } }
+
+/* Cards */
+.vt-card{
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.95rem 0.9rem 0.85rem;
+  background: rgba(255,255,255,0.78);
+  box-shadow: var(--shadow);
+  position: relative;
+}
+:root[data-theme="dark"] .vt-card{
+  background: rgba(0,0,0,0.18);
+}
+
+.vt-card__badge{
+  position:absolute;
+  top: 0.7rem;
+  right: 0.7rem;
+  font-weight: 950;
+  letter-spacing: 0.06em;
+  opacity: 0.9;
+  color: var(--vt-blue);
+}
+:root[data-theme="dark"] .vt-card__badge{ color: var(--vt-yellow); }
+
+.vt-card__title{ margin: 0; font-size: 1.05rem; font-weight: 950; }
+.vt-card__link{ text-decoration: none; }
+.vt-card__subtitle{ margin: 0.4rem 0 0.6rem; opacity: 0.9; font-weight: 700; }
+.vt-card__meta{ margin: 0; opacity: 0.85; font-size: 0.92rem; }
+.vt-card__meta-sep{ margin: 0 0.35rem; opacity: 0.6; }
