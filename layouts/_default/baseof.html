@@ -17,6 +17,8 @@
           <span class="tagline">{{ .Site.Params.description }}</span>
         </div>
         <div class="actions">
+          {{ partial "vault_capacity.html" . }}
+          <a class="btn secondary" href="/registry/">Registry</a>
           <a class="btn secondary" href="/recipes/">Recipes</a>
           <a class="btn secondary" href="/tags/">Tags</a>
           <button id="themeToggle" class="secondary" type="button" aria-label="Toggle dark mode">Dark mode</button>
