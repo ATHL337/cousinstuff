@@ -1,0 +1,61 @@
+{{ define "main" }}
+  {{ $max := 33 }}
+  {{ $recipes := where .Site.RegularPages "Section" "recipes" }}
+  {{ $count := len $recipes }}
+
+  <h1>Vault Registry</h1>
+
+  <div class="card">
+    <div class="meta" style="font-weight:800;">
+      Vault 33 Registry • {{ $count }} / {{ $max }} recipes loaded
+    </div>
+    <div class="meta" style="margin-top:6px;">
+      Slots 01–33 are the canonical archive. Keep it curated.
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:14px;">
+    <div class="grid" style="gap:10px;">
+      {{/* Sort by slot if present, otherwise by title */}}
+      {{ $sorted := sort $recipes "Title" "asc" }}
+      {{ range $i, $p := $sorted }}
+        {{ $slot := printf "%02d" (add $i 1) }}
+        <div style="display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+          <div style="display:flex; gap:10px; align-items:baseline; flex-wrap:wrap;">
+            <span class="chip" style="min-width:60px; justify-content:center;">VT-{{ $slot }}</span>
+            <a href="{{ $p.RelPermalink }}" style="font-size:16px; font-weight:900;">{{ $p.Title }}</a>
+          </div>
+
+          <div class="meta">
+            {{ with $p.Params.servings }}{{ . }} servings{{ end }}
+            {{ with $p.Params.totalTime }} • Total: {{ . }}{{ end }}
+          </div>
+        </div>
+
+        {{ with $p.Params.tags }}
+          <div class="chips" style="margin:-2px 0 10px 70px;">
+            {{ range . }}
+              <a class="chip" href="/tags/{{ . | urlize }}/">{{ . }}</a>
+            {{ end }}
+          </div>
+        {{ end }}
+
+        {{ if lt (add $i 1) (len $sorted) }}<hr />{{ end }}
+      {{ end }}
+
+      {{ if lt $count $max }}
+        <hr />
+        <div class="meta" style="font-weight:800;">
+          {{ sub $max $count }} slot(s) remaining.
+        </div>
+      {{ end }}
+
+      {{ if gt $count $max }}
+        <hr />
+        <div class="meta" style="font-weight:900;">
+          Over capacity: {{ sub $count $max }} recipe(s) beyond Vault 33.
+        </div>
+      {{ end }}
+    </div>
+  </div>
+{{ end }}
