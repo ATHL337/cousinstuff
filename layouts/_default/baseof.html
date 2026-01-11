@@ -27,11 +27,16 @@
         {{ block "main" . }}{{ end }}
       </main>
 
-      <footer class="meta" style="padding:26px 0 8px; text-align:center; line-height:1.6;">
-        <div>© {{ now.Year }} {{ .Site.Params.brand }} • Built with love and retro-future flair</div>
-        <div style="font-size:12px; opacity:0.85;">
-          <br>
-          Fallout-inspired aesthetic • Unofficial fan project • Not affiliated with or endorsed by Bethesda Softworks
+      <footer class="vt-legal">
+        <div class="vt-legal-inner">
+          <span class="vt-legal-brand">© {{ now.Year }} {{ .Site.Params.brand }}</span>
+          <span class="vt-legal-dot">•</span>
+          <span>Built with love</span>
+          <span class="vt-legal-dot">•</span>
+          <span class="vt-legal-subtle">Unofficial fan project</span>
+        </div>
+        <div class="vt-legal-subline">
+          Fallout-inspired aesthetic • Not affiliated with or endorsed by Bethesda Softworks
         </div>
       </footer>
 
