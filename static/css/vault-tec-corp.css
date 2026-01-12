@@ -858,3 +858,98 @@ footer, .footer {
   .vt-section { margin-top: 16px !important; }
   hr { margin: 12px 0 !important; }
 }
+/* ================================
+   Mobile App Header — baseof.html exact classes
+   ================================ */
+@media (max-width: 720px) {
+
+  /* Container should not constrain width in a way that forces overflow */
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-left: max(14px, env(safe-area-inset-left));
+    padding-right: max(14px, env(safe-area-inset-right));
+  }
+
+  /* NAV becomes a stacked app header */
+  .nav {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+    padding: 12px 0 12px !important;
+  }
+
+  /* Brand: compact, wraps nicely */
+  .brand {
+    display: grid;
+    gap: 6px;
+    align-items: start;
+  }
+  .brand .title {
+    font-size: 1.1rem;
+    line-height: 1.05;
+  }
+  .brand .tagline {
+    font-size: 0.92rem;
+    line-height: 1.25;
+  }
+
+  /* Actions: full-width grid, never off-screen */
+  .actions {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+    align-items: stretch;
+  }
+
+  /* Capacity widget spans full width */
+  .actions .vt-capacity,
+  .actions .vt-capacity-wrap,
+  .actions [class*="vt-capacity"] {
+    grid-column: 1 / -1;
+    width: 100% !important;
+  }
+
+  /* Nav buttons become big tap targets */
+  .actions a.btn,
+  .actions button {
+    width: 100%;
+    min-height: 46px;
+    text-align: center;
+    justify-content: center;
+    border-radius: 999px;
+  }
+
+  /* Dark mode toggle spans full width for thumb comfort */
+  #themeToggle {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Smaller phones: 1-column stack */
+@media (max-width: 420px) {
+  .actions {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Reduce awkward spacing: main content should start close to header */
+@media (max-width: 720px) {
+  main {
+    margin-top: 10px;
+  }
+}
+@media (max-width: 720px) {
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 60;
+    background: rgba(255,255,255,0.70);
+    backdrop-filter: blur(10px);
+  }
+  :root[data-theme="dark"] .nav {
+    background: rgba(6,18,38,0.72);
+  }
+}
