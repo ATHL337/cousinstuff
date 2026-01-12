@@ -1,40 +1,39 @@
 (() => {
   const filters = Array.from(document.querySelectorAll(".vt-filter[data-filter]"));
   const sections = Array.from(document.querySelectorAll(".vt-section[data-category]"));
-  const randomBtn = document.getElementById("vt-random");
+  const randomTop = document.getElementById("vt-random");
+  const randomBottom = document.getElementById("vt-random-bottom");
 
-  const FILTER_PARAM = "filter";
+  const setActive = (key) => {
+    filters.forEach(b => b.classList.toggle("is-active", b.dataset.filter === key));
 
-  const getStickyOffset = () => {
-    // If the filters become sticky on mobile, we should offset scroll.
-    const nav = document.querySelector(".vt-filters");
-    if (!nav) return 0;
-
-    const style = window.getComputedStyle(nav);
-    const isSticky = style.position === "sticky";
-    if (!isSticky) return 0;
-
-    // A little extra padding so the section header breathes.
-    return Math.ceil(nav.getBoundingClientRect().height + 14);
-  };
-
-  const setPressedState = (key) => {
-    filters.forEach((b) => {
-      const isActive = b.dataset.filter === key;
-      b.classList.toggle("is-active", isActive);
-      b.setAttribute("aria-pressed", isActive ? "true" : "false");
-    });
-  };
-
-  const showSections = (key) => {
     if (key === "all") {
-      sections.forEach((s) => (s.style.display = ""));
+      sections.forEach(s => (s.style.display = ""));
       return;
     }
-    sections.forEach((s) => {
+    sections.forEach(s => {
       s.style.display = (s.dataset.category === key) ? "" : "none";
     });
+
+    const target = document.getElementById(key);
+    if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
   };
+
+  filters.forEach(btn => {
+    btn.addEventListener("click", () => setActive(btn.dataset.filter));
+  });
+
+  const goRandom = () => {
+    const links = Array.from(document.querySelectorAll(".vt-card__link"));
+    if (!links.length) return;
+    const pick = links[Math.floor(Math.random() * links.length)];
+    window.location.href = pick.getAttribute("href");
+  };
+
+  if (randomTop) randomTop.addEventListener("click", goRandom);
+  if (randomBottom) randomBottom.addEventListener("click", goRandom);
+})();
+
 
   const scrollToSection = (key) => {
     if (key === "all") {

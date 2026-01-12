@@ -671,3 +671,126 @@ h2{ letter-spacing:0.2px; }
   .nav.is-compact .actions a.btn,
   .nav.is-compact .actions button{ min-height: 38px !important; padding: 7px 10px !important; }
 }
+/* =========================================
+   Mobile Bottom Utility Bar (Capacity + Random + Dark)
+   Long-term maintainable approach
+   ========================================= */
+
+.vt-bottombar { display: none; }
+
+@media (max-width: 720px) {
+
+  /* Make room so content isn't covered by bottom bar */
+  body {
+    padding-bottom: calc(84px + env(safe-area-inset-bottom));
+  }
+
+  .vt-bottombar{
+    display: block;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+    padding: 10px max(14px, env(safe-area-inset-left)) calc(10px + env(safe-area-inset-bottom)) max(14px, env(safe-area-inset-right));
+    background: linear-gradient(180deg, transparent, rgba(0,0,0,0.24));
+    pointer-events: none; /* inner handles taps */
+  }
+
+  .vt-bottombar__inner{
+    pointer-events: auto;
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 10px;
+    align-items: center;
+
+    border-radius: 18px;
+    border: 2px solid rgba(255,255,255,0.16);
+    background: rgba(6,18,38,0.82);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 16px 36px rgba(0,0,0,0.38);
+    padding: 10px 10px;
+  }
+
+  :root:not([data-theme="dark"]) .vt-bottombar__inner{
+    background: rgba(255,255,255,0.86);
+    border-color: rgba(11,58,120,0.18);
+  }
+
+  /* Keep capacity compact so it doesn't dominate */
+  .vt-bottombar .vt-capacity{
+    margin: 0 !important;
+    width: 100%;
+    max-width: none;
+    padding: 8px 10px;
+    border-radius: 14px;
+  }
+
+  /* Buttons */
+  .vt-bottombar__inner .btn,
+  .vt-bottombar__inner button{
+    min-height: 42px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+
+  /* Random is “primary” action */
+  .vt-bottombar__random{
+    background: linear-gradient(90deg, var(--vt-blue) 0%, var(--vt-blue) 65%, var(--vt-yellow) 100%);
+    color: #fff;
+    border-color: rgba(11,58,120,0.35);
+    font-weight: 950;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+  :root[data-theme="dark"] .vt-bottombar__random{
+    background: linear-gradient(90deg, var(--vt-yellow) 0%, var(--vt-yellow) 40%, var(--vt-blue) 100%);
+    color: #0b1020;
+    border-color: rgba(242,194,48,0.5);
+  }
+
+  /* Dark mode toggle: keep compact */
+  .vt-bottombar__toggle{
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+
+  /* Top header: reduce height */
+  .brand .tagline{
+    display: none !important;
+  }
+
+  /* Top actions: give room to breathe */
+  .actions{
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr !important;
+    gap: 10px !important;
+    width: 100%;
+  }
+  .actions a.btn{
+    width: 100%;
+    min-height: 44px;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 420px){
+  /* Very small phones: stack Random above toggles if needed */
+  .vt-bottombar__inner{
+    grid-template-columns: 1fr 1fr;
+  }
+  .vt-bottombar .vt-capacity{
+    grid-column: 1 / -1;
+  }
+  .vt-bottombar__random{
+    grid-column: 1 / -1;
+  }
+}
+@media (max-width: 720px){
+  .vt-registry-header .vt-capacity{
+    display: none;
+  }
+}
