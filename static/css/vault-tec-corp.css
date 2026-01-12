@@ -4,58 +4,179 @@
    - data-skin="pip"
    ================================ */
 
-/* Ensure corp is explicitly defined (prevents drift) */
+/* ----------------
+   CORPORATE (Vault-Tec poster)
+   ---------------- */
 :root:not([data-skin]),
 :root[data-skin="corp"]{
-  /* Use your existing Vault-Tec tokens set earlier in the file.
-     These just ensure key UI surfaces stay “corp” even if other CSS shifts. */
-  --vt-surface: rgba(255,255,255,0.86);
+  /* Core palette */
+  --vt-blue:#0b3a78;
+  --vt-blue-2:#082a57;
+  --vt-yellow:#f2c230;
+  --vt-yellow-2:#d8a50f;
+  --paper:#fbf7ea;
+
+  /* App tokens (Corp) */
+  --bg:var(--paper);
+  --fg:#0b1020;
+  --muted:#4b5563;
+  --card:#ffffff;
+  --border:#e6dcc1;
+  --link:var(--vt-blue);
+
+  --chip:#fff1c4;
+  --chip-fg:#1f2937;
+
+  --btn:var(--vt-blue);
+  --btn-fg:#ffffff;
+
+  --shadow:0 14px 32px rgba(11,58,120,0.12);
+
+  /* Skin-aware surfaces (used by nav + bottom bar) */
+  --vt-surface: rgba(255,255,255,0.78);
   --vt-surface-border: rgba(11,58,120,0.18);
-  --vt-bottombar-bg: rgba(255,255,255,0.86);
+
+  --vt-bottombar-bg: rgba(255,255,255,0.90);
   --vt-bottombar-border: rgba(11,58,120,0.18);
-  --vt-bottombar-shadow: 0 16px 36px rgba(0,0,0,0.25);
+  --vt-bottombar-shadow: 0 16px 36px rgba(11,58,120,0.25);
 }
 
-/* If dark theme + corp skin */
+/* Corp + Dark theme */
 :root[data-theme="dark"]:not([data-skin]),
 :root[data-theme="dark"][data-skin="corp"]{
+  --bg:#061226;
+  --fg:#f8fafc;
+  --muted:#cbd5e1;
+  --card:#0b1e3c;
+  --border:#12315d;
+  --link:#8bb7ff;
+
+  --chip:#0f2a52;
+  --chip-fg:#e5e7eb;
+
+  --btn:var(--vt-blue);
+  --btn-fg:#ffffff;
+
+  --shadow:0 14px 32px rgba(0,0,0,0.35);
+
   --vt-surface: rgba(6,18,38,0.78);
   --vt-surface-border: rgba(255,255,255,0.16);
+
   --vt-bottombar-bg: rgba(6,18,38,0.82);
   --vt-bottombar-border: rgba(255,255,255,0.16);
   --vt-bottombar-shadow: 0 16px 36px rgba(0,0,0,0.38);
 }
 
-/* Pip-Boy skin: monochrome terminal vibe */
+/* Corp poster background + typography re-assertion */
+:root:not([data-skin]) body,
+:root[data-skin="corp"] body{
+  background:
+    radial-gradient(1100px 650px at 18% 10%, rgba(242,194,48,0.22), transparent 58%),
+    radial-gradient(950px 560px at 86% 0%, rgba(11,58,120,0.22), transparent 58%),
+    linear-gradient(180deg, rgba(11,58,120,0.05), transparent 40%),
+    var(--bg);
+
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center top;
+  background-attachment:fixed;
+}
+
+/* Mobile browsers can jitter with fixed backgrounds */
+@media (max-width: 720px){
+  :root:not([data-skin]) body,
+  :root[data-skin="corp"] body{
+    background-attachment:scroll;
+  }
+}
+
+/* Strong Vault-Tec headers */
+:root:not([data-skin]) h1,
+:root[data-skin="corp"] h1,
+:root:not([data-skin]) h2,
+:root[data-skin="corp"] h2,
+:root:not([data-skin]) .vt-title,
+:root[data-skin="corp"] .vt-title{
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  font-weight:950;
+}
+
+:root:not([data-skin]) .brand .title,
+:root[data-skin="corp"] .brand .title{
+  color:var(--vt-blue);
+}
+:root[data-theme="dark"]:not([data-skin]) .brand .title,
+:root[data-theme="dark"][data-skin="corp"] .brand .title{
+  color:var(--vt-yellow);
+}
+
+/* Accent button restores poster feel */
+:root:not([data-skin]) .btn.accent,
+:root[data-skin="corp"] .btn.accent,
+:root:not([data-skin]) button.accent,
+:root[data-skin="corp"] button.accent{
+  background:linear-gradient(90deg, var(--vt-yellow), var(--vt-yellow-2));
+  color:#0b1020;
+  border-color:rgba(216,165,15,0.65);
+}
+
+/* ----------------
+   PIP-BOY (terminal)
+   ---------------- */
+
+/* Pip-Boy base variables (theme-specific overrides below) */
 :root[data-skin="pip"]{
-  --bg:#06110a;
-  --fg:#d8ffd8;
-  --muted:#98ff98;
-  --card:rgba(6, 17, 10, 0.65);
+  /* Push palette away from blue/yellow */
+  --vt-blue:#1a7f4b;
+  --vt-yellow:#98ff98;
+
+  /* Skin-aware surfaces */
+  --vt-surface: rgba(6, 17, 10, 0.78);
+  --vt-surface-border: rgba(152,255,152,0.30);
+
+  --vt-bottombar-bg: rgba(6, 17, 10, 0.86);
+  --vt-bottombar-border: rgba(152,255,152,0.22);
+  --vt-bottombar-shadow: 0 16px 36px rgba(0,0,0,0.50);
+}
+
+/* Pip-Boy + DARK (deep CRT) */
+:root[data-skin="pip"][data-theme="dark"]{
+  --bg:#020a05;
+  --fg:#98ff98;
+  --muted:#6adf6a;
+  --card:rgba(2, 10, 5, 0.78);
   --border:rgba(152,255,152,0.35);
   --link:#98ff98;
 
-  --chip:rgba(10, 45, 24, 0.80);
+  --chip:rgba(10, 45, 24, 0.72);
   --chip-fg:#d8ffd8;
 
   --btn:rgba(10, 45, 24, 0.95);
   --btn-fg:#d8ffd8;
 
-  --shadow:0 14px 32px rgba(0,0,0,0.55);
-
-  /* Skin-aware surfaces */
-  --vt-surface: rgba(6, 17, 10, 0.72);
-  --vt-surface-border: rgba(152,255,152,0.30);
-  --vt-bottombar-bg: rgba(6, 17, 10, 0.86);
-  --vt-bottombar-border: rgba(152,255,152,0.22);
-  --vt-bottombar-shadow: 0 16px 36px rgba(0,0,0,0.50);
-
-  /* Push palette away from blue/yellow */
-  --vt-blue:#1a7f4b;
-  --vt-yellow:#98ff98;
+  --shadow:0 14px 32px rgba(0,0,0,0.60);
 }
 
-/* Pip-Boy background */
+/* Pip-Boy + LIGHT (brighter terminal) */
+:root[data-skin="pip"]:not([data-theme="dark"]){
+  --bg:#0a1c12;
+  --fg:#d8ffd8;
+  --muted:#98ff98;
+  --card:rgba(10, 28, 18, 0.75);
+  --border:rgba(152,255,152,0.25);
+  --link:#98ff98;
+
+  --chip:rgba(10, 45, 24, 0.60);
+  --chip-fg:#d8ffd8;
+
+  --btn:rgba(10, 45, 24, 0.90);
+  --btn-fg:#d8ffd8;
+
+  --shadow:0 14px 32px rgba(0,0,0,0.45);
+}
+
+/* Pip-Boy background uses tokens so light/dark has visible effect */
 :root[data-skin="pip"] body{
   background:
     radial-gradient(900px 540px at 20% 0%, rgba(152,255,152,0.10), transparent 58%),
@@ -64,18 +185,18 @@
   background-attachment: fixed;
 }
 
-/* Pip-Boy glow */
+/* Pip-Boy glow + accents */
 :root[data-skin="pip"] body{
-  text-shadow: 0 0 10px rgba(152,255,152,0.10);
+  text-shadow:0 0 10px rgba(152,255,152,0.10);
 }
 
 :root[data-skin="pip"] .nav::after{
-  background: linear-gradient(90deg, rgba(152,255,152,0.85), rgba(152,255,152,0.55));
-  opacity: 0.9;
+  background:linear-gradient(90deg, rgba(152,255,152,0.85), rgba(152,255,152,0.55));
+  opacity:0.9;
 }
 
 :root[data-skin="pip"] .brand .title{
-  color: var(--link);
+  color:var(--link);
 }
 
 /* Terminal panels */
@@ -83,8 +204,8 @@
 :root[data-skin="pip"] .vt-card,
 :root[data-skin="pip"] .vt-placard,
 :root[data-skin="pip"] .vt-section__head{
-  background: rgba(6, 17, 10, 0.70) !important;
-  border-color: rgba(152,255,152,0.35) !important;
+  background: var(--card) !important;
+  border-color: var(--border) !important;
   box-shadow: 0 10px 26px rgba(0,0,0,0.50) !important;
 }
 
@@ -92,7 +213,7 @@
 :root[data-skin="pip"] .btn,
 :root[data-skin="pip"] .vt-filter,
 :root[data-skin="pip"] input[type="search"]{
-  border-color: rgba(152,255,152,0.35) !important;
+  border-color: var(--border) !important;
   background: rgba(10, 45, 24, 0.60) !important;
   color: var(--fg) !important;
 }
@@ -112,18 +233,18 @@
 /* Scanlines only in Pip-Boy */
 :root[data-skin="pip"] body::before{
   content:"";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background: repeating-linear-gradient(
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background:repeating-linear-gradient(
     to bottom,
     rgba(152,255,152,0.03),
     rgba(152,255,152,0.03) 1px,
     transparent 1px,
     transparent 4px
   );
-  opacity: 0.35;
-  mix-blend-mode: screen;
+  opacity:0.35;
+  mix-blend-mode:screen;
 }
 
 /* =========================================================
@@ -141,11 +262,12 @@ body.vt-has-bottombar{
 
 @media (max-width: 720px){
 
+  /* Sticky header stays thin: brand + nav links only */
   .nav{
     position:sticky;
     top:0;
     z-index:var(--vt-z-header);
-    background: var(--vt-surface);
+    background:var(--vt-surface);
     backdrop-filter:blur(10px);
 
     display:grid;
@@ -154,10 +276,10 @@ body.vt-has-bottombar{
     padding:10px 0 12px;
   }
 
-  /* Hide tagline on mobile */
+  /* Hide tagline on mobile to cut header height */
   .brand .tagline{ display:none !important; }
 
-  /* Bottom bar utilities only */
+  /* Bottom bar is the ONLY place utilities live on mobile */
   .vt-bottombar{ display:none; }
 
   body.vt-has-bottombar .vt-bottombar{
@@ -171,22 +293,22 @@ body.vt-has-bottombar{
       calc(10px + env(safe-area-inset-bottom))
       max(14px, env(safe-area-inset-right));
 
-    background: linear-gradient(180deg, transparent, rgba(0,0,0,0.24));
+    background:linear-gradient(180deg, transparent, rgba(0,0,0,0.24));
     pointer-events:none;
   }
 
   body.vt-has-bottombar .vt-bottombar__inner{
     pointer-events:auto;
     display:grid;
-    grid-template-columns: 1fr auto auto;
+    grid-template-columns:1fr auto auto auto;
     gap:10px;
     align-items:center;
 
     border-radius:18px;
     border:2px solid var(--vt-bottombar-border);
-    background: var(--vt-bottombar-bg);
+    background:var(--vt-bottombar-bg);
     backdrop-filter:blur(10px);
-    box-shadow: var(--vt-bottombar-shadow);
+    box-shadow:var(--vt-bottombar-shadow);
     padding:10px;
   }
 }
