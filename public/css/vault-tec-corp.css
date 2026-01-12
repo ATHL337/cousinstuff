@@ -199,3 +199,120 @@ h2 { letter-spacing: 0.2px; }
   color: var(--vt-yellow-2);
   font-weight: 950;
 }
+/* ================================
+   Hybrid Registry UI (ALL + Sections)
+   ================================ */
+
+.vt-registry-header { position: relative; }
+
+/* Keep category filters tight + readable */
+.vt-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+/* On mobile, turn filters into a sticky app bar */
+@media (max-width: 640px) {
+  .vt-filters {
+    position: sticky;
+    top: 10px;
+    z-index: 50;
+    padding: 10px;
+    border-radius: 16px;
+    background: rgba(0,0,0,0.22);
+    border: 2px solid rgba(18,49,93,0.65);
+    backdrop-filter: blur(8px);
+  }
+  :root:not([data-theme="dark"]) .vt-filters{
+    background: rgba(255,255,255,0.72);
+    border-color: var(--border);
+  }
+}
+
+/* Filter pills become consistent and thumb-friendly */
+.vt-filter{
+  min-height: 46px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-weight: 950;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Make ALL and category buttons feel distinct */
+.vt-filter--primary {
+  box-shadow: 0 12px 18px rgba(0,0,0,0.10);
+}
+
+/* ================================
+   Section Blocks
+   ================================ */
+
+.vt-section {
+  margin-top: 1.4rem;
+}
+
+.vt-section__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 16px;
+  border: 2px solid var(--border);
+  background: rgba(255,255,255,0.55);
+  box-shadow: 0 10px 18px rgba(0,0,0,0.06);
+  margin-bottom: 10px;
+}
+
+:root[data-theme="dark"] .vt-section__head{
+  background: rgba(0,0,0,0.18);
+}
+
+.vt-section__title {
+  margin: 0;
+  font-size: 1.05rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 950;
+  color: var(--vt-blue);
+}
+:root[data-theme="dark"] .vt-section__title { color: var(--vt-yellow); }
+
+.vt-section__range {
+  opacity: 0.85;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+/* ================================
+   Card polish for mobile
+   ================================ */
+
+@media (max-width: 640px) {
+  .vt-grid { grid-template-columns: 1fr; }
+
+  .vt-card {
+    padding-right: 4.6rem; /* room for VT-## */
+  }
+
+  .vt-card__title {
+    margin-right: 3.6rem;
+    line-height: 1.2;
+  }
+
+  /* Keep titles tidy */
+  .vt-card__title,
+  .vt-card__link {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
