@@ -527,3 +527,93 @@ h2{ letter-spacing:0.2px; }
   .vt-card__subtitle{ font-size:0.95rem; line-height:1.35; }
   .vt-card__meta{ font-size:0.92rem; }
 }
+/* =========================================
+   Mobile App Header Overrides (site.css -> baseof.html)
+   Single source of truth, low collateral damage
+   ========================================= */
+
+@media (max-width: 720px) {
+
+  /* container in site.css is 980px + 24px padding; tighten for mobile */
+  .container{
+    max-width: 1100px; /* allow full width */
+    padding: 14px;
+    padding-left: max(14px, env(safe-area-inset-left));
+    padding-right: max(14px, env(safe-area-inset-right));
+  }
+
+  /* override site.css flex header into stacked grid */
+  .nav{
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    align-items: start !important;
+    justify-content: stretch !important;
+    gap: 10px !important;
+
+    /* keep your Vault stripe look; reduce vertical waste */
+    padding: 12px 0 !important;
+
+    /* optional: app sticky header */
+    position: sticky;
+    top: 0;
+    z-index: 60;
+    background: rgba(255,255,255,0.70);
+    backdrop-filter: blur(10px);
+  }
+  :root[data-theme="dark"] .nav{
+    background: rgba(6,18,38,0.72);
+  }
+
+  /* brand in site.css is flex baseline; make it compact + wrap-safe */
+  .brand{
+    display: grid !important;
+    gap: 6px !important;
+    align-items: start !important;
+  }
+  .brand .title{
+    font-size: 1.1rem !important;
+    line-height: 1.05 !important;
+  }
+  .brand .tagline{
+    font-size: 0.92rem !important;
+    line-height: 1.25 !important;
+  }
+
+  /* actions in site.css is flex-wrap; replace with 2-col grid */
+  .actions{
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* capacity widget spans full width (works regardless of wrapper) */
+  .actions .vt-capacity,
+  .actions [class*="vt-capacity"]{
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+  }
+
+  /* buttons become full-width tap targets */
+  .actions a.btn,
+  .actions button{
+    width: 100% !important;
+    min-height: 46px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* dark mode toggle full width */
+  #themeToggle{
+    grid-column: 1 / -1 !important;
+  }
+}
+
+/* very small phones: single-column actions */
+@media (max-width: 420px){
+  .actions{
+    grid-template-columns: 1fr !important;
+  }
+}
