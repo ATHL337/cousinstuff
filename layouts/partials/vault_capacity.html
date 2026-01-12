@@ -3,9 +3,16 @@
 {{ $count := len $recipes }}
 {{ $max := 33 }}
 
-<div class="vt-capacity" aria-label="Vault capacity">
-  <span class="vt-capacity-label">Vault Capacity</span>
-  <span class="vt-capacity-value">{{ $count }} / {{ $max }}</span>
+<div class="vt-capacity" role="status" aria-live="polite" aria-label="Vault capacity">
+  <span class="vt-capacity-label">
+    Vault Capacity
+    <span class="sr-only"> recipes loaded</span>
+  </span>
+
+  <span class="vt-capacity-value" aria-label="{{ $count }} of {{ $max }}">
+    {{ $count }} / {{ $max }}
+  </span>
+
   {{ if gt $count $max }}
     <span class="vt-capacity-warn">Over capacity</span>
   {{ end }}

@@ -1,8 +1,9 @@
-/* CousinStuff — Vault-Tec corporate inspired (clean, blue/yellow, poster-like) */
-/* No copyrighted assets. Pure CSS/typography/layout language. */
+/* CousinStuff — Vault-Tec corporate inspired (clean, blue/yellow, poster-like)
+   No copyrighted assets. Pure CSS/typography/layout language.
+   ========================================= */
 
 /* ================================
-   Global Tokens
+   Global Tokens / Theme Overrides
    ================================ */
 
 :root{
@@ -27,6 +28,13 @@
 
   --radius:18px;
   --shadow:0 14px 32px rgba(11,58,120,0.10);
+
+  /* Mobile layout system knobs */
+  --vt-mobile-header-h: 86px; /* reserved header height for sticky filters */
+  --vt-mobile-gap: 10px;
+  --vt-z-header: 100;
+  --vt-z-filters: 90;
+  --vt-z-bottombar: 80;
 }
 
 :root[data-theme="dark"]{
@@ -46,7 +54,7 @@
   --shadow:0 14px 32px rgba(0,0,0,0.35);
 }
 
-/* Accent button (top-level) */
+/* Accent button */
 .btn.accent, button.accent{
   background:var(--vt-yellow);
   color:#0b1020;
@@ -54,11 +62,8 @@
 }
 
 /* ================================
-   Base Layout / Background
+   Background / Page Feel
    ================================ */
-
-html{ -webkit-text-size-adjust:100%; }
-body{ overflow-x:hidden; }
 
 body{
   background:
@@ -66,26 +71,23 @@ body{
     radial-gradient(950px 560px at 86% 0%, rgba(11,58,120,0.22), transparent 58%),
     linear-gradient(180deg, rgba(11,58,120,0.04), transparent 40%),
     var(--bg);
-
   background-repeat:no-repeat;
   background-size:cover;
   background-position:center top;
   background-attachment:fixed;
 }
 
-/* Mobile Safari/Chrome can jitter with fixed backgrounds; keep it smooth */
+/* Mobile Safari jitter fix */
 @media (max-width: 720px){
-  body{
-    background-attachment:scroll;
-  }
+  body{ background-attachment:scroll; }
 }
 
 /* ================================
-   Header / Nav (baseof.html)
+   Header / Nav (desktop + shared)
    ================================ */
 
 .nav{
-  border-bottom:0;
+  border-bottom:0;                 /* override base */
   padding:16px 0 18px;
   position:relative;
 }
@@ -114,8 +116,14 @@ body{
   font-weight:600;
 }
 
+/* Optional: compact mode driven by nav-compact.js */
+@media (max-width: 720px){
+  .nav.is-compact{ padding: 8px 0 10px; }
+  .nav.is-compact::after{ height: 4px; }
+}
+
 /* ================================
-   Core Components
+   Core Components (theme polish)
    ================================ */
 
 .card{
@@ -164,7 +172,6 @@ h1{
   text-transform:uppercase;
   letter-spacing:0.9px;
 }
-h2{ letter-spacing:0.2px; }
 
 .recipe-photo{
   border:2px solid var(--border);
@@ -172,33 +179,7 @@ h2{ letter-spacing:0.2px; }
 }
 
 /* ================================
-   Print
-   ================================ */
-
-@media print{
-  body{ background:#fff !important; }
-  .card{ box-shadow:none; border:1px solid #ddd; }
-  .nav::after{ display:none; }
-}
-
-/* ================================
-   Accessibility
-   ================================ */
-
-.sr-only{
-  position:absolute !important;
-  width:1px !important;
-  height:1px !important;
-  padding:0 !important;
-  margin:-1px !important;
-  overflow:hidden !important;
-  clip:rect(0,0,0,0) !important;
-  white-space:nowrap !important;
-  border:0 !important;
-}
-
-/* ================================
-   Vault Placard (generic)
+   Vault Placard / Capacity
    ================================ */
 
 .vt-placard{
@@ -211,10 +192,6 @@ h2{ letter-spacing:0.2px; }
   text-align:left;
 }
 :root[data-theme="dark"] .vt-placard{ background:rgba(0,0,0,0.18); }
-
-/* ================================
-   Vault Capacity (generic)
-   ================================ */
 
 .vt-capacity{
   display:flex;
@@ -234,7 +211,7 @@ h2{ letter-spacing:0.2px; }
 :root[data-theme="dark"] .vt-capacity{ background:rgba(0,0,0,0.18); }
 
 /* ================================
-   Vault Registry
+   Registry Layout
    ================================ */
 
 .vt-wrap{ max-width:1100px; margin:0 auto; padding:1.25rem; }
@@ -291,17 +268,6 @@ h2{ letter-spacing:0.2px; }
   background:linear-gradient(90deg, rgba(242,194,48,0.22), rgba(11,58,120,0.18));
 }
 
-.vt-filter--primary{
-  background:linear-gradient(90deg, var(--vt-blue) 0%, var(--vt-blue) 70%, var(--vt-yellow) 100%);
-  color:#fff;
-  border-color:rgba(11,58,120,0.35);
-}
-:root[data-theme="dark"] .vt-filter--primary{
-  background:linear-gradient(90deg, var(--vt-yellow) 0%, var(--vt-yellow) 40%, var(--vt-blue) 100%);
-  color:#0b1020;
-  border-color:rgba(242,194,48,0.5);
-}
-
 /* Sections */
 .vt-section{ margin-top:1.4rem; }
 
@@ -354,7 +320,7 @@ h2{ letter-spacing:0.2px; }
   background:rgba(255,255,255,0.78);
   box-shadow:var(--shadow);
   position:relative;
-  padding-right:4.6rem; /* room for VT-## badge */
+  padding-right:4.6rem;
 }
 :root[data-theme="dark"] .vt-card{ background:rgba(0,0,0,0.18); }
 
@@ -388,7 +354,7 @@ h2{ letter-spacing:0.2px; }
 .vt-card__meta{ margin:0; opacity:0.85; font-size:0.92rem; }
 .vt-card__meta-sep{ margin:0 0.35rem; opacity:0.6; }
 
-/* Clamp long titles to 2 lines */
+/* Clamp titles */
 .vt-card__title,
 .vt-card__link{
   display:-webkit-box;
@@ -399,398 +365,192 @@ h2{ letter-spacing:0.2px; }
 }
 
 /* ================================
-   Footer (legal placard is handled elsewhere)
+   Accessibility helper
    ================================ */
 
+.sr-only{
+  position:absolute !important;
+  width:1px !important;
+  height:1px !important;
+  padding:0 !important;
+  margin:-1px !important;
+  overflow:hidden !important;
+  clip:rect(0,0,0,0) !important;
+  white-space:nowrap !important;
+  border:0 !important;
+}
+
 /* ================================
-   Mobile App Header — single source of truth
+   Print
    ================================ */
+
+@media print{
+  body{ background:#fff !important; }
+  .card{ box-shadow:none; border:1px solid #ddd; }
+  .nav::after{ display:none; }
+  .vt-bottombar{ display:none !important; }
+}
+
+/* =========================================================
+   MOBILE LAYOUT SYSTEM (single source of truth)
+   - Sticky top header
+   - Sticky filters below header (no overlap)
+   - Bottom utility bar (enabled via vt-has-bottombar)
+   ========================================================= */
+
+body.vt-has-bottombar{
+  padding-bottom: calc(84px + env(safe-area-inset-bottom));
+}
 
 @media (max-width: 720px){
 
-  /* Safer container padding without double-injecting everywhere */
   .container{
     margin:0 auto;
     padding-left:max(14px, env(safe-area-inset-left));
     padding-right:max(14px, env(safe-area-inset-right));
   }
 
-  .vt-wrap{
-    padding-left:0;
-    padding-right:0;
-  }
+  .vt-wrap{ padding-left:0; padding-right:0; }
 
-  /* Sticky app header */
+  /* Sticky header */
   .nav{
-    display:grid !important;
-    grid-template-columns:1fr !important;
-    gap:10px !important;
-    padding:12px 0 12px !important;
     position:sticky;
     top:0;
-    z-index:60;
-    background:rgba(255,255,255,0.70);
+    z-index:var(--vt-z-header);
+    background:rgba(255,255,255,0.78);
     backdrop-filter:blur(10px);
+
+    display:grid;
+    grid-template-columns:1fr;
+    gap:10px;
+    padding:10px 0 12px;
   }
-  :root[data-theme="dark"] .nav{ background:rgba(6,18,38,0.72); }
+  :root[data-theme="dark"] .nav{ background:rgba(6,18,38,0.78); }
+
+  .nav::after{ height:4px; }
 
   .brand{
     display:grid;
-    gap:6px;
+    gap:4px;
     align-items:start;
   }
   .brand .title{ font-size:1.1rem; line-height:1.05; }
-  .brand .tagline{ font-size:0.92rem; line-height:1.25; }
 
+  /* Default: hide tagline on mobile (keeps header height stable) */
+  .brand .tagline{ display:none; }
+
+  /* Top actions (nav links) */
   .actions{
-    width:100% !important;
-    max-width:100% !important;
-    display:grid !important;
-    grid-template-columns:1fr 1fr !important;
-    gap:10px !important;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    width:100%;
     align-items:stretch;
   }
-
-  /* Capacity widget first + full width */
-  .actions .vt-capacity,
-  .actions [class*="vt-capacity"]{
-    grid-column:1 / -1;
-    width:100% !important;
-  }
-
-  /* Buttons fill */
   .actions a.btn,
   .actions button{
     width:100%;
-    min-height:46px;
+    min-height:44px;
     text-align:center;
     justify-content:center;
   }
 
-  /* Dark mode full width */
-  #themeToggle{ grid-column:1 / -1; }
-
-  main{ margin-top:10px; }
-}
-
-/* Smaller phones: 1-column actions */
-@media (max-width: 420px){
-  .actions{ grid-template-columns:1fr !important; }
-}
-
-/* ================================
-   Mobile Registry UX — sticky filters
-   ================================ */
-
-@media (max-width: 640px){
-
-  /* Sticky filter bar inside registry page */
+  /* Sticky registry filters sit below header */
   .vt-filters{
     position:sticky;
-    top:12px;
-    z-index:50;
+    top: calc(var(--vt-mobile-header-h) + var(--vt-mobile-gap));
+    z-index: var(--vt-z-filters);
+
     padding:10px;
     border-radius:16px;
     background:rgba(255,255,255,0.72);
     border:2px solid var(--border);
     backdrop-filter:blur(8px);
+
+    flex-wrap:nowrap;
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
   }
   :root[data-theme="dark"] .vt-filters{
     background:rgba(0,0,0,0.22);
     border-color:rgba(18,49,93,0.65);
   }
 
-  /* Keep pills from becoming a vertical wall; allow horizontal scroll */
-  .vt-filters{
-    flex-wrap:nowrap;
-    overflow-x:auto;
-    -webkit-overflow-scrolling:touch;
-  }
   .vt-filters__spacer{ display:none; }
+  .vt-filter{ flex:0 0 auto; white-space:nowrap; min-height:44px; }
 
-  .vt-filter{
-    flex:0 0 auto;
+  /* Bottom bar */
+  .vt-bottombar{ display:none; }
+
+  body.vt-has-bottombar .vt-bottombar{
+    display:block;
+    position:fixed;
+    left:0; right:0; bottom:0;
+    z-index:var(--vt-z-bottombar);
+
+    padding:
+      10px max(14px, env(safe-area-inset-left))
+      calc(10px + env(safe-area-inset-bottom))
+      max(14px, env(safe-area-inset-right));
+
+    background: linear-gradient(180deg, transparent, rgba(0,0,0,0.24));
+    pointer-events:none;
+  }
+
+  body.vt-has-bottombar .vt-bottombar__inner{
+    pointer-events:auto;
+    display:grid;
+    grid-template-columns: 1fr auto auto;
+    gap:10px;
+    align-items:center;
+
+    border-radius:18px;
+    border:2px solid rgba(255,255,255,0.16);
+    background:rgba(6,18,38,0.82);
+    backdrop-filter:blur(10px);
+    box-shadow:0 16px 36px rgba(0,0,0,0.38);
+    padding:10px;
+  }
+
+  :root:not([data-theme="dark"]) body.vt-has-bottombar .vt-bottombar__inner{
+    background:rgba(255,255,255,0.86);
+    border-color:rgba(11,58,120,0.18);
+  }
+
+  body.vt-has-bottombar .vt-bottombar .vt-capacity{
+    margin:0 !important;
+    width:100%;
+    padding:8px 10px;
+    border-radius:14px;
+  }
+
+  body.vt-has-bottombar .vt-bottombar__inner .btn,
+  body.vt-has-bottombar .vt-bottombar__inner button{
+    min-height:42px;
+    padding:8px 12px;
+    border-radius:999px;
     white-space:nowrap;
   }
 
-  /* Random button stays easy to hit but not gigantic */
-  #vt-random{
-    flex:0 0 auto;
-  }
-
-  /* Sections tighten */
-  .vt-section{ margin-top:1.1rem; }
-  .vt-section__head{ padding:10px 12px; }
-
-  /* Cards read better */
-  .vt-card{ padding:0.95rem; padding-right:4.6rem; border-radius:16px; }
-  .vt-card__subtitle{ font-size:0.95rem; line-height:1.35; }
-  .vt-card__meta{ font-size:0.92rem; }
-}
-/* =========================================
-   Mobile App Header Overrides (site.css -> baseof.html)
-   Single source of truth, low collateral damage
-   ========================================= */
-
-@media (max-width: 720px) {
-
-  /* container in site.css is 980px + 24px padding; tighten for mobile */
-  .container{
-    max-width: 1100px; /* allow full width */
-    padding: 14px;
-    padding-left: max(14px, env(safe-area-inset-left));
-    padding-right: max(14px, env(safe-area-inset-right));
-  }
-
-  /* override site.css flex header into stacked grid */
-  .nav{
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    align-items: start !important;
-    justify-content: stretch !important;
-    gap: 10px !important;
-
-    /* keep your Vault stripe look; reduce vertical waste */
-    padding: 12px 0 !important;
-
-    /* optional: app sticky header */
-    position: sticky;
-    top: 0;
-    z-index: 60;
-    background: rgba(255,255,255,0.70);
-    backdrop-filter: blur(10px);
-  }
-  :root[data-theme="dark"] .nav{
-    background: rgba(6,18,38,0.72);
-  }
-
-  /* brand in site.css is flex baseline; make it compact + wrap-safe */
-  .brand{
-    display: grid !important;
-    gap: 6px !important;
-    align-items: start !important;
-  }
-  .brand .title{
-    font-size: 1.1rem !important;
-    line-height: 1.05 !important;
-  }
-  .brand .tagline{
-    font-size: 0.92rem !important;
-    line-height: 1.25 !important;
-  }
-
-  /* actions in site.css is flex-wrap; replace with 2-col grid */
-  .actions{
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    gap: 10px !important;
-    align-items: stretch !important;
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-
-  /* capacity widget spans full width (works regardless of wrapper) */
-  .actions .vt-capacity,
-  .actions [class*="vt-capacity"]{
-    grid-column: 1 / -1 !important;
-    width: 100% !important;
-  }
-
-  /* buttons become full-width tap targets */
-  .actions a.btn,
-  .actions button{
-    width: 100% !important;
-    min-height: 46px;
-    text-align: center;
-    justify-content: center;
-  }
-
-  /* dark mode toggle full width */
-  #themeToggle{
-    grid-column: 1 / -1 !important;
-  }
-}
-
-/* very small phones: single-column actions */
-@media (max-width: 420px){
-  .actions{
-    grid-template-columns: 1fr !important;
-  }
-}
-/* =========================================
-   Mobile Sticky Header: compact mode
-   ========================================= */
-@media (max-width: 720px) {
-
-  /* Keep sticky but make it compact */
-  .nav{
-    padding: 10px 0 !important;
-  }
-
-  /* Hide tagline to cut header height */
-  .brand .tagline{
-    display: none !important;
-  }
-
-  /* Make actions a single horizontal row */
-  .actions{
-    display: flex !important;
-    flex-wrap: nowrap !important;
-    gap: 10px !important;
-    overflow-x: auto !important;
-    -webkit-overflow-scrolling: touch;
-    padding-bottom: 6px; /* room for scroll */
-  }
-
-  /* Tighten buttons for app-bar feel */
-  .actions a.btn,
-  .actions button{
-    width: auto !important;
-    min-height: 40px !important;
-    padding: 8px 12px !important;
-    white-space: nowrap;
-  }
-
-  /* Capacity pill shouldn't dominate */
-  .actions .vt-capacity{
-    flex: 0 0 auto;
-    width: auto !important;
-    max-width: none !important;
-    padding: 8px 10px !important;
-  }
-
-  /* Optional: hide the big stripe bar on mobile to save height */
-  .nav::after{
-    height: 4px;
-  }
-}
-@media (max-width: 720px){
-  .nav.is-compact .brand .tagline{ display:none !important; }
-  .nav.is-compact{ padding: 8px 0 !important; }
-  .nav.is-compact .actions{ padding-bottom: 0 !important; }
-  .nav.is-compact .actions a.btn,
-  .nav.is-compact .actions button{ min-height: 38px !important; padding: 7px 10px !important; }
-}
-/* =========================================
-   Mobile Bottom Utility Bar (Capacity + Random + Dark)
-   Long-term maintainable approach
-   ========================================= */
-
-.vt-bottombar { display: none; }
-
-@media (max-width: 720px) {
-
-  /* Make room so content isn't covered by bottom bar */
-  body {
-    padding-bottom: calc(84px + env(safe-area-inset-bottom));
-  }
-
-  .vt-bottombar{
-    display: block;
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 999;
-    padding: 10px max(14px, env(safe-area-inset-left)) calc(10px + env(safe-area-inset-bottom)) max(14px, env(safe-area-inset-right));
-    background: linear-gradient(180deg, transparent, rgba(0,0,0,0.24));
-    pointer-events: none; /* inner handles taps */
-  }
-
-  .vt-bottombar__inner{
-    pointer-events: auto;
-    display: grid;
-    grid-template-columns: 1fr auto auto;
-    gap: 10px;
-    align-items: center;
-
-    border-radius: 18px;
-    border: 2px solid rgba(255,255,255,0.16);
-    background: rgba(6,18,38,0.82);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 16px 36px rgba(0,0,0,0.38);
-    padding: 10px 10px;
-  }
-
-  :root:not([data-theme="dark"]) .vt-bottombar__inner{
-    background: rgba(255,255,255,0.86);
-    border-color: rgba(11,58,120,0.18);
-  }
-
-  /* Keep capacity compact so it doesn't dominate */
-  .vt-bottombar .vt-capacity{
-    margin: 0 !important;
-    width: 100%;
-    max-width: none;
-    padding: 8px 10px;
-    border-radius: 14px;
-  }
-
-  /* Buttons */
-  .vt-bottombar__inner .btn,
-  .vt-bottombar__inner button{
-    min-height: 42px;
-    padding: 8px 12px;
-    border-radius: 999px;
-    white-space: nowrap;
-  }
-
-  /* Random is “primary” action */
-  .vt-bottombar__random{
+  body.vt-has-bottombar .vt-bottombar__random{
     background: linear-gradient(90deg, var(--vt-blue) 0%, var(--vt-blue) 65%, var(--vt-yellow) 100%);
-    color: #fff;
-    border-color: rgba(11,58,120,0.35);
-    font-weight: 950;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
+    color:#fff;
+    border-color:rgba(11,58,120,0.35);
+    font-weight:950;
+    letter-spacing:0.02em;
+    text-transform:uppercase;
   }
-  :root[data-theme="dark"] .vt-bottombar__random{
+  :root[data-theme="dark"] body.vt-has-bottombar .vt-bottombar__random{
     background: linear-gradient(90deg, var(--vt-yellow) 0%, var(--vt-yellow) 40%, var(--vt-blue) 100%);
-    color: #0b1020;
-    border-color: rgba(242,194,48,0.5);
-  }
-
-  /* Dark mode toggle: keep compact */
-  .vt-bottombar__toggle{
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
-  }
-
-  /* Top header: reduce height */
-  .brand .tagline{
-    display: none !important;
-  }
-
-  /* Top actions: give room to breathe */
-  .actions{
-    display: grid !important;
-    grid-template-columns: 1fr 1fr 1fr !important;
-    gap: 10px !important;
-    width: 100%;
-  }
-  .actions a.btn{
-    width: 100%;
-    min-height: 44px;
-    justify-content: center;
-    text-align: center;
+    color:#0b1020;
+    border-color:rgba(242,194,48,0.5);
   }
 }
 
 @media (max-width: 420px){
-  /* Very small phones: stack Random above toggles if needed */
-  .vt-bottombar__inner{
-    grid-template-columns: 1fr 1fr;
+  body.vt-has-bottombar .vt-bottombar__inner{
+    grid-template-columns:1fr 1fr;
   }
-  .vt-bottombar .vt-capacity{
-    grid-column: 1 / -1;
-  }
-  .vt-bottombar__random{
-    grid-column: 1 / -1;
-  }
-}
-@media (max-width: 720px){
-  .vt-registry-header .vt-capacity{
-    display: none;
-  }
+  body.vt-has-bottombar .vt-bottombar .vt-capacity{ grid-column:1 / -1; }
+  body.vt-has-bottombar .vt-bottombar__random{ grid-column:1 / -1; }
 }

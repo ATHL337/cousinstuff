@@ -8,45 +8,61 @@
     <link rel="stylesheet" href="/css/site.css" />
     <link rel="stylesheet" href="/css/vault-tec-corp.css" />
     <script src="/js/theme.js" defer></script>
-	<script src="/js/nav-compact.js" defer></script>
+    <script src="/js/nav-compact.js" defer></script>
   </head>
-  <body>
+
+  <!-- Enable bottom utility bar layout system -->
+  <body class="vt-has-bottombar">
     <div class="container">
+
+      <!-- Top header -->
       <div class="nav no-print" id="siteNav">
         <div class="brand">
           <a class="title" href="/">{{ .Site.Params.brand }}</a>
           <span class="tagline">{{ .Site.Params.description }}</span>
         </div>
-		<div class="actions">
-		  <a class="btn secondary" href="/registry/">Registry</a>
-		  <a class="btn secondary" href="/recipes/">Recipes</a>
-		  <a class="btn secondary" href="/tags/">Tags</a>
-		</div>
 
-		<!-- Mobile bottom utility bar -->
-		<div class="vt-bottombar no-print" role="navigation" aria-label="Vault utilities">
-		  <div class="vt-bottombar__inner">
-			{{ partial "vault_capacity.html" . }}
+        <div class="actions">
+          <a class="btn secondary" href="/registry/">Registry</a>
+          <a class="btn secondary" href="/recipes/">Recipes</a>
+          <a class="btn secondary" href="/tags/">Tags</a>
+        </div>
 
-			<!-- Registry-only: Random Ration -->
-			{{ if eq .RelPermalink "/registry/" }}
-			  <button class="btn accent vt-bottombar__random" type="button" id="vt-random-bottom">
-				Random Ration
-			  </button>
-			{{ end }}
+        <!-- Mobile bottom utility bar -->
+        <div class="vt-bottombar no-print" role="navigation" aria-label="Vault utilities">
+          <div class="vt-bottombar__inner">
 
-			<button id="themeToggle" class="btn secondary vt-bottombar__toggle" type="button" aria-label="Toggle dark mode">
-			  Dark mode
-			</button>
-		  </div>
-		</div>
+            {{ partial "vault_capacity.html" . }}
 
+            <!-- Registry-only: Random Ration -->
+            {{ if eq .RelPermalink "/registry/" }}
+              <button
+                class="btn accent vt-bottombar__random"
+                type="button"
+                id="vt-random-bottom">
+                Random Ration
+              </button>
+            {{ end }}
+
+            <!-- Dark mode toggle (bottom bar) -->
+            <button
+              id="themeToggleBottom"
+              class="btn secondary vt-bottombar__toggle"
+              type="button"
+              aria-label="Toggle dark mode">
+              Dark mode
+            </button>
+
+          </div>
+        </div>
       </div>
 
+      <!-- Main content -->
       <main>
         {{ block "main" . }}{{ end }}
       </main>
 
+      <!-- Footer -->
       <footer class="vt-legal">
         <br>
         <div class="vt-legal-inner">

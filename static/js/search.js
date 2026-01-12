@@ -1,71 +1,123 @@
-async function loadRecipeIndex() {
-  const res = await fetch("/recipes/index.json", { cache: "no-store" });
-  if (!res.ok) throw new Error("Could not load recipe index");
-  return await res.json();
-}
+(() => {
+  const INDEX_URL = "/recipes/index.json";
+  const INPUT_ID = "searchInput";
+  const LIST_ID = "recipeList";
+  const DEBOUNCE_MS = 120;
 
-function normalize(s) {
-  return (s || "").toString().toLowerCase();
-}
+  let indexCache = null;
+  let debounceTimer = null;
 
-function renderList(items) {
-  const list = document.getElementById("recipeList");
-  if (!list) return;
-  list.innerHTML = "";
-  if (!items.length) {
-    list.innerHTML = '<div class="card">No matches. Try a different search.</div>';
-    return;
+  function normalize(s) {
+    return (s || "")
+      .toString()
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "");
   }
-  for (const r of items) {
-    const tags = (r.tags || []).map(t => `<a class="chip" href="/tags/${encodeURIComponent(t).toLowerCase()}/">${t}</a>`).join("");
-    const meta = [
-      r.servings ? `${r.servings} servings` : "",
-      r.totalTime ? `Total: ${r.totalTime}` : "",
-      r.prepTime ? `Prep: ${r.prepTime}` : ""
-    ].filter(Boolean).join(" • ");
 
-    const el = document.createElement("div");
-    el.className = "card";
-    el.innerHTML = `
-      <div class="grid" style="gap:8px;">
-        <div>
-          <div style="display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap;">
-            <a href="${r.permalink}" style="font-size:18px; font-weight:800;">${r.title}</a>
-            <span class="meta">${meta}</span>
-          </div>
-          ${r.description ? `<div class="meta" style="margin-top:6px;">${r.description}</div>` : ""}
-          ${tags ? `<div class="chips">${tags}</div>` : ""}
-        </div>
-      </div>
-    `;
-    list.appendChild(el);
+  async function loadIndex() {
+    if (indexCache) return indexCache;
+
+    const res = await fetch(INDEX_URL, { cache: "no-store" });
+    if (!res.ok) throw new Error("Could not load recipe index");
+
+    indexCache = await res.json();
+    return indexCache;
   }
-}
 
-async function setupSearch() {
-  const input = document.getElementById("searchInput");
-  if (!input) return;
+  function escapeHtml(str) {
+    const div = document.createElement("div");
+    div.textContent = str;
+    return div.innerHTML;
+  }
 
-  const all = await loadRecipeIndex();
-  renderList(all);
+  function renderList(items) {
+    const list = document.getElementById(LIST_ID);
+    if (!list) return;
 
-  input.addEventListener("input", () => {
-    const q = normalize(input.value).trim();
-    if (!q) return renderList(all);
+    list.innerHTML = "";
 
-    const parts = q.split(/\s+/).filter(Boolean);
-    const filtered = all.filter(r => {
-      const hay = normalize(r.title) + " " + normalize(r.description) + " " + normalize((r.tags || []).join(" "));
-      return parts.every(p => hay.includes(p));
+    if (!items.length) {
+      list.innerHTML = `
+        <div class="card" role="status" aria-live="polite">
+          No matches. Try a different search.
+        </div>`;
+      return;
+    }
+
+    const frag = document.createDocumentFragment();
+
+    items.forEach((r) => {
+      const card = document.createElement("div");
+      card.className = "card";
+
+      card.innerHTML = `
+        <a class="vt-card__link" href="${escapeHtml(r.url)}">
+          <h3 class="vt-card__title">${escapeHtml(r.title)}</h3>
+        </a>
+        ${r.description ? `<p class="vt-card__subtitle">${escapeHtml(r.description)}</p>` : ""}
+        ${r.tags && r.tags.length ? `<p class="vt-card__meta">${escapeHtml(r.tags.join(", "))}</p>` : ""}
+      `;
+
+      frag.appendChild(card);
     });
 
-    renderList(filtered);
-  });
-}
+    list.appendChild(frag);
+  }
 
-window.addEventListener("DOMContentLoaded", () => {
-  setupSearch().catch(err => {
-    const list = document.getElementById("recipeList");
-    if (list) list.innerHTML = `<div class="card">Search failed to initialize: ${err.message}</div>`;
+  function filterIndex(index, query) {
+    const q = normalize(query).trim();
+    if (!q) return index;
+
+    const parts = q.split(/\s+/);
+
+    return index.filter((r) => {
+      const hay =
+        normalize(r.title) +
+        " " +
+        normalize(r.description) +
+        " " +
+        normalize((r.tags || []).join(" "));
+
+      return parts.every((p) => hay.includes(p));
+    });
+  }
+
+  function debounce(fn, delay) {
+    return (...args) => {
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(() => fn(...args), delay);
+    };
+  }
+
+  async function setupSearch() {
+    const input = document.getElementById(INPUT_ID);
+    const list = document.getElementById(LIST_ID);
+
+    // Not on a search page → silently exit
+    if (!input || !list) return;
+
+    const index = await loadIndex();
+    renderList(index);
+
+    const onInput = debounce(() => {
+      const filtered = filterIndex(index, input.value);
+      renderList(filtered);
+    }, DEBOUNCE_MS);
+
+    input.addEventListener("input", onInput, { passive: true });
+  }
+
+  window.addEventListener("DOMContentLoaded", () => {
+    setupSearch().catch((err) => {
+      const list = document.getElementById(LIST_ID);
+      if (list) {
+        list.innerHTML = `
+          <div class="card" role="alert">
+            Search failed to initialize: ${escapeHtml(err.message)}
+          </div>`;
+      }
+      console.error(err);
+    });
   });
-});
+})();
