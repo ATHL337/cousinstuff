@@ -264,17 +264,29 @@ body.vt-has-bottombar{
 
   /* Sticky header stays thin: brand + nav links only */
   .nav{
-    position:sticky;
-    top:0;
-    z-index:var(--vt-z-header);
-    background:var(--vt-surface);
-    backdrop-filter:blur(10px);
+    position: sticky;
+    top: 8px; /* small breathing room from top */
+    z-index: var(--vt-z-header);
 
-    display:grid;
-    grid-template-columns:1fr;
-    gap:10px;
-    padding:10px 0 12px;
+    background: var(--vt-surface);
+    backdrop-filter: blur(10px);
+
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+
+    padding: 10px 12px;
+
+    /* NEW: pill treatment */
+    border-radius: 18px;
+    border: 2px solid var(--vt-surface-border);
+    box-shadow: var(--vt-bottombar-shadow);
+
+    /* inset from screen edges like bottom bar */
+    margin: 8px 14px 0;
   }
+}
+
 
   /* Hide tagline on mobile to cut header height */
   .brand .tagline{ display:none !important; }
