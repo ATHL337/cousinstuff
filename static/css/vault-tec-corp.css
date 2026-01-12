@@ -617,3 +617,57 @@ h2{ letter-spacing:0.2px; }
     grid-template-columns: 1fr !important;
   }
 }
+/* =========================================
+   Mobile Sticky Header: compact mode
+   ========================================= */
+@media (max-width: 720px) {
+
+  /* Keep sticky but make it compact */
+  .nav{
+    padding: 10px 0 !important;
+  }
+
+  /* Hide tagline to cut header height */
+  .brand .tagline{
+    display: none !important;
+  }
+
+  /* Make actions a single horizontal row */
+  .actions{
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 10px !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 6px; /* room for scroll */
+  }
+
+  /* Tighten buttons for app-bar feel */
+  .actions a.btn,
+  .actions button{
+    width: auto !important;
+    min-height: 40px !important;
+    padding: 8px 12px !important;
+    white-space: nowrap;
+  }
+
+  /* Capacity pill shouldn't dominate */
+  .actions .vt-capacity{
+    flex: 0 0 auto;
+    width: auto !important;
+    max-width: none !important;
+    padding: 8px 10px !important;
+  }
+
+  /* Optional: hide the big stripe bar on mobile to save height */
+  .nav::after{
+    height: 4px;
+  }
+}
+@media (max-width: 720px){
+  .nav.is-compact .brand .tagline{ display:none !important; }
+  .nav.is-compact{ padding: 8px 0 !important; }
+  .nav.is-compact .actions{ padding-bottom: 0 !important; }
+  .nav.is-compact .actions a.btn,
+  .nav.is-compact .actions button{ min-height: 38px !important; padding: 7px 10px !important; }
+}
