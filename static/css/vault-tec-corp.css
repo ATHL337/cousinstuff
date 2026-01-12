@@ -5,951 +5,525 @@
    Global Tokens
    ================================ */
 
-:root {
-  /* Brand palette */
-  --vt-blue: #0b3a78;
-  --vt-blue-2: #082a57;
-  --vt-yellow: #f2c230;
-  --vt-yellow-2: #d8a50f;
-  --paper: #fbf7ea;
+:root{
+  --vt-blue:#0b3a78;
+  --vt-blue-2:#082a57;
+  --vt-yellow:#f2c230;
+  --vt-yellow-2:#d8a50f;
+  --paper:#fbf7ea;
 
-  /* Override site tokens */
-  --bg: var(--paper);
-  --fg: #0b1020;
-  --muted: #4b5563;
-  --card: #ffffff;
-  --border: #e6dcc1;
-  --link: var(--vt-blue);
+  --bg:var(--paper);
+  --fg:#0b1020;
+  --muted:#4b5563;
+  --card:#ffffff;
+  --border:#e6dcc1;
+  --link:var(--vt-blue);
 
-  --chip: #fff1c4;
-  --chip-fg: #1f2937;
+  --chip:#fff1c4;
+  --chip-fg:#1f2937;
 
-  --btn: var(--vt-blue);
-  --btn-fg: #ffffff;
+  --btn:var(--vt-blue);
+  --btn-fg:#ffffff;
 
-  --radius: 18px;
-  --shadow: 0 14px 32px rgba(11, 58, 120, 0.10);
+  --radius:18px;
+  --shadow:0 14px 32px rgba(11,58,120,0.10);
 }
 
-/* Dark mode stays “corporate” — blue panels, yellow accents */
-:root[data-theme="dark"] {
-  --bg: #061226;
-  --fg: #f8fafc;
-  --muted: #cbd5e1;
-  --card: #0b1e3c;
-  --border: #12315d;
-  --link: #8bb7ff;
+:root[data-theme="dark"]{
+  --bg:#061226;
+  --fg:#f8fafc;
+  --muted:#cbd5e1;
+  --card:#0b1e3c;
+  --border:#12315d;
+  --link:#8bb7ff;
 
-  --chip: #0f2a52;
-  --chip-fg: #e5e7eb;
+  --chip:#0f2a52;
+  --chip-fg:#e5e7eb;
 
-  --btn: var(--vt-blue);
-  --btn-fg: #ffffff;
+  --btn:var(--vt-blue);
+  --btn-fg:#ffffff;
 
-  --shadow: 0 14px 32px rgba(0,0,0,0.35);
+  --shadow:0 14px 32px rgba(0,0,0,0.35);
 }
 
-/* Accent button (TOP-LEVEL; do not nest inside :root[data-theme="dark"]) */
-.btn.accent, button.accent {
-  background: var(--vt-yellow);
-  color: #0b1020;
-  border-color: rgba(216,165,15,0.65);
+/* Accent button (top-level) */
+.btn.accent, button.accent{
+  background:var(--vt-yellow);
+  color:#0b1020;
+  border-color:rgba(216,165,15,0.65);
 }
 
 /* ================================
    Base Layout / Background
    ================================ */
 
-body {
+html{ -webkit-text-size-adjust:100%; }
+body{ overflow-x:hidden; }
+
+body{
   background:
-    radial-gradient(1100px 650px at 18% 10%, rgba(242, 194, 48, 0.22), transparent 58%),
-    radial-gradient(950px 560px at 86% 0%, rgba(11, 58, 120, 0.22), transparent 58%),
-    linear-gradient(180deg, rgba(11, 58, 120, 0.04), transparent 40%),
+    radial-gradient(1100px 650px at 18% 10%, rgba(242,194,48,0.22), transparent 58%),
+    radial-gradient(950px 560px at 86% 0%, rgba(11,58,120,0.22), transparent 58%),
+    linear-gradient(180deg, rgba(11,58,120,0.04), transparent 40%),
     var(--bg);
 
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center top;
+  background-attachment:fixed;
 }
 
+/* Mobile Safari/Chrome can jitter with fixed backgrounds; keep it smooth */
+@media (max-width: 720px){
+  body{
+    background-attachment:scroll;
+  }
+}
 
 /* ================================
-   Header / Nav
+   Header / Nav (baseof.html)
    ================================ */
 
-/* HEADER: “poster stripe” feel */
-.nav {
-  border-bottom: 0;
-  padding: 16px 0 18px;
-  position: relative;
+.nav{
+  border-bottom:0;
+  padding:16px 0 18px;
+  position:relative;
 }
+
+/* Poster stripe */
 .nav::after{
   content:"";
   position:absolute;
   left:0; right:0; bottom:-1px;
   height:6px;
-  border-radius: 999px;
-  background: linear-gradient(90deg,
-    var(--vt-blue) 0%,
-    var(--vt-blue) 55%,
-    var(--vt-yellow) 100%
-  );
-  opacity: 0.95;
+  border-radius:999px;
+  background:linear-gradient(90deg,var(--vt-blue) 0%,var(--vt-blue) 55%,var(--vt-yellow) 100%);
+  opacity:0.95;
 }
 
-/* Brand lockup */
-.brand { gap: 12px; }
-.brand .title {
-  font-weight: 950;
-  letter-spacing: 0.8px;
-  text-transform: uppercase;
-  color: var(--vt-blue);
+.brand{ gap:12px; }
+.brand .title{
+  font-weight:950;
+  letter-spacing:0.8px;
+  text-transform:uppercase;
+  color:var(--vt-blue);
 }
-:root[data-theme="dark"] .brand .title { color: var(--vt-yellow); }
-
-.brand .tagline {
-  color: var(--muted);
-  font-weight: 600;
+:root[data-theme="dark"] .brand .title{ color:var(--vt-yellow); }
+.brand .tagline{
+  color:var(--muted);
+  font-weight:600;
 }
 
 /* ================================
    Core Components
    ================================ */
 
-/* Cards: thick border, soft shadow, “printed sign” vibe */
-.card {
-  border: 2px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
+.card{
+  border:2px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
 }
 
-/* Buttons: corporate pill buttons */
-button, .btn {
-  border: 2px solid var(--border);
-  border-radius: 999px;
-  padding: 9px 14px;
-  font-weight: 800;
-  letter-spacing: 0.2px;
-  box-shadow: 0 10px 18px rgba(0,0,0,0.08);
-  transition: transform 0.05s ease, filter 0.15s ease;
+button, .btn{
+  border:2px solid var(--border);
+  border-radius:999px;
+  padding:9px 14px;
+  font-weight:800;
+  letter-spacing:0.2px;
+  box-shadow:0 10px 18px rgba(0,0,0,0.08);
+  transition:transform 0.05s ease, filter 0.15s ease;
 }
-button:hover, .btn:hover { filter: brightness(1.04); }
-button:active, .btn:active { transform: translateY(1px); }
+button:hover, .btn:hover{ filter:brightness(1.04); }
+button:active, .btn:active{ transform:translateY(1px); }
 
-.btn.secondary, button.secondary {
-  background: transparent;
-  color: var(--fg);
-}
-
-/* Chips: “label stickers” */
-.chip {
-  border: 2px solid var(--border);
-  border-radius: 999px;
-  background: var(--chip);
-  font-weight: 800;
+.btn.secondary, button.secondary{
+  background:transparent;
+  color:var(--fg);
 }
 
-/* Links */
-a { text-decoration-thickness: 2px; text-underline-offset: 3px; }
+.chip{
+  border:2px solid var(--border);
+  border-radius:999px;
+  background:var(--chip);
+  font-weight:800;
+}
 
-/* Inputs */
+a{ text-decoration-thickness:2px; text-underline-offset:3px; }
+
 input[type="search"]{
-  border: 2px solid var(--border);
-  border-radius: 999px;
-  padding: 12px 14px;
-  background: rgba(255,255,255,0.55);
+  border:2px solid var(--border);
+  border-radius:999px;
+  padding:12px 14px;
+  background:rgba(255,255,255,0.55);
 }
 :root[data-theme="dark"] input[type="search"]{
-  background: rgba(0,0,0,0.15);
+  background:rgba(0,0,0,0.15);
 }
 
-/* Headings: poster-like */
-h1 {
-  text-transform: uppercase;
-  letter-spacing: 0.9px;
+h1{
+  text-transform:uppercase;
+  letter-spacing:0.9px;
 }
-h2 { letter-spacing: 0.2px; }
+h2{ letter-spacing:0.2px; }
 
-/* Recipe photo: “print frame” */
-.recipe-photo {
-  border: 2px solid var(--border);
-  box-shadow: var(--shadow);
+.recipe-photo{
+  border:2px solid var(--border);
+  box-shadow:var(--shadow);
 }
 
 /* ================================
    Print
    ================================ */
 
-@media print {
-  body { background: #fff !important; }
-  .card { box-shadow: none; border: 1px solid #ddd; }
-  .nav::after { display:none; }
+@media print{
+  body{ background:#fff !important; }
+  .card{ box-shadow:none; border:1px solid #ddd; }
+  .nav::after{ display:none; }
 }
 
 /* ================================
    Accessibility
    ================================ */
 
-.sr-only {
-  position: absolute !important;
-  width: 1px !important;
-  height: 1px !important;
-  padding: 0 !important;
-  margin: -1px !important;
-  overflow: hidden !important;
-  clip: rect(0, 0, 0, 0) !important;
-  white-space: nowrap !important;
-  border: 0 !important;
+.sr-only{
+  position:absolute !important;
+  width:1px !important;
+  height:1px !important;
+  padding:0 !important;
+  margin:-1px !important;
+  overflow:hidden !important;
+  clip:rect(0,0,0,0) !important;
+  white-space:nowrap !important;
+  border:0 !important;
 }
 
 /* ================================
-   Vault Placard Header (Recipes)
+   Vault Placard (generic)
    ================================ */
 
 .vt-placard{
-  border: 2px solid var(--border);
-  border-radius: var(--radius);
-  background: rgba(255,255,255,0.70);
-  box-shadow: var(--shadow);
-  padding: 14px 14px 12px;
-  margin: 10px 0 16px;
-  text-align: left;
+  border:2px solid var(--border);
+  border-radius:var(--radius);
+  background:rgba(255,255,255,0.70);
+  box-shadow:var(--shadow);
+  padding:14px 14px 12px;
+  margin:10px 0 16px;
+  text-align:left;
 }
-:root[data-theme="dark"] .vt-placard{
-  background: rgba(0,0,0,0.18);
-}
-
-.vt-placard-top{
-  display:flex;
-  align-items:baseline;
-  gap:10px;
-  flex-wrap:wrap;
-}
-
-.vt-placard-chip{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-width:72px;
-  padding: 6px 10px;
-  border-radius: 999px;
-  font-weight: 950;
-  letter-spacing: 0.6px;
-  text-transform: uppercase;
-  border: 2px solid var(--border);
-  background: linear-gradient(90deg, var(--vt-blue) 0%, var(--vt-blue) 70%, var(--vt-yellow) 100%);
-  color: #fff;
-}
-:root[data-theme="dark"] .vt-placard-chip{
-  color: #0b1020;
-  background: linear-gradient(90deg, var(--vt-yellow) 0%, var(--vt-yellow) 40%, var(--vt-blue) 100%);
-}
-
-.vt-placard-title{
-  font-weight: 950;
-  letter-spacing: 0.6px;
-  text-transform: uppercase;
-  font-size: 18px;
-}
-
-.vt-placard-sub{
-  margin-top: 8px;
-  font-weight: 700;
-  letter-spacing: 0.2px;
-  opacity: 0.85;
-  font-size: 12px;
-  text-transform: uppercase;
-}
+:root[data-theme="dark"] .vt-placard{ background:rgba(0,0,0,0.18); }
 
 /* ================================
-   Vault Capacity Pill (Generic)
+   Vault Capacity (generic)
    ================================ */
 
 .vt-capacity{
-  display:inline-flex;
+  display:flex;
   align-items:center;
-  gap:10px;
-  padding: 8px 12px;
-  border-radius: 999px;
-  border: 2px solid var(--border);
-  background: rgba(255,255,255,0.55);
-  box-shadow: 0 10px 18px rgba(0,0,0,0.06);
-  font-weight: 900;
-  letter-spacing: 0.4px;
-  text-transform: uppercase;
-  font-size: 12px;
+  justify-content:space-between;
+  gap:12px;
+  padding:10px 12px;
+  border-radius:999px;
+  border:2px solid var(--border);
+  background:rgba(255,255,255,0.55);
+  box-shadow:0 10px 18px rgba(0,0,0,0.06);
+  font-weight:900;
+  letter-spacing:0.04em;
+  text-transform:uppercase;
+  font-size:12px;
 }
-:root[data-theme="dark"] .vt-capacity{
-  background: rgba(0,0,0,0.18);
-}
-
-.vt-capacity-label{ opacity: 0.8; }
-.vt-capacity-value{
-  padding: 4px 10px;
-  border-radius: 999px;
-  border: 2px solid var(--border);
-  background: linear-gradient(90deg, var(--vt-blue) 0%, var(--vt-blue) 65%, var(--vt-yellow) 100%);
-  color: #fff;
-}
-:root[data-theme="dark"] .vt-capacity-value{
-  color: #0b1020;
-  background: linear-gradient(90deg, var(--vt-yellow) 0%, var(--vt-yellow) 35%, var(--vt-blue) 100%);
-}
-
-.vt-capacity-warn{
-  color: var(--vt-yellow-2);
-  font-weight: 950;
-}
+:root[data-theme="dark"] .vt-capacity{ background:rgba(0,0,0,0.18); }
 
 /* ================================
-   Vault Registry — Corporate Placard
+   Vault Registry
    ================================ */
 
-/* Registry shell */
-.vt-wrap { max-width: 1100px; margin: 0 auto; padding: 1.25rem; }
-.vt-registry-header { margin-bottom: 1.25rem; }
+.vt-wrap{ max-width:1100px; margin:0 auto; padding:1.25rem; }
+.vt-registry-header{ margin-bottom:1.25rem; }
 
-/* Registry Placard */
-.vt-registry-header .vt-placard{
-  border: 2px solid var(--border);
-  border-radius: var(--radius);
-  background: rgba(255,255,255,0.72);
-  box-shadow: var(--shadow);
-  padding: 14px 14px 12px;
-  text-align: left;
+.vt-title{
+  margin:0;
+  font-size:1.75rem;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  color:var(--vt-blue);
 }
-:root[data-theme="dark"] .vt-registry-header .vt-placard{
-  background: rgba(0,0,0,0.22);
-}
+:root[data-theme="dark"] .vt-title{ color:var(--vt-yellow); }
 
-/* Headline */
-.vt-title {
-  margin: 0;
-  font-size: 1.75rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--vt-blue);
+.vt-subtitle{
+  margin:0.25rem 0 0.6rem;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:0.03em;
+  opacity:0.85;
 }
-:root[data-theme="dark"] .vt-title { color: var(--vt-yellow); }
-
-.vt-subtitle {
-  margin: 0.25rem 0 0.6rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  opacity: 0.85;
-}
-
-/* Capacity (Registry variant) */
-.vt-capacity{
-  display:flex;
-  align-items:center;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 10px 12px;
-  border-radius: 999px;
-  border: 2px solid var(--border);
-  background: rgba(255,255,255,0.55);
-  box-shadow: 0 10px 18px rgba(0,0,0,0.06);
-  margin: 0.5rem 0 0.75rem;
-}
-:root[data-theme="dark"] .vt-capacity{
-  background: rgba(0,0,0,0.18);
-}
-
-.vt-capacity__label{
-  display:flex;
-  align-items:baseline;
-  justify-content: space-between;
-  gap: 1rem;
-  width: 100%;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  font-size: 12px;
-}
-
-/* Disable bar visuals if HTML includes them */
-.vt-capacity__bar{ display:none; }
-.vt-capacity__fill{ display:none; }
 
 /* Filters */
 .vt-filters{
   display:flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+  flex-wrap:wrap;
+  gap:0.5rem;
   align-items:center;
-  margin-top: 0.25rem;
+  margin-top:0.25rem;
 }
-.vt-filters__spacer{ flex: 1 1 auto; }
+.vt-filters__spacer{ flex:1 1 auto; }
 
 .vt-filter{
-  border: 2px solid var(--border);
-  background: rgba(255,255,255,0.45);
-  color: var(--fg);
-  padding: 9px 12px;
-  border-radius: 999px;
+  border:2px solid var(--border);
+  background:rgba(255,255,255,0.45);
+  color:var(--fg);
+  padding:10px 12px;
+  border-radius:999px;
   cursor:pointer;
-  font-weight: 900;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  box-shadow: 0 10px 18px rgba(0,0,0,0.06);
+  font-weight:900;
+  letter-spacing:0.02em;
+  text-transform:uppercase;
+  box-shadow:0 10px 18px rgba(0,0,0,0.06);
+  min-height:44px;
 }
-:root[data-theme="dark"] .vt-filter{
-  background: rgba(0,0,0,0.18);
-}
+:root[data-theme="dark"] .vt-filter{ background:rgba(0,0,0,0.18); }
 
 .vt-filter.is-active{
-  border-color: rgba(11,58,120,0.45);
-  background: linear-gradient(90deg, rgba(11,58,120,0.12), rgba(242,194,48,0.14));
+  border-color:rgba(11,58,120,0.45);
+  background:linear-gradient(90deg, rgba(11,58,120,0.12), rgba(242,194,48,0.14));
 }
 :root[data-theme="dark"] .vt-filter.is-active{
-  border-color: rgba(242,194,48,0.55);
-  background: linear-gradient(90deg, rgba(242,194,48,0.22), rgba(11,58,120,0.18));
+  border-color:rgba(242,194,48,0.55);
+  background:linear-gradient(90deg, rgba(242,194,48,0.22), rgba(11,58,120,0.18));
 }
 
 .vt-filter--primary{
-  background: linear-gradient(90deg, var(--vt-blue) 0%, var(--vt-blue) 70%, var(--vt-yellow) 100%);
-  color: #fff;
-  border-color: rgba(11,58,120,0.35);
+  background:linear-gradient(90deg, var(--vt-blue) 0%, var(--vt-blue) 70%, var(--vt-yellow) 100%);
+  color:#fff;
+  border-color:rgba(11,58,120,0.35);
 }
 :root[data-theme="dark"] .vt-filter--primary{
-  background: linear-gradient(90deg, var(--vt-yellow) 0%, var(--vt-yellow) 40%, var(--vt-blue) 100%);
-  color: #0b1020;
-  border-color: rgba(242,194,48,0.5);
+  background:linear-gradient(90deg, var(--vt-yellow) 0%, var(--vt-yellow) 40%, var(--vt-blue) 100%);
+  color:#0b1020;
+  border-color:rgba(242,194,48,0.5);
 }
 
-/* Sections + grid */
-.vt-section{ margin-top: 1.75rem; }
+/* Sections */
+.vt-section{ margin-top:1.4rem; }
+
+.vt-section__head{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:12px;
+  padding:10px 12px;
+  border-radius:16px;
+  border:2px solid var(--border);
+  background:rgba(255,255,255,0.55);
+  box-shadow:0 10px 18px rgba(0,0,0,0.06);
+  margin-bottom:10px;
+}
+:root[data-theme="dark"] .vt-section__head{ background:rgba(0,0,0,0.18); }
 
 .vt-section__title{
-  margin: 0 0 0.75rem;
-  font-size: 1.25rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--vt-blue);
+  margin:0;
+  font-size:1.05rem;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  font-weight:950;
+  color:var(--vt-blue);
 }
-:root[data-theme="dark"] .vt-section__title{ color: var(--vt-yellow); }
+:root[data-theme="dark"] .vt-section__title{ color:var(--vt-yellow); }
 
 .vt-section__range{
-  opacity: 0.7;
-  font-weight: 800;
-  margin-left: 0.25rem;
-  text-transform: none;
-  letter-spacing: 0;
+  opacity:0.85;
+  font-weight:900;
+  letter-spacing:0.04em;
+  text-transform:uppercase;
+  font-size:0.9rem;
 }
 
+/* Grid */
 .vt-grid{
   display:grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.85rem;
+  grid-template-columns:repeat(3, minmax(0, 1fr));
+  gap:0.85rem;
 }
-@media (max-width: 950px) { .vt-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 600px) { .vt-grid { grid-template-columns: 1fr; } }
+@media (max-width: 980px){ .vt-grid{ grid-template-columns:repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px){ .vt-grid{ grid-template-columns:1fr; } }
 
 /* Cards */
 .vt-card{
-  border: 2px solid var(--border);
-  border-radius: var(--radius);
-  padding: 0.95rem 0.9rem 0.85rem;
-  background: rgba(255,255,255,0.78);
-  box-shadow: var(--shadow);
-  position: relative;
+  border:2px solid var(--border);
+  border-radius:var(--radius);
+  padding:0.95rem 0.9rem 0.85rem;
+  background:rgba(255,255,255,0.78);
+  box-shadow:var(--shadow);
+  position:relative;
+  padding-right:4.6rem; /* room for VT-## badge */
 }
-:root[data-theme="dark"] .vt-card{
-  background: rgba(0,0,0,0.18);
-}
+:root[data-theme="dark"] .vt-card{ background:rgba(0,0,0,0.18); }
 
 .vt-card__badge{
   position:absolute;
-  top: 0.7rem;
-  right: 0.7rem;
-  font-weight: 950;
-  letter-spacing: 0.06em;
-  opacity: 0.9;
-  color: var(--vt-blue);
+  top:0.7rem;
+  right:0.7rem;
+  font-weight:950;
+  letter-spacing:0.06em;
+  opacity:0.9;
+  color:var(--vt-blue);
+  max-width:3.6rem;
+  text-align:right;
 }
-:root[data-theme="dark"] .vt-card__badge{ color: var(--vt-yellow); }
+:root[data-theme="dark"] .vt-card__badge{ color:var(--vt-yellow); }
 
-.vt-card__title{ margin: 0; font-size: 1.05rem; font-weight: 950; }
-.vt-card__link{ text-decoration: none; }
-.vt-card__subtitle{ margin: 0.4rem 0 0.6rem; opacity: 0.9; font-weight: 700; }
-.vt-card__meta{ margin: 0; opacity: 0.85; font-size: 0.92rem; }
-.vt-card__meta-sep{ margin: 0 0.35rem; opacity: 0.6; }
-/* Prevent title from colliding with VT-## badge */
-.vt-card {
-  padding-right: 4.5rem; /* reserves space for badge */
+.vt-card__title{
+  margin:0;
+  font-size:1.05rem;
+  font-weight:950;
+  margin-right:3.6rem;
+  line-height:1.22;
 }
+.vt-card__link{ text-decoration:none; }
 
-/* Badge spacing */
-.vt-card__badge {
-  top: 0.7rem;
-  right: 0.7rem;
-  max-width: 3.5rem;
-  text-align: right;
+.vt-card__subtitle{
+  margin:0.4rem 0 0.6rem;
+  opacity:0.9;
+  font-weight:700;
 }
-
-/* Title wrapping control */
-.vt-card__title {
-  margin-right: 3.5rem; /* keeps text clear of badge */
-  line-height: 1.25;
-}
+.vt-card__meta{ margin:0; opacity:0.85; font-size:0.92rem; }
+.vt-card__meta-sep{ margin:0 0.35rem; opacity:0.6; }
 
 /* Clamp long titles to 2 lines */
 .vt-card__title,
-.vt-card__link {
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-/* ================================
-   Mobile Pack — CousinStuff
-   Highest ROI: spacing, grid, tap targets
-   ================================ */
-
-/* 1) Safer default sizing on small screens */
-html { -webkit-text-size-adjust: 100%; }
-body { overflow-x: hidden; }
-
-/* 2) Containers: prevent edge-to-edge crowding */
-.vt-wrap,
-main,
-.container {
-  padding-left: max(14px, env(safe-area-inset-left));
-  padding-right: max(14px, env(safe-area-inset-right));
-}
-
-/* 3) Registry grid: responsive cards without cramped columns */
-.vt-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-@media (max-width: 980px) { .vt-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 640px) { .vt-grid { grid-template-columns: 1fr; } }
-
-/* 4) Cards: better readability on phones */
-@media (max-width: 640px) {
-  .vt-card {
-    padding: 0.95rem 0.95rem 0.9rem;
-    border-radius: 16px;
-  }
-  .vt-card__title { font-size: 1.05rem; }
-  .vt-card__subtitle { font-size: 0.95rem; line-height: 1.35; }
-  .vt-card__meta { font-size: 0.92rem; }
-}
-
-/* 5) Badge collision fix (mobile + desktop safe) */
-.vt-card { padding-right: 4.6rem; }
-.vt-card__title { margin-right: 3.6rem; line-height: 1.22; }
-
-/* Clamp long titles so they don’t run into badge */
-.vt-card__title,
-.vt-card__link {
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-/* 6) Filters: wrap cleanly and stay tappable */
-.vt-filters { gap: 0.5rem; }
-.vt-filter {
-  min-height: 44px; /* thumb-friendly */
-  padding: 10px 12px;
-}
-
-/* On small screens, keep “Dispense” full width for big tap target */
-@media (max-width: 640px) {
-  .vt-filters { flex-direction: column; align-items: stretch; }
-  .vt-filters__spacer { display: none; }
-  .vt-filter { width: 100%; text-align: center; }
-}
-
-/* 7) Section titles: reduce visual bulk on mobile */
-@media (max-width: 640px) {
-  .vt-section { margin-top: 1.25rem; }
-  .vt-section__title { font-size: 1.05rem; }
-}
-
-/* 8) Recipe pages: improve reading comfort */
-@media (max-width: 640px) {
-  h1 { font-size: 1.6rem; }
-  h2 { font-size: 1.2rem; }
-  p, li { line-height: 1.55; }
-}
-
-/* 9) Nav/header spacing: prevent tall header on phones */
-@media (max-width: 640px) {
-  .nav { padding: 12px 0 14px; }
-  .brand .title { font-size: 1.05rem; }
-  .brand .tagline { font-size: 0.9rem; }
-}
-
-/* 10) Footer readability: give it breathing room */
-footer, .footer {
-  padding: 18px 0 28px;
-}
-@media (max-width: 640px) {
-  footer, .footer {
-    font-size: 0.95rem;
-    padding: 18px 0 34px;
-  }
-}
-
-/* 11) Optional: make cards feel “pressable” on touch devices */
-@media (hover: none) {
-  .vt-card, .card { transition: transform 0.08s ease; }
-  .vt-card:active, .card:active { transform: translateY(1px); }
+.vt-card__link{
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  line-clamp:2;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
 }
 
 /* ================================
-   Mobile App-Style Patch (<= 640px)
+   Footer (legal placard is handled elsewhere)
    ================================ */
 
-@media (max-width: 640px) {
-
-  /* Reduce “hero” vertical waste (covers common wrappers) */
-  header,
-  .header,
-  .hero,
-  .masthead,
-  .home-hero,
-  .intro,
-  .top,
-  .nav {
-    padding-top: 10px !important;
-    padding-bottom: 10px !important;
-  }
-
-  /* Brand row: keep it compact */
-  .brand {
-    gap: 10px;
-    align-items: center;
-  }
-  .brand .title {
-    font-size: 1.05rem;
-    line-height: 1.05;
-  }
-  .brand .tagline {
-    font-size: 0.9rem;
-    line-height: 1.2;
-  }
-
-  /* If the homepage has a left text + right buttons layout, kill the two-column feel */
-  .home-hero,
-  .hero,
-  .masthead,
-  .intro {
-    display: block !important;
-  }
-
-  /* Welcome headline: smaller + tighter */
-  h1,
-  .hero h1,
-  .masthead h1,
-  .home-hero h1 {
-    font-size: 1.55rem !important;
-    line-height: 1.1 !important;
-    letter-spacing: 0.04em;
-    margin-top: 10px !important;
-    margin-bottom: 10px !important;
-  }
-
-  /* Paragraph copy: readable but not tall */
-  p,
-  .hero p,
-  .masthead p,
-  .home-hero p {
-    font-size: 0.98rem !important;
-    line-height: 1.45 !important;
-    margin-top: 6px !important;
-    margin-bottom: 10px !important;
-  }
-
-  /* Nav buttons (Registry / Recipes / Tags / Dark mode): full-width app buttons */
-  .nav-buttons,
-  .menu,
-  .nav-links,
-  nav ul,
-  nav .links {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 10px !important;
-    margin-top: 10px !important;
-  }
-
-  /* Make links/buttons thumb-friendly */
-  nav a,
-  nav button,
-  .nav a,
-  .nav button,
-  .btn,
-  button {
-    min-height: 46px;
-  }
-
-  /* Home action buttons: put them in a 2-up grid if present */
-  .hero .btn-row,
-  .cta,
-  .cta-row,
-  .home-actions,
-  .actions {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    gap: 10px !important;
-  }
-
-  /* If you only have one CTA, it should span */
-  .hero .btn-row > :only-child,
-  .cta > :only-child,
-  .cta-row > :only-child,
-  .home-actions > :only-child,
-  .actions > :only-child {
-    grid-column: 1 / -1 !important;
-  }
-
-  /* Vault capacity: dock + shrink so it doesn’t fight nav */
-  .vt-capacity {
-    display: flex !important;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 360px;
-    margin: 10px auto 6px !important;
-    padding: 10px 12px;
-    border-radius: 16px;
-    text-transform: uppercase;
-  }
-
-  /* If your capacity has a yellow “coin” / circle, keep it tight */
-  .vt-capacity-value,
-  .vt-capacity .value,
-  .vt-capacity .badge,
-  .vt-capacity .coin {
-    padding: 6px 10px !important;
-    border-radius: 999px !important;
-    font-size: 0.95rem !important;
-    line-height: 1 !important;
-    white-space: nowrap;
-  }
-
-  /* Keep the decorative stripe from eating vertical space */
-  .nav::after {
-    height: 5px;
-  }
-
-  /* Cards/sections on the homepage: reduce big gaps */
-  .card,
-  .vt-placard,
-  .section,
-  section {
-    margin-top: 12px !important;
-  }
-}
-@media (max-width: 640px) {
-  /* Slight readability boost for mobile without changing the theme */
-  .vt-placard,
-  .card {
-    background: rgba(255,255,255,0.82);
-  }
-  :root[data-theme="dark"] .vt-placard,
-  :root[data-theme="dark"] .card {
-    background: rgba(0,0,0,0.28);
-  }
-}
 /* ================================
-   Mobile Nav Fix — prevent off-screen buttons
+   Mobile App Header — single source of truth
    ================================ */
-@media (max-width: 640px) {
 
-  /* Force any “hero header” multi-column wrapper into 1 column */
-  .nav,
-  header,
-  .header,
-  .hero,
-  .masthead,
-  .home-hero,
-  .intro,
-  .top {
-    display: block !important;
+@media (max-width: 720px){
+
+  /* Safer container padding without double-injecting everywhere */
+  .container{
+    margin:0 auto;
+    padding-left:max(14px, env(safe-area-inset-left));
+    padding-right:max(14px, env(safe-area-inset-right));
   }
 
-  /* Catch common two-column patterns */
-  .nav .container,
-  header .container,
-  .header .container,
-  .hero .container,
-  .masthead .container,
-  .home-hero .container,
-  .intro .container {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 10px !important;
-    align-items: start !important;
+  .vt-wrap{
+    padding-left:0;
+    padding-right:0;
   }
 
-  /* If your theme uses a grid/flex wrapper for the header row, collapse it */
-  .nav .row,
-  header .row,
-  .header .row,
-  .hero .row,
-  .masthead .row,
-  .home-hero .row {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 10px !important;
+  /* Sticky app header */
+  .nav{
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    gap:10px !important;
+    padding:12px 0 12px !important;
+    position:sticky;
+    top:0;
+    z-index:60;
+    background:rgba(255,255,255,0.70);
+    backdrop-filter:blur(10px);
+  }
+  :root[data-theme="dark"] .nav{ background:rgba(6,18,38,0.72); }
+
+  .brand{
+    display:grid;
+    gap:6px;
+    align-items:start;
+  }
+  .brand .title{ font-size:1.1rem; line-height:1.05; }
+  .brand .tagline{ font-size:0.92rem; line-height:1.25; }
+
+  .actions{
+    width:100% !important;
+    max-width:100% !important;
+    display:grid !important;
+    grid-template-columns:1fr 1fr !important;
+    gap:10px !important;
+    align-items:stretch;
   }
 
-  /* Make sure the right-side nav area can’t stay narrow/offscreen */
-  nav,
-  .menu,
-  .nav-links,
-  .nav-buttons,
-  .nav-actions {
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-
-  /* The actual buttons/links: full-width, centered text */
-  nav a,
-  nav button,
-  .nav a,
-  .nav button,
-  .nav-links a,
-  .nav-buttons a,
-  .nav-buttons button,
-  .menu a,
-  .menu button {
-    display: block !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    text-align: center !important;
-    min-height: 46px;
-  }
-
-  /* If the nav list is an <ul>, remove the side indent and force stack */
-  nav ul {
-    list-style: none;
-    padding-left: 0 !important;
-    margin: 8px 0 0 !important;
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 10px !important;
-  }
-
-  /* Remove awkward extra margins from desktop spacing */
-  .brand,
-  .brand + *,
-  .tagline,
-  .hero p,
-  .masthead p {
-    margin: 0 !important;
-  }
-
-  /* Vault capacity: keep it in the flow, centered, not floating right */
-  .vt-capacity {
-    width: 100% !important;
-    max-width: 420px;
-    margin: 10px auto 0 !important;
-  }
-}
-@media (max-width: 640px) {
-  .vt-registry-header { margin-bottom: 12px !important; }
-  .vt-section { margin-top: 16px !important; }
-  hr { margin: 12px 0 !important; }
-}
-/* ================================
-   Mobile App Header — baseof.html exact classes
-   ================================ */
-@media (max-width: 720px) {
-
-  /* Container should not constrain width in a way that forces overflow */
-  .container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding-left: max(14px, env(safe-area-inset-left));
-    padding-right: max(14px, env(safe-area-inset-right));
-  }
-
-  /* NAV becomes a stacked app header */
-  .nav {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 10px !important;
-    padding: 12px 0 12px !important;
-  }
-
-  /* Brand: compact, wraps nicely */
-  .brand {
-    display: grid;
-    gap: 6px;
-    align-items: start;
-  }
-  .brand .title {
-    font-size: 1.1rem;
-    line-height: 1.05;
-  }
-  .brand .tagline {
-    font-size: 0.92rem;
-    line-height: 1.25;
-  }
-
-  /* Actions: full-width grid, never off-screen */
-  .actions {
-    width: 100% !important;
-    max-width: 100% !important;
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    gap: 10px !important;
-    align-items: stretch;
-  }
-
-  /* Capacity widget spans full width */
+  /* Capacity widget first + full width */
   .actions .vt-capacity,
-  .actions .vt-capacity-wrap,
-  .actions [class*="vt-capacity"] {
-    grid-column: 1 / -1;
-    width: 100% !important;
+  .actions [class*="vt-capacity"]{
+    grid-column:1 / -1;
+    width:100% !important;
   }
 
-  /* Nav buttons become big tap targets */
+  /* Buttons fill */
   .actions a.btn,
-  .actions button {
-    width: 100%;
-    min-height: 46px;
-    text-align: center;
-    justify-content: center;
-    border-radius: 999px;
+  .actions button{
+    width:100%;
+    min-height:46px;
+    text-align:center;
+    justify-content:center;
   }
 
-  /* Dark mode toggle spans full width for thumb comfort */
-  #themeToggle {
-    grid-column: 1 / -1;
-  }
+  /* Dark mode full width */
+  #themeToggle{ grid-column:1 / -1; }
+
+  main{ margin-top:10px; }
 }
 
-/* Smaller phones: 1-column stack */
-@media (max-width: 420px) {
-  .actions {
-    grid-template-columns: 1fr !important;
-  }
+/* Smaller phones: 1-column actions */
+@media (max-width: 420px){
+  .actions{ grid-template-columns:1fr !important; }
 }
 
-/* Reduce awkward spacing: main content should start close to header */
-@media (max-width: 720px) {
-  main {
-    margin-top: 10px;
+/* ================================
+   Mobile Registry UX — sticky filters
+   ================================ */
+
+@media (max-width: 640px){
+
+  /* Sticky filter bar inside registry page */
+  .vt-filters{
+    position:sticky;
+    top:12px;
+    z-index:50;
+    padding:10px;
+    border-radius:16px;
+    background:rgba(255,255,255,0.72);
+    border:2px solid var(--border);
+    backdrop-filter:blur(8px);
   }
-}
-@media (max-width: 720px) {
-  .nav {
-    position: sticky;
-    top: 0;
-    z-index: 60;
-    background: rgba(255,255,255,0.70);
-    backdrop-filter: blur(10px);
+  :root[data-theme="dark"] .vt-filters{
+    background:rgba(0,0,0,0.22);
+    border-color:rgba(18,49,93,0.65);
   }
-  :root[data-theme="dark"] .nav {
-    background: rgba(6,18,38,0.72);
+
+  /* Keep pills from becoming a vertical wall; allow horizontal scroll */
+  .vt-filters{
+    flex-wrap:nowrap;
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
   }
+  .vt-filters__spacer{ display:none; }
+
+  .vt-filter{
+    flex:0 0 auto;
+    white-space:nowrap;
+  }
+
+  /* Random button stays easy to hit but not gigantic */
+  #vt-random{
+    flex:0 0 auto;
+  }
+
+  /* Sections tighten */
+  .vt-section{ margin-top:1.1rem; }
+  .vt-section__head{ padding:10px 12px; }
+
+  /* Cards read better */
+  .vt-card{ padding:0.95rem; padding-right:4.6rem; border-radius:16px; }
+  .vt-card__subtitle{ font-size:0.95rem; line-height:1.35; }
+  .vt-card__meta{ font-size:0.92rem; }
 }
