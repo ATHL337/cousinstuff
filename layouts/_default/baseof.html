@@ -11,7 +11,6 @@
     <script src="/js/nav-compact.js" defer></script>
   </head>
 
-  <!-- Enable bottom utility bar layout system -->
   <body class="vt-has-bottombar">
     <div class="container">
 
@@ -27,42 +26,29 @@
           <a class="btn secondary" href="/recipes/">Recipes</a>
           <a class="btn secondary" href="/tags/">Tags</a>
         </div>
+      </div>
 
-        <!-- Mobile bottom utility bar -->
-        <div class="vt-bottombar no-print" role="navigation" aria-label="Vault utilities">
-          <div class="vt-bottombar__inner">
+      <!-- Mobile bottom utility bar (ONLY place utilities exist on mobile) -->
+      <div class="vt-bottombar no-print" role="navigation" aria-label="Vault utilities">
+        <div class="vt-bottombar__inner">
+          {{ partial "vault_capacity.html" . }}
 
-            {{ partial "vault_capacity.html" . }}
-
-            <!-- Registry-only: Random Ration -->
-            {{ if eq .RelPermalink "/registry/" }}
-              <button
-                class="btn accent vt-bottombar__random"
-                type="button"
-                id="vt-random-bottom">
-                Random Ration
-              </button>
-            {{ end }}
-
-            <!-- Dark mode toggle (bottom bar) -->
-            <button
-              id="themeToggleBottom"
-              class="btn secondary vt-bottombar__toggle"
-              type="button"
-              aria-label="Toggle dark mode">
-              Dark mode
+          {{ if eq .RelPermalink "/registry/" }}
+            <button class="btn accent vt-bottombar__random" type="button" id="vt-random-bottom">
+              Random Ration
             </button>
+          {{ end }}
 
-          </div>
+          <button id="themeToggleBottom" class="btn secondary vt-bottombar__toggle" type="button" aria-label="Toggle dark mode">
+            Dark mode
+          </button>
         </div>
       </div>
 
-      <!-- Main content -->
       <main>
         {{ block "main" . }}{{ end }}
       </main>
 
-      <!-- Footer -->
       <footer class="vt-legal">
         <br>
         <div class="vt-legal-inner">
