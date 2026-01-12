@@ -1,3 +1,131 @@
+/* ================================
+   Skin system (GLOBAL)
+   - data-skin="corp" (default)
+   - data-skin="pip"
+   ================================ */
+
+/* Ensure corp is explicitly defined (prevents drift) */
+:root:not([data-skin]),
+:root[data-skin="corp"]{
+  /* Use your existing Vault-Tec tokens set earlier in the file.
+     These just ensure key UI surfaces stay “corp” even if other CSS shifts. */
+  --vt-surface: rgba(255,255,255,0.86);
+  --vt-surface-border: rgba(11,58,120,0.18);
+  --vt-bottombar-bg: rgba(255,255,255,0.86);
+  --vt-bottombar-border: rgba(11,58,120,0.18);
+  --vt-bottombar-shadow: 0 16px 36px rgba(0,0,0,0.25);
+}
+
+/* If dark theme + corp skin */
+:root[data-theme="dark"]:not([data-skin]),
+:root[data-theme="dark"][data-skin="corp"]{
+  --vt-surface: rgba(6,18,38,0.78);
+  --vt-surface-border: rgba(255,255,255,0.16);
+  --vt-bottombar-bg: rgba(6,18,38,0.82);
+  --vt-bottombar-border: rgba(255,255,255,0.16);
+  --vt-bottombar-shadow: 0 16px 36px rgba(0,0,0,0.38);
+}
+
+/* Pip-Boy skin: monochrome terminal vibe */
+:root[data-skin="pip"]{
+  --bg:#06110a;
+  --fg:#d8ffd8;
+  --muted:#98ff98;
+  --card:rgba(6, 17, 10, 0.65);
+  --border:rgba(152,255,152,0.35);
+  --link:#98ff98;
+
+  --chip:rgba(10, 45, 24, 0.80);
+  --chip-fg:#d8ffd8;
+
+  --btn:rgba(10, 45, 24, 0.95);
+  --btn-fg:#d8ffd8;
+
+  --shadow:0 14px 32px rgba(0,0,0,0.55);
+
+  /* Skin-aware surfaces */
+  --vt-surface: rgba(6, 17, 10, 0.72);
+  --vt-surface-border: rgba(152,255,152,0.30);
+  --vt-bottombar-bg: rgba(6, 17, 10, 0.86);
+  --vt-bottombar-border: rgba(152,255,152,0.22);
+  --vt-bottombar-shadow: 0 16px 36px rgba(0,0,0,0.50);
+
+  /* Push palette away from blue/yellow */
+  --vt-blue:#1a7f4b;
+  --vt-yellow:#98ff98;
+}
+
+/* Pip-Boy background */
+:root[data-skin="pip"] body{
+  background:
+    radial-gradient(900px 540px at 20% 0%, rgba(152,255,152,0.10), transparent 58%),
+    linear-gradient(180deg, rgba(152,255,152,0.06), transparent 45%),
+    var(--bg);
+  background-attachment: fixed;
+}
+
+/* Pip-Boy glow */
+:root[data-skin="pip"] body{
+  text-shadow: 0 0 10px rgba(152,255,152,0.10);
+}
+
+:root[data-skin="pip"] .nav::after{
+  background: linear-gradient(90deg, rgba(152,255,152,0.85), rgba(152,255,152,0.55));
+  opacity: 0.9;
+}
+
+:root[data-skin="pip"] .brand .title{
+  color: var(--link);
+}
+
+/* Terminal panels */
+:root[data-skin="pip"] .card,
+:root[data-skin="pip"] .vt-card,
+:root[data-skin="pip"] .vt-placard,
+:root[data-skin="pip"] .vt-section__head{
+  background: rgba(6, 17, 10, 0.70) !important;
+  border-color: rgba(152,255,152,0.35) !important;
+  box-shadow: 0 10px 26px rgba(0,0,0,0.50) !important;
+}
+
+:root[data-skin="pip"] button,
+:root[data-skin="pip"] .btn,
+:root[data-skin="pip"] .vt-filter,
+:root[data-skin="pip"] input[type="search"]{
+  border-color: rgba(152,255,152,0.35) !important;
+  background: rgba(10, 45, 24, 0.60) !important;
+  color: var(--fg) !important;
+}
+
+:root[data-skin="pip"] .btn.secondary,
+:root[data-skin="pip"] button.secondary{
+  background: rgba(6, 17, 10, 0.35) !important;
+}
+
+:root[data-skin="pip"] .btn.accent,
+:root[data-skin="pip"] button.accent,
+:root[data-skin="pip"] .vt-bottombar__random{
+  background: rgba(152,255,152,0.20) !important;
+  color: var(--fg) !important;
+}
+
+/* Scanlines only in Pip-Boy */
+:root[data-skin="pip"] body::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(152,255,152,0.03),
+    rgba(152,255,152,0.03) 1px,
+    transparent 1px,
+    transparent 4px
+  );
+  opacity: 0.35;
+  mix-blend-mode: screen;
+}
+
 /* =========================================================
    MOBILE LAYOUT SYSTEM (single source of truth)
    ========================================================= */
@@ -13,12 +141,11 @@ body.vt-has-bottombar{
 
 @media (max-width: 720px){
 
-  /* Sticky header stays thin: brand + nav links only */
   .nav{
     position:sticky;
     top:0;
     z-index:var(--vt-z-header);
-    background:rgba(255,255,255,0.78);
+    background: var(--vt-surface);
     backdrop-filter:blur(10px);
 
     display:grid;
@@ -26,12 +153,11 @@ body.vt-has-bottombar{
     gap:10px;
     padding:10px 0 12px;
   }
-  :root[data-theme="dark"] .nav{ background:rgba(6,18,38,0.78); }
 
-  /* Hide tagline on mobile to cut header height */
+  /* Hide tagline on mobile */
   .brand .tagline{ display:none !important; }
 
-  /* Bottom bar is the ONLY place utilities live on mobile */
+  /* Bottom bar utilities only */
   .vt-bottombar{ display:none; }
 
   body.vt-has-bottombar .vt-bottombar{
@@ -57,15 +183,10 @@ body.vt-has-bottombar{
     align-items:center;
 
     border-radius:18px;
-    border:2px solid rgba(255,255,255,0.16);
-    background:rgba(6,18,38,0.82);
+    border:2px solid var(--vt-bottombar-border);
+    background: var(--vt-bottombar-bg);
     backdrop-filter:blur(10px);
-    box-shadow:0 16px 36px rgba(0,0,0,0.38);
+    box-shadow: var(--vt-bottombar-shadow);
     padding:10px;
-  }
-
-  :root:not([data-theme="dark"]) body.vt-has-bottombar .vt-bottombar__inner{
-    background:rgba(255,255,255,0.86);
-    border-color:rgba(11,58,120,0.18);
   }
 }
