@@ -12,8 +12,6 @@ enableRobotsTXT = true
   description = "A family recipe registry you can search, tag, and print."
   ogImage = "/img/og/og-corp.png"
 
-  
-
 [outputs]
   home = ["HTML"]
   section = ["HTML", "JSON"]
@@ -24,8 +22,6 @@ enableRobotsTXT = true
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = false
-
-enableRobotsTXT = true
 
 [sitemap]
 changefreq = "weekly"
