@@ -1,0 +1,16 @@
+{{- if eq .Section "recipes" -}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Recipe",
+  "name": {{ .Title | jsonify }},
+  "description": {{ (or .Description .Site.Params.description) | jsonify }},
+  "url": {{ .Permalink | jsonify }},
+  {{- with .Params.images -}}
+  "image": [{{ range $i, $img := . }}{{ if $i }},{{ end }}{{ ($img | absURL) | jsonify }}{{ end }}],
+  {{- end -}}
+  "datePublished": {{ .Date.Format "2006-01-02" | jsonify }},
+  "author": { "@type": "Person", "name": {{ .Site.Params.brand | jsonify }} }
+}
+</script>
+{{- end -}}

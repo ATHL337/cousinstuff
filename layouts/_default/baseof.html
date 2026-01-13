@@ -1,16 +1,57 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
-    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
-    <link rel="stylesheet" href="/css/site.css" />
-    <link rel="stylesheet" href="/css/vault-tec-corp.css" />
-	<script src="/js/theme.js" defer></script>
-	<script src="/js/nav-compact.js" defer></script>
-	<script src="/js/skin.js" defer></script>
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+
+  {{- $desc := (or .Description .Site.Params.description) -}}
+  <meta name="description" content="{{ $desc }}">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="{{ .Permalink }}">
+
+  <!-- Robots (override per page via front matter: robots: "noindex,nofollow") -->
+  <meta name="robots" content="{{ with .Params.robots }}{{ . }}{{ else }}index,follow{{ end }}">
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="{{ .Site.Title }}">
+  <meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
+  <meta property="og:url" content="{{ .Permalink }}">
+  <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}">
+  <meta property="og:description" content="{{ $desc }}">
+
+  {{- /* OG Image priority: page images[] -> page image -> site ogImage -> none */ -}}
+  {{- with .Params.images -}}
+    {{- range first 1 . -}}
+      <meta property="og:image" content="{{ . | absURL }}">
+    {{- end -}}
+  {{- else if .Params.image -}}
+    <meta property="og:image" content="{{ .Params.image | absURL }}">
+  {{- else if .Site.Params.ogImage -}}
+    <meta property="og:image" content="{{ .Site.Params.ogImage | absURL }}">
+  {{- end -}}
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}">
+  <meta name="twitter:description" content="{{ $desc }}">
+  {{- with .Site.Params.twitter -}}
+    <meta name="twitter:site" content="@{{ . }}">
+  {{- end -}}
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/site.css" />
+  <link rel="stylesheet" href="/css/vault-tec-corp.css" />
+
+  <!-- Scripts -->
+  <script src="/js/theme.js" defer></script>
+  <script src="/js/nav-compact.js" defer></script>
+  <script src="/js/skin.js" defer></script>
+  {{ partial "recipe_schema.html" . }}
+</head>
+
 
   <body class="vt-has-bottombar">
     <div class="container">
