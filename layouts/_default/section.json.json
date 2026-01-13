@@ -1,0 +1,13 @@
+{{- /* Generic section JSON index (minimal + safe) */ -}}
+[
+{{- $pages := .Pages -}}
+{{- range $i, $p := $pages -}}
+  {{- if $i }},{{ end }}
+  {
+    "title": {{ $p.Title | jsonify }},
+    "url": {{ $p.Permalink | jsonify }},
+    "summary": {{ ($p.Summary | plainify) | jsonify }},
+    "date": {{ ($p.Date.Format "2006-01-02") | jsonify }}
+  }
+{{- end -}}
+]

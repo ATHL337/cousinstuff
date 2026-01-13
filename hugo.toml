@@ -1,4 +1,4 @@
-baseURL = "https://example.com/"
+baseURL = "https://cousinstuff.com/"
 languageCode = "en-us"
 title = "CousinStuff"
 enableRobotsTXT = true
@@ -7,14 +7,15 @@ enableRobotsTXT = true
   tag = "tags"
 
 [params]
-  description = "Family recipes, shared simply."
   brand = "CousinStuff"
   description = "A family recipe registry you can search, tag, and print."
   ogImage = "/img/og/og-corp.png"
+  # optional if you want twitter tags:
+  # twitter = "yourhandle"  # without @
 
 [outputs]
   home = ["HTML"]
-  section = ["HTML", "JSON"]
+  section = ["HTML"]
   taxonomy = ["HTML"]
   term = ["HTML"]
 
@@ -24,6 +25,6 @@ enableRobotsTXT = true
       unsafe = false
 
 [sitemap]
-changefreq = "weekly"
-priority = 0.5
-filename = "sitemap.xml"
+  changefreq = "weekly"
+  priority = 0.5
+  filename = "sitemap.xml"
