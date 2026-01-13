@@ -7,10 +7,9 @@
     <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
     <link rel="stylesheet" href="/css/site.css" />
     <link rel="stylesheet" href="/css/vault-tec-corp.css" />
-    <script src="/js/theme.js" defer></script>
-    <script src="/js/nav-compact.js" defer></script>
+	<script src="/js/theme.js" defer></script>
+	<script src="/js/nav-compact.js" defer></script>
 	<script src="/js/skin.js" defer></script>
-
   </head>
 
   <body class="vt-has-bottombar">
@@ -23,20 +22,21 @@
           <span class="tagline">{{ .Site.Params.description }}</span>
         </div>
 
-	<div class="actions">
-	  <a class="btn secondary" href="/registry/">Registry</a>
-	  <a class="btn secondary" href="/recipes/">Recipes</a>
-	  <a class="btn secondary" href="/tags/">Tags</a>
+        <div class="actions">
+          <a class="btn secondary" href="/registry/">Registry</a>
+          <a class="btn secondary" href="/recipes/">Recipes</a>
+          <a class="btn secondary" href="/tags/">Tags</a>
 
-	  <!-- Desktop utilities (hidden on mobile by CSS below) -->
-	  <button id="themeToggleTop" class="btn secondary vt-util vt-util--theme" type="button" aria-label="Toggle dark mode">
-		Dark mode
-	  </button>
-	  <button id="skinToggleTop" class="btn secondary vt-util vt-util--skin" type="button" aria-label="Toggle skin">
-		Pip-Boy
-	  </button>
-	</div>
-
+          <!-- Desktop utilities (hidden on mobile by CSS) -->
+          <button id="themeToggleTop" class="btn secondary vt-util vt-util--theme" type="button" aria-label="Toggle dark mode">
+            Dark mode
+          </button>
+          <button id="skinToggleTop" class="btn secondary vt-util vt-util--skin" type="button" aria-label="Toggle skin">
+            Pip-Boy
+          </button>
+        </div>
+      </div>
+      <!-- ✅ IMPORTANT: nav is now properly closed -->
 
       <!-- Mobile bottom utility bar (ONLY place utilities exist on mobile) -->
       <div class="vt-bottombar no-print" role="navigation" aria-label="Vault utilities">
@@ -52,12 +52,10 @@
           <button id="themeToggleBottom" class="btn secondary vt-bottombar__toggle" type="button" aria-label="Toggle dark mode">
             Dark mode
           </button>
-		  <button id="skinToggleBottom" class="btn secondary vt-bottombar__toggle" type="button" aria-label="Toggle skin">
-			Pip-Boy
-		  </button>
 
-
-
+          <button id="skinToggleBottom" class="btn secondary vt-bottombar__toggle" type="button" aria-label="Toggle skin">
+            Pip-Boy
+          </button>
         </div>
       </div>
 
