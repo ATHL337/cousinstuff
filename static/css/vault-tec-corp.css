@@ -1,11 +1,29 @@
-/* ================================
-   Skin system (GLOBAL)
+/* CousinStuff — Vault-Tec corporate inspired (clean, blue/yellow, poster-like)
+   + Optional Pip-Boy skin (terminal green)
+   No copyrighted assets. Pure CSS/typography/layout language.
+*/
+
+/* =========================================================
+   Z-INDEX + GLOBAL TOKENS
+   ========================================================= */
+
+:root{
+  --vt-z-header: 90;
+  --vt-z-bottombar: 80;
+
+  --radius:18px;
+  --shadow:0 14px 32px rgba(11,58,120,0.10);
+}
+
+/* =========================================================
+   SKIN SYSTEM (GLOBAL)
    - data-skin="corp" (default)
    - data-skin="pip"
-   ================================ */
+   Theme toggle is separate: data-theme="dark"
+   ========================================================= */
 
 /* ----------------
-   CORPORATE (Vault-Tec poster)
+   CORPORATE (Vault-Tec poster) — DEFAULT
    ---------------- */
 :root:not([data-skin]),
 :root[data-skin="corp"]{
@@ -16,7 +34,7 @@
   --vt-yellow-2:#d8a50f;
   --paper:#fbf7ea;
 
-  /* App tokens (Corp) */
+  /* App tokens */
   --bg:var(--paper);
   --fg:#0b1020;
   --muted:#4b5563;
@@ -32,7 +50,7 @@
 
   --shadow:0 14px 32px rgba(11,58,120,0.12);
 
-  /* Skin-aware surfaces (used by nav + bottom bar) */
+  /* Skin-aware surfaces (nav + pill header + bottom bar) */
   --vt-surface: rgba(255,255,255,0.78);
   --vt-surface-border: rgba(11,58,120,0.18);
 
@@ -67,7 +85,7 @@
   --vt-bottombar-shadow: 0 16px 36px rgba(0,0,0,0.38);
 }
 
-/* Corp poster background + typography re-assertion */
+/* Corp poster background (re-assert so corp never looks “flat”) */
 :root:not([data-skin]) body,
 :root[data-skin="corp"] body{
   background:
@@ -75,7 +93,6 @@
     radial-gradient(950px 560px at 86% 0%, rgba(11,58,120,0.22), transparent 58%),
     linear-gradient(180deg, rgba(11,58,120,0.05), transparent 40%),
     var(--bg);
-
   background-repeat:no-repeat;
   background-size:cover;
   background-position:center top;
@@ -90,42 +107,11 @@
   }
 }
 
-/* Strong Vault-Tec headers */
-:root:not([data-skin]) h1,
-:root[data-skin="corp"] h1,
-:root:not([data-skin]) h2,
-:root[data-skin="corp"] h2,
-:root:not([data-skin]) .vt-title,
-:root[data-skin="corp"] .vt-title{
-  letter-spacing:0.06em;
-  text-transform:uppercase;
-  font-weight:950;
-}
-
-:root:not([data-skin]) .brand .title,
-:root[data-skin="corp"] .brand .title{
-  color:var(--vt-blue);
-}
-:root[data-theme="dark"]:not([data-skin]) .brand .title,
-:root[data-theme="dark"][data-skin="corp"] .brand .title{
-  color:var(--vt-yellow);
-}
-
-/* Accent button restores poster feel */
-:root:not([data-skin]) .btn.accent,
-:root[data-skin="corp"] .btn.accent,
-:root:not([data-skin]) button.accent,
-:root[data-skin="corp"] button.accent{
-  background:linear-gradient(90deg, var(--vt-yellow), var(--vt-yellow-2));
-  color:#0b1020;
-  border-color:rgba(216,165,15,0.65);
-}
-
 /* ----------------
    PIP-BOY (terminal)
    ---------------- */
 
-/* Pip-Boy base variables (theme-specific overrides below) */
+/* Pip-Boy base variables */
 :root[data-skin="pip"]{
   /* Push palette away from blue/yellow */
   --vt-blue:#1a7f4b;
@@ -185,52 +171,10 @@
   background-attachment: fixed;
 }
 
-/* Pip-Boy glow + accents */
+/* Pip-Boy glow + scanlines */
 :root[data-skin="pip"] body{
   text-shadow:0 0 10px rgba(152,255,152,0.10);
 }
-
-:root[data-skin="pip"] .nav::after{
-  background:linear-gradient(90deg, rgba(152,255,152,0.85), rgba(152,255,152,0.55));
-  opacity:0.9;
-}
-
-:root[data-skin="pip"] .brand .title{
-  color:var(--link);
-}
-
-/* Terminal panels */
-:root[data-skin="pip"] .card,
-:root[data-skin="pip"] .vt-card,
-:root[data-skin="pip"] .vt-placard,
-:root[data-skin="pip"] .vt-section__head{
-  background: var(--card) !important;
-  border-color: var(--border) !important;
-  box-shadow: 0 10px 26px rgba(0,0,0,0.50) !important;
-}
-
-:root[data-skin="pip"] button,
-:root[data-skin="pip"] .btn,
-:root[data-skin="pip"] .vt-filter,
-:root[data-skin="pip"] input[type="search"]{
-  border-color: var(--border) !important;
-  background: rgba(10, 45, 24, 0.60) !important;
-  color: var(--fg) !important;
-}
-
-:root[data-skin="pip"] .btn.secondary,
-:root[data-skin="pip"] button.secondary{
-  background: rgba(6, 17, 10, 0.35) !important;
-}
-
-:root[data-skin="pip"] .btn.accent,
-:root[data-skin="pip"] button.accent,
-:root[data-skin="pip"] .vt-bottombar__random{
-  background: rgba(152,255,152,0.20) !important;
-  color: var(--fg) !important;
-}
-
-/* Scanlines only in Pip-Boy */
 :root[data-skin="pip"] body::before{
   content:"";
   position:fixed;
@@ -248,183 +192,484 @@
 }
 
 /* =========================================================
-   MOBILE LAYOUT SYSTEM (single source of truth)
+   TYPOGRAPHY + SHARED COMPONENTS
    ========================================================= */
 
-body.vt-has-bottombar{
-  padding-bottom: calc(84px + env(safe-area-inset-bottom));
+html{ -webkit-text-size-adjust:100%; }
+body{ overflow-x:hidden; }
+
+a{ text-decoration-thickness:2px; text-underline-offset:3px; }
+
+h1{
+  text-transform:uppercase;
+  letter-spacing:0.9px;
+}
+h2{ letter-spacing:0.2px; }
+
+/* Strong Vault-Tec headings in Corp */
+:root:not([data-skin]) h1,
+:root[data-skin="corp"] h1,
+:root:not([data-skin]) h2,
+:root[data-skin="corp"] h2,
+:root:not([data-skin]) .vt-title,
+:root[data-skin="corp"] .vt-title{
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  font-weight:950;
 }
 
-/* Capacity widget should NOT appear elsewhere on mobile */
-@media (max-width: 720px){
-  .vt-registry-header .vt-capacity{ display:none !important; }
+.card{
+  border:2px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+}
+
+button, .btn{
+  border:2px solid var(--border);
+  border-radius:999px;
+  padding:9px 14px;
+  font-weight:800;
+  letter-spacing:0.2px;
+  box-shadow:0 10px 18px rgba(0,0,0,0.08);
+  transition:transform 0.05s ease, filter 0.15s ease;
+}
+button:hover, .btn:hover{ filter:brightness(1.04); }
+button:active, .btn:active{ transform:translateY(1px); }
+
+.btn.secondary, button.secondary{
+  background:transparent;
+  color:var(--fg);
+}
+
+.btn.accent, button.accent{
+  background:linear-gradient(90deg, var(--vt-yellow), var(--vt-yellow-2));
+  color:#0b1020;
+  border-color:rgba(216,165,15,0.65);
+}
+
+.chip{
+  border:2px solid var(--border);
+  border-radius:999px;
+  background:var(--chip);
+  color:var(--chip-fg);
+  font-weight:800;
+}
+
+/* Inputs */
+input[type="search"]{
+  border:2px solid var(--border);
+  border-radius:999px;
+  padding:12px 14px;
+  background:rgba(255,255,255,0.55);
+}
+:root[data-theme="dark"] input[type="search"]{
+  background:rgba(0,0,0,0.15);
+}
+
+/* Pip control tightening */
+:root[data-skin="pip"] .card,
+:root[data-skin="pip"] .vt-card,
+:root[data-skin="pip"] .vt-placard,
+:root[data-skin="pip"] .vt-section__head{
+  background: var(--card) !important;
+  border-color: var(--border) !important;
+  box-shadow: 0 10px 26px rgba(0,0,0,0.50) !important;
+}
+:root[data-skin="pip"] button,
+:root[data-skin="pip"] .btn,
+:root[data-skin="pip"] .vt-filter,
+:root[data-skin="pip"] input[type="search"]{
+  border-color: var(--border) !important;
+  background: rgba(10, 45, 24, 0.60) !important;
+  color: var(--fg) !important;
+}
+:root[data-skin="pip"] .btn.secondary,
+:root[data-skin="pip"] button.secondary{
+  background: rgba(6, 17, 10, 0.35) !important;
 }
 
 /* =========================================================
-   Registry Readability Pack (scoped)
+   HEADER / NAV
+   ========================================================= */
+
+.nav{
+  border-bottom:0;
+  padding:16px 0 18px;
+  position:relative;
+}
+
+/* Poster stripe */
+.nav::after{
+  content:"";
+  position:absolute;
+  left:0; right:0; bottom:-1px;
+  height:6px;
+  border-radius:999px;
+  background:linear-gradient(90deg,var(--vt-blue) 0%,var(--vt-blue) 55%,var(--vt-yellow) 100%);
+  opacity:0.95;
+}
+:root[data-skin="pip"] .nav::after{
+  background:linear-gradient(90deg, rgba(152,255,152,0.85), rgba(152,255,152,0.55));
+  opacity:0.9;
+}
+
+.brand{ gap:12px; }
+.brand .title{
+  font-weight:950;
+  letter-spacing:0.8px;
+  text-transform:uppercase;
+  color:var(--vt-blue);
+}
+:root[data-theme="dark"]:not([data-skin]) .brand .title,
+:root[data-theme="dark"][data-skin="corp"] .brand .title{
+  color:var(--vt-yellow);
+}
+:root[data-skin="pip"] .brand .title{ color:var(--link); }
+
+.brand .tagline{
+  color:var(--muted);
+  font-weight:600;
+}
+
+/* =========================================================
+   VAULT PLACARD + CAPACITY
+   ========================================================= */
+
+.vt-placard{
+  border:2px solid var(--border);
+  border-radius:var(--radius);
+  background:rgba(255,255,255,0.70);
+  box-shadow:var(--shadow);
+  padding:14px 14px 12px;
+  margin:10px 0 16px;
+  text-align:left;
+}
+:root[data-theme="dark"] .vt-placard{ background:rgba(0,0,0,0.18); }
+
+.vt-capacity{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:10px 12px;
+  border-radius:999px;
+  border:2px solid var(--border);
+  background:rgba(255,255,255,0.55);
+  box-shadow:0 10px 18px rgba(0,0,0,0.06);
+  font-weight:900;
+  letter-spacing:0.04em;
+  text-transform:uppercase;
+  font-size:12px;
+}
+:root[data-theme="dark"] .vt-capacity{ background:rgba(0,0,0,0.18); }
+
+/* =========================================================
+   VAULT REGISTRY COMPONENTS
+   ========================================================= */
+
+.vt-wrap{ max-width:1100px; margin:0 auto; padding:1.25rem; }
+.vt-registry-header{ margin-bottom:1.25rem; }
+
+.vt-title{
+  margin:0;
+  font-size:1.75rem;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  color:var(--vt-blue);
+}
+:root[data-theme="dark"]:not([data-skin]) .vt-title,
+:root[data-theme="dark"][data-skin="corp"] .vt-title{
+  color:var(--vt-yellow);
+}
+:root[data-skin="pip"] .vt-title{ color:var(--link); }
+
+.vt-subtitle{
+  margin:0.25rem 0 0.6rem;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:0.03em;
+  opacity:0.85;
+}
+
+/* Filters */
+.vt-filters{
+  display:flex;
+  flex-wrap:wrap;
+  gap:0.5rem;
+  align-items:center;
+  margin-top:0.25rem;
+}
+.vt-filters__spacer{ flex:1 1 auto; }
+
+.vt-filter{
+  border:2px solid var(--border);
+  background:rgba(255,255,255,0.45);
+  color:var(--fg);
+  padding:10px 12px;
+  border-radius:999px;
+  cursor:pointer;
+  font-weight:900;
+  letter-spacing:0.02em;
+  text-transform:uppercase;
+  box-shadow:0 10px 18px rgba(0,0,0,0.06);
+  min-height:44px;
+}
+:root[data-theme="dark"] .vt-filter{ background:rgba(0,0,0,0.18); }
+
+.vt-filter.is-active{
+  border-color:rgba(11,58,120,0.45);
+  background:linear-gradient(90deg, rgba(11,58,120,0.12), rgba(242,194,48,0.14));
+}
+:root[data-theme="dark"] .vt-filter.is-active{
+  border-color:rgba(242,194,48,0.55);
+  background:linear-gradient(90deg, rgba(242,194,48,0.22), rgba(11,58,120,0.18));
+}
+
+.vt-filter--primary{
+  background:linear-gradient(90deg, var(--vt-blue) 0%, var(--vt-blue) 70%, var(--vt-yellow) 100%);
+  color:#fff;
+  border-color:rgba(11,58,120,0.35);
+}
+:root[data-theme="dark"] .vt-filter--primary{
+  background:linear-gradient(90deg, var(--vt-yellow) 0%, var(--vt-yellow) 40%, var(--vt-blue) 100%);
+  color:#0b1020;
+  border-color:rgba(242,194,48,0.5);
+}
+
+/* Sections */
+.vt-section{ margin-top:1.4rem; }
+
+.vt-section__head{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:12px;
+  padding:10px 12px;
+  border-radius:16px;
+  border:2px solid var(--border);
+  background:rgba(255,255,255,0.55);
+  box-shadow:0 10px 18px rgba(0,0,0,0.06);
+  margin-bottom:10px;
+}
+:root[data-theme="dark"] .vt-section__head{ background:rgba(0,0,0,0.18); }
+
+.vt-section__title{
+  margin:0;
+  font-size:1.05rem;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  font-weight:950;
+  color:var(--vt-blue);
+}
+:root[data-theme="dark"]:not([data-skin]) .vt-section__title,
+:root[data-theme="dark"][data-skin="corp"] .vt-section__title{
+  color:var(--vt-yellow);
+}
+:root[data-skin="pip"] .vt-section__title{ color:var(--link); }
+
+.vt-section__range{
+  opacity:0.85;
+  font-weight:900;
+  letter-spacing:0.04em;
+  text-transform:uppercase;
+  font-size:0.9rem;
+}
+
+/* Grid */
+.vt-grid{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0, 1fr));
+  gap:0.85rem;
+}
+@media (max-width: 980px){ .vt-grid{ grid-template-columns:repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px){ .vt-grid{ grid-template-columns:1fr; } }
+
+/* Cards */
+.vt-card{
+  border:2px solid var(--border);
+  border-radius:var(--radius);
+  padding:0.95rem 0.9rem 0.85rem;
+  background:rgba(255,255,255,0.78);
+  box-shadow:var(--shadow);
+  position:relative;
+  padding-right:4.6rem; /* room for VT-## badge */
+}
+:root[data-theme="dark"] .vt-card{ background:rgba(0,0,0,0.18); }
+
+.vt-card__badge{
+  position:absolute;
+  top:0.7rem;
+  right:0.7rem;
+  font-weight:950;
+  letter-spacing:0.06em;
+  opacity:0.9;
+  color:var(--vt-blue);
+  max-width:3.6rem;
+  text-align:right;
+}
+:root[data-theme="dark"]:not([data-skin]) .vt-card__badge,
+:root[data-theme="dark"][data-skin="corp"] .vt-card__badge{
+  color:var(--vt-yellow);
+}
+:root[data-skin="pip"] .vt-card__badge{ color:var(--link); }
+
+.vt-card__title{
+  margin:0;
+  font-size:1.05rem;
+  font-weight:950;
+  margin-right:3.6rem;
+  line-height:1.22;
+}
+.vt-card__link{ text-decoration:none; }
+
+.vt-card__subtitle{
+  margin:0.4rem 0 0.6rem;
+  opacity:0.9;
+  font-weight:700;
+}
+.vt-card__meta{ margin:0; opacity:0.85; font-size:0.92rem; }
+.vt-card__meta-sep{ margin:0 0.35rem; opacity:0.6; }
+
+/* Clamp long titles to 2 lines */
+.vt-card__title,
+.vt-card__link{
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  line-clamp:2;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+}
+
+/* =========================================================
+   REGISTRY READABILITY PACK (scoped)
+   Requires: <body class="... page-registry"> on registry page
    ========================================================= */
 
 body.page-registry main{
-  max-width: 1100px;
-  margin: 0 auto;
+  max-width:1100px;
+  margin:0 auto;
+  line-height:1.55;
 }
 
-/* Stronger vertical rhythm */
-body.page-registry main{
-  line-height: 1.55;
-}
-
-/* Make headings pop + add breathing room */
+/* Spacing for headings */
 body.page-registry h1,
 body.page-registry h2{
-  margin-top: 0.6rem;
-  margin-bottom: 0.5rem;
+  margin-top:0.6rem;
+  margin-bottom:0.5rem;
 }
 
-body.page-registry h2{
-  padding-top: 0.75rem;
-  border-top: 1px solid rgba(255,255,255,0.08);
-}
-
-/* --- Turn registry entries into “cards” without changing HTML ---
+/* Turn registry recipe links into readable “cards”
    Assumption: recipe links point to /recipes/...
-   This targets ONLY links to recipes on the registry page.
 */
 body.page-registry a[href^="/recipes/"]{
-  display: block;
-  padding: 12px 14px;
-  margin: 10px 0;
-  border-radius: 16px;
-  border: 2px solid var(--border);
-  background: rgba(255,255,255,0.10);
-  box-shadow: 0 10px 22px rgba(0,0,0,0.16);
-  text-decoration: none;
+  display:block;
+  padding:12px 14px;
+  margin:10px 0;
+  border-radius:16px;
+  border:2px solid var(--border);
+  background:rgba(255,255,255,0.16);
+  box-shadow:0 10px 22px rgba(0,0,0,0.16);
+  text-decoration:none;
+  position:relative;
+  padding-left:16px; /* for accent rail */
 }
 
-/* Corp mode card background */
-:root[data-skin="corp"] body.page-registry a[href^="/recipes/"],
-:root:not([data-skin]) body.page-registry a[href^="/recipes/"]{
-  background: rgba(255,255,255,0.16);
-}
-
-/* Pip mode card background */
-:root[data-skin="pip"] body.page-registry a[href^="/recipes/"]{
-  background: rgba(10,45,24,0.45);
-  border-color: rgba(152,255,152,0.30);
-  box-shadow: 0 10px 26px rgba(0,0,0,0.45);
-}
-
-/* Hover/focus = more discernable scanning */
+/* Hover/focus improves scanning */
 body.page-registry a[href^="/recipes/"]:hover,
 body.page-registry a[href^="/recipes/"]:focus-visible{
-  transform: translateY(-1px);
-  filter: brightness(1.05);
-  outline: none;
+  transform:translateY(-1px);
+  filter:brightness(1.05);
+  outline:none;
 }
 
-/* Add a left “accent rail” so items are easier to pick out */
-body.page-registry a[href^="/recipes/"]{
-  position: relative;
-  padding-left: 16px;
-}
+/* Accent rail */
 body.page-registry a[href^="/recipes/"]::before{
   content:"";
   position:absolute;
-  left: 0;
-  top: 10px;
-  bottom: 10px;
-  width: 6px;
-  border-radius: 999px;
-  background: linear-gradient(180deg, var(--vt-blue), var(--vt-yellow));
-  opacity: 0.9;
+  left:0;
+  top:10px;
+  bottom:10px;
+  width:6px;
+  border-radius:999px;
+  background:linear-gradient(180deg, var(--vt-blue), var(--vt-yellow));
+  opacity:0.9;
+}
+:root[data-skin="pip"] body.page-registry a[href^="/recipes/"]{
+  background:rgba(10,45,24,0.45);
+  border-color:rgba(152,255,152,0.30);
+  box-shadow:0 10px 26px rgba(0,0,0,0.45);
 }
 :root[data-skin="pip"] body.page-registry a[href^="/recipes/"]::before{
-  background: linear-gradient(180deg, rgba(152,255,152,0.85), rgba(152,255,152,0.35));
+  background:linear-gradient(180deg, rgba(152,255,152,0.85), rgba(152,255,152,0.35));
 }
 
-/* Make the “VT-##” tokens look like labels if they’re standalone text nodes.
-   This is defensive: it helps if the VT code is inside a <strong>, <em>, or a small element.
-*/
-body.page-registry strong,
-body.page-registry b{
-  letter-spacing: 0.02em;
-}
-
-/* --- Sticky section headers (mobile + desktop) ---
-   This targets second-level headings in registry.
-   If you only want it on mobile, I can scope it to max-width.
-*/
+/* Sticky section headings help orientation */
 body.page-registry h2{
-  position: sticky;
-  top: 72px; /* below your top pill header; adjust if needed */
-  z-index: 20;
-  background: linear-gradient(180deg, rgba(0,0,0,0.22), transparent);
-  backdrop-filter: blur(6px);
-  padding: 10px 12px;
-  border-radius: 14px;
-  border: 2px solid rgba(255,255,255,0.10);
+  position:sticky;
+  top:72px; /* desktop-ish; mobile overrides below */
+  z-index:20;
+  padding:10px 12px;
+  border-radius:14px;
+  border:2px solid rgba(255,255,255,0.10);
+  backdrop-filter:blur(6px);
 }
-
-/* Corp sticky background */
-:root[data-skin="corp"] body.page-registry h2,
-:root:not([data-skin]) body.page-registry h2{
-  background: rgba(255,255,255,0.18);
-  border-color: rgba(11,58,120,0.18);
+:root:not([data-skin]) body.page-registry h2,
+:root[data-skin="corp"] body.page-registry h2{
+  background:rgba(255,255,255,0.18);
+  border-color:rgba(11,58,120,0.18);
 }
-
-/* Pip sticky background */
 :root[data-skin="pip"] body.page-registry h2{
-  background: rgba(6,17,10,0.72);
-  border-color: rgba(152,255,152,0.22);
+  background:rgba(6,17,10,0.72);
+  border-color:rgba(152,255,152,0.22);
 }
 
-/* Mobile: reduce the “wall” feeling even more */
-@media (max-width: 720px){
-  body.page-registry a[href^="/recipes/"]{
-    margin: 12px 0;
-  }
-  body.page-registry h2{
-    top: 90px; /* top nav pill height; tweak if it overlaps */
-  }
-}
+/* =========================================================
+   MOBILE LAYOUT SYSTEM (single source of truth)
+   - Utilities exist ONLY in bottom bar on mobile
+   ========================================================= */
 
+/* Desktop: no forced padding, bottom bar hidden */
+body.vt-has-bottombar{ padding-bottom:0; }
+.vt-bottombar{ display:none; }
 
 @media (max-width: 720px){
 
-  /* Sticky header stays thin: brand + nav links only */
+  /* Make room so content isn't covered by bottom bar */
+  body.vt-has-bottombar{
+    padding-bottom: calc(84px + env(safe-area-inset-bottom));
+  }
+
+  /* Capacity widget should NOT appear elsewhere on mobile */
+  .vt-registry-header .vt-capacity{ display:none !important; }
+
+  /* Top header becomes a pill to match bottom bar */
   .nav{
-    position: sticky;
-    top: 8px; /* small breathing room from top */
-    z-index: var(--vt-z-header);
+    position:sticky;
+    top:8px;
+    z-index:var(--vt-z-header);
 
-    background: var(--vt-surface);
-    backdrop-filter: blur(10px);
+    background:var(--vt-surface);
+    backdrop-filter:blur(10px);
 
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 10px;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:10px;
+    padding:10px 12px;
 
-    padding: 10px 12px;
+    border-radius:18px;
+    border:2px solid var(--vt-surface-border);
+    box-shadow:var(--vt-bottombar-shadow);
 
-    /* NEW: pill treatment */
-    border-radius: 18px;
-    border: 2px solid var(--vt-surface-border);
-    box-shadow: var(--vt-bottombar-shadow);
-
-    /* inset from screen edges like bottom bar */
-    margin: 8px 14px 0;
+    margin:8px 14px 0;
   }
-}
 
-
-  /* Hide tagline on mobile to cut header height */
+  /* Hide tagline to reduce header height */
   .brand .tagline{ display:none !important; }
 
-  /* Bottom bar is the ONLY place utilities live on mobile */
-  .vt-bottombar{ display:none; }
+  /* Bottom bar visible on mobile */
+  .vt-bottombar{ display:block; }
 
-  body.vt-has-bottombar .vt-bottombar{
-    display:block;
+  .vt-bottombar{
     position:fixed;
     left:0; right:0; bottom:0;
     z-index:var(--vt-z-bottombar);
@@ -438,10 +683,10 @@ body.page-registry h2{
     pointer-events:none;
   }
 
-  body.vt-has-bottombar .vt-bottombar__inner{
+  .vt-bottombar__inner{
     pointer-events:auto;
     display:grid;
-    grid-template-columns:1fr auto auto auto;
+    grid-template-columns:1fr auto auto auto; /* Capacity | Random | Theme | Skin */
     gap:10px;
     align-items:center;
 
@@ -452,4 +697,70 @@ body.page-registry h2{
     box-shadow:var(--vt-bottombar-shadow);
     padding:10px;
   }
+
+  /* Bottom bar buttons: compact but tappable */
+  .vt-bottombar__inner .btn,
+  .vt-bottombar__inner button{
+    min-height:42px;
+    padding:8px 12px;
+    border-radius:999px;
+    white-space:nowrap;
+  }
+
+  /* Random = primary action */
+  .vt-bottombar__random{
+    background:linear-gradient(90deg, var(--vt-blue) 0%, var(--vt-blue) 65%, var(--vt-yellow) 100%);
+    color:#fff;
+    border-color:rgba(11,58,120,0.35);
+    font-weight:950;
+    letter-spacing:0.02em;
+    text-transform:uppercase;
+  }
+  :root[data-theme="dark"]:not([data-skin]) .vt-bottombar__random,
+  :root[data-theme="dark"][data-skin="corp"] .vt-bottombar__random{
+    background:linear-gradient(90deg, var(--vt-yellow) 0%, var(--vt-yellow) 40%, var(--vt-blue) 100%);
+    color:#0b1020;
+    border-color:rgba(242,194,48,0.5);
+  }
+  :root[data-skin="pip"] .vt-bottombar__random{
+    background:rgba(152,255,152,0.20);
+    color:var(--fg);
+    border-color:rgba(152,255,152,0.28);
+  }
+
+  /* Registry sticky headers: account for pill nav height */
+  body.page-registry h2{ top:96px; }
+}
+
+/* Very small phones: allow bottom bar wrap */
+@media (max-width: 420px){
+  .vt-bottombar__inner{
+    grid-template-columns:1fr 1fr;
+  }
+  .vt-bottombar__inner .vt-capacity{ grid-column:1 / -1; }
+  #vt-random-bottom{ grid-column:1 / -1; }
+}
+
+/* =========================================================
+   PRINT + ACCESSIBILITY
+   ========================================================= */
+
+@media print{
+  body{ background:#fff !important; }
+  .card{ box-shadow:none; border:1px solid #ddd; }
+  .nav::after{ display:none; }
+  .vt-bottombar{ display:none !important; }
+}
+
+/* Screen-reader only */
+.sr-only{
+  position:absolute !important;
+  width:1px !important;
+  height:1px !important;
+  padding:0 !important;
+  margin:-1px !important;
+  overflow:hidden !important;
+  clip:rect(0,0,0,0) !important;
+  white-space:nowrap !important;
+  border:0 !important;
 }
