@@ -260,6 +260,135 @@ body.vt-has-bottombar{
   .vt-registry-header .vt-capacity{ display:none !important; }
 }
 
+/* =========================================================
+   Registry Readability Pack (scoped)
+   ========================================================= */
+
+body.page-registry main{
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Stronger vertical rhythm */
+body.page-registry main{
+  line-height: 1.55;
+}
+
+/* Make headings pop + add breathing room */
+body.page-registry h1,
+body.page-registry h2{
+  margin-top: 0.6rem;
+  margin-bottom: 0.5rem;
+}
+
+body.page-registry h2{
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+/* --- Turn registry entries into “cards” without changing HTML ---
+   Assumption: recipe links point to /recipes/...
+   This targets ONLY links to recipes on the registry page.
+*/
+body.page-registry a[href^="/recipes/"]{
+  display: block;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border-radius: 16px;
+  border: 2px solid var(--border);
+  background: rgba(255,255,255,0.10);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.16);
+  text-decoration: none;
+}
+
+/* Corp mode card background */
+:root[data-skin="corp"] body.page-registry a[href^="/recipes/"],
+:root:not([data-skin]) body.page-registry a[href^="/recipes/"]{
+  background: rgba(255,255,255,0.16);
+}
+
+/* Pip mode card background */
+:root[data-skin="pip"] body.page-registry a[href^="/recipes/"]{
+  background: rgba(10,45,24,0.45);
+  border-color: rgba(152,255,152,0.30);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.45);
+}
+
+/* Hover/focus = more discernable scanning */
+body.page-registry a[href^="/recipes/"]:hover,
+body.page-registry a[href^="/recipes/"]:focus-visible{
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+  outline: none;
+}
+
+/* Add a left “accent rail” so items are easier to pick out */
+body.page-registry a[href^="/recipes/"]{
+  position: relative;
+  padding-left: 16px;
+}
+body.page-registry a[href^="/recipes/"]::before{
+  content:"";
+  position:absolute;
+  left: 0;
+  top: 10px;
+  bottom: 10px;
+  width: 6px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, var(--vt-blue), var(--vt-yellow));
+  opacity: 0.9;
+}
+:root[data-skin="pip"] body.page-registry a[href^="/recipes/"]::before{
+  background: linear-gradient(180deg, rgba(152,255,152,0.85), rgba(152,255,152,0.35));
+}
+
+/* Make the “VT-##” tokens look like labels if they’re standalone text nodes.
+   This is defensive: it helps if the VT code is inside a <strong>, <em>, or a small element.
+*/
+body.page-registry strong,
+body.page-registry b{
+  letter-spacing: 0.02em;
+}
+
+/* --- Sticky section headers (mobile + desktop) ---
+   This targets second-level headings in registry.
+   If you only want it on mobile, I can scope it to max-width.
+*/
+body.page-registry h2{
+  position: sticky;
+  top: 72px; /* below your top pill header; adjust if needed */
+  z-index: 20;
+  background: linear-gradient(180deg, rgba(0,0,0,0.22), transparent);
+  backdrop-filter: blur(6px);
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 2px solid rgba(255,255,255,0.10);
+}
+
+/* Corp sticky background */
+:root[data-skin="corp"] body.page-registry h2,
+:root:not([data-skin]) body.page-registry h2{
+  background: rgba(255,255,255,0.18);
+  border-color: rgba(11,58,120,0.18);
+}
+
+/* Pip sticky background */
+:root[data-skin="pip"] body.page-registry h2{
+  background: rgba(6,17,10,0.72);
+  border-color: rgba(152,255,152,0.22);
+}
+
+/* Mobile: reduce the “wall” feeling even more */
+@media (max-width: 720px){
+  body.page-registry a[href^="/recipes/"]{
+    margin: 12px 0;
+  }
+  body.page-registry h2{
+    top: 90px; /* top nav pill height; tweak if it overlaps */
+  }
+}
+
+
 @media (max-width: 720px){
 
   /* Sticky header stays thin: brand + nav links only */
