@@ -1,60 +1,81 @@
 <!doctype html>
 <html lang="en">
-<head>
-  [params]
-  ogImage = "/img/og-default.png"
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+    {{- $siteTitle := .Site.Title -}}
+    {{- $pageTitle := cond .IsHome $siteTitle (printf "%s | %s" .Title $siteTitle) -}}
+    <title>{{ $pageTitle }}</title>
 
-  <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+    {{- $desc := (or .Description .Site.Params.description) -}}
+    <meta name="description" content="{{ $desc }}" />
 
-  {{- $desc := (or .Description .Site.Params.description) -}}
-  <meta name="description" content="{{ $desc }}">
+    <!-- Canonical -->
+    <link rel="canonical" href="{{ .Permalink }}" />
 
-  <!-- Canonical -->
-  <link rel="canonical" href="{{ .Permalink }}">
+    <!-- Robots (override per-page with front matter: robots: "noindex,nofollow") -->
+    <meta name="robots" content="{{ with .Params.robots }}{{ . }}{{ else }}index,follow{{ end }}" />
 
-  <!-- Robots (override per page via front matter: robots: "noindex,nofollow") -->
-  <meta name="robots" content="{{ with .Params.robots }}{{ . }}{{ else }}index,follow{{ end }}">
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="{{ $siteTitle }}" />
+    <meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}" />
+    <meta property="og:url" content="{{ .Permalink }}" />
+    <meta property="og:title" content="{{ $pageTitle }}" />
+    <meta property="og:description" content="{{ $desc }}" />
 
-  <!-- Open Graph -->
-  <meta property="og:site_name" content="{{ .Site.Title }}">
-  <meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
-  <meta property="og:url" content="{{ .Permalink }}">
-  <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}">
-  <meta property="og:description" content="{{ $desc }}">
-
-  {{- /* OG Image priority: page images[] -> page image -> site ogImage -> none */ -}}
-  {{- with .Params.images -}}
-    {{- range first 1 . -}}
-      <meta property="og:image" content="{{ . | absURL }}">
+    {{- /* OG image priority:
+          1) page param: images[] (first)
+          2) page param: image
+          3) recipe param: og_image (optional)
+          4) site param: ogImage
+        */ -}}
+    {{- if .Params.images -}}
+      {{- range first 1 .Params.images -}}
+        <meta property="og:image" content="{{ . | absURL }}" />
+      {{- end -}}
+    {{- else if .Params.image -}}
+      <meta property="og:image" content="{{ .Params.image | absURL }}" />
+    {{- else if .Params.og_image -}}
+      <meta property="og:image" content="{{ .Params.og_image | absURL }}" />
+    {{- else if .Site.Params.ogImage -}}
+      <meta property="og:image" content="{{ .Site.Params.ogImage | absURL }}" />
     {{- end -}}
-  {{- else if .Params.image -}}
-    <meta property="og:image" content="{{ .Params.image | absURL }}">
-  {{- else if .Site.Params.ogImage -}}
-    <meta property="og:image" content="{{ .Site.Params.ogImage | absURL }}">
-  {{- end -}}
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}">
-  <meta name="twitter:description" content="{{ $desc }}">
-  {{- with .Site.Params.twitter -}}
-    <meta name="twitter:site" content="@{{ . }}">
-  {{- end -}}
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{{ $pageTitle }}" />
+    <meta name="twitter:description" content="{{ $desc }}" />
+    {{- with .Site.Params.twitter -}}
+      <meta name="twitter:site" content="@{{ . }}" />
+    {{- end -}}
+    {{- /* Reuse same image for twitter if present */ -}}
+    {{- if .Params.images -}}
+      {{- range first 1 .Params.images -}}
+        <meta name="twitter:image" content="{{ . | absURL }}" />
+      {{- end -}}
+    {{- else if .Params.image -}}
+      <meta name="twitter:image" content="{{ .Params.image | absURL }}" />
+    {{- else if .Params.og_image -}}
+      <meta name="twitter:image" content="{{ .Params.og_image | absURL }}" />
+    {{- else if .Site.Params.ogImage -}}
+      <meta name="twitter:image" content="{{ .Site.Params.ogImage | absURL }}" />
+    {{- end -}}
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="/css/site.css" />
-  <link rel="stylesheet" href="/css/vault-tec-corp.css" />
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/site.css" />
+    <link rel="stylesheet" href="/css/vault-tec-corp.css" />
 
-  <!-- Scripts -->
-  <script src="/js/theme.js" defer></script>
-  <script src="/js/nav-compact.js" defer></script>
-  <script src="/js/skin.js" defer></script>
-  {{ partial "recipe_schema.html" . }}
-</head>
+    <!-- Scripts -->
+    <script src="/js/theme.js" defer></script>
+    <script src="/js/nav-compact.js" defer></script>
+    <script src="/js/skin.js" defer></script>
 
+    <!-- Schema: only on recipe single pages -->
+    {{- if and .IsPage (eq .Section "recipes") -}}
+      {{ partial "recipe_schema.html" . }}
+    {{- end -}}
+  </head>
 
   <body class="vt-has-bottombar">
     <div class="container">
@@ -80,9 +101,8 @@
           </button>
         </div>
       </div>
-      <!-- ✅ IMPORTANT: nav is now properly closed -->
 
-      <!-- Mobile bottom utility bar (ONLY place utilities exist on mobile) -->
+      <!-- Mobile bottom utility bar -->
       <div class="vt-bottombar no-print" role="navigation" aria-label="Vault utilities">
         <div class="vt-bottombar__inner">
           {{ partial "vault_capacity.html" . }}
@@ -108,7 +128,7 @@
       </main>
 
       <footer class="vt-legal">
-        <br>
+        <br />
         <div class="vt-legal-inner">
           <span class="vt-legal-brand">© {{ now.Year }} {{ .Site.Params.brand }}</span>
           <span class="vt-legal-dot">•</span>

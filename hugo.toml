@@ -9,6 +9,10 @@ enableRobotsTXT = true
 [params]
   description = "Family recipes, shared simply."
   brand = "CousinStuff"
+  description = "A family recipe registry you can search, tag, and print."
+  ogImage = "/img/og/og-corp.png"
+
+  
 
 [outputs]
   home = ["HTML"]
