@@ -764,3 +764,14 @@ body.vt-has-bottombar{ padding-bottom:0; }
   white-space:nowrap !important;
   border:0 !important;
 }
+/* =========================================================
+   Desktop utilities (Top Nav)
+   ========================================================= */
+
+/* Show the top toggles on desktop */
+.vt-util{ display:inline-flex; }
+
+/* On mobile, utilities live ONLY in the bottom bar */
+@media (max-width: 720px){
+  .vt-util{ display:none !important; }
+}
