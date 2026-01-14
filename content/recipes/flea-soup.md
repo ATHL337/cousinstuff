@@ -1,20 +1,21 @@
 ---
-title: "VT-16 Flea Soup"
-slug: "vt-16-flea-soup"
-date: 2026-01-15
+title: "Flea Soup"
+slug: "flea-soup"
+date: 2026-01-14
 description: "A dark, savory, Fallout-inspired beef broth soup with floating sesame specks for visual texture—warm, comforting, and Vault-safe."
 tags: ["Fallout", "Soup", "Specialty", "Comfort", "Beef", "Kid-Friendly"]
 images:
   - "/img/og/recipes/vt-16-flea-soup.png"
-servings: 4
+servings: 6
 prepTime: "PT10M"
 cookTime: "PT25M"
 totalTime: "PT35M"
 slot: 16
+category: "Specialty Modules"
 ---
 
-## VT-16 Flea Soup  
-**Specialty Module Ration • Dark broth, gentle warmth, signature specks**
+## Flea Soup  
+**Dark broth • Gentle warmth • Signature specks**
 
 ---
 
@@ -31,24 +32,24 @@ Vault-Tec’s sanitized version preserves the *appearance* of the original—com
 ## Ingredients
 
 ### Core
-- 1 lb beef stew meat (or chuck, cubed)
-- 6 cups beef broth (dark, rich)
-- 1 tablespoon soy sauce or tamari
-- 1 teaspoon Worcestershire sauce
+- 1.5 lb beef stew meat (or chuck, cubed)
+- 9 cups beef broth (dark, rich)
+- 1½ tablespoons soy sauce or tamari
+- 1½ teaspoons Worcestershire sauce
 
 ### Aromatics
-- 1 small onion, diced
-- 2 cloves garlic, minced
-- 1 teaspoon grated ginger (optional)
+- 1 medium onion, diced
+- 3 cloves garlic, minced
+- 1½ teaspoons grated ginger (optional)
 
 ### Flea Specks (Visual Effect)
-- 2 teaspoons white sesame seeds
-- 1 teaspoon black sesame seeds
+- 1 tablespoon white sesame seeds
+- 1½ teaspoons black sesame seeds
 
 ### Warmth & Balance
-- ½ teaspoon smoked paprika
-- ¼ teaspoon black pepper
-- Pinch of sugar (optional)
+- ¾ teaspoon smoked paprika
+- ½ teaspoon black pepper
+- 2 pinches sugar (optional)
 - Salt to taste
 
 ---
@@ -56,12 +57,12 @@ Vault-Tec’s sanitized version preserves the *appearance* of the original—com
 ## Instructions
 
 ### Simmer
-- Add beef, broth, soy sauce, Worcestershire, onion, garlic, and ginger to a pot.
-- Bring to a gentle simmer and cook for 20 minutes until beef is tender.
+- Add beef, broth, soy sauce, Worcestershire, onion, garlic, and ginger to a large pot.
+- Bring to a gentle simmer and cook for about 20 minutes, until beef is tender.
 
 ### Season
 - Add smoked paprika, black pepper, and salt.
-- Taste and adjust.
+- Taste and adjust seasoning as needed.
 
 ### Speck Deployment
 - Stir in the sesame seeds just before serving.
