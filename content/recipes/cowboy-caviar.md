@@ -1,7 +1,7 @@
 ---
 title: "Cowboy Caviar"
 slug: "cowboy-caviar"
-slot: 4
+slot: null
 subtitle: "Potluck-grade ration • Bright, fresh, morale-boosting"
 date: 2026-01-10
 servings: 8
