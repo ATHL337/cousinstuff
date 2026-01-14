@@ -4,7 +4,8 @@ date: 2026-01-14
 description: "Charred, juicy pork skewers with a lightly sweet, savory glaze—Vault-safe, kid-friendly, and macro-conscious."
 tags: ["Fallout", "High Protein", "Air Fryer", "Pork", "Skewers", "Family Friendly", "Meal Prep", "Specialty"]
 images:
-  - "/img/og/recipes/vt-02-iguana-on-a-stick.jpg"
+  - "/img/og/recipes/vt-02-iguana-on-a-stick.png"
+image: "/img/recipes/vt-02-iguana-on-a-stick.png"
 servings: 6
 prepTime: "PT15M"
 cookTime: "PT12M"
