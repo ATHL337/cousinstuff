@@ -18,16 +18,53 @@
   {{- $imgs = $imgs | append (.Site.Params.ogImage | absURL) -}}
 {{- end -}}
 
+{{- $yield := "" -}}
+{{- with .Params.servings -}}
+  {{- $yield = printf "%v servings" . -}}
+{{- end -}}
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Recipe",
   "name": {{ .Title | jsonify }},
-  "description": {{ (or .Description .Site.Params.description) | jsonify }},
-  "url": {{ .Permalink | jsonify }}{{- if gt (len $imgs) 0 -}},
-  "image": {{ $imgs | jsonify }}{{- end -}},
+  "description": {{ (or .Params.description .Description .Site.Params.description) | jsonify }},
+  "url": {{ .Permalink | jsonify }},
+  {{- if gt (len $imgs) 0 }}
+  "image": {{ $imgs | jsonify }},
+  {{- end }}
   "datePublished": {{ .Date.Format "2006-01-02" | jsonify }},
-  "author": { "@type": "Person", "name": {{ .Site.Params.brand | jsonify }} }
+  "author": { "@type": "Person", "name": {{ .Site.Params.brand | jsonify }} },
+  {{- if $yield }}
+  "recipeYield": {{ $yield | jsonify }},
+  {{- end }}
+
+  {{- with .Params.tags }}
+  "keywords": {{ (delimit . ", ") | jsonify }},
+  {{- end }}
+
+  {{- with .Params.prepTime }}
+  "prepTime": {{ . | jsonify }},
+  {{- end }}
+  {{- with .Params.cookTime }}
+  "cookTime": {{ . | jsonify }},
+  {{- end }}
+  {{- with .Params.totalTime }}
+  "totalTime": {{ . | jsonify }},
+  {{- end }}
+
+  {{- with .Params.ingredients }}
+  "recipeIngredient": {{ . | jsonify }},
+  {{- end }}
+
+  {{- with .Params.instructions }}
+  "recipeInstructions": [
+    {{- range $i, $step := . -}}
+      {{- if $i }},{{ end }}
+      { "@type": "HowToStep", "text": {{ $step | jsonify }} }
+    {{- end -}}
+  ]
+  {{- end }}
 }
 </script>
 {{- end -}}

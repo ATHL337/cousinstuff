@@ -32,31 +32,35 @@
       </div>
     </div>
 
-	{{/* Hero image priority: image -> images[0] */}}
-	{{ $hero := "" }}
+    {{/* ------------------------------------------------------------
+        HERO IMAGE RULES (for the top-of-recipe image)
+        - Use .Params.image for the hero (your /img/recipes/... file)
+        - Fallback to .Params.images[0] ONLY if image isn't set
+        This prevents OG cards in /img/og/... from becoming the hero.
+    ------------------------------------------------------------ */}}
+    {{ $hero := "" }}
 
-	{{ with .Params.image }}
-	  {{ $hero = . }}
-	{{ end }}
+    {{ with .Params.image }}
+      {{ $hero = . }}
+    {{ end }}
 
-	{{ if not $hero }}
-	  {{ with .Params.images }}
-		{{ if gt (len .) 0 }}
-		  {{ $hero = index . 0 }}
-		{{ end }}
-	  {{ end }}
-	{{ end }}
+    {{ if not $hero }}
+      {{ with .Params.images }}
+        {{ if gt (len .) 0 }}
+          {{ $hero = index . 0 }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
 
-	{{ if $hero }}
-	  <img
-		class="recipe-photo"
-		alt="{{ .Title }}"
-		src="{{ $hero | relURL }}"
-		loading="lazy"
-		decoding="async"
-	  />
-	{{ end }}
-
+    {{ if $hero }}
+      <img
+        class="recipe-photo"
+        alt="{{ .Title }} image"
+        src="{{ $hero | relURL }}"
+        loading="lazy"
+        decoding="async"
+      />
+    {{ end }}
 
     <div class="card">
       {{ .Content }}

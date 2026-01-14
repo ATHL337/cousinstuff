@@ -8,7 +8,7 @@
     {{- $pageTitle := cond .IsHome $siteTitle (printf "%s | %s" .Title $siteTitle) -}}
     <title>{{ $pageTitle }}</title>
 
-    {{- $desc := (or .Description .Site.Params.description) -}}
+    {{- $desc := (or .Params.description .Description .Site.Params.description) -}}
     <meta name="description" content="{{ $desc }}" />
 
     <!-- Canonical -->
@@ -17,29 +17,39 @@
     <!-- Robots (override per-page with front matter: robots: "noindex,nofollow") -->
     <meta name="robots" content="{{ with .Params.robots }}{{ . }}{{ else }}index,follow{{ end }}" />
 
+    {{- /* ------------------------------------------------------------
+          IMAGE SELECTION (single source of truth)
+          - Recipe hero image should come from: .Params.image
+          - Social OG/Twitter should come from: .Params.images[0]
+          - Fallbacks: og_image -> site ogImage
+          This prevents the OG image from accidentally being used as hero.
+        ------------------------------------------------------------ */ -}}
+    {{- $og := "" -}}
+    {{- with .Params.images -}}
+      {{- if gt (len .) 0 -}}
+        {{- $og = (index . 0) -}}
+      {{- end -}}
+    {{- end -}}
+    {{- if and (not $og) .Params.og_image -}}
+      {{- $og = .Params.og_image -}}
+    {{- end -}}
+    {{- if and (not $og) .Site.Params.ogImage -}}
+      {{- $og = .Site.Params.ogImage -}}
+    {{- end -}}
+
+    {{- $hero := "" -}}
+    {{- with .Params.image -}}
+      {{- $hero = . -}}
+    {{- end -}}
+
     <!-- Open Graph -->
     <meta property="og:site_name" content="{{ $siteTitle }}" />
     <meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}" />
     <meta property="og:url" content="{{ .Permalink }}" />
     <meta property="og:title" content="{{ $pageTitle }}" />
     <meta property="og:description" content="{{ $desc }}" />
-
-    {{- /* OG image priority:
-          1) page param: images[] (first)
-          2) page param: image
-          3) recipe param: og_image (optional)
-          4) site param: ogImage
-        */ -}}
-    {{- if .Params.images -}}
-      {{- range first 1 .Params.images -}}
-        <meta property="og:image" content="{{ . | absURL }}" />
-      {{- end -}}
-    {{- else if .Params.image -}}
-      <meta property="og:image" content="{{ .Params.image | absURL }}" />
-    {{- else if .Params.og_image -}}
-      <meta property="og:image" content="{{ .Params.og_image | absURL }}" />
-    {{- else if .Site.Params.ogImage -}}
-      <meta property="og:image" content="{{ .Site.Params.ogImage | absURL }}" />
+    {{- if $og -}}
+      <meta property="og:image" content="{{ $og | absURL }}" />
     {{- end -}}
 
     <!-- Twitter -->
@@ -49,17 +59,8 @@
     {{- with .Site.Params.twitter -}}
       <meta name="twitter:site" content="@{{ . }}" />
     {{- end -}}
-    {{- /* Reuse same image for twitter if present */ -}}
-    {{- if .Params.images -}}
-      {{- range first 1 .Params.images -}}
-        <meta name="twitter:image" content="{{ . | absURL }}" />
-      {{- end -}}
-    {{- else if .Params.image -}}
-      <meta name="twitter:image" content="{{ .Params.image | absURL }}" />
-    {{- else if .Params.og_image -}}
-      <meta name="twitter:image" content="{{ .Params.og_image | absURL }}" />
-    {{- else if .Site.Params.ogImage -}}
-      <meta name="twitter:image" content="{{ .Site.Params.ogImage | absURL }}" />
+    {{- if $og -}}
+      <meta name="twitter:image" content="{{ $og | absURL }}" />
     {{- end -}}
 
     <!-- Styles -->
