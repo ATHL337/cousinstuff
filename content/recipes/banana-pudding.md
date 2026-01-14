@@ -1,7 +1,7 @@
 ---
 title: "Banana Pudding"
 slug: "banana-pudding"
-slot: 29
+slot: null
 subtitle: "Cold-storage comfort ration • Creamy, layered, nostalgic"
 date: 2026-01-10
 servings: 8
