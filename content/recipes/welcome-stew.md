@@ -3,8 +3,11 @@ title: "Vault-Tec Welcome Stew (Cozy Survival Edition)"
 date: 2026-01-14
 description: "A cozy, herby chicken stew built for vault-life practicality: high-protein, moderate-carb, low-fat, and family friendly."
 tags: ["Fallout", "High Protein", "Meal Prep", "Chicken", "Soup", "Stew", "Moderate Carb", "Family Friendly"]
+slot: 7
 images:
   - "/img/og/recipes/vault-tec-welcome-stew.jpg"
+image: "/img/recipes/vault-tec-welcome-stew.jpg"
+
 servings: 6
 totalTime: "PT45M"
 prepTime: "PT15M"

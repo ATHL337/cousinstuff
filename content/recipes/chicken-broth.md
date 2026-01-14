@@ -1,7 +1,7 @@
 ---
 title: "Chicken Broth"
 slug: "chicken-broth"
-slot: 7
+slot: null
 subtitle: "Infirmary-grade hydration ration • Clear, restorative, foundational"
 date: 2026-01-10
 servings: 8

@@ -1,12 +1,13 @@
-{{/* Vault Capacity: recipes loaded out of 33 */}}
-{{ $recipes := where .Site.RegularPages "Section" "recipes" }}
-{{ $count := len $recipes }}
+{{/* Vault Capacity: slotted recipes loaded out of 33 */}}
+{{ $all := where .Site.RegularPages "Section" "recipes" }}
+{{ $slotted := where $all ".Params.slot" "ne" nil }}
+{{ $count := len $slotted }}
 {{ $max := 33 }}
 
 <div class="vt-capacity" role="status" aria-live="polite" aria-label="Vault capacity">
   <span class="vt-capacity-label">
     Vault
-    <span class="sr-only"> recipes loaded</span>
+    <span class="sr-only"> recipes </span>
   </span>
 
   <span class="vt-capacity-value" aria-label="{{ $count }} of {{ $max }}">
