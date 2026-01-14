@@ -1,7 +1,7 @@
 ---
 title: "Xander Root Miso Soup"
 slug: "xander-root-miso-soup"
-slot: 16
+slot: null
 subtitle: "Fermented umami ration • Light, restorative, depth-forward"
 date: 2026-01-10
 servings: 4
