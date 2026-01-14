@@ -32,38 +32,49 @@
       </div>
     </div>
 
-    {{/* ------------------------------------------------------------
-        HERO IMAGE RULES (for the top-of-recipe image)
-        - Use .Params.image for the hero (your /img/recipes/... file)
-        - Fallback to .Params.images[0] ONLY if image isn't set
-        This prevents OG cards in /img/og/... from becoming the hero.
-    ------------------------------------------------------------ */}}
-    {{ $hero := "" }}
-
+    {{/* HERO image: always use .Params.image if set */}}
     {{ with .Params.image }}
-      {{ $hero = . }}
-    {{ end }}
-
-    {{ if not $hero }}
-      {{ with .Params.images }}
-        {{ if gt (len .) 0 }}
-          {{ $hero = index . 0 }}
-        {{ end }}
-      {{ end }}
-    {{ end }}
-
-    {{ if $hero }}
       <img
         class="recipe-photo"
-        alt="{{ .Title }} image"
-        src="{{ $hero | relURL }}"
+        alt="{{ $.Title }} image"
+        src="{{ . | relURL }}"
         loading="lazy"
         decoding="async"
       />
     {{ end }}
 
     <div class="card">
-      {{ .Content }}
+      {{/* Preferred structured rendering (for Mealie + consistency) */}}
+      {{ if or .Params.recipeIngredient .Params.recipeInstructions }}
+
+        {{ with .Params.recipeIngredient }}
+          <h2>Ingredients</h2>
+          <ul>
+            {{ range . }}
+              <li>{{ . }}</li>
+            {{ end }}
+          </ul>
+        {{ end }}
+
+        {{ with .Params.recipeInstructions }}
+          <h2>Instructions</h2>
+          <ol>
+            {{ range . }}
+              <li>{{ . }}</li>
+            {{ end }}
+          </ol>
+        {{ end }}
+
+        {{/* Optional: keep extra notes/sections in markdown body */}}
+        {{ if .Content }}
+          <hr />
+          {{ .Content }}
+        {{ end }}
+
+      {{ else }}
+        {{/* Legacy pages */}}
+        {{ .Content }}
+      {{ end }}
     </div>
   </div>
 {{ end }}

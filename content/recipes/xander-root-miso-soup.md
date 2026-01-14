@@ -1,62 +1,37 @@
 ---
 title: "Xander Root Miso Soup"
 slug: "xander-root-miso-soup"
-slot: null
-subtitle: "Fermented umami ration • Light, restorative, depth-forward"
 date: 2026-01-10
+description: "Fermented umami ration—light, restorative, and depth-forward without heaviness."
+tags: ["Soup", "Vegetarian", "Umami", "Light", "Specialty"]
+
+slot: null
+category: "Specialty Modules"
+subtitle: "Fermented umami ration • Light, restorative, depth-forward"
+
+images:
+  - "/img/og/recipes/xander-root-miso-soup.png"
+image: "/img/recipes/xander-root-miso-soup.png"
+
 servings: 4
-prepTime: "10 min"
-totalTime: "25 min"
-tags:
-  - soup
-  - vegetarian
-  - umami
-  - light
-  - specialty
----
+prepTime: "PT10M"
+cookTime: "PT15M"
+totalTime: "PT25M"
 
-## Ingredients
+recipeIngredient:
+  - "Vegetable broth"
+  - "Miso paste (white or yellow)"
+  - "Tofu cubes"
+  - "Scallions, sliced"
+  - "Mushrooms, sliced (optional)"
+  - "Spinach or bok choy (optional)"
 
-### Core
-- Vegetable broth
-- Miso paste (white or yellow)
-- Tofu cubes
-- Scallions, sliced
-
-### Add-Ins
-- Mushrooms, sliced
-- Spinach or bok choy
+recipeInstructions:
+  - "Heat Base: Bring broth to a gentle simmer."
+  - "Add Veg: Add mushrooms/greens and cook 2–3 minutes."
+  - "Miso In: Dissolve miso in a small amount of hot broth, then stir into pot (do not boil)."
+  - "Serve: Add tofu and scallions and serve hot."
 
 ---
-
-## Instructions
-
-### Heat Base
-- Bring broth to a gentle simmer.
-
-### Add Veg
-- Add mushrooms and greens; cook 2–3 minutes.
-
-### Miso In
-- Dissolve miso in small amount of hot broth.
-- Stir into pot (do not boil).
-
-### Serve
-- Add tofu and scallions.
-- Serve hot.
-
----
-
 ## Overseer’s Notes
-- Never boil miso — it kills flavor.
-- Add sesame oil for richness.
-- Add noodles to bulk it up.
-
-## Pairings
-- Dumplings
-- Rice
-- Pickled veggies
-
-## Timeline (≈ 25 min total)
-- Prep: 10 min  
-- Cook: 15 min  
+- Never boil miso; it kills flavor.

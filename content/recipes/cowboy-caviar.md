@@ -1,65 +1,41 @@
 ---
 title: "Cowboy Caviar"
 slug: "cowboy-caviar"
-slot: null
-subtitle: "Potluck-grade ration • Bright, fresh, morale-boosting"
 date: 2026-01-10
+description: "Potluck-grade ration—bright, fresh, and morale-boosting. Great as a dip, side, or taco filler."
+tags: ["Vegetarian", "Side", "Party", "Fresh", "Mexican"]
+
+slot: null
+category: "Sides & Add-Ons"
+subtitle: "Potluck-grade ration • Bright, fresh, morale-boosting"
+
+images:
+  - "/img/og/recipes/cowboy-caviar.png"
+image: "/img/recipes/cowboy-caviar.png"
+
 servings: 8
-prepTime: "15 min"
-totalTime: "25 min"
-tags:
-  - vegetarian
-  - side
-  - party
-  - fresh
-  - mexican
----
+prepTime: "PT15M"
+cookTime: "PT0M"
+totalTime: "PT25M"
 
-## Ingredients
+recipeIngredient:
+  - "Black beans, drained and rinsed"
+  - "Diced tomatoes"
+  - "Corn"
+  - "Red onion, finely diced"
+  - "Bell pepper, diced"
+  - "Jalapeño, minced (optional)"
+  - "Olive oil"
+  - "Red wine vinegar or lime juice"
+  - "Salt"
+  - "Black pepper"
+  - "Fresh cilantro, chopped"
 
-### Core
-- Black beans, drained and rinsed
-- Diced tomatoes
-- Corn
-- Red onion, finely diced
-- Bell pepper, diced
-- Jalapeño, minced (optional)
-
-### Dressing
-- Olive oil
-- Red wine vinegar or lime juice
-- Salt
-- Black pepper
-
-### Finishing
-- Fresh cilantro, chopped
+recipeInstructions:
+  - "Combine: Mix beans, tomatoes, corn, onion, bell pepper, and jalapeño (if using) in a bowl."
+  - "Dress: Whisk olive oil with vinegar or lime juice, salt, and pepper; pour over and toss."
+  - "Rest: Chill 10–15 minutes before serving for best flavor."
 
 ---
-
-## Instructions
-
-### Combine
-- In a large bowl, add beans, tomatoes, corn, onion, bell pepper, and jalapeño.
-
-### Dress
-- Whisk olive oil, vinegar or lime juice, salt, and pepper.
-- Pour over mixture and toss gently.
-
-### Rest
-- Chill 10–15 minutes before serving for best flavor.
-
----
-
 ## Overseer’s Notes
-- Great with tortilla chips or as a taco filling.
-- Keeps well in the fridge for 2–3 days.
 - Add avocado just before serving for extra richness.
-
-## Pairings
-- Grilled chicken
-- Quesadillas
-- Lime tortilla chips
-
-## Timeline (≈ 25 min total)
-- Prep: 15 min  
-- Rest: 10 min  

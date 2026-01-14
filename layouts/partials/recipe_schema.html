@@ -1,7 +1,10 @@
-{{- if eq .Section "recipes" -}}
-{{- $imgs := slice -}}
+{{- if and .IsPage (eq .Section "recipes") -}}
 
-{{- /* Priority: .Params.images[] -> .Params.image -> .Site.Params.ogImage */ -}}
+{{- /* -----------------------------
+      Build image array for schema/OG
+      Priority: images[] -> image -> site ogImage
+   ----------------------------- */ -}}
+{{- $imgs := slice -}}
 {{- with .Params.images -}}
   {{- if gt (len .) 0 -}}
     {{- range . -}}
@@ -9,62 +12,109 @@
     {{- end -}}
   {{- end -}}
 {{- end -}}
-
 {{- if and (eq (len $imgs) 0) .Params.image -}}
   {{- $imgs = $imgs | append (.Params.image | absURL) -}}
 {{- end -}}
-
 {{- if and (eq (len $imgs) 0) .Site.Params.ogImage -}}
   {{- $imgs = $imgs | append (.Site.Params.ogImage | absURL) -}}
 {{- end -}}
 
-{{- $yield := "" -}}
+{{- /* Ingredients + steps (arrays of strings) */ -}}
+{{- $ings := .Params.recipeIngredient | default (slice) -}}
+{{- $steps := .Params.recipeInstructions | default (slice) -}}
+
+{{- /* -----------------------------
+      Nutrition (supports BOTH styles)
+      A) legacy flat fields: calories/protein/carbs/fat
+      B) new nested block: nutrition.calories, nutrition.protein_g, etc
+   ----------------------------- */ -}}
+{{- $n := dict -}}
+
+{{- /* Calories */ -}}
+{{- if .Params.calories -}}
+  {{- $n = merge $n (dict "calories" (printf "%v calories" .Params.calories)) -}}
+{{- else if and .Params.nutrition (index .Params.nutrition "calories") -}}
+  {{- $n = merge $n (dict "calories" (printf "%v calories" (index .Params.nutrition "calories"))) -}}
+{{- end -}}
+
+{{- /* Protein */ -}}
+{{- if .Params.protein -}}
+  {{- $n = merge $n (dict "proteinContent" .Params.protein) -}}
+{{- else if and .Params.nutrition (index .Params.nutrition "protein_g") -}}
+  {{- $n = merge $n (dict "proteinContent" (printf "%vg" (index .Params.nutrition "protein_g"))) -}}
+{{- end -}}
+
+{{- /* Carbs */ -}}
+{{- if .Params.carbs -}}
+  {{- $n = merge $n (dict "carbohydrateContent" .Params.carbs) -}}
+{{- else if and .Params.nutrition (index .Params.nutrition "carbs_g") -}}
+  {{- $n = merge $n (dict "carbohydrateContent" (printf "%vg" (index .Params.nutrition "carbs_g"))) -}}
+{{- end -}}
+
+{{- /* Fat */ -}}
+{{- if .Params.fat -}}
+  {{- $n = merge $n (dict "fatContent" .Params.fat) -}}
+{{- else if and .Params.nutrition (index .Params.nutrition "fat_g") -}}
+  {{- $n = merge $n (dict "fatContent" (printf "%vg" (index .Params.nutrition "fat_g"))) -}}
+{{- end -}}
+
+{{- /* -----------------------------
+      Build the Recipe object safely
+   ----------------------------- */ -}}
+{{- $recipe := dict
+  "@context" "https://schema.org"
+  "@type" "Recipe"
+  "name" .Title
+  "description" (or .Description .Site.Params.description)
+  "url" .Permalink
+  "datePublished" (.Date.Format "2006-01-02")
+  "author" (dict "@type" "Person" "name" .Site.Params.brand)
+-}}
+
+{{- if gt (len $imgs) 0 -}}
+  {{- $recipe = merge $recipe (dict "image" $imgs) -}}
+{{- end -}}
+
+{{- with .Params.category -}}
+  {{- $recipe = merge $recipe (dict "recipeCategory" .) -}}
+{{- end -}}
+
+{{- with .Params.tags -}}
+  {{- $recipe = merge $recipe (dict "keywords" (delimit . ", ")) -}}
+{{- end -}}
+
 {{- with .Params.servings -}}
-  {{- $yield = printf "%v servings" . -}}
+  {{- $recipe = merge $recipe (dict "recipeYield" (printf "%v servings" .)) -}}
+{{- end -}}
+
+{{- with .Params.prepTime -}}
+  {{- $recipe = merge $recipe (dict "prepTime" .) -}}
+{{- end -}}
+{{- with .Params.cookTime -}}
+  {{- $recipe = merge $recipe (dict "cookTime" .) -}}
+{{- end -}}
+{{- with .Params.totalTime -}}
+  {{- $recipe = merge $recipe (dict "totalTime" .) -}}
+{{- end -}}
+
+{{- if gt (len $ings) 0 -}}
+  {{- $recipe = merge $recipe (dict "recipeIngredient" $ings) -}}
+{{- end -}}
+
+{{- if gt (len $steps) 0 -}}
+  {{- $howto := slice -}}
+  {{- range $steps -}}
+    {{- $howto = $howto | append (dict "@type" "HowToStep" "text" .) -}}
+  {{- end -}}
+  {{- $recipe = merge $recipe (dict "recipeInstructions" $howto) -}}
+{{- end -}}
+
+{{- if gt (len $n) 0 -}}
+  {{- $recipe = merge $recipe (dict "nutrition" (merge (dict "@type" "NutritionInformation") $n)) -}}
 {{- end -}}
 
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Recipe",
-  "name": {{ .Title | jsonify }},
-  "description": {{ (or .Params.description .Description .Site.Params.description) | jsonify }},
-  "url": {{ .Permalink | jsonify }},
-  {{- if gt (len $imgs) 0 }}
-  "image": {{ $imgs | jsonify }},
-  {{- end }}
-  "datePublished": {{ .Date.Format "2006-01-02" | jsonify }},
-  "author": { "@type": "Person", "name": {{ .Site.Params.brand | jsonify }} },
-  {{- if $yield }}
-  "recipeYield": {{ $yield | jsonify }},
-  {{- end }}
-
-  {{- with .Params.tags }}
-  "keywords": {{ (delimit . ", ") | jsonify }},
-  {{- end }}
-
-  {{- with .Params.prepTime }}
-  "prepTime": {{ . | jsonify }},
-  {{- end }}
-  {{- with .Params.cookTime }}
-  "cookTime": {{ . | jsonify }},
-  {{- end }}
-  {{- with .Params.totalTime }}
-  "totalTime": {{ . | jsonify }},
-  {{- end }}
-
-  {{- with .Params.ingredients }}
-  "recipeIngredient": {{ . | jsonify }},
-  {{- end }}
-
-  {{- with .Params.instructions }}
-  "recipeInstructions": [
-    {{- range $i, $step := . -}}
-      {{- if $i }},{{ end }}
-      { "@type": "HowToStep", "text": {{ $step | jsonify }} }
-    {{- end -}}
-  ]
-  {{- end }}
-}
+{{ $recipe | jsonify | safeJS }}
 </script>
+
 {{- end -}}
