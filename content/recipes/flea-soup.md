@@ -6,6 +6,8 @@ description: "A dark, savory, Fallout-inspired beef broth soup with floating ses
 tags: ["Fallout", "Soup", "Specialty", "Comfort", "Beef", "Kid-Friendly"]
 images:
   - "/img/og/recipes/vt-16-flea-soup.png"
+image: "/img/recipes/vt-16-flea-soup.png"
+
 servings: 6
 prepTime: "PT10M"
 cookTime: "PT25M"

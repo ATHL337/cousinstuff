@@ -1,11 +1,12 @@
 ---
 title: "Sugar Bombs Protein Crunch Parfait"
 slug: "sugar-bombs-protein-crunch-parfait"
-date: 2026-01-14
+date: 2026-01-1
 description: "A Fallout-inspired layered parfait with crunchy cereal, creamy vanilla yogurt, and fruit—sweet, nostalgic, and secretly high-protein."
 tags: ["Fallout", "Dessert", "Sweet", "Kid-Friendly", "No-Bake", "High Protein"]
 images:
   - "/img/og/recipes/sugar-bombs-parfait.png"
+image: "/img/recipes/sugar-bombs-parfait.png"
 servings: 6
 prepTime: "PT10M"
 cookTime: "PT0M"
