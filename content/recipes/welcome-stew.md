@@ -5,8 +5,8 @@ description: "A cozy, herby chicken stew built for vault-life practicality: high
 tags: ["Fallout", "High Protein", "Meal Prep", "Chicken", "Soup", "Stew", "Moderate Carb", "Family Friendly"]
 slot: 7
 images:
-  - "/img/og/recipes/vault-tec-welcome-stew.jpg"
-image: "/img/recipes/vault-tec-welcome-stew.jpg"
+  - "/img/og/recipes/vault-tec-welcome-stew.png"
+image: "/img/recipes/vault-tec-welcome-stew.png"
 
 servings: 6
 totalTime: "PT45M"
