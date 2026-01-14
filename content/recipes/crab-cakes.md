@@ -1,7 +1,7 @@
 ---
 title: "Crab Cakes"
 slug: "crab-cakes"
-slot: 2
+slot: null
 subtitle: "Coastal protein ration • Pan-seared, crisped, morale-approved"
 date: 2026-01-10
 servings: 6
