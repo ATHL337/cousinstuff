@@ -1,0 +1,35 @@
+{{- $d := . | default "" -}}
+{{- if not $d -}}
+{{- else -}}
+  {{- $s := printf "%v" $d -}}
+
+  {{- /* Accept already-human strings like "45 minutes" */ -}}
+  {{- if not (hasPrefix $s "P") -}}
+    {{- $s -}}
+  {{- else -}}
+    {{- $hours := 0 -}}
+    {{- $mins := 0 -}}
+
+    {{- /* Very small ISO-8601 subset: PT#H#M */ -}}
+    {{- $afterPT := replace $s "PT" "" -}}
+    {{- if in $afterPT "H" -}}
+      {{- $parts := split $afterPT "H" -}}
+      {{- $hours = (index $parts 0) | int -}}
+      {{- $afterPT = index $parts 1 -}}
+    {{- end -}}
+    {{- if in $afterPT "M" -}}
+      {{- $minsStr := replace $afterPT "M" "" -}}
+      {{- if $minsStr -}}{{- $mins = $minsStr | int -}}{{- end -}}
+    {{- end -}}
+
+    {{- if and (eq $hours 0) (gt $mins 0) -}}
+      {{- printf "%d min" $mins -}}
+    {{- else if and (gt $hours 0) (eq $mins 0) -}}
+      {{- printf "%d hr" $hours -}}
+    {{- else if and (gt $hours 0) (gt $mins 0) -}}
+      {{- printf "%d hr %d min" $hours $mins -}}
+    {{- else -}}
+      {{- $s -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}

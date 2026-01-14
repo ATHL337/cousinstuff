@@ -3,13 +3,20 @@
     <div style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; align-items:flex-start;">
       <div>
         <h1 class="sr-only">{{ .Title }}</h1>
-		{{ partial "vault_placard.html" . }}
+        {{ partial "vault_placard.html" . }}
 
         <div class="meta">
           {{ with .Params.servings }}<span>{{ . }} servings</span>{{ end }}
-          {{ with .Params.prepTime }}<span>Prep: {{ . }}</span>{{ end }}
-          {{ with .Params.totalTime }}<span>Total: {{ . }}</span>{{ end }}
+
+          {{ with .Params.prepTime }}
+            <span>Prep: {{ partial "duration_label.html" . }}</span>
+          {{ end }}
+
+          {{ with .Params.totalTime }}
+            <span>Total: {{ partial "duration_label.html" . }}</span>
+          {{ end }}
         </div>
+
         {{ with .Params.tags }}
           <div class="chips">
             {{ range . }}
@@ -25,8 +32,17 @@
       </div>
     </div>
 
-    {{ with .Params.image }}
-      <img class="recipe-photo" alt="Recipe image" src="{{ . }}" loading="lazy" />
+    {{/* Image priority: images[0] -> image */}}
+    {{ $img := "" }}
+    {{ with .Params.images }}
+      {{ if gt (len .) 0 }}{{ $img = index . 0 }}{{ end }}
+    {{ end }}
+    {{ if not $img }}
+      {{ with .Params.image }}{{ $img = . }}{{ end }}
+    {{ end }}
+
+    {{ if $img }}
+      <img class="recipe-photo" alt="{{ .Title }} image" src="{{ $img }}" loading="lazy" />
     {{ end }}
 
     <div class="card">

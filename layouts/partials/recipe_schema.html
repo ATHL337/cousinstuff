@@ -1,14 +1,31 @@
 {{- if eq .Section "recipes" -}}
+{{- $imgs := slice -}}
+
+{{- /* Priority: .Params.images[] -> .Params.image -> .Site.Params.ogImage */ -}}
+{{- with .Params.images -}}
+  {{- if gt (len .) 0 -}}
+    {{- range . -}}
+      {{- $imgs = $imgs | append (. | absURL) -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if and (eq (len $imgs) 0) .Params.image -}}
+  {{- $imgs = $imgs | append (.Params.image | absURL) -}}
+{{- end -}}
+
+{{- if and (eq (len $imgs) 0) .Site.Params.ogImage -}}
+  {{- $imgs = $imgs | append (.Site.Params.ogImage | absURL) -}}
+{{- end -}}
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Recipe",
   "name": {{ .Title | jsonify }},
   "description": {{ (or .Description .Site.Params.description) | jsonify }},
-  "url": {{ .Permalink | jsonify }},
-  {{- with .Params.images -}}
-  "image": [{{ range $i, $img := . }}{{ if $i }},{{ end }}{{ ($img | absURL) | jsonify }}{{ end }}],
-  {{- end -}}
+  "url": {{ .Permalink | jsonify }}{{- if gt (len $imgs) 0 -}},
+  "image": {{ $imgs | jsonify }}{{- end -}},
   "datePublished": {{ .Date.Format "2006-01-02" | jsonify }},
   "author": { "@type": "Person", "name": {{ .Site.Params.brand | jsonify }} }
 }
