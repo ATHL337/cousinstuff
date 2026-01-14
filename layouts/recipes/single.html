@@ -32,18 +32,31 @@
       </div>
     </div>
 
-    {{/* Image priority: images[0] -> image */}}
-    {{ $img := "" }}
-    {{ with .Params.images }}
-      {{ if gt (len .) 0 }}{{ $img = index . 0 }}{{ end }}
-    {{ end }}
-    {{ if not $img }}
-      {{ with .Params.image }}{{ $img = . }}{{ end }}
-    {{ end }}
+	{{/* Hero image priority: image -> images[0] */}}
+	{{ $hero := "" }}
 
-    {{ if $img }}
-      <img class="recipe-photo" alt="{{ .Title }} image" src="{{ $img }}" loading="lazy" />
-    {{ end }}
+	{{ with .Params.image }}
+	  {{ $hero = . }}
+	{{ end }}
+
+	{{ if not $hero }}
+	  {{ with .Params.images }}
+		{{ if gt (len .) 0 }}
+		  {{ $hero = index . 0 }}
+		{{ end }}
+	  {{ end }}
+	{{ end }}
+
+	{{ if $hero }}
+	  <img
+		class="recipe-photo"
+		alt="{{ .Title }}"
+		src="{{ $hero | relURL }}"
+		loading="lazy"
+		decoding="async"
+	  />
+	{{ end }}
+
 
     <div class="card">
       {{ .Content }}
