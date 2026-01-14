@@ -15,7 +15,7 @@ enableRobotsTXT = true
 
 [outputs]
   home = ["HTML"]
-  section = ["HTML"]
+  section = ["HTML", "JSON"]
   taxonomy = ["HTML"]
   term = ["HTML"]
 

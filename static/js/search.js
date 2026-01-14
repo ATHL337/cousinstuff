@@ -51,13 +51,14 @@
       const card = document.createElement("div");
       card.className = "card";
 
-      card.innerHTML = `
-        <a class="vt-card__link" href="${escapeHtml(r.url)}">
-          <h3 class="vt-card__title">${escapeHtml(r.title)}</h3>
-        </a>
-        ${r.description ? `<p class="vt-card__subtitle">${escapeHtml(r.description)}</p>` : ""}
-        ${r.tags && r.tags.length ? `<p class="vt-card__meta">${escapeHtml(r.tags.join(", "))}</p>` : ""}
-      `;
+	card.innerHTML = `
+	  <a class="vt-card__link" href="${escapeHtml(r.permalink)}">
+		<h3 class="vt-card__title">${escapeHtml(r.title)}</h3>
+	  </a>
+	  ${r.description ? `<p class="vt-card__subtitle">${escapeHtml(r.description)}</p>` : ""}
+	  ${r.tags && r.tags.length ? `<p class="vt-card__meta">${escapeHtml(r.tags.join(", "))}</p>` : ""}
+	`;
+
 
       frag.appendChild(card);
     });
