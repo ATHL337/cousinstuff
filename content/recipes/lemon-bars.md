@@ -1,18 +1,40 @@
 ---
-title: "Lemon Bars"
-slug: "lemon-bars"
-slot: 27
-subtitle: "Bright citrus ration • Tangy, powdered, celebration-safe"
-date: 2026-01-10
-servings: 12
-prepTime: "20 min"
-totalTime: "55 min"
+title: Lemon Bars
+slug: lemon-bars
+date: '2026-01-10'
 tags:
-  - dessert
-  - citrus
-  - baked
-  - party
-  - sweet
+- dessert
+- citrus
+- baked
+- party
+- sweet
+images:
+- /img/og/recipes/lemon-bars.png
+image: /img/recipes/lemon-bars.png
+servings: 12
+prepTime: PT20M
+cookTime: PT35M
+totalTime: PT55M
+slot: 27
+subtitle: Bright citrus ration • Tangy, powdered, celebration-safe
+recipeIngredient:
+- All-purpose flour
+- Powdered sugar
+- Butter
+- Eggs
+- Granulated sugar
+- Fresh lemon juice
+- Lemon zest
+- Flour
+recipeInstructions:
+- Mix crust ingredients.
+- Press into pan.
+- Bake until lightly golden.
+- Whisk eggs, sugar, lemon juice, zest, and flour.
+- Pour over crust.
+- Bake until set.
+- Cool completely.
+- Dust with powdered sugar.
 ---
 
 ## Ingredients

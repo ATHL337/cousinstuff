@@ -1,18 +1,38 @@
 ---
-title: "Herb Butter Turkey Breast"
-slug: "herb-butter-turkey-breast"
-slot: 5
-subtitle: "Holiday-grade protein ration • Juicy, aromatic, tradition-safe"
-date: 2026-01-10
-servings: 8
-prepTime: "20 min"
-totalTime: "2 hr"
+title: Herb Butter Turkey Breast
+slug: herb-butter-turkey-breast
+date: '2026-01-10'
 tags:
-  - poultry
-  - holiday
-  - legacy
-  - comfort
-  - oven
+- poultry
+- holiday
+- legacy
+- comfort
+- oven
+images:
+- /img/og/recipes/herb-butter-turkey-breast.png
+image: /img/recipes/herb-butter-turkey-breast.png
+servings: 8
+prepTime: PT20M
+cookTime: PT1H40M
+totalTime: PT2H
+slot: 5
+subtitle: Holiday-grade protein ration • Juicy, aromatic, tradition-safe
+recipeIngredient:
+- Turkey breast (bone-in or boneless)
+- Unsalted butter, softened
+- Fresh rosemary, chopped
+- Fresh thyme, chopped
+- Garlic, minced
+- Salt
+- Black pepper
+recipeInstructions:
+- Preheat oven to 350°F (177°C).
+- Pat turkey dry with paper towels.
+- Mix butter, herbs, garlic, salt, and pepper.
+- Rub mixture all over turkey, including under the skin if possible.
+- Place turkey in roasting pan.
+- Roast until internal temp reaches 165°F (74°C).
+- Rest 10–15 minutes before slicing.
 ---
 
 ## Ingredients

@@ -1,42 +1,81 @@
 ---
-title: "Crab Cakes"
-slug: "crab-cakes"
-date: 2026-01-10
-description: "Coastal protein ration—pan-seared, crisped, and morale-approved."
-tags: ["Seafood", "Appetizer", "Crispy", "Comfort"]
-
-slot: null
-category: "Specialty Modules"
-subtitle: "Coastal protein ration • Pan-seared, crisped, morale-approved"
-
+title: Crab Cakes
+slug: crab-cakes
+date: '2026-01-14'
+description: Crisp-edged crab cakes with a tender center. Archived from the Vault
+  rotation but kept for family reference.
+tags:
+- Seafood
+- Appetizer
+- Comfort
+- Pan-Seared
 images:
-  - "/img/og/recipes/crab-cakes.png"
-image: "/img/recipes/crab-cakes.png"
-
-servings: 6
-prepTime: "PT20M"
-cookTime: "PT15M"
-totalTime: "PT35M"
-
+- /img/og/recipes/crab-cakes.png
+image: /img/recipes/crab-cakes.png
+servings: 4
+prepTime: PT20M
+cookTime: PT15M
+totalTime: PT35M
+archived: true
 recipeIngredient:
-  - "Lump crab meat, picked clean"
-  - "1/3 cup mayonnaise"
-  - "1/4 cup Dijon mustard"
-  - "1 large egg"
-  - "Breadcrumbs or crushed crackers"
-  - "Worcestershire sauce (to taste)"
-  - "Fresh ginger, grated (to taste)"
-  - "Ground nutmeg (pinch)"
-  - "Red pepper flakes (optional)"
-  - "Salt and black pepper"
-  - "Neutral oil or butter for pan-frying"
-
+- Crab meat
+- Mayo
+- Egg
+- Breadcrumbs
+- Dijon mustard
+- Old Bay (or similar)
+- Lemon
+- Salt and pepper
 recipeInstructions:
-  - "Mix: Combine mayo, Dijon, egg, Worcestershire, ginger, nutmeg, red pepper flakes, salt, and pepper. Fold in crab and breadcrumbs gently."
-  - "Shape: Form into patties and chill 10 minutes."
-  - "Sear: Pan-fry over medium heat 3–5 minutes per side until golden."
-  - "Serve: Drain briefly on paper towels and serve hot."
+- Mix crab, binder, and seasonings gently (don’t shred the crab).
+- Form into cakes and chill 10 minutes if you can.
+- Pan-sear until golden on both sides; finish until heated through.
+- Serve with lemon.
+---
+
+## Ingredients
+
+### Core
+- Crab meat
+- Mayo
+- Egg
+- Breadcrumbs
+
+### Flavor
+- Dijon mustard
+- Old Bay (or similar)
+- Lemon
+- Salt and pepper
 
 ---
+
+## Instructions
+
+### Mix
+- Combine ingredients
+- Don’t overmix
+
+### Form
+- Shape into patties
+- Chill 10 min if time
+
+### Sear
+- Pan-sear until golden
+
+### Serve
+- Lemon squeeze
+
+---
+
 ## Overseer’s Notes
-- Chill before cooking to prevent collapse.
+- Crispy outside, soft inside.
+- Chill helps them hold.
+
+## Pairings
+- Salad
+- Roasted veggies
+
+## Timeline (≈ 35 min total)
+- Prep: 20 min  
+- Cook: 15 min  
+---

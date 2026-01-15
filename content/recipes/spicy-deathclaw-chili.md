@@ -1,18 +1,39 @@
 ---
-title: "Spicy Deathclaw Chili"
-slug: "spicy-deathclaw-chili"
-slot: 18
-subtitle: "Capsaicin-forward ration • High heat, high comfort"
-date: 2026-01-10
-servings: 8
-prepTime: "15 min"
-totalTime: "1 hr"
+title: Spicy Deathclaw Chili
+slug: spicy-deathclaw-chili
+date: '2026-01-10'
 tags:
-  - chili
-  - spicy
-  - beef
-  - comfort
-  - specialty
+- chili
+- spicy
+- beef
+- comfort
+- specialty
+images:
+- /img/og/recipes/spicy-deathclaw-chili.png
+image: /img/recipes/spicy-deathclaw-chili.png
+servings: 8
+prepTime: PT15M
+cookTime: PT45M
+totalTime: PT1H
+slot: 18
+subtitle: Capsaicin-forward ration • High heat, high comfort
+recipeIngredient:
+- Ground beef
+- Onion, diced
+- Garlic, minced
+- Canned crushed tomatoes
+- Kidney or black beans
+- Chili powder
+- Cumin
+- Smoked paprika
+- Cayenne
+- Salt
+- Black pepper
+recipeInstructions:
+- Brown beef with onion and garlic.
+- Add tomatoes, beans, and spices.
+- Simmer uncovered 45 minutes.
+- Add salt and heat to taste.
 ---
 
 ## Ingredients

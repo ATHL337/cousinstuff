@@ -1,18 +1,39 @@
 ---
-title: "Fudge Brownies"
-slug: "fudge-brownies"
-slot: 28
-subtitle: "High-density morale ration • Deep cocoa, soft centers"
-date: 2026-01-10
-servings: 12
-prepTime: "15 min"
-totalTime: "40 min"
+title: Fudge Brownies
+slug: fudge-brownies
+date: '2026-01-10'
 tags:
-  - dessert
-  - chocolate
-  - baked
-  - comfort
-  - party
+- dessert
+- chocolate
+- baked
+- comfort
+- party
+images:
+- /img/og/recipes/fudge-brownies.png
+image: /img/recipes/fudge-brownies.png
+servings: 12
+prepTime: PT15M
+cookTime: PT25M
+totalTime: PT40M
+slot: 28
+subtitle: High-density morale ration • Deep cocoa, soft centers
+recipeIngredient:
+- Unsalted butter
+- Granulated sugar
+- Brown sugar
+- Eggs
+- Vanilla extract
+- All-purpose flour
+- Cocoa powder
+- Salt
+- Chocolate chips
+- Chopped walnuts
+recipeInstructions:
+- Melt butter and whisk with sugars.
+- Whisk in eggs and vanilla.
+- Stir in flour, cocoa, and salt.
+- Spread in lined pan.
+- Bake at 350°F until set but soft in the center.
 ---
 
 ## Ingredients

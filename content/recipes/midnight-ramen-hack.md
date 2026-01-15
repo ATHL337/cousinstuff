@@ -1,18 +1,37 @@
 ---
-title: "Midnight Ramen Hack"
-slug: "midnight-ramen-hack"
-slot: 33
-subtitle: "Emergency ration remix • Salty, cozy, wildly customizable"
-date: 2026-01-10
-servings: 1
-prepTime: "2 min"
-totalTime: "7 min"
+title: Midnight Ramen Hack
+slug: midnight-ramen-hack
+date: '2026-01-10'
 tags:
-  - ramen
-  - snack
-  - comfort
-  - wildcard
-  - quick
+- ramen
+- snack
+- comfort
+- wildcard
+- quick
+images:
+- /img/og/recipes/midnight-ramen-hack.png
+image: /img/recipes/midnight-ramen-hack.png
+servings: 1
+prepTime: PT2M
+cookTime: PT5M
+totalTime: PT7M
+slot: 33
+subtitle: Emergency ration remix • Salty, cozy, wildly customizable
+recipeIngredient:
+- Instant ramen
+- Water
+- Egg
+- Cheese slice
+- Green onions
+- Hot sauce
+- Frozen veggies
+- Leftover meat
+recipeInstructions:
+- Cook ramen according to package.
+- Crack in egg and stir for richness.
+- Add cheese if desired.
+- Top with upgrades.
+- Eat directly from the pot.
 ---
 
 ## Ingredients

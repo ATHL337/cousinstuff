@@ -1,18 +1,36 @@
 ---
-title: "Brahmin Fries"
-slug: "brahmin-fries"
-slot: 17
-subtitle: "Loaded starch ration • Crisped, topped, indulgent"
-date: 2026-01-10
-servings: 6
-prepTime: "15 min"
-totalTime: "45 min"
+title: Brahmin Fries
+slug: brahmin-fries
+date: '2026-01-10'
 tags:
-  - side
-  - potatoes
-  - crispy
-  - comfort
-  - specialty
+- side
+- potatoes
+- crispy
+- comfort
+- specialty
+images:
+- /img/og/recipes/brahmin-fries.png
+image: /img/recipes/brahmin-fries.png
+servings: 6
+prepTime: PT15M
+cookTime: PT30M
+totalTime: PT45M
+slot: 17
+subtitle: Loaded starch ration • Crisped, topped, indulgent
+recipeIngredient:
+- Russet potatoes, cut into wedges
+- Olive oil
+- Salt
+- Shredded cheese
+- Cooked bacon or beef crumbles
+- Sour cream
+- Green onions
+recipeInstructions:
+- Toss potatoes with oil and salt.
+- Roast at 425°F until crispy.
+- Add cheese and protein.
+- Return to oven until melted.
+- Top with sour cream and onions.
 ---
 
 ## Ingredients

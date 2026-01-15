@@ -1,18 +1,37 @@
 ---
-title: "Nuka-Cola Glazed Chicken"
-slug: "nuka-cola-glazed-chicken"
-slot: 15
-subtitle: "Carbonated sugar-acid glaze • Sticky, savory, high-impact"
-date: 2026-01-10
-servings: 6
-prepTime: "10 min"
-totalTime: "35 min"
+title: Nuka-Cola Glazed Chicken
+slug: nuka-cola-glazed-chicken
+date: '2026-01-10'
 tags:
-  - chicken
-  - sweet
-  - savory
-  - skillet
-  - specialty
+- chicken
+- sweet
+- savory
+- skillet
+- specialty
+images:
+- /img/og/recipes/nuka-cola-glazed-chicken.png
+image: /img/recipes/nuka-cola-glazed-chicken.png
+servings: 6
+prepTime: PT10M
+cookTime: PT25M
+totalTime: PT35M
+slot: 15
+subtitle: Carbonated sugar-acid glaze • Sticky, savory, high-impact
+recipeIngredient:
+- Boneless chicken thighs or breasts
+- Salt
+- Black pepper
+- VT-12 Nuka-Cola BBQ Sauce
+- Soy sauce
+- Garlic, minced
+- Ginger, grated
+recipeInstructions:
+- Season chicken.
+- Sear in skillet until browned on both sides.
+- Add BBQ sauce, soy, garlic, and ginger.
+- Reduce heat and simmer until sticky.
+- Spoon glaze over chicken repeatedly.
+- Remove when internal temp reaches 165°F.
 ---
 
 ## Ingredients

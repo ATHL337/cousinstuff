@@ -1,18 +1,35 @@
 ---
-title: "Campfire Nachos"
-slug: "campfire-nachos"
-slot: 31
-subtitle: "Late-night snack module • Melty, chaotic, shareable"
-date: 2026-01-10
-servings: 4
-prepTime: "5 min"
-totalTime: "15 min"
+title: Campfire Nachos
+slug: campfire-nachos
+date: '2026-01-10'
 tags:
-  - snack
-  - cheesy
-  - party
-  - wildcard
-  - quick
+- snack
+- cheesy
+- party
+- wildcard
+- quick
+images:
+- /img/og/recipes/campfire-nachos.png
+image: /img/recipes/campfire-nachos.png
+servings: 4
+prepTime: PT5M
+cookTime: PT10M
+totalTime: PT15M
+slot: 31
+subtitle: Late-night snack module • Melty, chaotic, shareable
+recipeIngredient:
+- Tortilla chips
+- Shredded cheddar or Mexican-blend cheese
+- Jalapeños
+- Black beans
+- Salsa
+- Sour cream
+- Green onions
+recipeInstructions:
+- Spread chips on a foil-lined pan.
+- Sprinkle cheese and toppings.
+- Bake at 400°F until cheese is fully melted.
+- Add cold toppings like sour cream and salsa.
 ---
 
 ## Ingredients

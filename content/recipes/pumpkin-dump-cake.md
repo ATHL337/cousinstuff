@@ -1,18 +1,40 @@
 ---
-title: "Pumpkin Dump Cake"
-slug: "pumpkin-dump-cake"
-slot: 6
-subtitle: "Sugar-ration dessert • Minimal labor, maximum comfort"
-date: 2026-01-10
-servings: 10
-prepTime: "10 min"
-totalTime: "60 min"
+title: Pumpkin Dump Cake
+slug: pumpkin-dump-cake
+date: '2026-01-10'
 tags:
-  - dessert
-  - pumpkin
-  - holiday
-  - baking
-  - comfort
+- dessert
+- pumpkin
+- holiday
+- baking
+- comfort
+images:
+- /img/og/recipes/pumpkin-dump-cake.png
+image: /img/recipes/pumpkin-dump-cake.png
+servings: 10
+prepTime: PT10M
+cookTime: PT50M
+totalTime: PT1H
+slot: 6
+subtitle: Sugar-ration dessert • Minimal labor, maximum comfort
+recipeIngredient:
+- Canned pumpkin purée
+- Evaporated milk
+- Eggs
+- Sugar
+- Yellow cake mix
+- Cinnamon
+- Nutmeg
+- Butter, sliced thin
+recipeInstructions:
+- Preheat oven to 350°F.
+- Grease a 9×13 pan.
+- Whisk pumpkin, milk, eggs, and sugar.
+- Pour into pan.
+- Sprinkle cake mix evenly on top.
+- Dust with cinnamon and nutmeg.
+- Place butter slices across entire surface.
+- Bake uncovered until golden and set.
 ---
 
 ## Ingredients

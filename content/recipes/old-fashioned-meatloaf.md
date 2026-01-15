@@ -1,18 +1,40 @@
 ---
-title: "Old-Fashioned Meatloaf"
-slug: "old-fashioned-meatloaf"
-slot: 22
-subtitle: "Pre-war dinner staple • Savory, glazed, dependable"
-date: 2026-01-10
-servings: 6
-prepTime: "15 min"
-totalTime: "1 hr"
+title: Old-Fashioned Meatloaf
+slug: old-fashioned-meatloaf
+date: '2026-01-10'
 tags:
-  - beef
-  - comfort
-  - legacy
-  - baked
-  - family
+- beef
+- comfort
+- legacy
+- baked
+- family
+images:
+- /img/og/recipes/old-fashioned-meatloaf.png
+image: /img/recipes/old-fashioned-meatloaf.png
+servings: 6
+prepTime: PT15M
+cookTime: PT45M
+totalTime: PT1H
+slot: 22
+subtitle: Pre-war dinner staple • Savory, glazed, dependable
+recipeIngredient:
+- Ground beef
+- Breadcrumbs
+- Egg
+- Onion, minced
+- Milk
+- Ketchup
+- Brown sugar
+- Worcestershire sauce
+- Salt
+- Black pepper
+- Garlic powder
+recipeInstructions:
+- Combine all loaf ingredients in a bowl.
+- Do not overwork.
+- Form into a loaf in a baking dish.
+- Mix glaze ingredients and spread on top.
+- Bake at 350°F until cooked through.
 ---
 
 ## Ingredients

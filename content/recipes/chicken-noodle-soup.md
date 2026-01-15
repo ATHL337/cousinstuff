@@ -1,18 +1,40 @@
 ---
-title: "Chicken Noodle Soup"
-slug: "chicken-noodle-soup"
-slot: 8
-subtitle: "Medical-wing comfort ration • Gentle, warming, morale-safe"
-date: 2026-01-10
-servings: 6
-prepTime: "15 min"
-totalTime: "45 min"
+title: Chicken Noodle Soup
+slug: chicken-noodle-soup
+date: '2026-01-10'
 tags:
-  - soup
-  - comfort
-  - chicken
-  - weeknight
-  - recovery
+- soup
+- comfort
+- chicken
+- weeknight
+- recovery
+images:
+- /img/og/recipes/chicken-noodle-soup.png
+image: /img/recipes/chicken-noodle-soup.png
+servings: 6
+prepTime: PT15M
+cookTime: PT30M
+totalTime: PT45M
+slot: 8
+subtitle: Medical-wing comfort ration • Gentle, warming, morale-safe
+recipeIngredient:
+- 6 cups VT-07 Chicken Broth
+- 2 cups cooked chicken, shredded
+- Egg noodles
+- Carrots, sliced
+- Celery, sliced
+- Onion, diced
+- Salt
+- Black pepper
+- Dried thyme or parsley
+recipeInstructions:
+- In a pot, sauté carrots, celery, and onion until soft.
+- Add broth and bring to a simmer.
+- Add noodles and cook until tender.
+- Stir in chicken.
+- Simmer 5 minutes.
+- Adjust salt and pepper.
+- Serve hot.
 ---
 
 ## Ingredients

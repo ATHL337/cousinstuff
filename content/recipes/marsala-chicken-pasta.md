@@ -1,18 +1,45 @@
 ---
-title: "Marsala Chicken Pasta"
-slug: "marsala-chicken-pasta"
-slot: 3
-subtitle: "Cream-forward comfort ration • Rich, savory, weeknight-safe"
-date: 2026-01-10
-servings: 6
-prepTime: "15 min"
-totalTime: "60 min"
+title: Marsala Chicken Pasta
+slug: marsala-chicken-pasta
+date: '2026-01-10'
 tags:
-  - chicken
-  - pasta
-  - creamy
-  - comfort
-  - weeknight
+- chicken
+- pasta
+- creamy
+- comfort
+- weeknight
+images:
+- /img/og/recipes/marsala-chicken-pasta.png
+image: /img/recipes/marsala-chicken-pasta.png
+servings: 6
+prepTime: PT15M
+cookTime: PT45M
+totalTime: PT1H
+slot: 3
+subtitle: Cream-forward comfort ration • Rich, savory, weeknight-safe
+recipeIngredient:
+- Chicken breasts, pounded thin
+- Pasta (penne or fettuccine)
+- Mushrooms, sliced
+- Shallots, diced
+- Garlic, minced
+- Heavy cream
+- Chicken broth
+- Salt
+- Black pepper
+- Italian seasoning
+- Parmesan cheese
+- Fresh parsley (optional)
+recipeInstructions:
+- Pat chicken dry and season with salt and pepper.
+- Sear in butter or oil until golden; remove and rest.
+- Sauté mushrooms, shallots, and garlic.
+- Deglaze with Marsala wine.
+- Add broth and cream; simmer until thickened.
+- Slice chicken and return to sauce.
+- Add cooked pasta and toss to coat.
+- Stir in Parmesan.
+- Garnish with parsley.
 ---
 
 ## Ingredients

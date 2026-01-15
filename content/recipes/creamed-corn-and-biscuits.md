@@ -1,18 +1,37 @@
 ---
-title: "Creamed Corn & Biscuits"
-slug: "creamed-corn-and-biscuits"
-slot: 25
-subtitle: "Depression-era comfort ration • Simple, filling, warm"
-date: 2026-01-10
-servings: 6
-prepTime: "10 min"
-totalTime: "30 min"
+title: Creamed Corn & Biscuits
+slug: creamed-corn-and-biscuits
+date: '2026-01-10'
 tags:
-  - comfort
-  - legacy
-  - side
-  - family
-  - quick
+- comfort
+- legacy
+- side
+- family
+- quick
+images:
+- /img/og/recipes/creamed-corn-and-biscuits.png
+image: /img/recipes/creamed-corn-and-biscuits.png
+servings: 6
+prepTime: PT10M
+cookTime: PT20M
+totalTime: PT30M
+slot: 25
+subtitle: Depression-era comfort ration • Simple, filling, warm
+recipeIngredient:
+- Canned or frozen corn
+- Butter
+- Milk or cream
+- Sugar (optional)
+- Salt
+- Black pepper
+- Store-bought or homemade biscuits
+recipeInstructions:
+- Melt butter in saucepan.
+- Add corn and milk.
+- Simmer until thickened.
+- Season lightly.
+- Prepare according to package or recipe.
+- Spoon corn over split biscuits if desired.
 ---
 
 ## Ingredients

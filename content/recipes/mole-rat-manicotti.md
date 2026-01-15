@@ -1,18 +1,41 @@
 ---
-title: "Mole Rat Manicotti"
-slug: "mole-rat-manicotti"
-slot: 11
-subtitle: "Experimental protein module • Baked, rich, high-output"
-date: 2026-01-10
-servings: 6
-prepTime: "25 min"
-totalTime: "75 min"
+title: Mole Rat Manicotti
+slug: mole-rat-manicotti
+date: '2026-01-10'
 tags:
-  - pasta
-  - baked
-  - comfort
-  - italian
-  - experimental
+- pasta
+- baked
+- comfort
+- italian
+- experimental
+images:
+- /img/og/recipes/mole-rat-manicotti.png
+image: /img/recipes/mole-rat-manicotti.png
+servings: 6
+prepTime: PT25M
+cookTime: PT50M
+totalTime: PT1H15M
+slot: 11
+subtitle: Experimental protein module • Baked, rich, high-output
+recipeIngredient:
+- Manicotti shells
+- Ground beef or sausage
+- Ricotta cheese
+- Mozzarella cheese
+- Egg
+- Marinara sauce
+- Italian seasoning
+- Garlic powder
+- Salt
+- Black pepper
+recipeInstructions:
+- Mix meat, ricotta, egg, seasoning, salt, and pepper.
+- Fill manicotti with mixture.
+- Spread sauce in baking dish.
+- Arrange stuffed shells.
+- Cover with more sauce and mozzarella.
+- Cover with foil.
+- Bake until bubbly and cooked through.
 ---
 
 ## Ingredients

@@ -1,18 +1,38 @@
 ---
-title: "Baked Ziti"
-slug: "baked-ziti"
-slot: 23
-subtitle: "Crowd-sized ration • Cheesy, layered, event-safe"
-date: 2026-01-10
-servings: 8
-prepTime: "20 min"
-totalTime: "1 hr"
+title: Baked Ziti
+slug: baked-ziti
+date: '2026-01-10'
 tags:
-  - pasta
-  - baked
-  - comfort
-  - legacy
-  - italian
+- pasta
+- baked
+- comfort
+- legacy
+- italian
+images:
+- /img/og/recipes/baked-ziti.png
+image: /img/recipes/baked-ziti.png
+servings: 8
+prepTime: PT20M
+cookTime: PT40M
+totalTime: PT1H
+slot: 23
+subtitle: Crowd-sized ration • Cheesy, layered, event-safe
+recipeIngredient:
+- Ziti or penne pasta
+- Marinara sauce
+- Ricotta cheese
+- Mozzarella cheese
+- Parmesan cheese
+- Italian sausage or ground beef
+- Italian seasoning
+- Salt
+- Black pepper
+recipeInstructions:
+- Boil pasta until just al dente.
+- Drain.
+- Layer pasta, sauce, ricotta, and mozzarella.
+- Cover with foil and bake at 350°F.
+- Remove foil and bake until bubbly and browned.
 ---
 
 ## Ingredients

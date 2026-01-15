@@ -1,18 +1,36 @@
 ---
-title: "Nuka-Cola BBQ Sauce"
-slug: "nuka-cola-bbq-sauce"
-slot: 12
-subtitle: "Carbonated glaze module • Sweet, tangy, reactive"
-date: 2026-01-10
-servings: 12
-prepTime: "5 min"
-totalTime: "25 min"
+title: Nuka-Cola BBQ Sauce
+slug: nuka-cola-bbq-sauce
+date: '2026-01-10'
 tags:
-  - sauce
-  - bbq
-  - sweet
-  - smoky
-  - condiment
+- sauce
+- bbq
+- sweet
+- smoky
+- condiment
+images:
+- /img/og/recipes/nuka-cola-bbq-sauce.png
+image: /img/recipes/nuka-cola-bbq-sauce.png
+servings: 12
+prepTime: PT5M
+cookTime: PT20M
+totalTime: PT25M
+slot: 12
+subtitle: Carbonated glaze module • Sweet, tangy, reactive
+recipeIngredient:
+- Cola (regular, not diet)
+- Ketchup
+- Brown sugar
+- Apple cider vinegar
+- Smoked paprika
+- Garlic powder
+- Onion powder
+- Black pepper
+recipeInstructions:
+- Add all ingredients to saucepan.
+- Bring to low boil, then reduce heat.
+- Simmer until thickened.
+- Remove from heat and cool before storing.
 ---
 
 ## Ingredients

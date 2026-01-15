@@ -1,18 +1,37 @@
 ---
-title: "Dirty Wastelander Milkshake"
-slug: "dirty-wastelander-milkshake"
-slot: 32
-subtitle: "Sugar-fueled chaos beverage • Sweet, spiked, legendary"
-date: 2026-01-10
-servings: 2
-prepTime: "5 min"
-totalTime: "5 min"
+title: Dirty Wastelander Milkshake
+slug: dirty-wastelander-milkshake
+date: '2026-01-10'
 tags:
-  - drink
-  - dessert
-  - fun
-  - wildcard
-  - party
+- drink
+- dessert
+- fun
+- wildcard
+- party
+images:
+- /img/og/recipes/dirty-wastelander-milkshake.png
+image: /img/recipes/dirty-wastelander-milkshake.png
+servings: 2
+prepTime: PT5M
+cookTime: PT0M
+totalTime: PT5M
+slot: 32
+subtitle: Sugar-fueled chaos beverage • Sweet, spiked, legendary
+recipeIngredient:
+- Vanilla ice cream
+- Milk
+- Chocolate syrup
+- Root beer schnapps
+- Irish cream
+- Vanilla vodka
+- Whipped cream
+- Sprinkles
+- Maraschino cherries
+recipeInstructions:
+- Add all ingredients to blender.
+- Blend until smooth.
+- Pour into tall glasses.
+- Top generously.
 ---
 
 ## Ingredients

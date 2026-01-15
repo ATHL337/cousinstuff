@@ -1,41 +1,75 @@
 ---
-title: "Cowboy Caviar"
-slug: "cowboy-caviar"
-date: 2026-01-10
-description: "Potluck-grade ration—bright, fresh, and morale-boosting. Great as a dip, side, or taco filler."
-tags: ["Vegetarian", "Side", "Party", "Fresh", "Mexican"]
-
-slot: null
-category: "Sides & Add-Ons"
-subtitle: "Potluck-grade ration • Bright, fresh, morale-boosting"
-
+title: Cowboy Caviar
+slug: cowboy-caviar
+date: '2026-01-14'
+description: Bright, fresh bean-and-veg dip/salad. Rotated out of VT-04 to make room
+  for a higher-protein main, but still a strong party side.
+tags:
+- Vegetarian
+- Side
+- Party
+- Fresh
+- Beans
 images:
-  - "/img/og/recipes/cowboy-caviar.png"
-image: "/img/recipes/cowboy-caviar.png"
-
+- /img/og/recipes/cowboy-caviar.png
+image: /img/recipes/cowboy-caviar.png
 servings: 8
-prepTime: "PT15M"
-cookTime: "PT0M"
-totalTime: "PT25M"
-
+prepTime: PT15M
+cookTime: PT0M
+totalTime: PT15M
+archived: true
 recipeIngredient:
-  - "Black beans, drained and rinsed"
-  - "Diced tomatoes"
-  - "Corn"
-  - "Red onion, finely diced"
-  - "Bell pepper, diced"
-  - "Jalapeño, minced (optional)"
-  - "Olive oil"
-  - "Red wine vinegar or lime juice"
-  - "Salt"
-  - "Black pepper"
-  - "Fresh cilantro, chopped"
-
+- Beans (black/black-eyed peas)
+- Corn
+- Tomato
+- Onion
+- Pepper
+- Cilantro (optional)
+- Lime
+- Olive oil
+- Salt and pepper
 recipeInstructions:
-  - "Combine: Mix beans, tomatoes, corn, onion, bell pepper, and jalapeño (if using) in a bowl."
-  - "Dress: Whisk olive oil with vinegar or lime juice, salt, and pepper; pour over and toss."
-  - "Rest: Chill 10–15 minutes before serving for best flavor."
+- Mix all ingredients.
+- Chill 10 minutes if possible.
+- Serve as dip or side.
+---
+
+## Ingredients
+
+### Core
+- Beans (black or black-eyed peas)
+- Corn
+- Tomato
+- Onion
+- Pepper
+
+### Dressing
+- Lime
+- Olive oil
+- Salt and pepper
+
+### Optional
+- Cilantro
 
 ---
+
+## Instructions
+
+### Mix
+- Combine everything
+
+### Chill
+- Optional: 10 min
+
+### Serve
+- Dip or side
+
+---
+
 ## Overseer’s Notes
-- Add avocado just before serving for extra richness.
+- Excellent party side, but not a main.
+- Add extra protein if you ever rotate it back in.
+
+## Timeline (≈ 15 min total)
+- Prep: 15 min  
+---

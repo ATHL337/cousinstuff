@@ -1,18 +1,40 @@
 ---
-title: "Chocolate Chip Cookies"
-slug: "chocolate-chip-cookies"
-slot: 26
-subtitle: "Morale-boosting sweet ration • Soft centers, crisp edges"
-date: 2026-01-10
-servings: 24
-prepTime: "15 min"
-totalTime: "30 min"
+title: Chocolate Chip Cookies
+slug: chocolate-chip-cookies
+date: '2026-01-10'
 tags:
-  - dessert
-  - cookies
-  - baked
-  - comfort
-  - kid-friendly
+- dessert
+- cookies
+- baked
+- comfort
+- kid-friendly
+images:
+- /img/og/recipes/chocolate-chip-cookies.png
+image: /img/recipes/chocolate-chip-cookies.png
+servings: 24
+prepTime: PT15M
+cookTime: PT15M
+totalTime: PT30M
+slot: 26
+subtitle: Morale-boosting sweet ration • Soft centers, crisp edges
+recipeIngredient:
+- All-purpose flour
+- Baking soda
+- Salt
+- Unsalted butter, softened
+- Brown sugar
+- White sugar
+- Eggs
+- Vanilla extract
+- Chocolate chips
+recipeInstructions:
+- Whisk flour, baking soda, and salt.
+- Beat butter and sugars until fluffy.
+- Add eggs and vanilla.
+- Gradually add dry ingredients.
+- Fold in chocolate chips.
+- Scoop onto lined baking sheets.
+- Bake at 350°F until edges are golden.
 ---
 
 ## Ingredients

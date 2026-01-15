@@ -1,18 +1,48 @@
 ---
-title: "Celebration Sheet Cake"
-slug: "celebration-sheet-cake"
-slot: 30
-subtitle: "Event-grade morale ration • Soft crumb, thick frosting, crowd-safe"
-date: 2026-01-10
-servings: 20
-prepTime: "20 min"
-totalTime: "55 min"
+title: Celebration Sheet Cake
+slug: celebration-sheet-cake
+date: '2026-01-10'
 tags:
-  - dessert
-  - cake
-  - party
-  - baked
-  - comfort
+- dessert
+- cake
+- party
+- baked
+- comfort
+images:
+- /img/og/recipes/celebration-sheet-cake.png
+image: /img/recipes/celebration-sheet-cake.png
+servings: 20
+prepTime: PT20M
+cookTime: PT35M
+totalTime: PT55M
+slot: 30
+subtitle: Event-grade morale ration • Soft crumb, thick frosting, crowd-safe
+recipeIngredient:
+- All-purpose flour
+- Granulated sugar
+- Baking powder
+- Baking soda
+- Salt
+- Eggs
+- Milk
+- Vegetable oil
+- Vanilla extract
+- Unsalted butter, softened
+- Powdered sugar
+- Heavy cream or milk
+- Sprinkles
+- Chocolate shavings
+- Fresh berries
+recipeInstructions:
+- Whisk dry ingredients in a large bowl.
+- Add eggs, milk, oil, and vanilla.
+- Mix until smooth.
+- Pour into a greased sheet pan.
+- Bake at 350°F until a toothpick comes out clean.
+- Beat butter until fluffy.
+- Gradually add powdered sugar and cream.
+- Spread generously once cake cools.
+- Add toppings if desired.
 ---
 
 ## Ingredients

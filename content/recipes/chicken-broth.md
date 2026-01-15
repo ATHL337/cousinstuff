@@ -1,40 +1,78 @@
 ---
-title: "Chicken Broth"
-slug: "chicken-broth"
-date: 2026-01-10
-description: "Infirmary-grade hydration ration—clear, restorative, and foundational for multiple Vault meals."
-tags: ["Soup", "Base", "Comfort", "Chicken", "Meal Prep"]
-
-slot: null
-category: "Foundations"
-subtitle: "Infirmary-grade hydration ration • Clear, restorative, foundational"
-
+title: Chicken Broth
+slug: chicken-broth
+date: '2026-01-14'
+description: Clear, restorative chicken broth for soups, rice, and ‘medical wing’
+  comfort. Archived from the Vault rotation.
+tags:
+- Soup
+- Base
+- Chicken
+- Meal Prep
+- Comfort
 images:
-  - "/img/og/recipes/chicken-broth.png"
-image: "/img/recipes/chicken-broth.png"
-
+- /img/og/recipes/chicken-broth.png
+image: /img/recipes/chicken-broth.png
 servings: 8
-prepTime: "PT10M"
-cookTime: "PT1H50M"
-totalTime: "PT2H"
-
+prepTime: PT10M
+cookTime: PT120M
+totalTime: PT130M
+archived: true
 recipeIngredient:
-  - "2–3 lb chicken bones, wings, or carcasses"
-  - "10 cups water"
-  - "1 onion, quartered"
-  - "2 carrots, chopped"
-  - "2 celery stalks, chopped"
-  - "4 cloves garlic, smashed"
-  - "1 bay leaf"
-  - "1 tsp black peppercorns"
-  - "Salt, to taste"
-
+- Chicken (bones/carcass or thighs)
+- Onion
+- Carrots
+- Celery
+- Garlic
+- Bay leaf
+- Salt and pepper
 recipeInstructions:
-  - "Load Reactor: Add all ingredients to a large stockpot and cover with water."
-  - "Simmer: Bring to a gentle boil, reduce to low, and simmer uncovered 1 1/2–2 hours."
-  - "Strain: Remove solids and strain liquid through a fine mesh."
-  - "Cool & Store: Cool, then refrigerate up to 5 days or freeze up to 3 months."
+- Add chicken + aromatics to pot and cover with water.
+- Bring to a gentle simmer; skim if needed.
+- Simmer 90–120 minutes.
+- Strain; season to taste.
+- Cool and store.
+---
+
+## Ingredients
+
+### Core
+- Chicken (bones/carcass or thighs)
+- Onion
+- Carrots
+- Celery
+- Garlic
+- Bay leaf
+
+### Seasoning
+- Salt
+- Pepper
 
 ---
+
+## Instructions
+
+### Simmer
+- Cover ingredients with water
+- Bring to gentle simmer
+
+### Cook
+- Simmer 90–120 min
+
+### Strain
+- Strain and season
+
+### Store
+- Cool quickly
+- Refrigerate or freeze
+
+---
+
 ## Overseer’s Notes
-- Freeze in 1-cup portions for fast deployment.
+- Freeze in 2-cup portions for fast deployments.
+- Great base for VT soups.
+
+## Timeline (≈ 2 hr 10 min total)
+- Prep: 10 min  
+- Simmer: 120 min  
+---

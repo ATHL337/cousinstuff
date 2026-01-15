@@ -1,18 +1,41 @@
 ---
-title: "Chicken and Dumplings"
-slug: "chicken-and-dumplings"
-slot: 21
-subtitle: "Cold-weather comfort ration • Soft, rich, and timeless"
-date: 2026-01-10
-servings: 6
-prepTime: "20 min"
-totalTime: "1 hr"
+title: Chicken and Dumplings
+slug: chicken-and-dumplings
+date: '2026-01-10'
 tags:
-  - chicken
-  - comfort
-  - legacy
-  - stew
-  - family
+- chicken
+- comfort
+- legacy
+- stew
+- family
+images:
+- /img/og/recipes/chicken-and-dumplings.png
+image: /img/recipes/chicken-and-dumplings.png
+servings: 6
+prepTime: PT20M
+cookTime: PT40M
+totalTime: PT1H
+slot: 21
+subtitle: Cold-weather comfort ration • Soft, rich, and timeless
+recipeIngredient:
+- Cooked chicken, shredded
+- Chicken broth
+- Milk
+- Butter
+- All-purpose flour
+- Carrots, sliced
+- Celery, sliced
+- Onion, diced
+- Salt
+- Black pepper
+- Dried thyme
+recipeInstructions:
+- Sauté vegetables in butter until softened.
+- Add broth and bring to a simmer.
+- Stir in shredded chicken.
+- Mix flour, milk, salt, and pepper into a thick batter.
+- Drop spoonfuls of dough into simmering broth.
+- Cover and cook until dumplings puff and set.
 ---
 
 ## Ingredients
