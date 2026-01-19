@@ -15,7 +15,7 @@ servings: 12
 prepTime: PT5M
 cookTime: PT20M
 totalTime: PT25M
-slot: 12
+slot: null
 subtitle: Carbonated glaze module • Sweet, tangy, reactive
 recipeIngredient:
 - Cola (regular, not diet)
