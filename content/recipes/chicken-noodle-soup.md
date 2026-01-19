@@ -15,7 +15,7 @@ servings: 6
 prepTime: PT15M
 cookTime: PT30M
 totalTime: PT45M
-slot: 8
+slot: null
 subtitle: Medical-wing comfort ration • Gentle, warming, morale-safe
 recipeIngredient:
 - 6 cups VT-07 Chicken Broth
