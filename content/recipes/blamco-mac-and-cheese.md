@@ -15,7 +15,7 @@ servings: 6
 prepTime: PT10M
 cookTime: PT20M
 totalTime: PT30M
-slot: 9
+slot: null
 subtitle: Pre-war morale ration • Creamy, nostalgic, kid-approved
 recipeIngredient:
 - Elbow macaroni
