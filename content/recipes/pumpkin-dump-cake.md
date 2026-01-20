@@ -15,7 +15,7 @@ servings: 10
 prepTime: PT10M
 cookTime: PT50M
 totalTime: PT1H
-slot: 6
+slot: null
 subtitle: Sugar-ration dessert • Minimal labor, maximum comfort
 recipeIngredient:
 - Canned pumpkin purée

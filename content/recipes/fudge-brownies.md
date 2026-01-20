@@ -15,7 +15,7 @@ servings: 12
 prepTime: PT15M
 cookTime: PT25M
 totalTime: PT40M
-slot: 28
+slot: null
 subtitle: High-density morale ration • Deep cocoa, soft centers
 recipeIngredient:
 - Unsalted butter

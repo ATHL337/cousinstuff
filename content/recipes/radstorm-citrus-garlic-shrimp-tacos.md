@@ -19,7 +19,7 @@ servings: 6
 prepTime: "PT15M"
 cookTime: "PT10M"
 totalTime: "PT25M"
-slot: 9
+slot: 6
 category: "Dockside Rations"
 recipeIngredient:
   - "1020 g raw shrimp, peeled + deveined (2.25 lb)"

@@ -15,7 +15,7 @@ servings: 20
 prepTime: PT20M
 cookTime: PT35M
 totalTime: PT55M
-slot: 30
+slot: null
 subtitle: Event-grade morale ration • Soft crumb, thick frosting, crowd-safe
 recipeIngredient:
 - All-purpose flour

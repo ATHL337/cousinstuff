@@ -15,7 +15,7 @@ servings: 24
 prepTime: PT15M
 cookTime: PT15M
 totalTime: PT30M
-slot: 26
+slot: null
 subtitle: Morale-boosting sweet ration • Soft centers, crisp edges
 recipeIngredient:
 - All-purpose flour

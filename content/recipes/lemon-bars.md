@@ -15,7 +15,7 @@ servings: 12
 prepTime: PT20M
 cookTime: PT35M
 totalTime: PT55M
-slot: 27
+slot: null
 subtitle: Bright citrus ration • Tangy, powdered, celebration-safe
 recipeIngredient:
 - All-purpose flour
