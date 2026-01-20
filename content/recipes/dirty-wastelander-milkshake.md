@@ -15,7 +15,7 @@ servings: 2
 prepTime: PT5M
 cookTime: PT0M
 totalTime: PT5M
-slot: 32
+slot: null
 subtitle: Sugar-fueled chaos beverage • Sweet, spiked, legendary
 recipeIngredient:
 - Vanilla ice cream

@@ -1,6 +1,6 @@
 ---
 title: Cajun Shrimp & Sausage Pasta
-slug: vt33-vault-cajun-shrimp-sausage-reactor-pasta
+slug: cajun-shrimp-sausage-reactor-pasta
 date: '2025-11-12'
 tags:
 - pasta
@@ -13,7 +13,7 @@ servings: 6
 prepTime: PT10M
 cookTime: PT30M
 totalTime: PT40M
-slot: 1
+slot: null
 subtitle: Reactor-Class Ration • High-output Cajun cream sauce
 recipeIngredient:
 - 1 lb shrimp, peeled & deveined

@@ -15,7 +15,7 @@ servings: 6
 prepTime: PT25M
 cookTime: PT50M
 totalTime: PT1H15M
-slot: 11
+slot: null
 subtitle: Experimental protein module • Baked, rich, high-output
 recipeIngredient:
 - Manicotti shells

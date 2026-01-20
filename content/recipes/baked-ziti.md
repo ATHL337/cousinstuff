@@ -15,7 +15,7 @@ servings: 8
 prepTime: PT20M
 cookTime: PT40M
 totalTime: PT1H
-slot: 23
+slot: null
 subtitle: Crowd-sized ration • Cheesy, layered, event-safe
 recipeIngredient:
 - Ziti or penne pasta

@@ -15,7 +15,7 @@ servings: 6
 prepTime: PT15M
 cookTime: PT45M
 totalTime: PT1H
-slot: 3
+slot: null
 subtitle: Cream-forward comfort ration • Rich, savory, weeknight-safe
 recipeIngredient:
 - Chicken breasts, pounded thin

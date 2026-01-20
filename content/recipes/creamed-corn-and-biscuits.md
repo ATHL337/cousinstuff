@@ -15,7 +15,7 @@ servings: 6
 prepTime: PT10M
 cookTime: PT20M
 totalTime: PT30M
-slot: 25
+slot: null
 subtitle: Depression-era comfort ration • Simple, filling, warm
 recipeIngredient:
 - Canned or frozen corn
