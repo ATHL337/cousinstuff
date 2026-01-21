@@ -4,6 +4,7 @@
       <div>
         <h1 class="sr-only">{{ .Title }}</h1>
         {{ partial "vault_placard.html" . }}
+		{{ partial "rads-badge.html" . }}
 
         <div class="meta">
           {{ with .Params.servings }}<span>{{ . }} servings</span>{{ end }}

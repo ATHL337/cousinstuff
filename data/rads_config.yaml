@@ -1,0 +1,25 @@
+model: "family_first_weighted"
+
+weights:
+  you: 1.2
+  spouse: 1.2
+  k1: 1.0
+  k2: 1.0
+  k3: 1.0
+  k4: 1.0
+
+# Optional: keep the canonical vote values here for reference
+scale:
+  hate: -10
+  like: 5
+  love: 15
+
+defaults:
+  unrated_score: 0
+  tier_unrated: "Unscored"
+
+tiers:
+  core_lock: 70
+  core_candidate: 45
+  specialty: 25
+  wildcard: 0

@@ -1,0 +1,25 @@
+{{- $recipes := where site.RegularPages "Section" "recipes" -}}
+{{- $rows := slice -}}
+
+{{- range $recipes -}}
+  {{- $slug := .Params.slug -}}
+  {{- if $slug -}}
+    {{- $r := partial "rads-score.html" (dict "slug" $slug) -}}
+    {{- $rows = $rows | append (dict "page" . "score" $r.score "tier" $r.tier "isRated" $r.isRated) -}}
+  {{- end -}}
+{{- end -}}
+
+{{- return (sort $rows "score" "desc") -}}
+{{- $rows := partial "recipes-with-rads.html" . -}}
+{{- range $rows -}}
+  {{- $p := .page -}}
+  <article class="recipe-card">
+    <h2><a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a></h2>
+    {{- /* show the badge */ -}}
+    {{- $tierClass := lower (replace .tier " " "-") -}}
+    <div class="recipe-meta">
+      <span class="rads-mini rads-tier-{{ $tierClass }}">{{ printf "%.0f" .score }} • {{ .tier }}</span>
+      {{- with $p.Params.slot -}}<span class="rads-chip">Slot {{ . }}</span>{{- end -}}
+    </div>
+  </article>
+{{- end -}}

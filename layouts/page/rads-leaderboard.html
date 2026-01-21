@@ -1,0 +1,36 @@
+{{ define "main" }}
+<h1>Vault RADS Leaderboard</h1>
+
+{{- $recipes := where site.RegularPages "Section" "recipes" -}}
+{{- $rows := slice -}}
+
+{{- range $recipes -}}
+  {{- $slug := .Params.slug -}}
+  {{- if $slug -}}
+    {{- $r := partial "rads-score.html" (dict "slug" $slug) -}}
+    {{- $rows = $rows | append (dict "page" . "score" $r.score "tier" $r.tier "isRated" $r.isRated) -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $sorted := sort $rows "score" "desc" -}}
+
+<div class="rads-leaderboard">
+  {{- range $sorted -}}
+    <div class="rads-row">
+      <div class="rads-row-title">
+        <a href="{{ .page.RelPermalink }}">{{ .page.Title }}</a>
+        {{- $tierClass := lower (replace .tier " " "-") -}}
+        <span class="rads-mini rads-tier-{{ $tierClass }}">
+          {{ printf "%.0f" .score }} • {{ .tier }}
+          {{- if not .isRated -}} • Unscored{{- end -}}
+        </span>
+      </div>
+
+      <div class="rads-row-meta">
+        {{- with .page.Params.slot -}}<span class="rads-chip">Slot {{ . }}</span>{{- end -}}
+        {{- with .page.Params.category -}}<span class="rads-chip">{{ . }}</span>{{- end -}}
+      </div>
+    </div>
+  {{- end -}}
+</div>
+{{ end }}

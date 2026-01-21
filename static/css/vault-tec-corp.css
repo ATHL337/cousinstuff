@@ -775,3 +775,54 @@ body.vt-has-bottombar{ padding-bottom:0; }
 @media (max-width: 720px){
   .vt-util{ display:none !important; }
 }
+/* ================================
+   RADS — Recipe Approval & Demand System
+   ================================ */
+.rads-badge {
+  display: inline-flex;
+  gap: .5rem;
+  align-items: center;
+  padding: .35rem .6rem;
+  border: 1px solid rgba(0,0,0,.25);
+  border-radius: 999px;
+  font-size: .85rem;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+.rads-label { opacity: .8; }
+.rads-score { font-weight: 700; }
+.rads-tier  { opacity: .9; }
+
+.rads-mini {
+  display: inline-flex;
+  gap: .4rem;
+  align-items: center;
+  padding: .2rem .5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,.25);
+  font-size: .75rem;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+.rads-chip {
+  display: inline-flex;
+  padding: .2rem .5rem;
+  border-radius: 999px;
+  border: 1px dashed rgba(0,0,0,.35);
+  font-size: .75rem;
+  opacity: .9;
+}
+
+.rads-tier-core-lock { font-weight: 800; }
+.rads-tier-core-candidate { font-weight: 700; }
+.rads-tier-specialty { font-weight: 600; }
+.rads-tier-wildcard { opacity: .85; }
+.rads-tier-unscored { opacity: .75; }
+
+.rads-leaderboard { display: grid; gap: .75rem; }
+.rads-row { padding: .75rem; border: 1px solid rgba(0,0,0,.2); border-radius: 14px; }
+.rads-row-title { display: flex; gap: .75rem; flex-wrap: wrap; align-items: baseline; }
+.rads-row-meta { display: flex; gap: .5rem; flex-wrap: wrap; margin-top: .35rem; opacity: .95; }
