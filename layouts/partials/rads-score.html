@@ -1,73 +1,79 @@
-{{- /* layouts/partials/rads-score.html */ -}}
-{{- $page := . -}}
+{{/* layouts/partials/rads-score.html
+   Returns a dict: {score, tier, label, votes, slug}
+   NOTE: This partial must RETURN a dict (not HTML) so callers can use $r.tier, $r.score, etc.
+*/}}
 
-{{- /* Identify the recipe key used in /data/rads_votes.yaml */ -}}
-{{- $key := "" -}}
-{{- if $page.Params.slug -}}
-  {{- $key = $page.Params.slug -}}
-{{- else if $page.File -}}
-  {{- $key = $page.File.ContentBaseName -}}
+{{- $slug := "" -}}
+{{- with .Params.slug -}}
+  {{- $slug = . -}}
+{{- else -}}
+  {{- with .File.ContentBaseName -}}{{- $slug = . -}}{{- end -}}
 {{- end -}}
 
 {{- $votesAll := site.Data.rads_votes -}}
-{{- $votes := (index $votesAll $key) -}}
-
-{{- /* If no votes exist yet, show an unscored badge */ -}}
-{{- if not $votes -}}
-  <span class="rads-badge rads-tier-unscored" title="RADS: no votes yet">
-    <span class="rads-label">RADS</span>
-    <span class="rads-score">—</span>
-    <span class="rads-tier">UNSCORED</span>
-  </span>
-{{- else -}}
-
-  {{- /* Family-first weighted model (simple + stable):
-        Adults (you, spouse): 1.0
-        Kids (k1-k4): 0.7
-        Votes already stored as points (e.g., -10, 5, 15), so we just weight and sum.
-  */ -}}
-  {{- $you   := default 0 $votes.you -}}
-  {{- $spouse:= default 0 $votes.spouse -}}
-  {{- $k1    := default 0 $votes.k1 -}}
-  {{- $k2    := default 0 $votes.k2 -}}
-  {{- $k3    := default 0 $votes.k3 -}}
-  {{- $k4    := default 0 $votes.k4 -}}
-
-  {{- $score := 0.0 -}}
-  {{- $score = add $score (mul (float $you) 1.0) -}}
-  {{- $score = add $score (mul (float $spouse) 1.0) -}}
-  {{- $score = add $score (mul (float $k1) 0.7) -}}
-  {{- $score = add $score (mul (float $k2) 0.7) -}}
-  {{- $score = add $score (mul (float $k3) 0.7) -}}
-  {{- $score = add $score (mul (float $k4) 0.7) -}}
-
-  {{- /* Tiering (Family-first):
-        CORE LOCK:      >= 45
-        CORE CANDIDATE: 35–44.9
-        SPECIALTY:      20–34.9
-        WILDCARD:       5–19.9
-        BENCH:          < 5
-  */ -}}
-  {{- $tier := "BENCH" -}}
-  {{- $tierClass := "rads-tier-wildcard" -}}
-
-  {{- if ge $score 45.0 -}}
-    {{- $tier = "CORE LOCK" -}}
-    {{- $tierClass = "rads-tier-core-lock" -}}
-  {{- else if ge $score 35.0 -}}
-    {{- $tier = "CORE CANDIDATE" -}}
-    {{- $tierClass = "rads-tier-core-candidate" -}}
-  {{- else if ge $score 20.0 -}}
-    {{- $tier = "SPECIALTY" -}}
-    {{- $tierClass = "rads-tier-specialty" -}}
-  {{- else if ge $score 5.0 -}}
-    {{- $tier = "WILDCARD" -}}
-    {{- $tierClass = "rads-tier-wildcard" -}}
+{{- $v := dict -}}
+{{- with $votesAll -}}
+  {{- with (index . $slug) -}}
+    {{- $v = . -}}
   {{- end -}}
-
-  <span class="rads-badge {{ $tierClass }}" title="RADS (Family-first weighted)">
-    <span class="rads-label">RADS</span>
-    <span class="rads-score">{{ printf "%.0f" $score }}</span>
-    <span class="rads-tier">{{ $tier }}</span>
-  </span>
 {{- end -}}
+
+{{/* Expecting something like:
+   rads_votes.yaml:
+     radstorm-citrus-garlic-shrimp-tacos:
+       you: 15
+       spouse: 5
+       k1: 15
+       k2: 15
+       k3: 15
+       k4: 5
+*/}}
+
+{{- $you := int (default 0 (index $v "you")) -}}
+{{- $spouse := int (default 0 (index $v "spouse")) -}}
+{{- $k1 := int (default 0 (index $v "k1")) -}}
+{{- $k2 := int (default 0 (index $v "k2")) -}}
+{{- $k3 := int (default 0 (index $v "k3")) -}}
+{{- $k4 := int (default 0 (index $v "k4")) -}}
+
+{{/* Family-first weighted model (won’t “ruin” scoring):
+   - You: 1.0
+   - Spouse: 1.2  (keeps household stability)
+   - Kids: 1.5 each (family-first)
+*/}}
+{{- $score := add (mul $you 1.0) (mul $spouse 1.2) (mul (add $k1 $k2 $k3 $k4) 1.5) -}}
+{{- $score = math.Round $score -}}
+
+{{/* Tiering thresholds (tune later):
+   - Core Lock: >= 120
+   - Core Candidate: >= 90
+   - Specialty: >= 60
+   - Wildcard: >= 30
+   - Unscored: else
+*/}}
+{{- $tier := "unscored" -}}
+{{- if ge $score 120 -}}
+  {{- $tier = "core-lock" -}}
+{{- else if ge $score 90 -}}
+  {{- $tier = "core-candidate" -}}
+{{- else if ge $score 60 -}}
+  {{- $tier = "specialty" -}}
+{{- else if ge $score 30 -}}
+  {{- $tier = "wildcard" -}}
+{{- end -}}
+
+{{- $label := "Unscored" -}}
+{{- if eq $tier "core-lock" -}}{{- $label = "Core Lock" -}}{{- end -}}
+{{- if eq $tier "core-candidate" -}}{{- $label = "Core Candidate" -}}{{- end -}}
+{{- if eq $tier "specialty" -}}{{- $label = "Specialty" -}}{{- end -}}
+{{- if eq $tier "wildcard" -}}{{- $label = "Wildcard" -}}{{- end -}}
+
+{{- $votes := dict "you" $you "spouse" $spouse "k1" $k1 "k2" $k2 "k3" $k3 "k4" $k4 -}}
+
+{{- return (dict
+  "slug" $slug
+  "score" (int $score)
+  "tier" $tier
+  "label" $label
+  "votes" $votes
+) -}}

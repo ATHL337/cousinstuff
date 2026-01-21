@@ -1,17 +1,10 @@
-{{- /* Usage:
-   {{ partial "rads-badge.html" . }}
-   Expects the page context (.) with .Params.slug
-*/ -}}
+{{- $r := partial "rads-score.html" . -}}
+{{- $tier := index $r "tier" -}}
+{{- $label := index $r "label" -}}
+{{- $score := index $r "score" -}}
 
-{{- $slug := .Params.slug -}}
-{{- if not $slug -}}
-  {{- /* no slug, no badge */ -}}
-{{- else -}}
-  {{- $r := partial "rads-score.html" (dict "slug" $slug) -}}
-  {{- $tierClass := lower (replace $r.tier " " "-") -}}
-  <span class="rads-badge rads-tier-{{ $tierClass }}">
-    <span class="rads-label">RADS</span>
-    <span class="rads-score">{{ printf "%.0f" $r.score }}</span>
-    <span class="rads-tier">{{ $r.tier }}</span>
-  </span>
-{{- end -}}
+<span class="rads-badge rads-tier-{{ $tier }}">
+  <span class="rads-label">RADS</span>
+  <span class="rads-score">{{ $score }}</span>
+  <span class="rads-tier">{{ $label }}</span>
+</span>
