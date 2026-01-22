@@ -1,54 +1,71 @@
-{{/* layouts/partials/rads-score.html
-     Usage: {{ partial "rads-score.html" (dict "slug" $slug "site" $.Site) }}
-     Returns: dict {score tier votes}
-*/}}
-
-{{- $slug := .slug -}}
-{{- $site := .site -}}
-{{- $votes := (index $site.Data "rads_votes") | default dict -}}
-{{- $v := (index $votes $slug) | default dict -}}
-
-{{- /* Family-first weighting (Option B: realistic, kid-heavy) */ -}}
-{{- $wYou := 0.12 -}}
-{{- $wSpouse := 0.18 -}}
-{{- $wK1 := 0.17 -}}
-{{- $wK2 := 0.20 -}}
-{{- $wK3 := 0.20 -}}
-{{- $wK4 := 0.13 -}}
-
-{{- $you := (index $v "you") | default 0 -}}
-{{- $sp  := (index $v "spouse") | default 0 -}}
-{{- $k1  := (index $v "k1") | default 0 -}}
-{{- $k2  := (index $v "k2") | default 0 -}}
-{{- $k3  := (index $v "k3") | default 0 -}}
-{{- $k4  := (index $v "k4") | default 0 -}}
-
-{{- $score := add
-    (mul $you $wYou)
-    (mul $sp  $wSpouse)
-    (mul $k1  $wK1)
-    (mul $k2  $wK2)
-    (mul $k3  $wK3)
-    (mul $k4  $wK4)
--}}
-{{- $score = printf "%.0f" $score | int -}}
-
-{{- /* Tier gates (Family-first):
-      12+ = Core lock, 9-11 = Core candidate, 6-8 = Specialty, 3-5 = Wildcard, else Unscored
+{{- /* RADS score calculator
+      Returns a dict:
+      - scoreRaw (float)
+      - score (string, whole number)
+      - tier (string: core-lock|core-candidate|specialty|wildcard|unscored)
+      - label (string)
 */ -}}
+
+{{- $site := site -}}
+{{- with .site -}}{{- $site = . -}}{{- end -}}
+
+{{- $slug := "" -}}
+{{- with .slug -}}
+  {{- $slug = . -}}
+{{- else -}}
+  {{- /* If called with a Page */ -}}
+  {{- $slug = or .Params.slug .File.ContentBaseName -}}
+{{- end -}}
+
+{{- $votes := $site.Data.rads_votes | default dict -}}
+{{- $row := or (index $votes $slug) (dict) -}}
+
+{{- /* Votes (coerce to float so weights behave consistently) */ -}}
+{{- $you    := float (or (index $row "you") 0) -}}
+{{- $spouse := float (or (index $row "spouse") 0) -}}
+{{- $k1     := float (or (index $row "k1") 0) -}}
+{{- $k2     := float (or (index $row "k2") 0) -}}
+{{- $k3     := float (or (index $row "k3") 0) -}}
+{{- $k4     := float (or (index $row "k4") 0) -}}
+
+{{- /* Family-first weights (tweak here without breaking math) */ -}}
+{{- $wYou := 1.2 -}}
+{{- $wSp  := 1.0 -}}
+{{- $wKid := 0.9 -}}
+
+{{- $scoreRaw := 0.0 -}}
+{{- $scoreRaw = add $scoreRaw (mul $you $wYou) -}}
+{{- $scoreRaw = add $scoreRaw (mul $spouse $wSp) -}}
+{{- $scoreRaw = add $scoreRaw (mul $k1 $wKid) -}}
+{{- $scoreRaw = add $scoreRaw (mul $k2 $wKid) -}}
+{{- $scoreRaw = add $scoreRaw (mul $k3 $wKid) -}}
+{{- $scoreRaw = add $scoreRaw (mul $k4 $wKid) -}}
+
+{{- $scoreRaw = math.Round $scoreRaw -}}
+{{- $score := printf "%.0f" $scoreRaw -}}
+
+{{- /* Tier thresholds (float comparisons) */ -}}
 {{- $tier := "unscored" -}}
-{{- if ge $score 12 -}}
+{{- $label := "Unscored" -}}
+
+{{- if ge $scoreRaw 120.0 -}}
   {{- $tier = "core-lock" -}}
-{{- else if ge $score 9 -}}
+  {{- $label = "Core Lock" -}}
+{{- else if ge $scoreRaw 95.0 -}}
   {{- $tier = "core-candidate" -}}
-{{- else if ge $score 6 -}}
+  {{- $label = "Core Candidate" -}}
+{{- else if ge $scoreRaw 70.0 -}}
   {{- $tier = "specialty" -}}
-{{- else if ge $score 3 -}}
+  {{- $label = "Specialty" -}}
+{{- else if ge $scoreRaw 40.0 -}}
   {{- $tier = "wildcard" -}}
+  {{- $label = "Wildcard" -}}
 {{- end -}}
 
 {{- return (dict
+  "slug" $slug
+  "scoreRaw" $scoreRaw
   "score" $score
   "tier" $tier
-  "votes" (dict "you" $you "spouse" $sp "k1" $k1 "k2" $k2 "k3" $k3 "k4" $k4)
+  "label" $label
 ) -}}
