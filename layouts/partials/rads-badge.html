@@ -1,13 +1,13 @@
 {{/* layouts/partials/rads-badge.html
    Accepts either:
-   - a dict: {score, tier}
+   - a dict/map: {score, tier}
    - a Page: compute RADS from data/rads_votes.yaml using slug
 */}}
 
 {{- $in := . -}}
 {{- $r := dict -}}
 
-{{- if kindIs "map" $in -}}
+{{- if reflect.IsMap $in -}}
   {{- $r = $in -}}
 {{- else -}}
   {{- /* assume Page */ -}}
