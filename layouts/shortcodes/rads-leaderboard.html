@@ -1,6 +1,34 @@
----
-title: "Vault RADS Leaderboard"
-slug: "rads-leaderboard"
----
+{{- $recipes := where .Site.RegularPages "Section" "recipes" -}}
+{{- $rows := slice -}}
 
-{{< rads-leaderboard >}}
+{{- range $recipes -}}
+  {{- $slug := .Params.slug | default "" -}}
+  {{- if ne $slug "" -}}
+    {{- $r := partial "rads-score.html" (dict "slug" $slug "site" .Site) -}}
+    {{- $rows = $rows | append (dict "page" . "r" $r) -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $sorted := sort $rows "r.score" "desc" -}}
+
+<div class="rads-leaderboard">
+  {{- range $sorted -}}
+    {{- $p := .page -}}
+    {{- $r := .r -}}
+
+    <div class="rads-row">
+      <div class="rads-row-title">
+        <a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a>
+
+        <span class="rads-mini {{ index $r "tierClass" }}">
+          RADS {{ index $r "score" }} • {{ index $r "tier" }}
+        </span>
+      </div>
+
+      <div class="rads-row-meta">
+        {{- with $p.Params.slot -}}<span class="rads-chip">Slot {{ . }}</span>{{- end -}}
+        {{- with $p.Params.category -}}<span class="rads-chip">{{ . }}</span>{{- end -}}
+      </div>
+    </div>
+  {{- end -}}
+</div>
