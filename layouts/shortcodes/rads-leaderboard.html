@@ -1,33 +1,33 @@
-{{- $recipes := where .Site.RegularPages "Section" "recipes" -}}
+{{- $recipes := where site.RegularPages "Section" "recipes" -}}
 {{- $rows := slice -}}
 
 {{- range $recipes -}}
-  {{- $slug := .Params.slug | default "" -}}
-  {{- if ne $slug "" -}}
-    {{- $r := partial "rads-score.html" (dict "slug" $slug "site" .Site) -}}
-    {{- $rows = $rows | append (dict "page" . "r" $r) -}}
-  {{- end -}}
+  {{- $r := partial "rads-score.html" . -}}
+  {{- $rows = $rows | append (dict
+      "page" .
+      "score" $r.score
+      "scoreDisplay" $r.scoreDisplay
+      "tier" $r.tier
+      "label" $r.label
+  ) -}}
 {{- end -}}
 
-{{- $sorted := sort $rows "r.score" "desc" -}}
+{{- $sorted := sort $rows "score" "desc" -}}
 
 <div class="rads-leaderboard">
   {{- range $sorted -}}
-    {{- $p := .page -}}
-    {{- $r := .r -}}
-
     <div class="rads-row">
       <div class="rads-row-title">
-        <a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a>
+        <a href="{{ .page.RelPermalink }}">{{ .page.Title }}</a>
 
-        <span class="rads-mini {{ index $r "tierClass" }}">
-          RADS {{ index $r "score" }} • {{ index $r "tier" }}
+        <span class="rads-mini rads-tier-{{ .tier }}">
+          ☢️ RADS {{ .scoreDisplay }} • {{ .label }}
         </span>
       </div>
 
       <div class="rads-row-meta">
-        {{- with $p.Params.slot -}}<span class="rads-chip">Slot {{ . }}</span>{{- end -}}
-        {{- with $p.Params.category -}}<span class="rads-chip">{{ . }}</span>{{- end -}}
+        {{- with .page.Params.slot -}}<span class="rads-chip">Slot {{ . }}</span>{{- end -}}
+        {{- with .page.Params.category -}}<span class="rads-chip">{{ . }}</span>{{- end -}}
       </div>
     </div>
   {{- end -}}
