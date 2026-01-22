@@ -1,17 +1,27 @@
 {{/* layouts/partials/rads-score.html
-   Returns a dict: {score, scoreDisplay, tier, label, votes, slug}
-   - score: float (0–15)
-   - scoreDisplay: string (one decimal)
+   Safe for:
+   - partial "rads-score.html" .            (Page)
+   - partial "rads-score.html" (dict ...)   (map)
+   Returns dict: {slug, score, scoreDisplay, tier, label, votes}
 */}}
 
 {{- $slug := "" -}}
-{{- with .slug -}}
-  {{- $slug = . -}}
-{{- else -}}
+
+{{/* If input is a dict/map, read slug from it */}}
+{{- if reflect.IsMap . -}}
+  {{- with (index . "slug") -}}
+    {{- $slug = . -}}
+  {{- end -}}
+{{- end -}}
+
+{{/* If input is a Page, prefer .Params.slug, else file basename */}}
+{{- if eq $slug "" -}}
   {{- with .Params.slug -}}
     {{- $slug = . -}}
   {{- else -}}
-    {{- with .File.ContentBaseName -}}{{- $slug = . -}}{{- end -}}
+    {{- with .File.ContentBaseName -}}
+      {{- $slug = . -}}
+    {{- end -}}
   {{- end -}}
 {{- end -}}
 
@@ -30,14 +40,7 @@
 {{- $k3 := float (default 0 (index $v "k3")) -}}
 {{- $k4 := float (default 0 (index $v "k4")) -}}
 
-{{/* Family-first weights (won’t wreck scoring; toddler counts, but less):
-   - You:    1.0
-   - Spouse: 1.2
-   - K1:     1.0
-   - K2:     1.0
-   - K3:     1.0
-   - K4:     0.5
-*/}}
+{{/* Family-first weights */}}
 {{- $wYou := 1.0 -}}
 {{- $wSpouse := 1.2 -}}
 {{- $wK1 := 1.0 -}}
@@ -53,7 +56,6 @@
       (mul $k3 $wK3)
       (mul $k4 $wK4)
 -}}
-
 {{- $weightTotal := add $wYou $wSpouse $wK1 $wK2 $wK3 $wK4 -}}
 
 {{- $score := 0.0 -}}
@@ -61,13 +63,7 @@
   {{- $score = div $weightedSum $weightTotal -}} {{/* 0–15 */}}
 {{- end -}}
 
-{{/* Tiering thresholds (0–15 scale):
-   - Core Lock:      >= 13.5
-   - Core Candidate: >= 11.5
-   - Specialty:      >= 9.0
-   - Wildcard:       >= 6.0
-   - Unscored:       <  6.0  (or missing votes)
-*/}}
+{{/* Tier thresholds (0–15) */}}
 {{- $tier := "unscored" -}}
 {{- if ge $score 13.5 -}}
   {{- $tier = "core-lock" -}}

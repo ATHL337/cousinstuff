@@ -1,7 +1,5 @@
 {{- $r := partial "rads-score.html" . -}}
-{{- $tierClass := lower (replace $r.tier " " "-") -}}
-
-<span class="rads-badge rads-tier-{{ $tierClass }}" title="RADS = family-weighted rating (0–15)">
+<span class="rads-badge rads-tier-{{ $r.tier }}" title="RADS = family-weighted rating (0–15)">
   <span class="rads-icon" aria-hidden="true">☢️</span>
   <span class="rads-label">RADS</span>
   <span class="rads-score">{{ $r.scoreDisplay }}</span>
