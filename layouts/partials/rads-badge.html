@@ -1,10 +1,13 @@
-{{- $r := partial "rads-score.html" . -}}
-{{- $tier := index $r "tier" -}}
-{{- $label := index $r "label" -}}
-{{- $score := index $r "score" -}}
+{{/* layouts/partials/rads-badge.html
+     Input: dict { score, tier }
+*/}}
+
+{{- $r := . -}}
+{{- $tier := (index $r "tier") | default "unscored" -}}
+{{- $score := (index $r "score") | default 0 -}}
 
 <span class="rads-badge rads-tier-{{ $tier }}">
   <span class="rads-label">RADS</span>
   <span class="rads-score">{{ $score }}</span>
-  <span class="rads-tier">{{ $label }}</span>
+  <span class="rads-tier">{{ $tier }}</span>
 </span>

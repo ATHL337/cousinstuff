@@ -1,79 +1,54 @@
 {{/* layouts/partials/rads-score.html
-   Returns a dict: {score, tier, label, votes, slug}
-   NOTE: This partial must RETURN a dict (not HTML) so callers can use $r.tier, $r.score, etc.
+     Usage: {{ partial "rads-score.html" (dict "slug" $slug "site" $.Site) }}
+     Returns: dict {score tier votes}
 */}}
 
-{{- $slug := "" -}}
-{{- with .Params.slug -}}
-  {{- $slug = . -}}
-{{- else -}}
-  {{- with .File.ContentBaseName -}}{{- $slug = . -}}{{- end -}}
-{{- end -}}
+{{- $slug := .slug -}}
+{{- $site := .site -}}
+{{- $votes := (index $site.Data "rads_votes") | default dict -}}
+{{- $v := (index $votes $slug) | default dict -}}
 
-{{- $votesAll := site.Data.rads_votes -}}
-{{- $v := dict -}}
-{{- with $votesAll -}}
-  {{- with (index . $slug) -}}
-    {{- $v = . -}}
-  {{- end -}}
-{{- end -}}
+{{- /* Family-first weighting (Option B: realistic, kid-heavy) */ -}}
+{{- $wYou := 0.12 -}}
+{{- $wSpouse := 0.18 -}}
+{{- $wK1 := 0.17 -}}
+{{- $wK2 := 0.20 -}}
+{{- $wK3 := 0.20 -}}
+{{- $wK4 := 0.13 -}}
 
-{{/* Expecting something like:
-   rads_votes.yaml:
-     radstorm-citrus-garlic-shrimp-tacos:
-       you: 15
-       spouse: 5
-       k1: 15
-       k2: 15
-       k3: 15
-       k4: 5
-*/}}
+{{- $you := (index $v "you") | default 0 -}}
+{{- $sp  := (index $v "spouse") | default 0 -}}
+{{- $k1  := (index $v "k1") | default 0 -}}
+{{- $k2  := (index $v "k2") | default 0 -}}
+{{- $k3  := (index $v "k3") | default 0 -}}
+{{- $k4  := (index $v "k4") | default 0 -}}
 
-{{- $you := int (default 0 (index $v "you")) -}}
-{{- $spouse := int (default 0 (index $v "spouse")) -}}
-{{- $k1 := int (default 0 (index $v "k1")) -}}
-{{- $k2 := int (default 0 (index $v "k2")) -}}
-{{- $k3 := int (default 0 (index $v "k3")) -}}
-{{- $k4 := int (default 0 (index $v "k4")) -}}
+{{- $score := add
+    (mul $you $wYou)
+    (mul $sp  $wSpouse)
+    (mul $k1  $wK1)
+    (mul $k2  $wK2)
+    (mul $k3  $wK3)
+    (mul $k4  $wK4)
+-}}
+{{- $score = printf "%.0f" $score | int -}}
 
-{{/* Family-first weighted model (won’t “ruin” scoring):
-   - You: 1.0
-   - Spouse: 1.2  (keeps household stability)
-   - Kids: 1.5 each (family-first)
-*/}}
-{{- $score := add (mul $you 1.0) (mul $spouse 1.2) (mul (add $k1 $k2 $k3 $k4) 1.5) -}}
-{{- $score = math.Round $score -}}
-
-{{/* Tiering thresholds (tune later):
-   - Core Lock: >= 120
-   - Core Candidate: >= 90
-   - Specialty: >= 60
-   - Wildcard: >= 30
-   - Unscored: else
-*/}}
+{{- /* Tier gates (Family-first):
+      12+ = Core lock, 9-11 = Core candidate, 6-8 = Specialty, 3-5 = Wildcard, else Unscored
+*/ -}}
 {{- $tier := "unscored" -}}
-{{- if ge $score 120 -}}
+{{- if ge $score 12 -}}
   {{- $tier = "core-lock" -}}
-{{- else if ge $score 90 -}}
+{{- else if ge $score 9 -}}
   {{- $tier = "core-candidate" -}}
-{{- else if ge $score 60 -}}
+{{- else if ge $score 6 -}}
   {{- $tier = "specialty" -}}
-{{- else if ge $score 30 -}}
+{{- else if ge $score 3 -}}
   {{- $tier = "wildcard" -}}
 {{- end -}}
 
-{{- $label := "Unscored" -}}
-{{- if eq $tier "core-lock" -}}{{- $label = "Core Lock" -}}{{- end -}}
-{{- if eq $tier "core-candidate" -}}{{- $label = "Core Candidate" -}}{{- end -}}
-{{- if eq $tier "specialty" -}}{{- $label = "Specialty" -}}{{- end -}}
-{{- if eq $tier "wildcard" -}}{{- $label = "Wildcard" -}}{{- end -}}
-
-{{- $votes := dict "you" $you "spouse" $spouse "k1" $k1 "k2" $k2 "k3" $k3 "k4" $k4 -}}
-
 {{- return (dict
-  "slug" $slug
-  "score" (int $score)
+  "score" $score
   "tier" $tier
-  "label" $label
-  "votes" $votes
+  "votes" (dict "you" $you "spouse" $sp "k1" $k1 "k2" $k2 "k3" $k3 "k4" $k4)
 ) -}}
