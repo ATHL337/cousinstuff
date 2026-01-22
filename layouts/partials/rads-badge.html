@@ -1,9 +1,12 @@
-{{- /* Badge renderer: safe + consistent call into rads-score */ -}}
-{{- $slug := or .Params.slug .File.ContentBaseName -}}
-{{- $r := partial "rads-score.html" (dict "slug" $slug "site" .Site) -}}
+{{/* layouts/partials/rads-badge.html
+     Use on recipe pages: {{ partial "rads-badge.html" . }}
+*/}}
 
-<span class="rads-badge rads-tier-{{ $r.tier }}">
+{{- $r := partial "rads-score.html" . -}}
+{{- if not $r -}}{{- return -}}{{- end -}}
+
+<span class="rads-badge {{ index $r "tierClass" }}">
   <span class="rads-label">RADS</span>
-  <span class="rads-score">{{ $r.score }}</span>
-  <span class="rads-tier">{{ $r.label }}</span>
+  <span class="rads-score">{{ index $r "score" }}</span>
+  <span class="rads-tier">{{ index $r "tier" }}</span>
 </span>

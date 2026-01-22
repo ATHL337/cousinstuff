@@ -1,71 +1,69 @@
-{{- /* RADS score calculator
-      Returns a dict:
-      - scoreRaw (float)
-      - score (string, whole number)
-      - tier (string: core-lock|core-candidate|specialty|wildcard|unscored)
-      - label (string)
-*/ -}}
+{{/* layouts/partials/rads-score.html
+     Returns a dict:
+     - score (int)
+     - tier (string)
+     - tierClass (string)
+     - voters (dict)
+*/}}
 
-{{- $site := site -}}
-{{- with .site -}}{{- $site = . -}}{{- end -}}
+{{- $in := . -}}
 
-{{- $slug := "" -}}
-{{- with .slug -}}
-  {{- $slug = . -}}
+{{/* Resolve Site */}}
+{{- $site := nil -}}
+{{- with $in.Site -}}
+  {{- $site = . -}}
 {{- else -}}
-  {{- /* If called with a Page */ -}}
-  {{- $slug = or .Params.slug .File.ContentBaseName -}}
+  {{- $site = index $in "site" -}}
 {{- end -}}
 
-{{- $votes := $site.Data.rads_votes | default dict -}}
-{{- $row := or (index $votes $slug) (dict) -}}
+{{/* Resolve slug */}}
+{{- $slug := "" -}}
+{{- with $in.Params -}}
+  {{- with .slug -}}{{- $slug = . -}}{{- end -}}
+{{- end -}}
+{{- if eq $slug "" -}}
+  {{- with (index $in "slug") -}}{{- $slug = . -}}{{- end -}}
+{{- end -}}
 
-{{- /* Votes (coerce to float so weights behave consistently) */ -}}
-{{- $you    := float (or (index $row "you") 0) -}}
-{{- $spouse := float (or (index $row "spouse") 0) -}}
-{{- $k1     := float (or (index $row "k1") 0) -}}
-{{- $k2     := float (or (index $row "k2") 0) -}}
-{{- $k3     := float (or (index $row "k3") 0) -}}
-{{- $k4     := float (or (index $row "k4") 0) -}}
+{{/* Load votes (data/rads_votes.yaml => .Site.Data.rads_votes) */}}
+{{- $all := (index $site.Data "rads_votes") | default (dict) -}}
+{{- $v := (index $all $slug) | default (dict) -}}
 
-{{- /* Family-first weights (tweak here without breaking math) */ -}}
-{{- $wYou := 1.2 -}}
-{{- $wSp  := 1.0 -}}
-{{- $wKid := 0.9 -}}
+{{/* Pull points (ints) */}}
+{{- $you    := int (default 0 (index $v "you")) -}}
+{{- $spouse := int (default 0 (index $v "spouse")) -}}
+{{- $k1     := int (default 0 (index $v "k1")) -}}
+{{- $k2     := int (default 0 (index $v "k2")) -}}
+{{- $k3     := int (default 0 (index $v "k3")) -}}
+{{- $k4     := int (default 0 (index $v "k4")) -}}
 
-{{- $scoreRaw := 0.0 -}}
-{{- $scoreRaw = add $scoreRaw (mul $you $wYou) -}}
-{{- $scoreRaw = add $scoreRaw (mul $spouse $wSp) -}}
-{{- $scoreRaw = add $scoreRaw (mul $k1 $wKid) -}}
-{{- $scoreRaw = add $scoreRaw (mul $k2 $wKid) -}}
-{{- $scoreRaw = add $scoreRaw (mul $k3 $wKid) -}}
-{{- $scoreRaw = add $scoreRaw (mul $k4 $wKid) -}}
+{{/* Family-first weights (simple + robust):
+     You x2, Spouse x2, each kid x1
+     Max = 15*(2+2+1+1+1+1)=120
+*/}}
+{{- $raw := add (mul 2 $you) (mul 2 $spouse) $k1 $k2 $k3 $k4 -}}
+{{- $score := cond (lt $raw 0) 0 $raw -}}
 
-{{- $scoreRaw = math.Round $scoreRaw -}}
-{{- $score := printf "%.0f" $scoreRaw -}}
-
-{{- /* Tier thresholds (float comparisons) */ -}}
-{{- $tier := "unscored" -}}
-{{- $label := "Unscored" -}}
-
-{{- if ge $scoreRaw 120.0 -}}
-  {{- $tier = "core-lock" -}}
-  {{- $label = "Core Lock" -}}
-{{- else if ge $scoreRaw 95.0 -}}
-  {{- $tier = "core-candidate" -}}
-  {{- $label = "Core Candidate" -}}
-{{- else if ge $scoreRaw 70.0 -}}
-  {{- $tier = "specialty" -}}
-  {{- $label = "Specialty" -}}
-{{- else if ge $scoreRaw 40.0 -}}
-  {{- $tier = "wildcard" -}}
-  {{- $label = "Wildcard" -}}
+{{/* Tier thresholds on 0..120 scale */}}
+{{- $tier := "Unscored" -}}
+{{- $tierClass := "rads-tier-unscored" -}}
+{{- if ge $score 105 -}}
+  {{- $tier = "Core Lock" -}}
+  {{- $tierClass = "rads-tier-core-lock" -}}
+{{- else if ge $score 85 -}}
+  {{- $tier = "Core Candidate" -}}
+  {{- $tierClass = "rads-tier-core-candidate" -}}
+{{- else if ge $score 55 -}}
+  {{- $tier = "Specialty" -}}
+  {{- $tierClass = "rads-tier-specialty" -}}
+{{- else if ge $score 25 -}}
+  {{- $tier = "Wildcard" -}}
+  {{- $tierClass = "rads-tier-wildcard" -}}
 {{- end -}}
 
 {{- return (dict
-  "slug" $slug
-  "scoreRaw" $scoreRaw
   "score" $score
   "tier" $tier
-  "label" $label
+  "tierClass" $tierClass
+  "voters" (dict "you" $you "spouse" $spouse "k1" $k1 "k2" $k2 "k3" $k3 "k4" $k4)
 ) -}}

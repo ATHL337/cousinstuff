@@ -1,31 +1,6 @@
-{{/* layouts/shortcodes/rads-leaderboard.html
-     Usage: {{< rads-leaderboard >}}
-*/}}
+---
+title: "Vault RADS Leaderboard"
+slug: "rads-leaderboard"
+---
 
-{{- $pages := where .Site.RegularPages "Section" "recipes" -}}
-{{- $rows := slice -}}
-
-{{- range $p := $pages -}}
-  {{- $slug := $p.Params.slug | default $p.File.TranslationBaseName -}}
-  {{- $r := partial "rads-score.html" (dict "slug" $slug "site" $.Site) -}}
-  {{- $rows = $rows | append (dict "page" $p "slug" $slug "r" $r "score" (index $r "score")) -}}
-{{- end -}}
-
-{{- $sorted := sort $rows "score" "desc" -}}
-
-<div class="rads-leaderboard">
-  {{- range $sorted -}}
-    {{- $p := index . "page" -}}
-    {{- $r := index . "r" -}}
-    <div class="rads-row">
-      <div class="rads-row-title">
-        <a href="{{ $p.RelPermalink }}"><strong>{{ $p.Title }}</strong></a>
-        {{ partial "rads-badge.html" $r }}
-      </div>
-      <div class="rads-row-meta">
-        <span class="rads-chip">Tier: {{ index $r "tier" }}</span>
-        <span class="rads-chip">Slug: {{ index . "slug" }}</span>
-      </div>
-    </div>
-  {{- end -}}
-</div>
+{{< rads-leaderboard >}}
