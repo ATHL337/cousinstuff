@@ -1,8 +1,20 @@
 {{/* layouts/partials/rads-badge.html
-     Input: dict { score, tier }
+   Accepts either:
+   - a dict: {score, tier}
+   - a Page: compute RADS from data/rads_votes.yaml using slug
 */}}
 
-{{- $r := . -}}
+{{- $in := . -}}
+{{- $r := dict -}}
+
+{{- if kindIs "map" $in -}}
+  {{- $r = $in -}}
+{{- else -}}
+  {{- /* assume Page */ -}}
+  {{- $slug := $in.Params.slug | default $in.File.TranslationBaseName -}}
+  {{- $r = partial "rads-score.html" (dict "slug" $slug "site" $in.Site) -}}
+{{- end -}}
+
 {{- $tier := (index $r "tier") | default "unscored" -}}
 {{- $score := (index $r "score") | default 0 -}}
 
