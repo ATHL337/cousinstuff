@@ -1,73 +1,97 @@
-{{- /* layouts/partials/rads-score.html */ -}}
+{{/* layouts/partials/rads-score.html
+   Returns a dict: {score, scoreDisplay, tier, label, votes, slug}
+   - score: float (0–15)
+   - scoreDisplay: string (one decimal)
+*/}}
 
 {{- $slug := "" -}}
-
-{{- /* Called from a recipe page: .Params.slug */ -}}
-{{- with .Params.slug -}}
+{{- with .slug -}}
   {{- $slug = . -}}
-{{- end -}}
-
-{{- /* Called from leaderboard: (dict "slug" $slug) */ -}}
-{{- if eq $slug "" -}}
-  {{- with .slug -}}
+{{- else -}}
+  {{- with .Params.slug -}}
     {{- $slug = . -}}
-  {{- end -}}
-{{- end -}}
-
-{{- /* Fallback: file base name if this is a Page */ -}}
-{{- if eq $slug "" -}}
-  {{- with .File -}}
-    {{- $slug = .ContentBaseName -}}
-  {{- end -}}
-{{- end -}}
-
-{{- /* Load votes */ -}}
-{{- $votes := site.Data.rads_votes -}}
-{{- $v := dict -}}
-{{- if and $slug (index $votes $slug) -}}
-  {{- $v = index $votes $slug -}}
-{{- end -}}
-
-{{- /* Family-first weights (tweak later if you want) */ -}}
-{{- $weights := dict
-  "you"    0.20
-  "spouse" 0.25
-  "k1"     0.15
-  "k2"     0.15
-  "k3"     0.15
-  "k4"     0.10
--}}
-
-{{- /* Votes default safely to 0 if missing */ -}}
-{{- $you    := float (default 0 (index $v "you")) -}}
-{{- $spouse := float (default 0 (index $v "spouse")) -}}
-{{- $k1     := float (default 0 (index $v "k1")) -}}
-{{- $k2     := float (default 0 (index $v "k2")) -}}
-{{- $k3     := float (default 0 (index $v "k3")) -}}
-{{- $k4     := float (default 0 (index $v "k4")) -}}
-
-{{- $score :=
-  add
-    (mul $you    (index $weights "you"))
-    (mul $spouse (index $weights "spouse"))
-    (mul $k1     (index $weights "k1"))
-    (mul $k2     (index $weights "k2"))
-    (mul $k3     (index $weights "k3"))
-    (mul $k4     (index $weights "k4"))
--}}
-
-{{- $isRated := gt (len $v) 0 -}}
-
-{{- /* Tiering (simple for now; you can tighten thresholds later) */ -}}
-{{- $tier := "Unscored" -}}
-{{- if $isRated -}}
-  {{- if ge $score 10.0 -}}
-    {{- $tier = "Core Candidate" -}}
-  {{- else if ge $score 5.0 -}}
-    {{- $tier = "Specialty" -}}
   {{- else -}}
-    {{- $tier = "Wildcard" -}}
+    {{- with .File.ContentBaseName -}}{{- $slug = . -}}{{- end -}}
   {{- end -}}
 {{- end -}}
 
-{{- return (dict "slug" $slug "score" $score "tier" $tier "isRated" $isRated) -}}
+{{- $votesAll := site.Data.rads_votes -}}
+{{- $v := dict -}}
+{{- with $votesAll -}}
+  {{- with (index . $slug) -}}
+    {{- $v = . -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $you := float (default 0 (index $v "you")) -}}
+{{- $spouse := float (default 0 (index $v "spouse")) -}}
+{{- $k1 := float (default 0 (index $v "k1")) -}}
+{{- $k2 := float (default 0 (index $v "k2")) -}}
+{{- $k3 := float (default 0 (index $v "k3")) -}}
+{{- $k4 := float (default 0 (index $v "k4")) -}}
+
+{{/* Family-first weights (won’t wreck scoring; toddler counts, but less):
+   - You:    1.0
+   - Spouse: 1.2
+   - K1:     1.0
+   - K2:     1.0
+   - K3:     1.0
+   - K4:     0.5
+*/}}
+{{- $wYou := 1.0 -}}
+{{- $wSpouse := 1.2 -}}
+{{- $wK1 := 1.0 -}}
+{{- $wK2 := 1.0 -}}
+{{- $wK3 := 1.0 -}}
+{{- $wK4 := 0.5 -}}
+
+{{- $weightedSum := add
+      (mul $you $wYou)
+      (mul $spouse $wSpouse)
+      (mul $k1 $wK1)
+      (mul $k2 $wK2)
+      (mul $k3 $wK3)
+      (mul $k4 $wK4)
+-}}
+
+{{- $weightTotal := add $wYou $wSpouse $wK1 $wK2 $wK3 $wK4 -}}
+
+{{- $score := 0.0 -}}
+{{- if gt $weightTotal 0.0 -}}
+  {{- $score = div $weightedSum $weightTotal -}} {{/* 0–15 */}}
+{{- end -}}
+
+{{/* Tiering thresholds (0–15 scale):
+   - Core Lock:      >= 13.5
+   - Core Candidate: >= 11.5
+   - Specialty:      >= 9.0
+   - Wildcard:       >= 6.0
+   - Unscored:       <  6.0  (or missing votes)
+*/}}
+{{- $tier := "unscored" -}}
+{{- if ge $score 13.5 -}}
+  {{- $tier = "core-lock" -}}
+{{- else if ge $score 11.5 -}}
+  {{- $tier = "core-candidate" -}}
+{{- else if ge $score 9.0 -}}
+  {{- $tier = "specialty" -}}
+{{- else if ge $score 6.0 -}}
+  {{- $tier = "wildcard" -}}
+{{- end -}}
+
+{{- $label := "Unscored" -}}
+{{- if eq $tier "core-lock" -}}{{- $label = "Core Lock" -}}{{- end -}}
+{{- if eq $tier "core-candidate" -}}{{- $label = "Core Candidate" -}}{{- end -}}
+{{- if eq $tier "specialty" -}}{{- $label = "Specialty" -}}{{- end -}}
+{{- if eq $tier "wildcard" -}}{{- $label = "Wildcard" -}}{{- end -}}
+
+{{- $votes := dict "you" (int $you) "spouse" (int $spouse) "k1" (int $k1) "k2" (int $k2) "k3" (int $k3) "k4" (int $k4) -}}
+
+{{- return (dict
+  "slug" $slug
+  "score" $score
+  "scoreDisplay" (printf "%.1f" $score)
+  "tier" $tier
+  "label" $label
+  "votes" $votes
+) -}}

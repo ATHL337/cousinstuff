@@ -1,0 +1,8 @@
+{{/* Input: dict "score" (float/int) "decimals" (int, optional) */}}
+{{- $s := .score | default 0 -}}
+{{- $d := .decimals | default 0 -}}
+{{- if eq $d 0 -}}
+  {{- printf "%.0f" (float $s) -}}
+{{- else -}}
+  {{- printf (printf "%%.%df" $d) (float $s) -}}
+{{- end -}}

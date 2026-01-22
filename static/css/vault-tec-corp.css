@@ -826,3 +826,58 @@ body.vt-has-bottombar{ padding-bottom:0; }
 .rads-row { padding: .75rem; border: 1px solid rgba(0,0,0,.2); border-radius: 14px; }
 .rads-row-title { display: flex; gap: .75rem; flex-wrap: wrap; align-items: baseline; }
 .rads-row-meta { display: flex; gap: .5rem; flex-wrap: wrap; margin-top: .35rem; opacity: .95; }
+/* RADS: Vault-Tec radiation badge */
+.rads-icon { font-size: 1rem; line-height: 1; }
+
+.rads-glow{
+  position: relative;
+  box-shadow:
+    0 0 0.6rem rgba(80, 255, 140, 0.35),
+    0 0 1.4rem rgba(80, 255, 140, 0.20);
+}
+
+.rads-badge{
+  background: rgba(0,0,0,.04);
+  backdrop-filter: blur(2px);
+}
+
+/* Tier accents (subtle) */
+.rads-tier-core-candidate { border-color: rgba(80,255,140,.55); }
+.rads-tier-core-lock      { border-color: rgba(80,255,140,.85); }
+.rads-tier-specialty      { border-color: rgba(255,200,80,.55); }
+.rads-tier-wildcard       { border-color: rgba(140,180,255,.55); }
+.rads-tier-unscored       { opacity: .75; }
+@keyframes radsPulse {
+  0%, 100% { box-shadow: 0 0 0.6rem rgba(80,255,140,.25), 0 0 1.2rem rgba(80,255,140,.12); }
+  50%      { box-shadow: 0 0 0.9rem rgba(80,255,140,.45), 0 0 1.8rem rgba(80,255,140,.22); }
+}
+.rads-glow { animation: radsPulse 2.2s ease-in-out infinite; }
+/* RADS — Vault rating system */
+.rads-badge,
+.rads-mini,
+.rads-chip {
+  border-color: rgba(30, 255, 120, 0.35);
+}
+
+.rads-badge {
+  background: rgba(18, 44, 28, 0.35);
+  box-shadow:
+    0 0 0 1px rgba(30, 255, 120, 0.18) inset,
+    0 0 18px rgba(30, 255, 120, 0.15);
+}
+
+.rads-badge .rads-icon {
+  filter: drop-shadow(0 0 6px rgba(30, 255, 120, 0.45));
+}
+
+.rads-tier-core-lock {
+  box-shadow:
+    0 0 0 1px rgba(30, 255, 120, 0.22) inset,
+    0 0 26px rgba(30, 255, 120, 0.20);
+}
+
+.rads-tier-core-candidate {
+  box-shadow:
+    0 0 0 1px rgba(30, 255, 120, 0.18) inset,
+    0 0 18px rgba(30, 255, 120, 0.14);
+}
