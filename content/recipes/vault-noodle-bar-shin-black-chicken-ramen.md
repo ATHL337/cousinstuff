@@ -22,7 +22,7 @@ servings: 5
 prepTime: "PT15M"
 cookTime: "PT15M"
 totalTime: "PT30M"
-slot: 24
+slot: 28
 category: "Noodle Bar Rations"
 draft: false
 recipeIngredient:
