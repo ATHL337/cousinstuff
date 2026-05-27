@@ -17,7 +17,7 @@ tags:
   - Soup
   - Comfort Food
 images:
-  - "/img/recipes/default.png"
+  - "/img/recipes/mirelurk-special-texas-wasteland-crab-and-beer-chowder.jpg"
 image: "/img/recipes/mirelurk-special-texas-wasteland-crab-and-beer-chowder.jpg"
 servings: 6
 prepTime: "PT20M"
