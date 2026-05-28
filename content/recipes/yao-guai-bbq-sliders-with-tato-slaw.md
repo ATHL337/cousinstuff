@@ -2,8 +2,8 @@
 title: "Yao Guai BBQ Sliders with Tato Slaw"
 slug: "yao-guai-bbq-sliders-with-tato-slaw"
 date: "2026-05-27"
-description: "A Fallout-inspired Texas-style slider dinner made with smoky shredded beef, barbecue sauce, soft buns, and crunchy carrot-cabbage Tato Slaw."
-summary: "Yao guai meat, carrot, and tato become a real May-in-Texas dinner with shredded BBQ beef sliders, canned tomatoes in the braise, crunchy cabbage slaw, carrot, and tangy wasteland sauce."
+description: "A Fallout-inspired Texas-style slider dinner made with smoky shredded beef, barbecue sauce, soft buns, and crunchy tomato-carrot Tato Slaw."
+summary: "Yao guai meat, carrot, and tato become a real May-in-Texas dinner with pressure-cooked BBQ beef sliders, crunchy cabbage slaw, Roma tomatoes, carrot, and tangy wasteland sauce."
 tags:
   - Fallout
   - BBQ
@@ -20,13 +20,13 @@ images:
 image: "/img/recipes/default.png"
 servings: 6
 prepTime: "PT20M"
-cookTime: "PT4H30M"
-totalTime: "PT4H50M"
-slot: 29
+cookTime: "PT1H50M"
+totalTime: "PT2H10M"
+slot: 26
 category: "Wasteland BBQ"
 draft: false
 recipeIngredient:
-  - "1.6 kg bone-in beef shoulder roast, chuck roast, or similar braising roast (3.5 lb)"
+  - "1.6 kg bone-in beef chuck roast (about 3.5–3.75 lb)"
   - "1 tbsp kosher salt"
   - "2 tsp black pepper"
   - "2 tsp smoked paprika"
@@ -38,7 +38,6 @@ recipeIngredient:
   - "4 cloves garlic, minced"
   - "240 ml beef broth (1 cup)"
   - "240 ml barbecue sauce (1 cup), plus more for serving"
-  - "1 can diced tomatoes, drained (14.5 oz)"
   - "2 tbsp apple cider vinegar"
   - "1 tbsp Worcestershire sauce"
   - "1 tbsp brown sugar or honey"
@@ -46,6 +45,7 @@ recipeIngredient:
   - "2 tbsp butter, melted, optional for buns"
   - "280 g shredded green cabbage (about 4 cups)"
   - "1 large carrot, shredded"
+  - "2 Roma tomatoes, seeded and diced"
   - "2 green onions, sliced"
   - "80 ml mayonnaise (1/3 cup)"
   - "1 tbsp apple cider vinegar or lime juice"
@@ -57,10 +57,10 @@ recipeIngredient:
   - "Crispy fried onions, optional"
 recipeInstructions:
   - "Season the Meat: Pat the roast dry. Mix salt, pepper, smoked paprika, garlic powder, onion powder, and chili powder. Rub the seasoning all over the beef."
-  - "Sear the Beef: Heat oil in a Dutch oven over medium-high heat. Sear the beef 3–4 minutes per side until browned. Remove and set aside."
-  - "Build the BBQ Base: Add sliced onion to the pot and cook 3–4 minutes. Add garlic and cook 1 minute. Stir in beef broth, barbecue sauce, drained diced tomatoes, apple cider vinegar, Worcestershire sauce, and brown sugar or honey."
-  - "Braise: Return the beef to the pot. Cover and cook at 300°F for 4–4 1/2 hours, or until the meat shreds easily with a fork."
-  - "Make the Tato Slaw: In a large bowl, combine cabbage, carrot, and green onion. In a separate bowl, whisk mayonnaise, vinegar or lime juice, Dijon mustard, honey or sugar, salt, and pepper. Toss with the vegetables and chill until serving."
+  - "Sear the Beef: Use the sear or sauté function on the NuWave or Instant Pot. Heat oil and sear the beef 3–4 minutes per side until browned. Remove and set aside."
+  - "Build the BBQ Base: Add sliced onion to the pot and cook 3–4 minutes. Add garlic and cook 1 minute. Stir in beef broth, barbecue sauce, apple cider vinegar, Worcestershire sauce, and brown sugar or honey. Scrape the bottom well to prevent a burn warning."
+  - "Pressure Cook: Return the beef to the pot. Lock the lid and cook on high pressure for 85–90 minutes. Let the pressure release naturally for 15–20 minutes, then carefully vent any remaining pressure."
+  - "Make the Tato Slaw: In a large bowl, combine cabbage, carrot, seeded diced Roma tomatoes, and green onion. In a separate bowl, whisk mayonnaise, vinegar or lime juice, Dijon mustard, honey or sugar, salt, and pepper. Toss with the vegetables and chill until serving."
   - "Shred the Yao Guai: Remove the beef from the pot. Remove and discard the bone. Shred the meat with two forks. Skim excess fat from the sauce if needed. Return shredded beef to the sauce and stir until coated."
   - "Toast the Buns: Brush slider buns with melted butter if using. Toast in the oven, on a griddle, or in a skillet until lightly golden."
   - "Assemble: Pile BBQ beef onto each slider bun. Top with Tato Slaw, pickles, crispy fried onions, or extra barbecue sauce."
@@ -69,29 +69,37 @@ recipeInstructions:
 
 ## Overview
 
-In *Fallout 4*, Yao guai roast is crafted from yao guai meat, carrot, and tato. This version turns that wasteland roast into a real May-in-Texas dinner: smoky shredded beef, barbecue sauce, soft slider buns, canned tomatoes cooked into the braise, and crunchy Tato Slaw made with cabbage and carrot.
+In *Fallout 4*, Yao guai roast is crafted from yao guai meat, carrot, and tato. This version turns that wasteland roast into a real May-in-Texas dinner: smoky pressure-cooked BBQ beef, soft slider buns, and crunchy Tato Slaw made with cabbage, carrot, and Roma tomatoes.
 
-**Theme:** Wasteland BBQ  
-**Profile:** Smoky, savory, tangy, slightly sweet  
-**Vibe:** A settlement cookout where the cooking station is smoking, the sliders are stacked high, and nobody asks too many questions about where the yao guai came from  
+**Theme:** Wasteland BBQ
+**Profile:** Smoky, savory, tangy, slightly sweet
+**Vibe:** A settlement cookout where the cooking station is hissing, the sliders are stacked high, and nobody asks too many questions about where the yao guai came from
+
+## NuWave / Instant Pot Timing
+
+For a 3.5–3.75 lb bone-in beef chuck roast, use **85–90 minutes on high pressure** with a **15–20 minute natural release**.
+
+If the roast is cut into smaller chunks, start checking closer to 75–80 minutes.
+
+If the roast is still tough after cooking, it is not overcooked. It needs more time under pressure to break down.
 
 ## Fallout Ingredient Translation
 
-| Game Ingredient | Real Ingredient |
-|---|---|
-| Yao guai meat | Bone-in beef shoulder roast, chuck roast, brisket, or pulled pork |
-| Carrot | Shredded carrot in the slaw |
-| Tato | Diced tomatoes cooked into the BBQ braise |
-| Cooking station | Dutch oven, slow cooker, smoker, or Instant Pot |
-| Wasteland cookout | Backyard slider night |
+| Game Ingredient   | Real Ingredient                                         |
+| ----------------- | ------------------------------------------------------- |
+| Yao guai meat     | Bone-in beef chuck roast                                |
+| Carrot            | Shredded carrot in the slaw                             |
+| Tato              | Roma tomato in the slaw                                 |
+| Cooking station   | NuWave, Instant Pot, Dutch oven, slow cooker, or smoker |
+| Wasteland cookout | Backyard slider night                                   |
 
 ## Meat Choice
 
-Use a **bone-in beef shoulder roast** for this version. It is a tough, flavorful cut that works well when cooked low and slow until it shreds.
+Use a **bone-in beef chuck roast** for this version. It is a tough, flavorful cut with enough connective tissue and fat to become tender and shreddable when pressure cooked or braised.
 
 Because the roast has a bone, the final meat yield will be a little lower than a boneless roast of the same weight, but the bone adds flavor to the sauce.
 
-For a more Texas-specific version, use chopped brisket or smoked chuck roast.
+For a more Texas-specific version, use smoked chuck roast or chopped brisket.
 
 For an easier weeknight version, use pulled pork or shredded rotisserie chicken, though beef feels the most like yao guai.
 
@@ -99,7 +107,7 @@ For an easier weeknight version, use pulled pork or shredded rotisserie chicken,
 
 ### Yao Guai BBQ Beef
 
-- 3.5 lb bone-in beef shoulder roast, chuck roast, or similar braising roast
+- 3.5–3.75 lb bone-in beef chuck roast
 - 1 tbsp kosher salt
 - 2 tsp black pepper
 - 2 tsp smoked paprika
@@ -111,7 +119,6 @@ For an easier weeknight version, use pulled pork or shredded rotisserie chicken,
 - 4 cloves garlic, minced
 - 1 cup beef broth
 - 1 cup barbecue sauce, plus more for serving
-- 1 can diced tomatoes, drained, 14.5 oz
 - 2 tbsp apple cider vinegar
 - 1 tbsp Worcestershire sauce
 - 1 tbsp brown sugar or honey
@@ -120,6 +127,7 @@ For an easier weeknight version, use pulled pork or shredded rotisserie chicken,
 
 - 4 cups shredded green cabbage
 - 1 large carrot, shredded
+- 2 Roma tomatoes, seeded and diced
 - 2 green onions, sliced
 - 1/3 cup mayonnaise
 - 1 tbsp apple cider vinegar or lime juice
@@ -148,9 +156,11 @@ Rub the seasoning all over the beef.
 
 ### 2. Sear the Beef
 
-Heat the oil in a Dutch oven over medium-high heat.
+Set the NuWave or Instant Pot to sear or sauté.
 
-Add the beef and sear for 3–4 minutes per side, until browned.
+Add the oil.
+
+When hot, add the beef and sear for 3–4 minutes per side, until browned.
 
 Remove the beef from the pot and set it aside.
 
@@ -162,21 +172,27 @@ Cook for 3–4 minutes, scraping up the browned bits from the bottom.
 
 Add the garlic and cook for 1 minute.
 
-Stir in the beef broth, barbecue sauce, drained diced tomatoes, apple cider vinegar, Worcestershire sauce, and brown sugar or honey.
+Stir in the beef broth, barbecue sauce, apple cider vinegar, Worcestershire sauce, and brown sugar or honey.
 
-### 4. Braise the Yao Guai
+Scrape the bottom of the pot well so no browned bits are stuck underneath the sauce.
+
+This helps prevent a burn warning during pressure cooking.
+
+### 4. Pressure Cook the Yao Guai
 
 Return the beef to the pot.
 
-Cover and cook in a 300°F oven for 4–4 1/2 hours, or until the meat shreds easily with a fork.
+Lock the lid and cook on high pressure for 85–90 minutes.
 
-Start checking around 3 1/2 hours. If the pot looks dry, add a splash of broth.
+Let the pressure release naturally for 15–20 minutes, then carefully vent any remaining pressure.
 
-The roast is ready when the meat pulls apart easily.
+The roast is ready when the meat pulls apart easily with a fork.
+
+If the meat is still tough, pressure cook for another 10–15 minutes and let it naturally release for 10 minutes.
 
 ### 5. Make the Tato Slaw
 
-While the beef cooks, combine the cabbage, carrot, and green onion in a large bowl.
+While the beef cooks, combine the cabbage, carrot, seeded diced Roma tomatoes, and green onion in a large bowl.
 
 In a separate bowl, whisk together the mayonnaise, apple cider vinegar or lime juice, Dijon mustard, honey or sugar, salt, and black pepper.
 
@@ -222,39 +238,33 @@ Add campfire corn, chips, beans, watermelon, iced tea, root beer, lemonade, or a
 
 ## Vault Notes
 
-### Why the Tomatoes Go in the Braise
+### Why Roma Tomatoes Stay in the Slaw
 
-Canned diced tomatoes work better in the BBQ beef than in the slaw.
+The **tato** belongs in the slaw for this recipe.
 
-They reinforce the **tato** theme while keeping the slaw crunchy. Fresh tomatoes can go in the slaw, but canned tomatoes tend to make it watery unless they are drained very well.
+Roma tomatoes give the topping its Fallout identity while keeping the sliders bright enough for a warm Texas dinner.
 
-### Optional Fresh Tomato Slaw
+Seed the tomatoes before adding them so the slaw stays crunchy instead of watery.
 
-If you have fresh tomatoes, add:
+### Oven Braise Method
 
-- 2 Roma tomatoes, seeded and diced
+Sear the beef in a Dutch oven.
 
-Add them to the slaw right before serving.
+Build the BBQ base with onion, garlic, broth, barbecue sauce, vinegar, Worcestershire sauce, and brown sugar or honey.
+
+Return the beef to the pot.
+
+Cover and cook in a 300°F oven for 4–4 1/2 hours, or until the meat shreds easily.
 
 ### Slow Cooker Method
 
 Sear the beef first if possible.
 
-Add the onion, garlic, broth, barbecue sauce, drained diced tomatoes, vinegar, Worcestershire sauce, and brown sugar or honey to the slow cooker.
+Add the onion, garlic, broth, barbecue sauce, vinegar, Worcestershire sauce, and brown sugar or honey to the slow cooker.
 
 Cook on low for 8–9 hours or high for 4–5 hours, until the beef shreds easily.
 
 Remove the bone, shred the meat, return it to the sauce, and keep warm until serving.
-
-### Instant Pot Method
-
-Use the sauté function to sear the beef.
-
-Add the onion, garlic, broth, barbecue sauce, drained diced tomatoes, vinegar, Worcestershire sauce, and brown sugar or honey.
-
-Pressure cook on high for 80–90 minutes, then allow a natural release for at least 15 minutes.
-
-Remove the bone, shred the meat, and return the beef to the sauce.
 
 ### Smoker Method
 
@@ -279,10 +289,15 @@ Pick based on the day:
 
 Keep the slaw simple and crunchy.
 
-If making it ahead, dress it lightly at first, then add more dressing before serving if needed.
+Seed the Roma tomatoes before adding them to the slaw.
+
+If making the slaw more than 1 hour ahead, prep the tomatoes but add them shortly before serving.
 
 ## Storage + Reheating
 
+Do not store assembled sliders unless you are okay with soft leftovers.
+
+- **Best fresh:** assemble sliders right before serving.
 - **BBQ beef fridge:** store in an airtight container up to 4 days.
 - **BBQ beef freezer:** freeze up to 3 months.
 - **Slaw fridge:** store up to 2 days, but best the first day.
