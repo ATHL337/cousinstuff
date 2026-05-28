@@ -1,4 +1,3 @@
-```markdown
 ---
 title: "Commonwealth Garlic-Parmesan Rad-Chicken Tray Bake"
 slug: "commonwealth-garlic-parmesan-rad-chicken-tray-bake"
@@ -25,7 +24,7 @@ servings: 4
 prepTime: "PT15M"
 cookTime: "PT37M"
 totalTime: "PT52M"
-slot: 30
+slot: null
 category: "Commonwealth Campfire Meals"
 draft: false
 recipeIngredient:
@@ -242,4 +241,3 @@ This keeps well as a leftover settlement ration plate.
 - Extra Parmesan cheese
 - Extra Parmesan Garlic sauce at the table
 - Ice-cold Nuka-Cola
-```
