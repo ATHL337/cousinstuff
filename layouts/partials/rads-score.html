@@ -27,9 +27,12 @@
 
 {{- $votesAll := site.Data.rads_votes -}}
 {{- $v := dict -}}
+{{- $hasVotes := false -}}
+
 {{- with $votesAll -}}
   {{- with (index . $slug) -}}
     {{- $v = . -}}
+    {{- $hasVotes = true -}}
   {{- end -}}
 {{- end -}}
 
@@ -56,23 +59,39 @@
       (mul $k3 $wK3)
       (mul $k4 $wK4)
 -}}
+
 {{- $weightTotal := add $wYou $wSpouse $wK1 $wK2 $wK3 $wK4 -}}
 
-{{- $score := 0.0 -}}
+{{- $rawScore := 0.0 -}}
 {{- if gt $weightTotal 0.0 -}}
-  {{- $score = div $weightedSum $weightTotal -}} {{/* 0–15 */}}
+  {{- $rawScore = div $weightedSum $weightTotal -}}
 {{- end -}}
 
-{{/* Tier thresholds (0–15) */}}
+{{/* Convert raw -10 to 15 scale into public 0 to 100 RADS */}}
+{{- $score := 0.0 -}}
+{{- if $hasVotes -}}
+  {{- $score = mul (div (add $rawScore 10.0) 25.0) 100.0 -}}
+  {{- if lt $score 0.0 -}}{{- $score = 0.0 -}}{{- end -}}
+  {{- if gt $score 100.0 -}}{{- $score = 100.0 -}}{{- end -}}
+{{- end -}}
+
+{{/* Public tier thresholds, 0 to 100 */}}
 {{- $tier := "unscored" -}}
-{{- if ge $score 13.5 -}}
-  {{- $tier = "core-lock" -}}
-{{- else if ge $score 11.5 -}}
-  {{- $tier = "core-candidate" -}}
-{{- else if ge $score 9.0 -}}
-  {{- $tier = "specialty" -}}
-{{- else if ge $score 6.0 -}}
-  {{- $tier = "wildcard" -}}
+
+{{- if $hasVotes -}}
+  {{- if ge $score 90.0 -}}
+    {{- $tier = "core-lock" -}}
+  {{- else if ge $score 75.0 -}}
+    {{- $tier = "core-candidate" -}}
+  {{- else if ge $score 60.0 -}}
+    {{- $tier = "specialty" -}}
+  {{- else if ge $score 45.0 -}}
+    {{- $tier = "wildcard" -}}
+  {{- else if gt $score 0.0 -}}
+    {{- $tier = "test-kitchen" -}}
+  {{- else -}}
+    {{- $tier = "radstorm-warning" -}}
+  {{- end -}}
 {{- end -}}
 
 {{- $label := "Unscored" -}}
@@ -80,14 +99,23 @@
 {{- if eq $tier "core-candidate" -}}{{- $label = "Core Candidate" -}}{{- end -}}
 {{- if eq $tier "specialty" -}}{{- $label = "Specialty" -}}{{- end -}}
 {{- if eq $tier "wildcard" -}}{{- $label = "Wildcard" -}}{{- end -}}
+{{- if eq $tier "test-kitchen" -}}{{- $label = "Test Kitchen" -}}{{- end -}}
+{{- if eq $tier "radstorm-warning" -}}{{- $label = "Radstorm Warning" -}}{{- end -}}
+
+{{- $scoreDisplay := "--" -}}
+{{- if $hasVotes -}}
+  {{- $scoreDisplay = printf "%.0f" $score -}}
+{{- end -}}
 
 {{- $votes := dict "you" (int $you) "spouse" (int $spouse) "k1" (int $k1) "k2" (int $k2) "k3" (int $k3) "k4" (int $k4) -}}
 
 {{- return (dict
   "slug" $slug
   "score" $score
-  "scoreDisplay" (printf "%.1f" $score)
+  "rawScore" $rawScore
+  "scoreDisplay" $scoreDisplay
   "tier" $tier
   "label" $label
   "votes" $votes
+  "hasVotes" $hasVotes
 ) -}}
