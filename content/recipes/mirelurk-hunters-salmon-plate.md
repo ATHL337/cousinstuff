@@ -18,7 +18,7 @@ servings: 4
 prepTime: "PT10M"
 cookTime: "PT25M"
 totalTime: "PT35M"
-slot: 8
+slot: null
 category: "Surface Rations"
 recipeIngredient:
   - "680 g raw Atlantic salmon (4 portions, ~170 g each)"

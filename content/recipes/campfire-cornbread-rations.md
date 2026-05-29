@@ -20,7 +20,7 @@ servings: 6
 prepTime: "PT5M"
 cookTime: "PT22M"
 totalTime: "PT27M"
-slot: 26
+slot: 32
 category: "Campfire Sides"
 draft: false
 recipeIngredient:

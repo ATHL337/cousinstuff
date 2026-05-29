@@ -22,7 +22,7 @@ servings: 6
 prepTime: "PT20M"
 cookTime: "PT1H50M"
 totalTime: "PT2H10M"
-slot: 26
+slot: 11
 category: "Wasteland BBQ"
 draft: false
 recipeIngredient:

@@ -24,7 +24,7 @@ servings: 6
 prepTime: "PT20M"
 cookTime: "PT40M"
 totalTime: "PT60M"
-slot: 3
+slot: null
 category: "Commonwealth Campfire Meals"
 draft: false
 recipeIngredient:
