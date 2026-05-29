@@ -16,8 +16,8 @@ tags:
   - Comfort Food
   - Wasteland BBQ
 images:
-  - "/img/recipes/default.png"
-image: "/img/recipes/default.png"
+  - "/img/recipes/yao-guai-bbq-sliders-with-tato-slaw.jpg"
+image: "/img/recipes/yao-guai-bbq-sliders-with-tato-slaw.jpg"
 servings: 6
 prepTime: "PT20M"
 cookTime: "PT1H50M"
