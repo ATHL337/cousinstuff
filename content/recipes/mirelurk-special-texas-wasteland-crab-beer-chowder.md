@@ -23,7 +23,7 @@ servings: 6
 prepTime: "PT20M"
 cookTime: "PT40M"
 totalTime: "PT1H"
-slot: 25
+slot: 1
 category: "Wasteland Chowders"
 draft: false
 recipeIngredient:
