@@ -18,13 +18,13 @@ tags:
   - Potatoes
   - Broccoli
 images:
-  - "/img/recipes/default.png"
-image: "/img/recipes/default.png"
+  - "/img/recipes/commonwealth-garlic-parmesan-rad-chicken-tray-bake.jpg"
+image: "/img/recipes/commonwealth-garlic-parmesan-rad-chicken-tray-bake.jpg"
 servings: 6
 prepTime: "PT20M"
-cookTime: "PT40M"
-totalTime: "PT60M"
-slot: null
+cookTime: "PT55M"
+totalTime: "PT75M"
+slot: 8
 category: "Commonwealth Campfire Meals"
 draft: false
 recipeIngredient:
@@ -42,12 +42,12 @@ recipeIngredient:
   - "Olive oil, for drizzling, about 3–4 tbsp"
   - "Shredded or grated Parmesan cheese, for finishing"
 recipeInstructions:
-  - "Preheat Oven: Preheat oven to 400 degrees F. Spray two large sheet pans with cooking spray or line them with parchment paper."
+  - "Preheat Oven: Preheat oven to 400 degrees F. Spray one extra-large sheet pan plus one half sheet pan, or two standard half sheet pans, with cooking spray or line them with parchment paper. Make sure all pans fit safely in the oven with room for airflow."
   - "Prep Vegetables: Wash and quarter the baby potatoes. Slice the onion. Chop broccoli into larger florets so it does not overcook too quickly."
-  - "Season Vegetables: Divide potatoes, onion, and broccoli between the two sheet pans. Drizzle with olive oil and season with about half of the seasoning blend. Toss to coat."
+  - "Season Vegetables: Divide potatoes, onion, and broccoli between the pans. Drizzle with olive oil and season with about half of the seasoning blend. Toss to coat."
   - "Season Chicken: Add boneless, skinless chicken thighs to a large bowl. Season with the remaining seasoning blend. Add enough Parmesan Garlic sauce to coat the chicken, then stir until evenly covered."
-  - "Build the Trays: Make spaces between the vegetables and divide the seasoned chicken thighs between the two sheet pans."
-  - "Bake: Bake at 400 degrees F for about 35–40 minutes, rotating the pans halfway through, until the chicken reaches at least 185 degrees F internally and the potatoes are tender."
+  - "Build the Trays: Make spaces between the vegetables and divide the seasoned chicken thighs between the pans. Keep everything in a single layer as much as possible."
+  - "Bake: Bake at 400 degrees F for about 45–55 minutes, rotating the pans halfway through, until the chicken reaches at least 185 degrees F internally and the potatoes are fork-tender."
   - "Finish: Broil one pan at a time for 1–3 minutes if desired for extra color. Top everything with Parmesan cheese before serving."
 ---
 
@@ -57,9 +57,9 @@ Out in the Commonwealth, a good settlement dinner needs three things: protein, v
 
 This family-sized tray bake turns **boneless, skinless chicken thighs** into a full dinner for 6 with roasted baby potatoes, broccoli, onion, smoky seasoning, and a heavy coat of scavenged pre-war Parmesan garlic wing sauce. It feels like something a tired settlement cook would throw together after patrol, then proudly serve like it came from Diamond City.
 
-This version is built for a real family table, not a tiny four-serving ration pack. Use **two sheet pans** so the chicken and vegetables roast properly instead of steaming in a crowded pan.
+This version is built for a real family table, not a tiny four-serving ration pack. Use **multiple oven-safe pans** so the chicken and vegetables roast properly instead of steaming in a crowded pan.
 
-**Theme:** Commonwealth Campfire Meals  
+**Theme:** Core Rations  
 **Profile:** Savory, garlicky, cheesy, smoky, family-friendly  
 **Vibe:** Roasted rad-chicken energy, crispy potato edges, settlement dinner comfort  
 
@@ -111,9 +111,13 @@ This is still a real dinner, but the Fallout logic is easy:
 
 Preheat the oven to **400 degrees F**.
 
-Spray **two large sheet pans** with cooking spray or line them with parchment paper for easier cleanup.
+Spray **one extra-large sheet pan plus one half sheet pan**, or **two standard half sheet pans**, with cooking spray or line them with parchment paper for easier cleanup.
 
-Do not try to force this full family-sized recipe onto one pan. One crowded pan will steam the potatoes and vegetables instead of roasting them.
+Make sure the pans fit safely in your oven with room for airflow. Do not force a pan into the oven if it touches the oven walls or prevents the door from closing cleanly.
+
+Trim or tuck parchment paper so it does not hang over the pan edges.
+
+Do not force the full family-sized recipe onto one pan. Crowding will steam the potatoes and vegetables instead of roasting them.
 
 ### 2. Prep the Settlement Vegetables
 
@@ -125,7 +129,7 @@ Chop the broccoli into larger florets. Do not cut the broccoli too small because
 
 ### 3. Season the Vegetables
 
-Divide the potatoes, onion, and broccoli between the two sheet pans.
+Divide the potatoes, onion, and broccoli between the pans.
 
 Drizzle the vegetables with olive oil.
 
@@ -152,9 +156,9 @@ Stir until the chicken is evenly covered in seasoning and sauce.
 
 ### 5. Build the Trays
 
-Make small open spaces between the vegetables on both sheet pans.
+Make small open spaces between the vegetables on each pan.
 
-Divide the seasoned chicken thighs between the two pans.
+Divide the seasoned chicken thighs between the pans.
 
 Place the chicken directly into the open spaces so it has contact with the pan.
 
@@ -162,7 +166,7 @@ Spread everything into a single layer as much as possible. Crowding the pans too
 
 ### 6. Bake
 
-Bake at **400 degrees F** for about **35–40 minutes**, or until:
+Bake at **400 degrees F** for about **45–55 minutes**, or until:
 
 - Chicken reaches at least **185 degrees F** internally
 - Potatoes are fork-tender
@@ -175,11 +179,15 @@ Rotate the pans halfway through cooking:
 - Move the lower pan to the top rack.
 - Turn each pan around front-to-back if your oven has hot spots.
 
+Start checking the chicken around **40 minutes**, but expect the full family-sized version to take closer to **45–55 minutes** depending on pan crowding, rack position, chicken thickness, and potato size.
+
+If the chicken reaches 185 degrees F before the potatoes are tender, move the chicken to a plate, cover loosely with foil, and return the potatoes and vegetables to the oven for another **8–12 minutes**.
+
 ### 7. Broil and Finish
 
 For extra color, broil for **1–3 minutes** at the end.
 
-Broil **one pan at a time** so you can control the finish and avoid burning the sauce or broccoli.
+Broil **one pan at a time** so you can control the finish and avoid burning the sauce, parchment, or broccoli.
 
 Top everything with shredded or grated Parmesan cheese before serving.
 
@@ -196,9 +204,28 @@ The key upgrades are:
 - More broccoli
 - More onion
 - Larger seasoning blend
-- Two sheet pans instead of one
+- Multiple pans instead of one crowded pan
 
 For bigger appetites, add a side like rice, garlic bread, Caesar salad, or buttered noodles.
+
+### Pan Fit and Airflow
+
+A family-sized sheet pan dinner only works if the pans actually fit in the oven.
+
+Use:
+
+- One extra-large sheet pan plus one half sheet pan, if both fit safely
+- Two standard half sheet pans
+- One half sheet pan plus one smaller oven-safe pan for overflow
+
+Avoid:
+
+- Pans that touch the oven walls
+- Pans that block the oven door
+- Parchment hanging over the sides
+- Stacking food too thickly in the center
+
+If the oversized pan does not fit, split the food across smaller pans and cook on two racks.
 
 ### Chicken Thigh Target Temperature
 
@@ -208,7 +235,7 @@ Chicken is safe at **165 degrees F**, but thighs are better when cooked higher. 
 
 This recipe is written for **boneless, skinless chicken thighs**.
 
-If using **bone-in chicken thighs**, expect a longer cook time. Start checking around **40 minutes**, but plan for about **45–50 minutes** depending on size. Cook until the thickest part of the thigh reaches at least **185 degrees F** and the potatoes are tender.
+If using **bone-in chicken thighs**, expect a longer cook time. Start checking around **45 minutes**, but plan for about **50–60 minutes** depending on size, pan crowding, and oven performance. Cook until the thickest part of the thigh reaches at least **185 degrees F** and the potatoes are tender.
 
 For best results with bone-in thighs:
 
@@ -224,7 +251,7 @@ For firmer greenhouse greens, add the broccoli halfway through the cook instead 
 Best split:
 
 - Start potatoes, onion, and chicken first.
-- Add broccoli after about 18–20 minutes.
+- Add broccoli after about 20–25 minutes.
 - Finish baking until chicken and potatoes are done.
 
 This is especially helpful if your family prefers broccoli with more bite.
