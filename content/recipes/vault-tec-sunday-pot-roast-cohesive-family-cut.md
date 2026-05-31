@@ -1,20 +1,24 @@
 ---
-title: "VT-19 Sunday Pot Roast"
-slug: "sunday-pot-roast"
+title: "Vault-Tec Sunday Pot Roast (Cohesive Family Cut)"
+slug: "vault-tec-sunday-pot-roast-cohesive-family-cut"
 date: "2026-05-31"
-description: "A Fallout-inspired, family-of-six Sunday pot roast built from two boneless chuck roasts, vegetables, beef broth, Worcestershire, garlic, herbs, and a long braise until fork-tender."
-summary: "A Vault-style Sunday ration using about 6 lb of boneless beef chuck roast, built to feed a family of six with enough meat and vegetables for second plates or next-day sandwiches."
+description: "A cohesive Fallout-inspired pot roast built for a family of six using two boneless chuck roasts, root vegetables, beef broth, Worcestershire, garlic, herbs, and a long braise until fork-tender."
+summary: "A cohesive replacement: pre-war Sunday dinner rebuilt as a Vault legacy ration with slow-braised boneless chuck roast, potatoes, carrots, onions, garlic, and gravy for six hungry vault dwellers with leftovers."
 tags:
   - Fallout
   - Beef
   - Pot Roast
   - Chuck Roast
+  - Vault-Tec
+  - Brahmin
+  - Legacy Recipe
   - Family Friendly
   - Dinner
   - Comfort Food
   - Slow Cooked
   - Sunday Dinner
-  - Core Rations
+  - Family Dinner
+  - Meal Prep
 images:
   - "/img/recipes/default.png"
 image: "/img/recipes/default.png"
@@ -23,7 +27,7 @@ prepTime: "PT30M"
 cookTime: "PT4H"
 totalTime: "PT4H30M"
 slot: 19
-category: "Core Rations"
+category: "Legacy Recipes"
 draft: false
 recipeIngredient:
   - "About 2.7 lb boneless beef chuck roast"
@@ -55,11 +59,23 @@ recipeInstructions:
 
 ## Overview
 
-This is the Vault Sunday table version of pot roast: big enough for a family of six, built around the H-E-B boneless beef chuck roast options in the meat case, and written so the recipe scales cleanly without becoming vague.
+This is the pre-war Sunday dinner the Vault cafeteria would protect in the emergency recipe binder: a big, slow-braised pot roast built for a family of six, enough vegetables for real plates, and enough leftover beef to make tomorrow feel planned instead of scavenged.
 
-**Theme:** Core Rations  
-**Profile:** Slow-braised, rich, family-sized  
-**Vibe:** Old-world Sunday dinner, Vault mess hall comfort, post-wasteland leftovers  
+The H-E-B meat case gave this recipe its practical shape: two boneless chuck roasts are easier to sear, easier to fit, and better for family portions than one oversized block.
+
+**Theme:** Legacy Recipes  
+**Profile:** Slow-braised, rich, savory, family-sized  
+**Vibe:** Pre-war Sunday dinner preserved in the Vault 33 recipe archives  
+
+## Fallout Ingredient Translation
+
+| Wasteland Ingredient | Real Ingredient |
+|---|---|
+| Brahmin roast ration | Boneless beef chuck roast |
+| Tatos | Baby potatoes |
+| Mutroot and settlement vegetables | Carrots and onions |
+| Vault gravy base | Beef broth, Worcestershire, tomato paste, and pan drippings |
+| Camp oven or mess hall range | Dutch oven, roasting pan, slow cooker, or Instant Pot |
 
 ## Meat Selection
 
@@ -75,7 +91,7 @@ Best move: use **two boneless chuck roasts totaling about 6 lb**. Two pieces sea
 
 ## Ingredients
 
-### Core Roast
+### Brahmin Roast Stand-In
 
 - About 2.7 lb boneless beef chuck roast
 - About 3.3 lb boneless beef chuck roast
@@ -83,14 +99,14 @@ Best move: use **two boneless chuck roasts totaling about 6 lb**. Two pieces sea
 - 2 tsp black pepper
 - 2 tbsp oil for searing
 
-### Vault Vegetable Loadout
+### Vault Table Vegetables
 
 - 2 large yellow onions, thick-sliced
 - 6 carrots, cut into large chunks
 - 2 lb baby potatoes, halved if large
 - 6 garlic cloves, smashed
 
-### Braising Liquid
+### Vault Gravy Base
 
 - 3 cups beef broth
 - 2 tbsp Worcestershire sauce
@@ -177,6 +193,10 @@ Serve each plate with:
 
 ## Vault Notes
 
+### Why This Belongs in VT-19
+
+This is a legacy recipe, not a flashy specialty module. It earns the VT-19 slot because it is dependable, family-centered, Sunday-dinner food: beef, vegetables, gravy, and leftovers. That makes it a better fit for the Legacy Recipes block than the front-line Core Rations block.
+
 ### Family-of-Six Scaling
 
 The old 3-4 lb version can technically feed six, but it leaves no margin for bigger appetites, second plates, or next-day use.
@@ -205,15 +225,18 @@ One large butcher-cut piece looks impressive, but it may cook unevenly unless cu
 
 For food safety, beef roasts should reach at least 145°F with a 3-minute rest. For pot roast, that is only the safety floor. Chuck roast becomes properly tender much later, usually when the connective tissue has had time to break down during a long covered braise.
 
-### Pot-Fit Switches
+### Cut-Fit Switches
 
-Pick based on your gear:
+Pick based on your gear and family appetite:
 
 - **Dutch oven too small:** use a deep roasting pan and cover tightly with foil.
 - **Only one pot:** sear in batches, then stack the roasts slightly if needed.
 - **Vegetables crowding the pot:** cook potatoes separately and spoon gravy over them.
-- **Need more stretch:** add extra carrots, onions, potatoes, or rolls.
+- **Need more stretch:** add extra carrots, onions, potatoes, dinner rolls, rice, or buttered noodles.
 - **Need cleaner leftovers:** shred one roast for dinner and save the second roast in larger chunks.
+- **Need more Vault flavor:** call the potatoes “tatos” at the table, but keep the recipe ingredient listed as potatoes so the shopping list stays clear.
+- **Need a stronger gravy:** reduce the braising liquid longer before adding the cornstarch slurry.
+- **Need less salt:** use low-sodium beef broth and adjust seasoning after the gravy reduces.
 
 ## Storage + Reheating
 
@@ -224,7 +247,7 @@ Pick based on your gear:
 
 ## Leftover Formats
 
-- Pot roast sandwiches with gravy
+- Overseer-approved pot roast sandwiches with gravy
 - Beef and potato breakfast hash
 - Shredded beef over rice
 - Vault-style beef noodle bowl
