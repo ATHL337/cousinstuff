@@ -20,8 +20,8 @@ tags:
   - Family Dinner
   - Meal Prep
 images:
-  - "/img/recipes/default.png"
-image: "/img/recipes/default.png"
+  - "/img/recipes/vault-tec-sunday-pot-roast-cohesive-family-cut.png"
+image: "/img/recipes/vault-tec-sunday-pot-roast-cohesive-family-cut.png"
 servings: 8
 prepTime: "PT30M"
 cookTime: "PT4H"
