@@ -1,654 +1,381 @@
-\---
-
-title: "Commonwealth Garlic-Parmesan Rad-Chicken Tray Bake"
-
-slug: "commonwealth-garlic-parmesan-rad-chicken-tray-bake"
-
-date: "2026-08-19"
-
-description: "A Fallout-inspired Core Ration tray bake sized for a family of 6, with boneless, skinless chicken thighs, roasted baby potatoes, broccoli, onion, optional mild peppers, smoky seasoning, and scavenged pre-war Parmesan garlic sauce."
-
-summary: "A family-sized Commonwealth tray bake built from boneless, skinless chicken thighs, roasted potatoes, broccoli, onion, optional mild peppers, Parmesan garlic sauce, and a smoky seasoning blend."
-
-tags:
-
-&#x20; - Fallout
-
-&#x20; - Commonwealth
-
-&#x20; - Core Ration
-
-&#x20; - Chicken
-
-&#x20; - Sheet Pan
-
-&#x20; - Settlement Food
-
-&#x20; - Family Friendly
-
-&#x20; - Dinner
-
-&#x20; - Weeknight
-
-&#x20; - Parmesan Garlic
-
-&#x20; - Comfort Food
-
-&#x20; - Potatoes
-
-&#x20; - Broccoli
-
-images:
-
-&#x20; - "/img/recipes/default.png"
-
-image: "/img/recipes/default.png"
-
-servings: 6
-
-prepTime: "PT20M"
-
-cookTime: "PT55M"
-
-totalTime: "PT75M"
-
-slot: 8
-
-category: "Core Rations"
-
+---
+category: Pre-War Field Notes
+cookTime: PT35M
+date: 2026-08-19
+description: A Fallout-inspired Galician family supper of overnight-marinated garlic pork loin, crispy fries, blistered peppers, and crusty bread.
 draft: false
-
+image: /img/recipes/raxo-firecracker-peppers.jpg
+images:
+- /img/recipes/raxo-firecracker-peppers.jpg
+prepTime: PT20M
 recipeIngredient:
-
-&#x20; - "3 lb boneless, skinless chicken thighs"
-
-&#x20; - "Buffalo Wild Wings Parmesan Garlic sauce, enough to coat chicken, about 3/4 to 1 cup"
-
-&#x20; - "1 1/2 tsp salt"
-
-&#x20; - "1 1/2 tsp black pepper"
-
-&#x20; - "1 1/2 tsp Italian seasoning"
-
-&#x20; - "1 1/2 tsp onion powder"
-
-&#x20; - "1 tbsp garlic powder"
-
-&#x20; - "1 tbsp smoked paprika"
-
-&#x20; - "36 oz baby potatoes, quartered"
-
-&#x20; - "2 small heads broccoli or 1 large head broccoli, chopped into larger florets"
-
-&#x20; - "1 large onion or 2 medium onions, sliced"
-
-&#x20; - "1–2 bell peppers or mild roasting peppers, sliced, optional"
-
-&#x20; - "Olive oil, for drizzling, about 3–4 tbsp"
-
-&#x20; - "Shredded or grated Parmesan cheese, for finishing"
-
+- 1.36 kg boneless pork loin, trimmed and cut into 2--2.5 cm cubes (3 lb)
+- 10 cloves garlic, finely minced, divided
+- 2 tbsp sweet smoked Spanish paprika (pimentón de la Vera, dulce)
+- 1 tsp hot Spanish paprika (pimentón picante), optional
+- 2 tbsp fresh rosemary, finely chopped
+- 2 tbsp fresh thyme leaves
+- 120 ml extra-virgin olive oil, divided (1/2 cup)
+- 120 ml dry white wine, preferably Albariño (1/2 cup)
+- 30 ml sherry vinegar (2 tbsp)
+- 2 tsp kosher or sea salt, plus more to taste
+- 1 tsp freshly ground black pepper
+- Zest of 1 large lemon
+- 1/2 tsp crushed red pepper flakes, optional
+- 30 g flat-leaf parsley, finely chopped (about 1/2 cup loosely packed)
+- Flaky sea salt, for finishing
+- 1.36--1.59 kg frozen straight-cut or restaurant-style French fries (3--3 1/2 lb)
+- 680 g shishito peppers (1 1/2 lb)
+- 15 ml extra-virgin olive oil (1 tbsp), for peppers
+- 2 lemons, cut into wedges
+- 1 large crusty loaf, sliced
 recipeInstructions:
+- "Marinate Pork: Combine pork loin with 8 cloves garlic, paprika, rosemary, thyme, 1/4 cup olive oil, white wine, sherry vinegar, salt, black pepper, lemon zest, and optional red pepper flakes. Cover and refrigerate at least 2 hours, preferably overnight."
+- "Stage Dinner: Remove pork from the refrigerator about 20 minutes before cooking. Lift it from the marinade, allow excess liquid to drain, and divide into 3--4 batches. Do not reuse the raw marinade."
+- "Start Fries: Divide frozen fries between the Ninja Foodi XL cooking zones without tightly overcrowding. Air fry according to the package directions, using 400°F as the starting point when compatible, tossing or shaking halfway through."
+- "Sear Raxo: Heat a large heavy skillet over medium-high heat with part of the remaining olive oil. Working in 3--4 batches, sear pork in a single uncrowded layer until browned and cooked through, about 6--8 minutes per batch depending on skillet size and heat. Transfer finished pork to a clean platter."
+- "Finish Raxo: Reduce heat to medium. Add the remaining 2 cloves garlic and cook about 30 seconds. Return the pork and accumulated juices to the skillet and toss 1--2 minutes. Finish with parsley and flaky salt, then cover loosely and rest while the peppers cook."
+- "Blister Firecracker Peppers: Heat a second skillet over high heat. Add 1 tbsp olive oil and the shishito peppers. Cook 5--7 minutes, turning occasionally, until blistered and softened but not collapsed. Finish with flaky salt."
+- "Final Crisp: Check the fries as the peppers finish. Give them a few additional minutes in the Foodi if needed for a crisp finish."
+- "Serve: Arrange the raxo, fries, and Firecracker Peppers family-style. Add crusty bread and lemon wedges and serve immediately."
+servings: 8
+slot: 28
+slug: raxo-firecracker-peppers
+summary: "A Pre-War Field Notes recipe inspired by Galicia: marinated raxo, easy air-fried French fries, blistered Firecracker Peppers, and bread, scaled for an eight-person family dinner."
+tags:
+- Fallout
+- Pork
+- Galicia
+- Spain
+- Raxo
+- Peppers
+- French Fries
+- Family Friendly
+- Dinner
+- Air Fryer
+- Stovetop
+- Pre-War Field Notes
+title: Raxo & Firecracker Peppers
+totalTime: PT55M
+---
 
-&#x20; - "Preheat Oven: Preheat oven to 400 degrees F. Spray one extra-large sheet pan plus one half sheet pan, or two standard half sheet pans, with cooking spray or line them with parchment paper. Make sure all pans fit safely in the oven with room for airflow."
+## Overview
 
-&#x20; - "Prep Vegetables: Wash and quarter the baby potatoes. Slice the onion. Chop broccoli into larger florets. Slice optional bell peppers or mild roasting peppers into thick strips."
+Raxo is a Galician pork dish built around small pieces of marinated pork, garlic, Spanish paprika, olive oil, wine, and a hot skillet. Served with crisp potatoes or fries, it is straightforward tavern food with enough flavor to earn a permanent place in the family registry.
 
-&#x20; - "Season Vegetables: Divide potatoes, onion, broccoli, and optional peppers between the pans. Drizzle with olive oil and season with about half of the seasoning blend. Toss to coat."
+This CousinStuff version is inspired by the raxo encountered during our family's 2026 trip through Galicia and informed by the Fork & Salt raxo recipe. Their version uses pork loin, marinates it for at least two hours and preferably overnight, and recommends fries or potatoes alongside the pork.
 
-&#x20; - "Season Chicken: Add boneless, skinless chicken thighs to a large bowl. Season with the remaining seasoning blend. Add enough Parmesan Garlic sauce to coat the chicken, then stir until evenly covered."
+For our kitchen, the mission is simpler: marinate the pork ahead of time, let the Ninja Foodi XL handle frozen French fries, and reserve the stovetop for the two things that actually need direct attention—the raxo and the Firecracker Peppers.
 
-&#x20; - "Build the Trays: Make spaces between the vegetables and divide the seasoned chicken thighs between the pans. Keep everything in a single layer as much as possible."
+**Theme:** Pre-War Field Notes  
+**Profile:** Garlicky, savory, smoky, herbaceous, lightly acidic  
+**Vibe:** A Galician tavern ration recovered from a Pre-War travel journal and rebuilt at an Appalachian C.A.M.P.
 
-&#x20; - "Bake: Bake at 400 degrees F for about 45–55 minutes, rotating the pans halfway through, until the chicken reaches at least 185 degrees F internally and the potatoes are fork-tender."
+## Pre-War Field Notes
 
-&#x20; - "Finish: Broil one pan at a time for 1–3 minutes if desired for extra color. Top everything with Parmesan cheese before serving."
+This ration started far outside Appalachia.
 
-\---
+During a 2026 family trip through Galicia, raxo and pimientos became one of those deceptively simple combinations worth bringing home: garlicky pork, potatoes, blistered peppers, good bread, and very little unnecessary complication.
 
+Back in the Texas Wasteland, that memory becomes **Raxo & Firecracker Peppers**.
 
+The pork gets its flavor before dinner even starts, the fries go straight from freezer to Foodi, and shishitos provide an easy stateside stand-in for the blistered peppers we remember from Galicia.
 
-\## Overview
+The point is not to disguise Galician food with Fallout names. It is to preserve a family travel memory as a practical Wasteland supper.
 
+## Recipe Inspiration
 
+The marinade and pork-loin approach are adapted from the Fork & Salt **Raxo (Galician Marinated Pork)** recipe, which combines pork loin with garlic, Spanish paprika, rosemary, thyme, olive oil, dry white wine, sherry vinegar, lemon zest, salt, and pepper.
 
-Out in the Commonwealth, a good Core Ration needs three things: protein, vegetables, and enough food that nobody has to start bartering over the last chicken thigh.
+Their recipe calls for at least a 2-hour marinade, preferably overnight. This family-sized version keeps that basic flavor architecture while scaling it for eight and simplifying the potato side with frozen French fries.
 
+## Fallout Ingredient Translation
 
+------------------------------------------------------------------------
 
-This family-sized tray bake turns \*\*boneless, skinless chicken thighs\*\* into a full dinner for 6 with roasted baby potatoes, broccoli, onion, optional mild peppers, smoky seasoning, and a heavy coat of scavenged pre-war Parmesan garlic wing sauce. It feels like something a tired settlement cook would throw together after patrol, then proudly serve like it came from Diamond City.
+Wasteland Ingredient Real Ingredient
 
+------------------------------------------------------------------------
 
+Fresh wasteland pork Boneless pork loin
 
-This version is built for a real family table, not a tiny four-serving ration pack. Use \*\*multiple oven-safe pans\*\* so the chicken and vegetables roast properly instead of steaming in a crowded pan.
+Tato fries Frozen French fries
 
+Firecracker Peppers Shishito peppers
 
+Pre-War cooking wine Albariño or another dry white wine
 
-\*\*Theme:\*\* Core Rations  
+Field seasoning packet Garlic, Spanish paprika, rosemary, thyme, lemon, salt, and pepper
 
-\*\*Profile:\*\* Savory, garlicky, cheesy, smoky, family-friendly  
+C.A.M.P. cooking station Ninja Foodi XL + stovetop skillets
 
-\*\*Vibe:\*\* Roasted rad-chicken energy, crispy potato edges, settlement dinner comfort  
+## Preserved travel ration Crusty bread
 
+## Ingredients
 
+### Marinated Raxo
 
-\## Wasteland Translation
+- 3 lb boneless pork loin, trimmed and cut into 3/4--1-inch cubes
+- 10 cloves garlic, finely minced, divided
+- 2 tbsp sweet smoked Spanish paprika (pimentón de la Vera, dulce)
+- 1 tsp hot Spanish paprika (pimentón picante), optional
+- 2 tbsp fresh rosemary, finely chopped
+- 2 tbsp fresh thyme leaves
+- 1/2 cup extra-virgin olive oil, divided
+- 1/2 cup dry white wine, preferably Albariño
+- 2 tbsp sherry vinegar
+- 2 tsp kosher or sea salt, plus more to taste
+- 1 tsp freshly ground black pepper
+- Zest of 1 large lemon
+- 1/2 tsp crushed red pepper flakes, optional
+- About 1/2 cup loosely packed flat-leaf parsley, finely chopped
+- Flaky sea salt, for finishing
 
+### Tato Fries
 
+- 3--3 1/2 lb frozen straight-cut or restaurant-style French fries
 
-This is still a real dinner, but the Fallout logic is easy:
+### Firecracker Peppers
 
+- 1 1/2 lb shishito peppers, **preferred**, or one of the availability substitutes below
+- 1 tbsp extra-virgin olive oil
+- Flaky sea salt, for finishing
+- 2 lemons, cut into wedges
 
+### For the Table
 
-| Real Ingredient | Wasteland Role |
+- 1 large crusty loaf, sliced
 
-|---|---|
+## Equipment Plan
 
-| Boneless, skinless chicken thighs | Farm-raised rad-chicken stand-in |
+Equipment Assignment
 
-| Baby potatoes | Tato-adjacent settlement starch |
+------------------------------------------------------------------------
 
-| Broccoli | Greenhouse greens |
+Ninja Foodi XL Frozen French fries Large heavy skillet Raxo Second large skillet Firecracker Peppers Stovetop Pork and peppers Microwave Optional holding/reheating only Electric oven Not required
 
-| Onion | Trading post staple |
+The oven intentionally stays out of the primary workflow. The Foodi handles the fries while the stovetop concentrates on foods that benefit from direct high heat.
 
-| Bell peppers or mild roasting peppers | Settlement market vegetables |
+## Kitchen Flow
 
-| Parmesan Garlic sauce | Scavenged pre-war wing sauce |
+### Night Before — Preferred
 
-| Parmesan cheese | Fancy Diamond City finish |
+Cut and marinate the pork.
 
+That moves almost all of the flavor-building prep out of the dinner rush.
 
+### Same-Day Minimum
 
-\## Ingredients
+If overnight is not possible, give the pork at least **2 hours in the refrigerator**.
 
+### Dinner Service
 
+Use this as a synchronization guide rather than a rigid stopwatch.
 
-\### Rad-Chicken Stand-In
+- **T-35 minutes — Stage the pork:** Remove the marinated pork from the refrigerator. Set out the skillets, receiving platter, tongs, parsley, bread, and serving dishes.
+- **T-30 minutes — Start the fries:** Put the frozen fries into the Ninja Foodi XL and begin cooking according to the package air-fryer directions. While they cook, lift the pork from the marinade, let the excess drain, and divide it into 3–4 batches.
+- **T-25 minutes — Heat the raxo skillet:** Preheat the large skillet over medium-high heat. Keep the second skillet off for now.
+- **T-22 minutes — Start the raxo:** Begin batch-searing the pork while the Foodi handles the fries.
+- **T-10 minutes — Check the fries:** Shake or toss the fries and continue cooking as needed. Finish the last raxo batches. Begin heating the second skillet for the peppers.
+- **T-7 minutes — Finish the raxo:** Complete the garlic-and-parsley finish, transfer the pork to its serving platter, and cover loosely. Immediately start blistering the Firecracker Peppers.
+- **T-2 minutes — Final crisp:** Check the fries. Give them a few extra minutes if they need more color while you finish the peppers with flaky salt and set out the lemon wedges.
+- **T-0 — Serve:** Bring the raxo, hot fries, Firecracker Peppers, bread, and lemon wedges to the table.
 
+**Package directions win for the fries.** Different frozen fries vary considerably in thickness and factory preparation, so use their stated air-fryer time when available and use the timeline above to synchronize the rest of dinner around them.
 
+## Instructions
 
-\- 3 lb boneless, skinless chicken thighs
+### 1. Marinate the Raxo
 
-\- Buffalo Wild Wings Parmesan Garlic sauce, enough to coat the chicken, about 3/4 to 1 cup
+Place the cubed pork loin in a large bowl or food-safe container.
 
+Add:
 
+- 8 cloves minced garlic
+- 2 tbsp sweet smoked Spanish paprika
+- 1 tsp hot Spanish paprika, if using
+- 2 tbsp chopped rosemary
+- 2 tbsp thyme leaves
+- 1/4 cup olive oil
+- 1/2 cup dry white wine
+- 2 tbsp sherry vinegar
+- 2 tsp kosher or sea salt
+- 1 tsp black pepper
+- Zest of 1 lemon
+- Crushed red pepper flakes, if using
 
-\*\*Meat note:\*\* This recipe is written for \*\*boneless, skinless chicken thighs\*\*. Bone-in thighs can work, but they usually need more time and should be checked carefully with a thermometer.
+Toss thoroughly so every piece of pork is coated.
 
+Cover and refrigerate for **at least 2 hours and preferably overnight**.
 
+### 2. Stage Dinner
 
-\### Settlement Vegetables
+About 20 minutes before cooking, remove the pork from the refrigerator.
 
+Lift the pork from the marinade and allow excess liquid to drain away. The surface does not need to be dry, but excess marinade in the skillet will steam the meat instead of searing it.
 
+Divide the pork into **3--4 batches** before heating the skillet.
 
-\- 36 oz baby potatoes, quartered
+Discard the marinade that contacted the raw pork.
 
-\- 2 small heads broccoli or 1 large head broccoli, chopped into larger florets
+Set a clean receiving platter beside the stove.
 
-\- 1 large onion or 2 medium onions, sliced
+### 3. Start the Tato Fries
 
-\- 1–2 bell peppers or mild roasting peppers, sliced, optional
+Divide the frozen fries between the Ninja Foodi XL cooking zones without tightly overcrowding them.
 
-\- 3–4 tbsp olive oil, for drizzling
+Air fry according to the package directions. If the package provides no useful air-fryer guidance, **400°F is the starting point**, checking and shaking regularly until crisp and hot.
 
+Shake or toss the fries about halfway through.
 
+No peeling. No chopping. No boiling potatoes. The Foodi owns this part of dinner.
 
-\### Smoky Seasoning Blend
+### 4. Sear the Raxo
 
+Heat a large heavy skillet over medium-high heat.
 
+Add enough of the remaining olive oil to lightly coat the skillet.
 
-\- 1 1/2 tsp salt
+Add the first pork batch in a **single uncrowded layer**.
 
-\- 1 1/2 tsp black pepper
+Sear until golden brown and cooked through, approximately **6--8 minutes total per batch**, depending on the skillet, burner, and size of the pork pieces.
 
-\- 1 1/2 tsp Italian seasoning
+Transfer cooked pork to the clean receiving platter.
 
-\- 1 1/2 tsp onion powder
+Repeat with the remaining batches, adding a little additional olive oil only when the skillet needs it.
 
-\- 1 tbsp garlic powder
+Do not pour the used marinade into the skillet.
 
-\- 1 tbsp smoked paprika
+### 5. Finish the Raxo
 
+Once the pork is cooked, reduce the skillet to medium.
 
+Add the remaining **2 minced garlic cloves** and cook for about **30 seconds**, just until fragrant.
 
-\### Diamond City Finish
+Return the pork and its accumulated juices to the skillet.
 
+Toss for **1--2 minutes** to bring everything together.
 
+Taste and adjust salt.
 
-\- Shredded or grated Parmesan cheese
+Transfer to the serving platter, scatter with chopped parsley, finish with flaky sea salt, and cover loosely while the peppers cook.
 
+### 6. Blister the Firecracker Peppers
 
+Heat the second skillet over high heat.
 
-\## Instructions
+Add 1 tbsp olive oil.
 
+Add the shishito peppers and cook for **5--7 minutes**, turning occasionally.
 
+They should develop dark blisters and soften while retaining some structure.
 
-\### 1. Preheat the Settlement Oven
+Transfer immediately to a serving dish and season with flaky sea salt.
 
+Most Firecracker Peppers are mild. Every once in a while, the Wasteland reminds you who's in charge.
 
+### 7. Final Crisp
 
-Preheat the oven to \*\*400 degrees F\*\*.
+Check the fries as the peppers finish.
 
+If they need additional browning, give them another few minutes in the Foodi.
 
+Season only if needed; many frozen fries arrive pre-seasoned.
 
-Spray \*\*one extra-large sheet pan plus one half sheet pan\*\*, or \*\*two standard half sheet pans\*\*, with cooking spray or line them with parchment paper for easier cleanup.
+### 8. Serve
 
+Bring everything to the table family-style:
 
+- Marinated raxo
+- Tato fries
+- Firecracker Peppers
+- Crusty bread
+- Lemon wedges
 
-Make sure the pans fit safely in your oven with room for airflow. Do not force a pan into the oven if it touches the oven walls or prevents the door from closing cleanly.
+The fries belong next to the pork where they can catch the garlicky pan juices.
 
+## Vault Notes
 
+### Why Pork Loin?
 
-Trim or tuck parchment paper so it does not hang over the pan edges.
+**Boneless pork loin is the canonical cut for this version.**
 
+It matches the Fork & Salt recipe that helped shape this adaptation, provides enough lean meat for a large family dinner without the richness of pork shoulder, and cubes easily for batch searing.
 
+Do not confuse **pork loin** with **pork tenderloin**. Tenderloin will work, but it is a smaller, more tender, typically more expensive cut and is not necessary here.
 
-Do not force the full family-sized recipe onto one pan. Crowding will steam the potatoes and vegetables instead of roasting them.
+### Why Marinate?
 
+The marinade does two jobs:
 
+1.  Builds the garlic, wine, paprika, herb, and citrus profile before dinner begins.
+2.  Moves prep work away from the busiest part of cooking.
 
-\### 2. Prep the Settlement Vegetables
+Overnight is the preferred CousinStuff workflow. Two hours is the minimum target.
 
+### Why Frozen Fries?
 
+Because dinner does not improve merely because somebody peeled three pounds of potatoes.
 
-Wash and quarter the baby potatoes.
+Frozen fries preserve the classic pork-and-potato pairing while allowing the Ninja Foodi XL to handle the entire side with minimal attention.
 
+Choose a **straight-cut, restaurant-style, or other sturdy fry** rather than an extremely thin shoestring fry. The goal is a crisp fry that can stand up to the raxo juices.
 
+### Firecracker Pepper Options
 
-Slice the onion.
+The pepper should fill the same role even when the produce section does not cooperate: something that cooks quickly over high heat and works alongside the raxo.
 
+Use the first good option you can find:
 
+1.  **Pimientos de Padrón — most traditional:** If available, use them. Cook them whole exactly as described for shishitos.
+2.  **Shishito peppers — preferred practical substitute:** Easy to blister whole, usually mild, and occasionally spicy. Use them exactly as written in the main recipe.
+3.  **Mini sweet peppers — family-friendly fallback:** Keep very small peppers whole; halve larger ones lengthwise and remove the seeds. Blister cut-side down first. They are sweeter and lack the occasional spicy surprise, but preserve the charred-pepper role on the plate.
+4.  **Cubanelle peppers — good full-size fallback:** Cut into broad strips and remove the stems and seeds. Sear over high heat until blistered and tender-crisp. They are mild and slightly sweet.
 
-Chop the broccoli into larger florets. Do not cut the broccoli too small because it will cook faster than the potatoes and chicken.
+For any option, use about **1 1/2 lb total peppers**, 1 tbsp olive oil, and flaky salt to finish.
 
+Green bell pepper can work in a pinch, but it is a last-resort substitute because its thicker flesh and stronger bell-pepper flavor noticeably change the side.
 
+### Cut-Fit Switches
 
-If using bell peppers or mild roasting peppers, slice them into thick strips so they can roast without disappearing into the pan.
+Pick based on the table and the day:
 
+- **Need lean:** pork loin is already the preferred leaner cut.
+- **Want extra-tender:** substitute pork tenderloin, but cook carefully because the smaller lean cut can overcook quickly.
+- **Need fewer starches:** take a smaller fry portion and add more peppers.
+- **Need kid-friendly:** omit hot paprika and crushed red pepper from the shared marinade.
+- **Need more food:** add another bag of fries and a second loaf before increasing the pork.
+- **Need easier dinner service:** marinate the pork and wash the peppers the night before.
+- **Need authentic peppers:** use pimientos de Padrón when available.
+- **No Padrón or shishitos:** use mini sweet peppers for the easiest family-friendly substitute, or Cubanelle peppers for a greener, less-sweet alternative.
 
+### Don't Crowd the Raxo
 
-\### 3. Season the Vegetables
+This remains the most important stovetop rule.
 
+Three pounds of wet, marinated pork dumped into one skillet will steam. Let excess marinade drain and cook the pork in batches so the skillet stays hot enough to brown the meat.
 
+## Storage + Reheating
 
-Divide the potatoes, onion, broccoli, and optional peppers between the pans.
+- **Fridge:** store cooked raxo in an airtight container for up to 3--4 days.
+- **Raxo:** reheat gently in a skillet over medium heat.
+- **Fries:** reheat in the Ninja Foodi XL until hot and crisp.
+- **Peppers:** reheat briefly in a skillet or Foodi; they will be softer than when freshly cooked.
+- **Microwave:** useful for quickly reheating the pork, but use short intervals and cover it to retain moisture.
+- **Freezer:** cooked raxo can be frozen for up to about 2 months; fries and blistered peppers are better fresh.
 
+## Serve With
 
+- Firecracker Peppers
+- Crusty bread
+- Lemon wedges
+- Simple field greens
+- Sparkling water
+- Iced tea
+- Nuka-Cola
 
-Drizzle the vegetables with olive oil.
+## Source Note
 
+Raxo technique and marinade inspiration adapted from the Fork & Salt recipe, **"Raxo (Galician Marinated Pork)"**:
 
-
-Sprinkle about half of the smoky seasoning blend over the vegetables:
-
-
-
-\- Salt
-
-\- Black pepper
-
-\- Italian seasoning
-
-\- Onion powder
-
-\- Garlic powder
-
-\- Smoked paprika
-
-
-
-Toss everything until the vegetables are lightly coated.
-
-
-
-\### 4. Sauce the Rad-Chicken
-
-
-
-Add the \*\*boneless, skinless chicken thighs\*\* to a large bowl.
-
-
-
-Season with the remaining smoky seasoning blend.
-
-
-
-Add enough Parmesan Garlic sauce to coat the chicken, about \*\*3/4 to 1 cup\*\* depending on how saucy you want it.
-
-
-
-Stir until the chicken is evenly covered in seasoning and sauce.
-
-
-
-\### 5. Build the Trays
-
-
-
-Make small open spaces between the vegetables on each pan.
-
-
-
-Divide the seasoned chicken thighs between the pans.
-
-
-
-Place the chicken directly into the open spaces so it has contact with the pan.
-
-
-
-Spread everything into a single layer as much as possible. Crowding the pans too much will steam the food instead of roasting it.
-
-
-
-\### 6. Bake
-
-
-
-Bake at \*\*400 degrees F\*\* for about \*\*45–55 minutes\*\*, or until:
-
-
-
-\- Chicken reaches at least \*\*185 degrees F\*\* internally
-
-\- Potatoes are fork-tender
-
-\- Vegetables are roasted
-
-\- Sauce is bubbling and slightly caramelized around the edges
-
-
-
-Rotate the pans halfway through cooking:
-
-
-
-\- Move the top pan to the lower rack.
-
-\- Move the lower pan to the top rack.
-
-\- Turn each pan around front-to-back if your oven has hot spots.
-
-
-
-Start checking the chicken around \*\*40 minutes\*\*, but expect the full family-sized version to take closer to \*\*45–55 minutes\*\* depending on pan crowding, rack position, chicken thickness, and potato size.
-
-
-
-If the chicken reaches 185 degrees F before the potatoes are tender, move the chicken to a plate, cover loosely with foil, and return the potatoes and vegetables to the oven for another \*\*8–12 minutes\*\*.
-
-
-
-\### 7. Broil and Finish
-
-
-
-For extra color, broil for \*\*1–3 minutes\*\* at the end.
-
-
-
-Broil \*\*one pan at a time\*\* so you can control the finish and avoid burning the sauce, parchment, or broccoli.
-
-
-
-Top everything with shredded or grated Parmesan cheese before serving.
-
-
-
-\## Settlement Notes
-
-
-
-\### Family of 6 Scaling
-
-
-
-The original version was closer to a 4-serving meal. This version increases the main ingredients so it can feed a family of 6 more reliably.
-
-
-
-The key upgrades are:
-
-
-
-\- 3 lb chicken thighs instead of 2 lb
-
-\- 36 oz potatoes instead of 24 oz
-
-\- More broccoli
-
-\- More onion
-
-\- Optional mild peppers for extra vegetable volume
-
-\- Larger seasoning blend
-
-\- Multiple pans instead of one crowded pan
-
-
-
-For bigger appetites, add a side like rice, garlic bread, Caesar salad, or buttered noodles.
-
-
-
-\### Pan Fit and Airflow
-
-
-
-A family-sized sheet pan dinner only works if the pans actually fit in the oven.
-
-
-
-Use:
-
-
-
-\- One extra-large sheet pan plus one half sheet pan, if both fit safely
-
-\- Two standard half sheet pans
-
-\- One half sheet pan plus one smaller oven-safe pan for overflow
-
-
-
-Avoid:
-
-
-
-\- Pans that touch the oven walls
-
-\- Pans that block the oven door
-
-\- Parchment hanging over the sides
-
-\- Stacking food too thickly in the center
-
-
-
-If the oversized pan does not fit, split the food across smaller pans and cook on two racks.
-
-
-
-\### Chicken Thigh Target Temperature
-
-
-
-Chicken is safe at \*\*165 degrees F\*\*, but thighs are better when cooked higher. For this recipe, aim for about \*\*185 degrees F\*\* so the thighs are tender and the potatoes have enough time to finish.
-
-
-
-\### Bone-In Chicken Thigh Option
-
-
-
-This recipe is written for \*\*boneless, skinless chicken thighs\*\*.
-
-
-
-If using \*\*bone-in chicken thighs\*\*, expect a longer cook time. Start checking around \*\*45 minutes\*\*, but plan for about \*\*50–60 minutes\*\* depending on size, pan crowding, and oven performance. Cook until the thickest part of the thigh reaches at least \*\*185 degrees F\*\* and the potatoes are tender.
-
-
-
-For best results with bone-in thighs:
-
-
-
-\- Place the thighs skin-side up if using skin-on thighs.
-
-\- Give the chicken more open space on the pan.
-
-\- Cut potatoes smaller so they finish at the same time.
-
-\- Add broccoli halfway through cooking so it does not burn.
-
-
-
-\### Broccoli Timing Option
-
-
-
-For firmer greenhouse greens, add the broccoli halfway through the cook instead of at the beginning.
-
-
-
-Best split:
-
-
-
-\- Start potatoes, onion, peppers, and chicken first.
-
-\- Add broccoli after about 20–25 minutes.
-
-\- Finish baking until chicken and potatoes are done.
-
-
-
-This is especially helpful if your family prefers broccoli with more bite.
-
-
-
-\### Vegetable Availability Switch
-
-
-
-Use what the settlement market has.
-
-
-
-Good swaps or additions:
-
-
-
-\- \*\*Bell peppers:\*\* red, yellow, orange, or green all work. Slice into thick strips.
-
-\- \*\*Mini sweet peppers:\*\* cut in half or into rings.
-
-\- \*\*Poblano peppers:\*\* mild, earthy, and good with Parmesan garlic sauce.
-
-\- \*\*Anaheim peppers:\*\* mild with a little more pepper flavor.
-
-\- \*\*Cubanelle peppers:\*\* sweet, thin-skinned, and good for roasting.
-
-\- \*\*Zucchini:\*\* cut into thick half-moons and add halfway through cooking.
-
-\- \*\*Green beans:\*\* add during the last 20–25 minutes.
-
-\- \*\*Carrots:\*\* cut small enough to roast with the potatoes.
-
-\- \*\*Mushrooms:\*\* add from the start if whole or halved, halfway through if sliced.
-
-
-
-Avoid using very hot peppers as the main family pan vegetable unless everyone wants heat. Keep jalapeños, serranos, crushed red pepper, or hot sauce as table-side add-ons.
-
-
-
-\### Sauce Control
-
-
-
-Buffalo Wild Wings Parmesan Garlic sauce is rich and salty, so do not drown the entire pan.
-
-
-
-Best default:
-
-
-
-\- Coat the chicken well.
-
-\- Keep the vegetables seasoned with olive oil and dry seasoning.
-
-\- Add extra sauce only at the table if someone wants more.
-
-
-
-\## Cut-Fit Switches
-
-
-
-Pick based on the day:
-
-
-
-\- \*\*Need more protein:\*\* use 3.5 lb boneless, skinless chicken thighs.
-
-\- \*\*Need to stretch it further:\*\* serve over rice, buttered noodles, or mashed potatoes.
-
-\- \*\*Using bone-in thighs:\*\* increase the cook time and check the thickest piece with a thermometer.
-
-\- \*\*Need fewer carbs:\*\* reduce potatoes and add more broccoli, green beans, zucchini, or peppers.
-
-\- \*\*Need more volume:\*\* add carrots, zucchini, bell peppers, poblano peppers, Cubanelle peppers, or mushrooms.
-
-\- \*\*Need more heat:\*\* add crushed red pepper, hot sauce, jalapeños, or chili flakes at the table.
-
-\- \*\*Need easier cleanup:\*\* use parchment paper or foil, then spray lightly before adding food.
-
-\- \*\*Need crispier potatoes:\*\* give the potatoes a 10-minute head start before adding the chicken and broccoli.
-
-\- \*\*Need more Fallout flavor:\*\* call the potatoes “tato wedges” at the table, but keep the recipe ingredient listed as baby potatoes so nobody gets confused.
-
-
-
-\## Storage + Reheating
-
-
-
-This keeps well as a leftover settlement ration plate.
-
-
-
-\- \*\*Fridge:\*\* store in an airtight container for up to 3–4 days.
-
-\- \*\*Reheat:\*\* microwave in short bursts or reheat in the air fryer or oven.
-
-\- \*\*Best texture:\*\* air fry leftovers at 350 degrees F for 5–8 minutes.
-
-\- \*\*Avoid drying out:\*\* add a small spoonful of sauce before reheating chicken if needed.
-
-
-
-\## Serve With
-
-
-
-\- Garlic bread
-
-\- Caesar salad
-
-\- Rice
-
-\- Buttered noodles
-
-\- Side salad
-
-\- Roasted carrots
-
-\- Extra Parmesan cheese
-
-\- Extra Parmesan Garlic sauce at the table
-
-\- Ice-cold Nuka-Cola
-
+<https://forkandsalt.com/recipes/galician/raxo>
