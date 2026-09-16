@@ -24,25 +24,25 @@ images:
 image: "/img/recipes/default.png"
 servings: 6
 prepTime: "PT20M"
-cookTime: "PT35M"
-totalTime: "PT1H"
+cookTime: "PT30M"
+totalTime: "PT55M"
 slot: 29
 category: "Core Rations"
 draft: false
 recipeIngredient:
-  - "2 1/2 lb ground beef, preferably 85/15"
+  - "2 lb ground beef, preferably 85/15"
   - "1 medium yellow onion, finely diced"
   - "3 cloves garlic, minced"
-  - "1 1/2 cups plain breadcrumbs"
+  - "1 cup plain breadcrumbs"
   - "2 large eggs"
-  - "1/2 cup milk"
-  - "2 tbsp Worcestershire sauce"
-  - "2 tbsp ketchup"
-  - "1 tbsp yellow mustard"
-  - "1 1/2 tsp kosher salt"
-  - "1 tsp black pepper"
-  - "1 tsp smoked paprika"
-  - "1 tsp dried parsley"
+  - "1/3 cup milk"
+  - "1 1/2 tbsp Worcestershire sauce"
+  - "1 1/2 tbsp ketchup"
+  - "2 tsp yellow mustard"
+  - "1 1/4 tsp kosher salt"
+  - "3/4 tsp black pepper"
+  - "3/4 tsp smoked paprika"
+  - "3/4 tsp dried parsley"
   - "3/4 cup ketchup, for Slasher Glaze"
   - "3 tbsp brown sugar"
   - "1 tbsp Worcestershire sauce, for Slasher Glaze"
@@ -70,7 +70,7 @@ recipeInstructions:
   - "Build the Mini Meatloaves: Gently mix beef, onion, 3 cloves garlic, breadcrumbs, eggs, milk, Worcestershire, ketchup, mustard, salt, pepper, smoked paprika, and parsley. Divide into 6 equal portions and shape each into a compact free-form mini loaf on the prepared pan."
   - "Mark and Start Baking: Score three shallow diagonal slash marks across each mini loaf. Mix the glaze and brush a light layer over all 6 loaves. Bake for 15 minutes."
   - "Cook the Potatoes: Cover the potatoes with cold salted water, bring to a boil, then simmer 15–18 minutes until fork-tender."
-  - "Glaze and Finish the Mini Meatloaves: After 15 minutes, brush all 6 loaves generously with more glaze. Return to the oven for 10–15 minutes, until the centers reach 160°F."
+  - "Glaze and Finish the Mini Meatloaves: After 15 minutes, brush all 6 loaves generously with more glaze. Return to the oven for 8–12 minutes, beginning temperature checks around 23 minutes total. Remove each loaf when the center reaches 160°F."
   - "Roast the Green Beans: Toss green beans with olive oil, garlic powder, salt, and pepper. Roast at 400°F for 12–15 minutes until tender and lightly blistered."
   - "Mash the Potatoes: Drain well. Melt butter in the hot pot, cook 2 cloves minced garlic for about 1 minute, then return potatoes and mash with warm milk, sour cream, salt, and pepper."
   - "Rest the Mini Meatloaves: Let the finished mini loaves rest for 5–10 minutes before serving so the juices settle."
@@ -133,19 +133,19 @@ The goal is not gore. The goal is a recognizable Fallout reference sitting on to
 
 ### Pint-Sized Slasher Mini Meatloaves
 
-- 2 1/2 lb ground beef, preferably 85/15
+- 2 lb ground beef, preferably 85/15
 - 1 medium yellow onion, finely diced
 - 3 cloves garlic, minced
-- 1 1/2 cups plain breadcrumbs
+- 1 cup plain breadcrumbs
 - 2 large eggs
-- 1/2 cup milk
-- 2 tbsp Worcestershire sauce
-- 2 tbsp ketchup
-- 1 tbsp yellow mustard
-- 1 1/2 tsp kosher salt
-- 1 tsp black pepper
-- 1 tsp smoked paprika
-- 1 tsp dried parsley
+- 1/3 cup milk
+- 1 1/2 tbsp Worcestershire sauce
+- 1 1/2 tbsp ketchup
+- 2 tsp yellow mustard
+- 1 1/4 tsp kosher salt
+- 3/4 tsp black pepper
+- 3/4 tsp smoked paprika
+- 3/4 tsp dried parsley
 
 ### Slasher Glaze
 
@@ -162,7 +162,7 @@ The goal is not gore. The goal is a recognizable Fallout reference sitting on to
 - 3/4 cup milk, warmed
 - 1/2 cup sour cream
 - 2 cloves garlic, minced
-- 1 1/2 tsp kosher salt, plus more for the potato water
+- 1 1/4 tsp kosher salt, plus more for the potato water
 - 1/2 tsp black pepper
 
 ### Scorched Green Beans
@@ -185,7 +185,7 @@ The goal is not gore. The goal is a recognizable Fallout reference sitting on to
 
 ### Meat
 
-- 1 package ground beef totaling about 2 1/2 lb, preferably 85/15
+- 1 package ground beef totaling about 2 lb, preferably 85/15
 
 ### Produce
 
@@ -207,15 +207,15 @@ The goal is not gore. The goal is a recognizable Fallout reference sitting on to
 - Plain breadcrumbs
 - Ketchup
 - Worcestershire sauce
-- Yellow mustard
+- 2 tsp yellow mustard
 - Brown sugar
 - Apple cider vinegar
 - Olive oil
 - Kosher salt
 - Black pepper
-- Smoked paprika
+- 3/4 tsp smoked paprika
 - Garlic powder
-- Dried parsley
+- 3/4 tsp dried parsley
 - Optional red pepper flakes
 
 ### Drinks
@@ -235,7 +235,7 @@ The dinner works best when the mini meatloaves control the clock and everything 
 | **T-25** | Potatoes should be approaching a simmer. Mix final glaze and stage green beans. |
 | **T-20** | Pull mini meatloaves briefly, apply generous glaze, return to oven. Green beans enter oven. |
 | **T-15** | Begin checking potatoes for tenderness. |
-| **T-10** | Drain and mash potatoes. Keep covered and warm. Check mini meatloaf temperature. |
+| **T-10** | Drain and mash potatoes. Keep covered and warm. Begin checking mini meatloaf temperature. |
 | **T-08** | Remove mini meatloaves at 160°F and rest 5–10 minutes. |
 | **T-05** | Pull green beans. Mix Blood Pack Cherry Fizz. |
 | **T-00** | Slice, plate, photograph, and serve. |
@@ -268,24 +268,24 @@ In a large bowl, add:
 - 3 cloves minced garlic
 - Breadcrumbs
 - Eggs
-- 1/2 cup milk
-- 2 tbsp Worcestershire sauce
-- 2 tbsp ketchup
-- Yellow mustard
-- 1 1/2 tsp kosher salt
-- 1 tsp black pepper
-- Smoked paprika
-- Dried parsley
+- 1/3 cup milk
+- 1 1/2 tbsp Worcestershire sauce
+- 1 1/2 tbsp ketchup
+- 2 tsp yellow mustard
+- 1 1/4 tsp kosher salt
+- 3/4 tsp black pepper
+- 3/4 tsp smoked paprika
+- 3/4 tsp dried parsley
 
 Mix gently with clean hands or a large spoon until everything is evenly distributed.
 
 Do not aggressively knead or compact the mixture. Overworking ground beef makes meatloaf dense.
 
-Divide the mixture into **6 equal portions**, about 6 1/2 to 7 oz each before cooking.
+Divide the mixture into **6 equal portions**, about 5 1/3 oz each before cooking.
 
 Shape each portion into a compact oval mini loaf about the same size and thickness. Arrange all 6 on the prepared pan with at least 1 inch of space between them so hot air can circulate.
 
-For the cleanest timing, keep the loaves close to the same size. If you intentionally make a smaller child-sized loaf, begin checking that one early and remove it as soon as it reaches 160°F.
+At about **5 1/3 oz raw per loaf**, these are substantial enough to anchor the plate without overwhelming the potatoes and green beans. For the cleanest timing, keep the loaves close to the same size. If you intentionally make a smaller child-sized loaf, begin checking that one early and remove it as soon as it reaches 160°F.
 
 ### 3. Leave the Slasher's Mark
 
@@ -323,7 +323,7 @@ Brush all 6 mini loaves generously with the remaining Slasher Glaze, letting som
 
 Return the pan to the oven.
 
-Continue baking for **10 to 15 minutes**, checking the center of the thickest mini loaf with an instant-read thermometer.
+Continue baking for **8 to 12 minutes**. Begin checking the center of the thickest mini loaf around **23 minutes total cooking time** with an instant-read thermometer.
 
 The mini meatloaves are done when the centers reach **160°F**.
 
@@ -356,7 +356,7 @@ Add:
 
 - 3/4 cup warm milk
 - 1/2 cup sour cream
-- 1 1/2 tsp kosher salt
+- 1 1/4 tsp kosher salt
 - 1/2 tsp black pepper
 
 Mash until creamy.
@@ -403,7 +403,7 @@ For each plate:
 
 ### Why Six Mini Meatloaves?
 
-A single 2 1/2-pound loaf works, but dividing the mixture into **6 individual mini loaves** is better for this recipe:
+A single 2-pound loaf works, but dividing the mixture into **6 individual mini loaves** is better for this recipe:
 
 - Faster, more even cooking
 - More glazed surface area
