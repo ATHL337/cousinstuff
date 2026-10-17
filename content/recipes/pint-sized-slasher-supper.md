@@ -26,7 +26,7 @@ servings: 6
 prepTime: "PT20M"
 cookTime: "PT30M"
 totalTime: "PT55M"
-slot: 29
+slot: 3
 category: "Core Rations"
 draft: false
 recipeIngredient:
