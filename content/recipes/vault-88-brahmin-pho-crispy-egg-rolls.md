@@ -3,7 +3,7 @@ title: "Vault 88 Brahmin Pho & Crispy Egg Rolls"
 slug: "vault-88-brahmin-pho-crispy-egg-rolls"
 date: "2026-10-17"
 description: "Fallout-inspired, H-E-B-friendly beef pho with two pounds of shaved beef, quick ginger-five-spice broth, rice noodles, and Ninja Foodi XL pork egg rolls."
-summary: "A pho-inspired Vault 88 noodle ration with two pounds of beef: four generous lunch bowls, or six standard family portions, plus crispy pork egg rolls."
+summary: "Family-approved, pho-inspired Vault 88 beef noodle bowls with two pounds of shaved steak and crispy pork egg rolls served first while the pho cooks."
 subtitle: "Vault 88 Noodle Rations • Two-Pound Brahmin Loadout"
 tags:
   - Fallout
@@ -14,6 +14,8 @@ tags:
   - Vietnamese Inspired
   - Noodle Bar
   - Family Friendly
+  - Family Tested
+  - Family Favorite
   - Lunch
   - Soup
   - Stovetop
@@ -47,7 +49,7 @@ recipeIngredient:
   - "1 bottle sweet chili sauce, for dipping"
   - "Optional: hoisin sauce, Sriracha, 1 sliced jalapeño, black pepper"
 recipeInstructions:
-  - "Preheat the Ninja Foodi XL for frozen egg rolls according to package directions. Air fry a single layer (8 for the four-person lunch, or 12 for all six, in batches as needed) and serve hot with sweet chili sauce."
+  - "Start the Ninja Foodi XL early for frozen egg rolls: preheat per package directions, cook a single layer (8 for four diners or 12 for six, batching as needed), and serve immediately with sweet chili sauce as the first course while the pho continues cooking."
   - "Char the yellow onion halves and split ginger cut side down in a dry skillet over medium-high heat for about 5-7 minutes, until brown in patches."
   - "Combine 12 cups reduced-sodium beef broth, the charred onion and ginger, 1/2 tsp five-spice, 1 tbsp fish sauce, and 2 tsp sugar in a 6- to 8-quart pot. Bring to a simmer and cook gently, loosely covered, 20-25 minutes."
   - "While broth simmers, rinse herbs and sprouts, slice green onions, and cut limes. Keep chili sauces separate so the shared broth stays mild."
@@ -55,7 +57,7 @@ recipeInstructions:
   - "Remove the onion and ginger from the broth. Taste; adjust fish sauce in 1-tsp increments and five-spice only by small pinches."
   - "Cook shaved beef in 2-3 batches directly in the gently simmering broth until fully cooked throughout; use clean utensils for finished meat. Keep any uncooked beef refrigerated."
   - "Divide noodles and cooked beef between bowls; ladle in approximately 1 3/4 to 2 cups hot broth per standard serving. Let everyone choose basil, cilantro, green onions, sprouts, lime, and optional sauces."
-  - "Serve egg rolls as an appetizer. Refrigerate remaining broth, meat and noodles separately within 2 hours, using shallow containers."
+  - "With the egg rolls already enjoyed as the appetizer, serve the finished pho bowls. Refrigerate remaining broth, meat and noodles separately within 2 hours, using shallow containers."
 ---
 
 ## Overview
@@ -70,7 +72,7 @@ This is an original quick family adaptation **inspired by Vietnamese phở bò**
 **Profile:** Savory, gingery, gently spiced, brightened with lime and herbs  
 **Vibe:** A crowded Vault 88 noodle counter feeding the settlement
 
-**Test Kitchen status:** Public v0.1. This recipe is ready for today's cook; record actual product times and family feedback to refine it after the first test.
+**Test Kitchen status:** **Family-tested v1.0 — October 17, 2026.** All four first-batch tasters (BIFF, Kim, Ollie, and Isa) loved it. The ingredients, quantities, and seasonings were followed without changes. The only recorded serving-flow detail was eating the crispy egg rolls first while finishing the pho. The six-person scaling remains a planned option, not yet independently family-tested.
 
 ## Yield & Portioning
 
@@ -131,7 +133,7 @@ The **oven is not needed**. The microwave is optional for leftovers.
 
 ## Synchronized Lunch Timeline
 
-The exact timing depends on the noodle and egg-roll package directions, plus Foodi capacity. Cook the broth and appetizer **in parallel**.
+The exact timing depends on the noodle and egg-roll package directions, plus Foodi capacity. **Start the egg rolls early and eat them immediately as the appetizer while the pho keeps cooking.** There is no need to wait for the noodle bowls. This first-course-first flow was used in the successful family test; run the broth and Foodi **in parallel**.
 
 | Elapsed | Task |
 |---|---|
@@ -139,7 +141,7 @@ The exact timing depends on the noodle and egg-roll package directions, plus Foo
 | **00:05** | Combine broth, charred aromatics, five-spice, fish sauce, sugar in stockpot; heat to simmer. |
 | **00:08** | Start the first 8 frozen egg rolls in the Foodi, single layer or batches as needed. |
 | **00:12** | Wash herbs and sprouts, cut limes, slice green onions, stage dipping and hot sauces. |
-| **00:18-00:23** | Serve crispy egg rolls with sweet chili sauce as the appetizer. |
+| **00:18-00:23** | Serve and enjoy the crispy egg rolls right away while the broth and remaining pho preparation continue. |
 | **00:23-00:32** | Cook rice noodles according to package instructions, drain and portion. |
 | **00:30-00:35** | Remove aromatics; taste broth; correct seasoning sparingly. |
 | **00:33-00:41** | Poach the shaved beef in the gently simmering broth in batches until fully cooked. |
@@ -163,9 +165,9 @@ In a **6-8 qt stockpot**, combine:
 
 Bring to a simmer. Reduce heat and simmer gently **20-25 minutes**, loosely covered. Chinese five-spice isn't a one-for-one replacement for traditional pho spices, so keep the quantity restrained. **Do not add salt at the beginning**; broth and fish sauce already contain it.
 
-### 3. Air-Fry the Appetizer While Stock Simmering
+### 3. Serve the Egg Rolls First While Stock Simmers
 
-Put **8 frozen pork egg rolls** in the Ninja Foodi XL tray or basket for the four-person lunch, without overlapping them. Follow the **package's air-fryer instructions** for temperature, turning, and cooking time. Work in batches if they won't fit. Ensure centers are thoroughly hot (**165°F**, if checking by thermometer). Serve with sweet chili sauce. For a six-person meal, cook all **12**.
+Put **8 frozen pork egg rolls** in the Ninja Foodi XL tray or basket for the four-person lunch, without overlapping them. Follow the **package's air-fryer instructions** for temperature, turning, and cooking time. Work in batches if they won't fit. Ensure centers are thoroughly hot (**165°F**, if checking by thermometer). **Serve and eat the egg rolls as soon as they are ready**, with sweet chili sauce. Keep the pho broth going during the appetizer so lunch service does not stall. For a six-person meal, cook all **12**.
 
 ### 4. Build the Garnish Station
 
@@ -246,18 +248,17 @@ These are flexible assembly ideas, not permanently fixed preferences. Everyone s
 - **Reheat:** Heat cooked broth and beef until **165°F throughout**, then add separately warmed noodles just before serving.
 - **Freeze:** Broth and cooked beef freeze well in serving-size containers for approximately **2-3 months for best quality**. Frozen cooked noodles tend to lose their texture.
 
-## Test Kitchen Acceptance Checklist
+## Family-Tested Results (October 17, 2026)
 
-- [ ] Broth smells of ginger and warm spice, not overwhelming five-spice.
-- [ ] Broth tastes savory without excessive salt.
-- [ ] Beef is thoroughly cooked and tender, not clumped.
-- [ ] Rice noodles are pleasant and not mushy.
-- [ ] Egg rolls are crisp and fully hot in the center.
-- [ ] Portioning works for four hungry diners and can scale to six.
-- [ ] Record actual appliance times, favorite toppings, and family feedback.
-- [ ] Capture a finished hero photo; replace the placeholder image.
+- [x] First cook completed for **four lunch diners: BIFF, Kim, Ollie, and Isa**.
+- [x] **4 of 4 loved the meal** — a CousinStuff family favorite.
+- [x] **No ingredient, quantity, or seasoning adjustments** were made to the published recipe.
+- [x] **Egg rolls were eaten first**, as an appetizer, while the remainder of the meal was being prepared.
+- [ ] Record measured appliance times and individual topping preferences if useful on a future cook.
+- [ ] Test the six-person serving scale with the entire family.
+- [ ] Capture a finished hero photo and replace the placeholder image.
 
-**Registry note:** This public recipe remains `slot: null` while the first cook is evaluated. It appears in the Recipes directory without displacing a curated Vault Registry entry; assign a free slot later if appropriate.
+**Registry note:** This recipe is now publicly available and family-tested but retains `slot: null` until a curated Vault Registry assignment is chosen. It remains searchable in the Recipes directory without displacing an existing slot.
 
 ## References
 
