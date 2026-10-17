@@ -39,7 +39,7 @@ recipeInstructions:
 - "Final Crisp: Check the fries as the peppers finish. Give them a few additional minutes in the Foodi if needed for a crisp finish."
 - "Serve: Arrange the raxo, fries, and Firecracker Peppers family-style. Add crusty bread and lemon wedges and serve immediately."
 servings: 8
-slot: 28
+slot: 23
 slug: raxo-firecracker-peppers
 summary: "A Pre-War Field Notes recipe inspired by Galicia: marinated raxo, easy air-fried French fries, blistered Firecracker Peppers, and bread, scaled for an eight-person family dinner."
 tags:
