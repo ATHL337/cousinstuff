@@ -1,16 +1,16 @@
 {
   "icons": [
     {
-      "src": "/icons/cousinstuff-app-192.png",
+      "src": "/icons/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
-      "src": "/icons/cousinstuff-app-512.png",
+      "src": "/icons/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     }
   ],
   "shortcuts": [
@@ -18,22 +18,34 @@
       "name": "Recipes",
       "short_name": "Recipes",
       "url": "/recipes/",
+      "description": "Browse the recipe library",
       "icons": [
         {
           "src": "/icons/recipes-shortcut-192.png",
           "sizes": "192x192",
           "type": "image/png"
+        },
+        {
+          "src": "/icons/recipes-shortcut-512.png",
+          "sizes": "512x512",
+          "type": "image/png"
         }
       ]
     },
     {
-      "name": "Registry",
+      "name": "Vault Registry",
       "short_name": "Registry",
       "url": "/registry/",
+      "description": "Browse Vault Registry slots",
       "icons": [
         {
           "src": "/icons/registry-shortcut-192.png",
           "sizes": "192x192",
+          "type": "image/png"
+        },
+        {
+          "src": "/icons/registry-shortcut-512.png",
+          "sizes": "512x512",
           "type": "image/png"
         }
       ]
