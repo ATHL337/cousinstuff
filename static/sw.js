@@ -1,6 +1,6 @@
 /* CousinStuff PWA v2 — safe offline caching and network-first navigation. */
 "use strict";
-const VERSION = "2026-10-18-pwa-v3-approved-icons";
+const VERSION = "2026-10-18-pwa-v4-circular-masks";
 const SHELL = "cs-app-" + VERSION;
 const RECENT = "cs-runtime-" + VERSION;
 const MAX_RECENT = 80;
@@ -10,9 +10,13 @@ const PRECACHE = [
   "/css/site.css", "/css/vault-tec-corp.css",
   "/js/search.js", "/js/registry.js", "/js/nav-compact.js",
   "/js/theme.js", "/js/skin.js", "/js/pwa.js",
-  "/manifest.json", "/icons/icon-192.png", "/icons/icon-512.png",
+  "/manifest.json", "/manifest.webmanifest",
+  "/icons/icon-192.png", "/icons/icon-512.png",
+  "/icons/icon-192-maskable.png", "/icons/icon-512-maskable.png",
   "/icons/recipes-shortcut-192.png", "/icons/recipes-shortcut-512.png",
+  "/icons/recipes-shortcut-192-maskable.png", "/icons/recipes-shortcut-512-maskable.png",
   "/icons/registry-shortcut-192.png", "/icons/registry-shortcut-512.png",
+  "/icons/registry-shortcut-192-maskable.png", "/icons/registry-shortcut-512-maskable.png",
   "/recipes/vault-88-brahmin-pho-crispy-egg-rolls/",
   "/img/recipes/vault-88-brahmin-pho-crispy-egg-rolls.jpg"
 ];
