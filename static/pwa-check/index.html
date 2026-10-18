@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PWA Health Check | CousinStuff</title>
+  <meta name="theme-color" content="#0b3a78">
+  <style>
+    :root{color-scheme:dark}
+    body{max-width:660px;margin:auto;padding:26px 18px;background:#061226;color:#f8fafc;
+      font:16px/1.6 system-ui,sans-serif}
+    h1{color:#f2c230}p{color:#cbd5e1}
+    .result{background:#0b1e3c;border:1px solid #234b7a;border-radius:12px;padding:10px;margin:9px 0}
+    .ok{color:#8de2a1}.bad{color:#ffa4a4}
+    a{color:#f2c230}button{padding:12px;border-radius:10px;background:#f2c230;border:0;font-weight:bold}
+    code{word-break:break-all}
+  </style>
+</head>
+<body>
+  <h1>CousinStuff PWA Health Check</h1>
+  <p>Checks essential install assets and offline support from your current browser.
+     Chrome ultimately decides whether installation is available.</p>
+  <button id="test">Run checks</button>
+  <div id="results" aria-live="polite"></div>
+  <p><a href="/">Back to CousinStuff</a></p>
+  <script>
+    const results=document.getElementById("results");
+    function item(label,ok,detail){
+      const e=document.createElement("div");e.className="result";
+      const strong=document.createElement("strong");strong.className=ok?"ok":"bad";
+      strong.textContent=(ok?"PASS: ":"CHECK: ")+label;
+      e.append(strong);
+      if(detail){const p=document.createElement("div");p.textContent=detail;e.append(p)}
+      results.append(e);
+    }
+    async function get(url){
+      const response=await fetch(url,{cache:"no-store"});
+      if(!response.ok)throw Error("HTTP "+response.status);
+      return response;
+    }
+    async function run(){
+      results.replaceChildren();
+      item("Secure context",window.isSecureContext,
+        "Origin: "+location.origin);
+      item("Service worker support","serviceWorker" in navigator,
+        navigator.serviceWorker?.controller?"Worker currently controls this page":"No active page controller yet");
+      try{
+        const r=await navigator.serviceWorker?.getRegistration("/");
+        item("Worker registration",Boolean(r?.active),
+          r?.active?.scriptURL||"No active worker registered");
+      }catch(e){item("Worker registration",false,String(e))}
+      try{
+        const manifest=await(await get("/manifest.json")).json();
+        const valid=manifest.name&&manifest.start_url==="/"&&manifest.display==="standalone";
+        item("Install manifest",Boolean(valid),manifest.name||"Manifest missing fields");
+        for(const size of [192,512]){
+          const icon=manifest.icons?.find(x=>x.sizes===size+"x"+size);
+          if(!icon){item(size+"px icon",false,"Not declared");continue}
+          try{
+            const response=await get(icon.src);
+            const data=await response.blob();
+            const bitmap=await createImageBitmap(data);
+            const correct=bitmap.width===size&&bitmap.height===size;
+            item(size+"px icon",correct,bitmap.width+"x"+bitmap.height+" decoded");
+            bitmap.close();
+          }catch(e){item(size+"px icon",false,String(e))}
+        }
+      }catch(e){item("Install manifest",false,String(e))}
+      try{
+        await get("/sw.js");
+        item("Service worker script",true,"Worker script is accessible");
+      }catch(e){item("Service worker script",false,String(e))}
+    }
+    document.getElementById("test").addEventListener("click",run);
+    run();
+  </script>
+</body>
+</html>

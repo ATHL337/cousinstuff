@@ -1,9 +1,10 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0b3a78">
-  <title>Offline | CousinStuff</title>
+  <title>Page not available | CousinStuff</title>
   <style>
     :root{color-scheme:dark}
     *{box-sizing:border-box}
@@ -12,18 +13,29 @@
     main{width:min(100%,520px);border:2px solid #234b7a;border-radius:22px;padding:28px;background:#0b1e3c}
     h1{color:#f2c230;margin:0 0 12px;font-size:1.7rem}
     p{color:#cbd5e1}
-    a{display:inline-block;padding:11px 14px;margin:6px 6px 0 0;color:#f2c230;
-      text-decoration:none;border:2px solid #386ba6;border-radius:999px;font-weight:700}
-    a:focus-visible{outline:3px solid #f2c230;outline-offset:3px}
+    a,button{display:inline-block;padding:11px 14px;margin:6px 6px 0 0;color:#f2c230;
+      text-decoration:none;border:2px solid #386ba6;border-radius:999px;font:700 1rem system-ui;
+      background:transparent;cursor:pointer}
+    a:focus-visible,button:focus-visible{outline:3px solid #f2c230;outline-offset:3px}
+    small{color:#9baecc;display:block;overflow-wrap:anywhere;margin-top:12px}
   </style>
 </head>
 <body>
   <main>
-    <h1>You're offline, Vault Dweller</h1>
-    <p>Previously opened recipes and saved CousinStuff pages are available without a connection. Visit a recipe while online to keep it available for your next kitchen mission.</p>
-    <a href="/recipes/">Browse saved recipes</a>
+    <h1>Page not saved for offline use</h1>
+    <p>This page couldn't load from the network, and a saved copy wasn't found.
+       Previously opened recipes can still work offline. Reconnect, then revisit
+       this page to save it for next time.</p>
+    <button id="retry" type="button">Try again</button>
+    <a href="/recipes/">Saved recipe directory</a>
     <a href="/recipes/vault-88-brahmin-pho-crispy-egg-rolls/">Vault 88 Pho</a>
     <a href="/">Home</a>
+    <small id="requested"></small>
   </main>
+  <script>
+    document.getElementById("retry").addEventListener("click", () => location.reload());
+    document.getElementById("requested").textContent =
+      "Requested page: " + location.pathname;
+  </script>
 </body>
 </html>

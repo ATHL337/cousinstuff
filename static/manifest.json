@@ -1,0 +1,45 @@
+{
+  "name": "CousinStuff — Vault Recipe Registry",
+  "short_name": "CousinStuff",
+  "description": "Fallout-inspired family recipes, shopping lists, and cooking instructions — available offline.",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#061226",
+  "theme_color": "#0b3a78",
+  "orientation": "any",
+  "categories": [
+    "food",
+    "lifestyle"
+  ],
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Recipes",
+      "short_name": "Recipes",
+      "url": "/recipes/",
+      "description": "Browse the recipe library"
+    },
+    {
+      "name": "Vault Registry",
+      "short_name": "Registry",
+      "url": "/registry/",
+      "description": "Browse Vault Registry slots"
+    }
+  ],
+  "prefer_related_applications": false
+}
