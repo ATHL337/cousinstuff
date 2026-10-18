@@ -1,40 +1,49 @@
 (() => {
+  "use strict";
   const nav = document.getElementById("siteNav");
-  if (!nav) return;
+  const toggle = document.getElementById("vtMenuToggle");
+  const links = document.getElementById("primaryNavLinks");
+  if (!nav || !toggle || !links) return;
+  const mobile = () => window.matchMedia("(max-width: 720px)").matches;
 
-  const MOBILE_MAX = 720;
-  const COMPACT_AT = 48;
-
-  let lastState = null;
-
-  function isMobile() {
-    return window.innerWidth <= MOBILE_MAX;
+  function closeMenu(restoreFocus = false) {
+    const wasOpen = nav.classList.contains("menu-open");
+    nav.classList.remove("menu-open");
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-label", "Open navigation menu");
+    if (restoreFocus && wasOpen) toggle.focus();
   }
-
+  toggle.addEventListener("click", () => {
+    if (!mobile()) return;
+    const willOpen = !nav.classList.contains("menu-open");
+    nav.classList.toggle("menu-open", willOpen);
+    toggle.setAttribute("aria-expanded", String(willOpen));
+    toggle.setAttribute("aria-label", willOpen ? "Close navigation menu" : "Open navigation menu");
+  });
+  links.addEventListener("click", event => {
+    if (event.target.closest("a")) closeMenu();
+  });
+  document.addEventListener("click", event => {
+    if (mobile() && !nav.contains(event.target)) closeMenu();
+  });
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape") closeMenu(true);
+  });
+  let scrolled = null;
   function update() {
-    // Only compact on mobile
-    if (!isMobile()) {
-      if (nav.classList.contains("is-compact")) {
-        nav.classList.remove("is-compact");
-      }
-      lastState = false;
+    if (!mobile()) {
+      nav.classList.remove("is-compact");
+      closeMenu();
+      scrolled = false;
       return;
     }
-
-    const shouldCompact = window.scrollY > COMPACT_AT;
-
-    if (shouldCompact !== lastState) {
-      nav.classList.toggle("is-compact", shouldCompact);
-      lastState = shouldCompact;
+    const next = window.scrollY > 48;
+    if (next !== scrolled) {
+      nav.classList.toggle("is-compact", next);
+      scrolled = next;
     }
   }
-
-  // Passive scroll listener for performance
-  window.addEventListener("scroll", update, { passive: true });
-
-  // Re-evaluate on resize / orientation change
-  window.addEventListener("resize", update, { passive: true });
-
-  // Initial state
+  window.addEventListener("scroll", update, { passive:true });
+  window.addEventListener("resize", update, { passive:true });
   update();
 })();

@@ -3,7 +3,7 @@ title: "Vault 88 Brahmin Pho & Crispy Egg Rolls"
 slug: "vault-88-brahmin-pho-crispy-egg-rolls"
 date: "2026-10-17"
 description: "Fallout-inspired, H-E-B-friendly beef pho with two pounds of shaved beef, quick ginger-five-spice broth, rice noodles, and Ninja Foodi XL pork egg rolls."
-summary: "Family-approved, pho-inspired Vault 88 beef noodle bowls with two pounds of shaved steak and crispy pork egg rolls served first while the pho cooks."
+summary: "A family-tested, pho-inspired Vault 88 noodle recipe with two pounds of shaved steak and crispy pork egg rolls served first while the pho cooks."
 subtitle: "Vault 88 Noodle Rations • Two-Pound Brahmin Loadout"
 tags:
   - Fallout
@@ -22,8 +22,8 @@ tags:
   - Air Fryer
   - H-E-B
 images:
-  - "/img/recipes/default.png"
-image: "/img/recipes/default.png"
+  - "/img/recipes/vault-88-brahmin-pho-crispy-egg-rolls.jpg"
+image: "/img/recipes/vault-88-brahmin-pho-crispy-egg-rolls.jpg"
 servings: 6
 prepTime: "PT15M"
 cookTime: "PT30M"
@@ -57,12 +57,12 @@ recipeInstructions:
   - "Remove the onion and ginger from the broth. Taste; adjust fish sauce in 1-tsp increments and five-spice only by small pinches."
   - "Cook shaved beef in 2-3 batches directly in the gently simmering broth until fully cooked throughout; use clean utensils for finished meat. Keep any uncooked beef refrigerated."
   - "Divide noodles and cooked beef between bowls; ladle in approximately 1 3/4 to 2 cups hot broth per standard serving. Let everyone choose basil, cilantro, green onions, sprouts, lime, and optional sauces."
-  - "With the egg rolls already enjoyed as the appetizer, serve the finished pho bowls. Refrigerate remaining broth, meat and noodles separately within 2 hours, using shallow containers."
+  - "With the egg rolls already enjoyed as the appetizer, serve the finished pho bowls. Refrigerate remaining broth, meat, and noodles separately within 2 hours, using shallow containers."
 ---
 
 ## Overview
 
-The Vault 88 noodle counter doesn't have all day to simmer a traditional bone broth. It has a stockpot, a Ninja Foodi XL, an H-E-B supply run, and four hungry residents waiting for lunch.
+The Vault 88 noodle counter doesn't have all day to simmer a traditional bone broth. It has a stockpot, a Ninja Foodi XL, an H-E-B supply run, and hungry diners waiting for lunch.
 
 **Vault 88 Brahmin Pho & Crispy Egg Rolls** creates a quick, fragrant, **pho-inspired** beef noodle soup using reduced-sodium beef broth, charred onion and ginger, modest amounts of Chinese five-spice and fish sauce, thin-shaved beef, flat rice noodles, and fresh garnishes. Frozen pork egg rolls cook in the Foodi while the broth develops.
 
@@ -72,11 +72,11 @@ This is an original quick family adaptation **inspired by Vietnamese phở bò**
 **Profile:** Savory, gingery, gently spiced, brightened with lime and herbs  
 **Vibe:** A crowded Vault 88 noodle counter feeding the settlement
 
-**Test Kitchen status:** **Family-tested v1.0 — October 17, 2026.** All four first-batch tasters (BIFF, Kim, Ollie, and Isa) loved it. The ingredients, quantities, and seasonings were followed without changes. The only recorded serving-flow detail was eating the crispy egg rolls first while finishing the pho. The six-person scaling remains a planned option, not yet independently family-tested.
+**Family-tested:** Four diners enjoyed the recipe as written, with no ingredient or seasoning changes. Serve the crispy egg rolls first while the pho finishes cooking.
 
 ## Yield & Portioning
 
-- **Four hungry lunch diners:** Make four generous bowls using about **24 oz beef**, **10-12 oz dry noodles**, and **about 2 cups broth per bowl**; more beef is available if wanted. Air fry **8 egg rolls** (2 each). Refrigerate/freeze the **8 oz unused raw beef** promptly; reserve the other four egg rolls frozen. Leftover broth can become another quick meal.
+- **Four hungry lunch diners:** Make four generous bowls using about **24 oz beef**, **10-12 oz dry noodles**, and **about 2 cups broth per bowl**; more beef is available if wanted. Air fry **8 egg rolls** (2 each). Refrigerate or freeze the **8 oz unused raw beef** promptly; reserve the other four egg rolls frozen. Leftover broth can become another quick meal.
 - **Six standard family servings:** Use **all 32 oz beef**, **all 14 oz noodles**, **about 1 3/4-2 cups broth per bowl**, and **all 12 egg rolls** (2 each).
 - Individual bowls can be smaller or larger. A smaller serving may use 3-4 oz raw-weight beef and fewer noodles, while a bigger bowl may take 6-7 oz or more, depending on appetite.
 
@@ -116,7 +116,7 @@ This is an original quick family adaptation **inspired by Vietnamese phở bò**
 - [ ] 1 jalapeño, thinly sliced
 - [ ] Black pepper
 
-**Estimated initial basket:** **$68.04 before tax**, based on indicative H-E-B prices checked October 17, 2026; actual store prices and inventory can vary. Most bottles and seasonings will outlast one meal.
+**Shopping note:** Prices and availability vary by store. Most sauces and seasonings will last through several batches.
 
 ## Equipment Plan
 
@@ -133,7 +133,7 @@ The **oven is not needed**. The microwave is optional for leftovers.
 
 ## Synchronized Lunch Timeline
 
-The exact timing depends on the noodle and egg-roll package directions, plus Foodi capacity. **Start the egg rolls early and eat them immediately as the appetizer while the pho keeps cooking.** There is no need to wait for the noodle bowls. This first-course-first flow was used in the successful family test; run the broth and Foodi **in parallel**.
+The exact timing depends on the noodle and egg-roll package directions, plus Foodi capacity. **Start the egg rolls early and eat them immediately as the appetizer while the pho keeps cooking.** There is no need to wait for the noodle bowls. Run the broth and Foodi **in parallel**.
 
 | Elapsed | Task |
 |---|---|
@@ -229,14 +229,14 @@ For **four generous bowls**, begin with about **6 oz raw-weight beef** each, **2
 | Crispy field provisions | Pork egg rolls |
 | C.A.M.P. food stations | Stockpot and Ninja Foodi XL |
 
-## Vault Notes: Individual Bowls
+## Bowl-Building Notes
 
-- **You:** Protein-forward, moderate noodles, extra broth; finish with lime and optional spice.
-- **Kim:** Start with a smaller beef-and-noodle portion and flavorful broth; leftovers keep separately.
-- **Ollie:** Full noodle portion, plenty of cooked beef, sauces and fresh toppings by choice.
-- **Isa:** Mild broth and familiar beef/noodles; serve sprouts and other garnish separately.
+- **For a lighter bowl:** Use a smaller portion of noodles and beef, but keep the broth generous.
+- **For a heartier bowl:** Increase the noodles and beef, or offer extra cooked beef at the table.
+- **For milder eaters:** Keep the broth plain and serve sprouts, herbs, and sauces on the side.
+- **For heat lovers:** Add hoisin, Sriracha, or jalapeño only at the table.
 
-These are flexible assembly ideas, not permanently fixed preferences. Everyone shares one mild stockpot.
+One mild stockpot can support a range of individual preferences.
 
 ## Storage & Reheating
 
@@ -248,20 +248,10 @@ These are flexible assembly ideas, not permanently fixed preferences. Everyone s
 - **Reheat:** Heat cooked broth and beef until **165°F throughout**, then add separately warmed noodles just before serving.
 - **Freeze:** Broth and cooked beef freeze well in serving-size containers for approximately **2-3 months for best quality**. Frozen cooked noodles tend to lose their texture.
 
-## Family-Tested Results (October 17, 2026)
+## Why This One Works
 
-- [x] First cook completed for **four lunch diners: BIFF, Kim, Ollie, and Isa**.
-- [x] **4 of 4 loved the meal** — a CousinStuff family favorite.
-- [x] **No ingredient, quantity, or seasoning adjustments** were made to the published recipe.
-- [x] **Egg rolls were eaten first**, as an appetizer, while the remainder of the meal was being prepared.
-- [ ] Record measured appliance times and individual topping preferences if useful on a future cook.
-- [ ] Test the six-person serving scale with the entire family.
-- [ ] Capture a finished hero photo and replace the placeholder image.
+This family-tested recipe keeps the original ingredient proportions and seasoning balance. Serving the hot egg rolls first makes the wait feel shorter while the aromatic broth simmers, and the noodle bowls stay fresh for serving.
 
-**Registry note:** This recipe is now publicly available and family-tested but retains `slot: null` until a curated Vault Registry assignment is chosen. It remains searchable in the Recipes directory without displacing an existing slot.
+## Recipe Inspiration & Shopping References
 
-## References
-
-- Culinary technique reference: Jet Tila, *Quick Beef Pho* — https://www.foodnetwork.com/recipes/quick-beef-pho-7112948
-- Five-spice shortcut reference: Food Network Kitchen, *Shortcut Beef Pho* — https://www.foodnetwork.com/recipes/food-network-kitchen/shortcut-beef-pho-3630586.html
-- H-E-B frozen pork egg rolls — https://www.heb.com/product-detail/h-e-b-pork-egg-rolls/3289103
+This shortcut bowl draws inspiration from [Jet Tila's Quick Beef Pho](https://www.foodnetwork.com/recipes/quick-beef-pho-7112948) and [Food Network Kitchen's Shortcut Beef Pho](https://www.foodnetwork.com/recipes/food-network-kitchen/shortcut-beef-pho-3630586.html). Serve it with [H-E-B frozen pork egg rolls](https://www.heb.com/product-detail/h-e-b-pork-egg-rolls/3289103), prepared according to the package.

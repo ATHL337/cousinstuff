@@ -3,6 +3,14 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#0b3a78" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="CousinStuff" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png" />
+    <link rel="apple-touch-icon" href="/icons/icon-192.png" />
 
     {{- $siteTitle := .Site.Title -}}
     {{- $pageTitle := cond .IsHome $siteTitle (printf "%s | %s" .Title $siteTitle) -}}
@@ -71,6 +79,7 @@
     <script src="/js/theme.js" defer></script>
     <script src="/js/nav-compact.js" defer></script>
     <script src="/js/skin.js" defer></script>
+    <script src="/js/pwa.js" defer></script>
 
     <!-- Schema: only on recipe single pages -->
     {{- if and .IsPage (eq .Section "recipes") -}}
@@ -82,13 +91,15 @@
     <div class="container">
 
       <!-- Top header -->
-      <div class="nav no-print" id="siteNav">
+      <nav class="nav no-print" id="siteNav" aria-label="Primary navigation">
         <div class="brand">
           <a class="title" href="/">{{ .Site.Params.brand }}</a>
           <span class="tagline">{{ .Site.Params.description }}</span>
         </div>
 
-        <div class="actions">
+        <button class="btn secondary vt-menu-toggle" type="button" id="vtMenuToggle"
+          aria-controls="primaryNavLinks" aria-expanded="false" aria-label="Open navigation menu">Menu</button>
+        <div class="actions" id="primaryNavLinks">
           <a class="btn secondary" href="/registry/">Registry</a>
           <a class="btn secondary" href="/vault/rads-leaderboard/">☢️ RADS</a>
 		  <a class="btn secondary" href="/recipes/">Recipes</a>
@@ -104,7 +115,7 @@
             Pip-Boy
           </button>
         </div>
-      </div>
+      </nav>
 
       <!-- Mobile bottom utility bar -->
       <div class="vt-bottombar no-print" role="navigation" aria-label="Vault utilities">
@@ -132,7 +143,6 @@
       </main>
 
       <footer class="vt-legal">
-        <br />
         <div class="vt-legal-inner">
           <span class="vt-legal-brand">© {{ now.Year }} {{ .Site.Params.brand }}</span>
           <span class="vt-legal-dot">•</span>
@@ -144,6 +154,10 @@
           Fallout-inspired aesthetic • Not affiliated with or endorsed by Bethesda Softworks
         </div>
       </footer>
+      <div class="pwa-update no-print" id="pwaUpdate" role="status" aria-live="polite" hidden>
+        <span>A fresh CousinStuff version is ready.</span>
+        <button type="button" class="btn accent" id="pwaReload">Update</button>
+      </div>
 
     </div>
   </body>
