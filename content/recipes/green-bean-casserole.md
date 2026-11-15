@@ -30,6 +30,9 @@ recipeInstructions:
 - Transfer to baking dish.
 - Top with fried onions and cheese.
 - Bake at 350°F until bubbly and golden.
+category: "Sides & Snacks"
+description: "Classic green bean casserole for holiday spreads and family dinners."
+summary: "Classic green bean casserole for holiday spreads and family dinners."
 ---
 
 ## Ingredients
