@@ -32,6 +32,9 @@ recipeInstructions:
 - Season lightly.
 - Prepare according to package or recipe.
 - Spoon corn over split biscuits if desired.
+category: "Sides & Snacks"
+description: "Creamy corn and warm biscuits for a cozy, comforting side dish."
+summary: "Creamy corn and warm biscuits for a cozy, comforting side dish."
 ---
 
 ## Ingredients
