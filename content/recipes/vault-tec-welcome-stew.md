@@ -21,7 +21,7 @@ prepTime: PT15M
 cookTime: PT30M
 totalTime: PT45M
 slot: 7
-category: Core Rations
+category: "Soups & Stews"
 recipeIngredient:
 - 1 tbsp unsalted butter
 - 1 tsp olive oil
@@ -55,6 +55,8 @@ recipeInstructions:
 - 'Protein Reintegration: Add shredded chicken, corn, Worcestershire, black pepper,
   smoked paprika, and remaining salt to taste; simmer 3–4 minutes until heated through.
   Remove bay leaf and adjust seasoning.'
+collection: "Core Rations"
+summary: "A welcoming, hearty stew inspired by Vault-Tec comfort rations."
 ---
 
 ## Overview
