@@ -32,6 +32,9 @@ recipeInstructions:
 - Reduce heat and simmer until sticky.
 - Spoon glaze over chicken repeatedly.
 - Remove when internal temp reaches 165°F.
+category: "Main Dishes"
+description: "Glazed chicken with sweet-savory flavors inspired by Nuka-Cola."
+summary: "Glazed chicken with sweet-savory flavors inspired by Nuka-Cola."
 ---
 
 ## Ingredients
