@@ -20,7 +20,7 @@ prepTime: "PT20M"
 cookTime: "PT35M"
 totalTime: "PT55M"
 slot: 9
-category: "Vault Classics"
+category: "Casseroles & Bakes"
 recipeIngredient:
   - "1.6 kg boneless, skinless chicken breast"
   - "1/2 onion, sliced"
@@ -53,6 +53,8 @@ recipeInstructions:
   - "Forge the Cheese Sauce: In a saucepan, gently melt cheddar, heavy cream, almond milk, and butter. Stir until smooth."
   - "Assemble the Ration: Fold roasted cauliflower into cheese sauce until evenly coated."
   - "Plate: Spoon mac into bowls and top with pulled chicken. Serve warm."
+collection: "Vault Classics"
+summary: "Smoky-sweet pulled chicken layered over creamy cauliflower mac and cheese. High-protein, cut-friendly, and built to fuel six hungry Vault dwellers."
 ---
 
 ## Overview
