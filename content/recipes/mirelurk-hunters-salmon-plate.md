@@ -19,7 +19,7 @@ prepTime: "PT10M"
 cookTime: "PT25M"
 totalTime: "PT35M"
 slot: null
-category: "Surface Rations"
+category: "Main Dishes"
 recipeIngredient:
   - "680 g raw Atlantic salmon (4 portions, ~170 g each)"
   - "520 g russet potatoes, diced (about 1.5–2 lb)"
@@ -38,6 +38,8 @@ recipeInstructions:
   - "Crisp the Broccoli: Toss broccoli with a small splash of the glaze (or just salt + a spritz of oil). Air fry at 375°F (190°C) for 6–8 minutes until tender with browned edges. Remove and hold warm."
   - "Hunt the Mirelurk (Salmon): Pat salmon dry. Brush with remaining glaze. Air fry at 390°F (199°C) for 8–10 minutes (thickness-dependent) until flaky and just cooked through."
   - "Assemble: Plate salmon with potatoes and broccoli. Optional: finish with fresh lemon wedges."
+collection: "Surface Rations"
+summary: "A salmon dinner with practical Wasteland touches and a hearty plate of sides."
 ---
 
 ## Overview
