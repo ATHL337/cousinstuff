@@ -35,6 +35,9 @@ recipeInstructions:
 - Bake until set.
 - Cool completely.
 - Dust with powdered sugar.
+category: "Desserts & Treats"
+description: "Bright lemon bars with a sweet-tart filling and tender crust."
+summary: "Bright lemon bars with a sweet-tart filling and tender crust."
 ---
 
 ## Ingredients
