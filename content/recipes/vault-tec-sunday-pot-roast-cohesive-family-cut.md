@@ -27,7 +27,7 @@ prepTime: "PT30M"
 cookTime: "PT4H"
 totalTime: "PT4H30M"
 slot: 19
-category: "Legacy Recipes"
+category: "Main Dishes"
 draft: false
 recipeIngredient:
   - "About 2.7 lb boneless beef chuck roast"
@@ -55,6 +55,7 @@ recipeInstructions:
   - "Rest and Shred: Remove beef and rest 10-15 minutes. Slice thickly or shred into large chunks. Discard bay leaves."
   - "Finish Gravy: Skim excess fat from the liquid. For thicker gravy, simmer the liquid and whisk in cornstarch slurry until glossy."
   - "Serve: Plate beef with potatoes, carrots, onions, and gravy. Serve with rolls, green beans, mashed potatoes, or rice."
+collection: "Legacy Recipes"
 ---
 
 ## Overview
