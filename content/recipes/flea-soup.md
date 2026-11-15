@@ -19,7 +19,7 @@ prepTime: PT10M
 cookTime: PT25M
 totalTime: PT35M
 slot: 16
-category: Specialty Modules
+category: "Soups & Stews"
 recipeIngredient:
 - 1.5 lb beef stew meat (or chuck, cubed)
 - 9 cups beef broth (dark, rich)
@@ -42,6 +42,8 @@ recipeInstructions:
 - 'Speck Deployment: Stir in sesame seeds just before serving so they float and drift
   naturally.'
 - 'Serve: Ladle into bowls. Do not over-stir; keep the specks visible.'
+collection: "Specialty Modules"
+summary: "A Wasteland-themed soup adapted for real kitchens and family mealtimes."
 ---
 
 ## Flea Soup
