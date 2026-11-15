@@ -9,7 +9,7 @@ tags:
 - wildcard
 - quick
 images:
-  - "/img/recipes/campfire-nachos.png"- /img/og/recipes/campfire-nachos.png
+  - "/img/og/recipes/campfire-nachos.png"
 image: /img/recipes/campfire-nachos.png
 servings: 4
 prepTime: PT5M
@@ -32,7 +32,7 @@ recipeInstructions:
 - Add cold toppings like sour cream and salsa.
 category: "Sides & Snacks"
 description: "Melty, shareable nachos with flexible toppings for a fast family snack."
-summary: "Melty, shareable nachos with flexible toppings for a fast family snack."
+summary: "Melty, shareable nachos with flexible toppings for a quick family snack."
 ---
 
 ## Ingredients
