@@ -1,19 +1,22 @@
-{{- /* Builds /recipes/index.json containing ALL recipe pages */ -}}
+{{- /* Search directory built from recipe metadata. No recipes are dropped for missing optional fields. */ -}}
 {{- $pages := where .Site.RegularPages "Section" "recipes" -}}
 {{- $pages = where $pages "Kind" "page" -}}
-
 [
 {{- range $i, $p := $pages -}}
-  {{- if $i}},{{ end }}
+  {{- if $i }},{{ end }}
   {
     "title": {{ $p.Title | jsonify }},
     "permalink": {{ $p.RelPermalink | jsonify }},
-    "description": {{ with $p.Params.description }}{{ . | jsonify }}{{ else }}""{{ end }},
-    "tags": {{ with $p.Params.tags }}{{ . | jsonify }}{{ else }}[]{{ end }},
+    "description": {{ (or $p.Params.summary $p.Params.description "") | jsonify }},
+    "category": {{ ($p.Params.category | default "Other") | jsonify }},
+    "collection": {{ ($p.Params.collection | default "") | jsonify }},
+    "image": {{ ($p.Params.image | default "/img/recipes/default.png" | relURL) | jsonify }},
+    "tags": {{ ($p.Params.tags | default (slice)) | jsonify }},
     "servings": {{ with $p.Params.servings }}{{ . }}{{ else }}null{{ end }},
-    "prepTime": {{ with $p.Params.prepTime }}{{ . | jsonify }}{{ else }}""{{ end }},
-    "cookTime": {{ with $p.Params.cookTime }}{{ . | jsonify }}{{ else }}""{{ end }},
-    "totalTime": {{ with $p.Params.totalTime }}{{ . | jsonify }}{{ else }}""{{ end }},
+    "prepTime": {{ ($p.Params.prepTime | default "") | jsonify }},
+    "cookTime": {{ ($p.Params.cookTime | default "") | jsonify }},
+    "totalTime": {{ ($p.Params.totalTime | default "") | jsonify }},
+    "date": {{ ($p.Date.Format "2006-01-02") | jsonify }},
     "slot": {{ with $p.Params.slot }}{{ . }}{{ else }}null{{ end }}
   }
 {{- end -}}
