@@ -9,7 +9,7 @@ tags:
 - wildcard
 - quick
 images:
-- /img/og/recipes/campfire-nachos.png
+  - "/img/recipes/campfire-nachos.png"- /img/og/recipes/campfire-nachos.png
 image: /img/recipes/campfire-nachos.png
 servings: 4
 prepTime: PT5M
@@ -30,6 +30,9 @@ recipeInstructions:
 - Sprinkle cheese and toppings.
 - Bake at 400°F until cheese is fully melted.
 - Add cold toppings like sour cream and salsa.
+category: "Sides & Snacks"
+description: "Melty, shareable nachos with flexible toppings for a fast family snack."
+summary: "Melty, shareable nachos with flexible toppings for a fast family snack."
 ---
 
 ## Ingredients
