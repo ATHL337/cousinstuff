@@ -26,7 +26,7 @@ prepTime: "PT10M"
 cookTime: "PT20M"
 totalTime: "PT30M"
 slot: null
-category: "Noodle Bar Rations"
+category: "Soups & Noodles"
 draft: false
 recipeIngredient:
   - "4 packages Paldo Volcano Chicken Noodle, including all 4 liquid sauce packets"
@@ -54,6 +54,7 @@ recipeInstructions:
   - "Slowly whisk 1/2 cup hot broth into each bowl, then another 1/2 cup, stirring continuously to create a creamy base. This technique does not reliably cook raw yolks, so use pasteurized eggs."
   - "Divide noodles and vegetables evenly between bowls; ladle in more broth and stir well, aiming for about 2 1/2 cups finished broth per serving as available."
   - "Top each bowl with two jammy egg halves and green onions. Taste before optionally adding a little rice vinegar. Serve three cooked chicken dumplings alongside each bowl."
+collection: "Noodle Bar Rations"
 ---
 
 ## Overview
