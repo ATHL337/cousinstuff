@@ -4,20 +4,20 @@
 CousinStuff is a practical family cookbook with a Fallout-inspired visual identity. A dish must be understandable without knowing Fallout; the fictional setting enriches a reliable real-world recipe.
 
 ## Source of truth
-- Structured front matter \`recipeIngredient\` and \`recipeInstructions\` is the canonical data for new or reconciled recipes, social discovery (Recipe JSON-LD), and website widgets.
-- Older recipes with both \`## Ingredients\` and \`## Instructions\` in the Markdown body continue to render that richer body once. **Do not delete body sections before reconciling them line by line with the structured data.**
+- Structured front matter `recipeIngredient` and `recipeInstructions` is the canonical data for new or reconciled recipes, social discovery (Recipe JSON-LD), and website widgets.
+- Older recipes with both `## Ingredients` and `## Instructions` in the Markdown body continue to render that richer body once. **Do not delete body sections before reconciling them line by line with the structured data.**
 - Recipes with only body content still render; missing metadata should not break existing URLs.
 - Never assign synthetic RADS votes, force a new Vault slot, invent nutrition, or claim a recipe was tested without a cook.
-- Retain established slug, date, and registry slot. Update \`lastmod\` when changing editorial content.
+- Retain established slug, date, and registry slot. Update `lastmod` when changing editorial content.
 
 ## Mandatory metadata for new recipes
-\`title\`, \`slug\`, \`date\`, \`description\`, \`summary\`, \`servings\`, \`prepTime\`, \`cookTime\`, \`totalTime\`, \`category\`, \`tags\`, \`image\`, \`images\`, \`recipeIngredient\`, \`recipeInstructions\`, \`draft\`.
+`title`, `slug`, `date`, `description`, `summary`, `servings`, `prepTime`, `cookTime`, `totalTime`, `category`, `tags`, `image`, `images`, `recipeIngredient`, `recipeInstructions`, `draft`.
 
 ### Food category versus fictional collection
-- \`category\`: human-readable **food type**, such as Main Dishes, Soups & Noodles, Soups & Stews, Casseroles & Bakes, Sides & Snacks, Desserts & Treats, Sauces & Bases.
-- \`collection\`: optional storytelling universe/recipe collection, such as Foundation Provisions, Noodle Bar Rations, or Wasteland BBQ.
-- \`subtitle\`: one short flavorful line. Do not substitute a fictional subtitle for a useful food description.
-- \`tags\`: relevant searchable ingredients and occasions. Avoid near-duplicate terms when adding new content.
+- `category`: human-readable **food type**, such as Main Dishes, Soups & Noodles, Soups & Stews, Casseroles & Bakes, Sides & Snacks, Desserts & Treats, Sauces & Bases.
+- `collection`: optional storytelling universe/recipe collection, such as Foundation Provisions, Noodle Bar Rations, or Wasteland BBQ.
+- `subtitle`: one short flavorful line. Do not substitute a fictional subtitle for a useful food description.
+- `tags`: relevant searchable ingredients and occasions. Avoid near-duplicate terms when adding new content.
 
 ## Kitchen acceptance checklist
 1. Ingredients: exact amounts, units, package sizes where relevant, and preparation state. Check allergen-sensitive options.
@@ -37,12 +37,12 @@ CousinStuff is a practical family cookbook with a Fallout-inspired visual identi
 - Light/dark and Vault-Tec/Pip-Boy modes should preserve contrast, keyboard focus and mobile usability.
 
 ## Asset rules
-- \`image\` points to a real file under \`static/img/recipes/\`.
-- \`images\` references a real social image under \`static/img/og/recipes/\` or reuses the verified hero file. Broken paths are replaced by an existing default placeholder, never an invented hero.
+- `image` points to a real file under `static/img/recipes/`.
+- `images` references a real social image under `static/img/og/recipes/` or reuses the verified hero file. Broken paths are replaced by an existing default placeholder, never an invented hero.
 - Separate family memories from public food photography.
 
 ## Rollout and verification
-1. Before publishing: verify metadata, file paths, unique slugs, and that non-Vault content never displays \`VT-??\`.
+1. Before publishing: verify metadata, file paths, unique slugs, and that non-Vault content never displays `VT-??`.
 2. Run Hugo for structural validation. Preview desktop/mobile, print, and both color skins when possible.
 3. Publish with one review branch and one PR; avoid a branch per recipe.
 4. Do not silently rewrite the actual taste/ingredient amounts of existing family favorites. Preserve details until an editorial/cooking review is complete.
