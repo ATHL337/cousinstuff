@@ -37,6 +37,9 @@ recipeInstructions:
 - Heat oil in skillet over medium.
 - Cook 3–4 minutes per side until golden.
 - Drain briefly and serve hot.
+category: "Main Dishes"
+description: "Savory Wasteland-inspired seafood cakes for a memorable family main dish."
+summary: "Savory Wasteland-inspired seafood cakes for a memorable family main dish."
 ---
 
 ## Ingredients
