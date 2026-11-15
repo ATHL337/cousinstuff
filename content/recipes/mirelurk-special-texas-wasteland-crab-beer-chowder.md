@@ -24,7 +24,7 @@ prepTime: "PT20M"
 cookTime: "PT40M"
 totalTime: "PT1H"
 slot: 1
-category: "Wasteland Chowders"
+category: "Soups & Stews"
 draft: false
 recipeIngredient:
   - "340 g lump crab meat, claw meat, or imitation crab (12 oz)"
@@ -63,6 +63,7 @@ recipeInstructions:
   - "Add Crab and Cream: Reduce heat to low. Stir in crab meat and cream. Simmer gently 3–5 minutes. Do not hard boil after adding cream and crab."
   - "Finish: Remove the bay leaf. Stir in lemon juice. Taste and adjust with salt, pepper, or more Old Bay."
   - "Serve: Ladle into bowls and top with crispy bacon, green onion, parsley or chives, and optional oyster crackers."
+collection: "Wasteland Chowders"
 ---
 
 ## Overview
