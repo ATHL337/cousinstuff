@@ -31,6 +31,8 @@ recipeInstructions:
 - Form into cakes and chill 10 minutes if you can.
 - Pan-sear until golden on both sides; finish until heated through.
 - Serve with lemon.
+category: "Main Dishes"
+summary: "Savory crab cakes with a crisp exterior, ready for a family seafood supper."
 ---
 
 ## Ingredients
