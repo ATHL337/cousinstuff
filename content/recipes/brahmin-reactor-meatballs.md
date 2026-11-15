@@ -12,14 +12,14 @@ tags:
 - Beef
 - Comfort
 images:
-- /img/og/recipes/brahmin-reactor-meatballs.png
+  - "/img/recipes/brahmin-reactor-meatballs.png"- /img/og/recipes/brahmin-reactor-meatballs.png
 image: /img/recipes/brahmin-reactor-meatballs.png
 servings: 6
 prepTime: PT15M
 cookTime: PT30M
 totalTime: PT45M
 slot: 4
-category: Core Rations
+category: "Main Dishes"
 recipeIngredient:
 - 2 lb lean ground beef (90/10 preferred)
 - 2 large eggs
@@ -41,6 +41,8 @@ recipeInstructions:
 - 'Reactor Soak: Reduce oven to 375°F. Transfer meatballs to a baking dish, pour marinara
   over top, and sprinkle with mozzarella.'
 - 'Finish: Bake 10 more minutes until cheese is melted and bubbling.'
+collection: "Core Rations"
+summary: "High-output, savory beef meatballs baked in rich marinara with melted"
 ---
 
 ## Brahmin Reactor Meatballs
