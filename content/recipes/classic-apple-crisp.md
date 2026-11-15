@@ -33,6 +33,9 @@ recipeInstructions:
 - Cut in butter until crumbly.
 - Sprinkle topping over apples.
 - Bake at 350°F until bubbly and golden.
+category: "Desserts & Treats"
+description: "Warm spiced apple crisp with a golden, crumbly topping."
+summary: "Warm spiced apple crisp with a golden, crumbly topping."
 ---
 
 ## Ingredients
