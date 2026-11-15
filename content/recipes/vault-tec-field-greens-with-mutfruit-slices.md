@@ -21,7 +21,7 @@ prepTime: "PT10M"
 cookTime: "PT0M"
 totalTime: "PT10M"
 slot: 27
-category: "Vault-Tec Field Rations"
+category: "Sides & Snacks"
 draft: false
 recipeIngredient:
   - "180 g spring mix or romaine (about 6 cups)"
@@ -40,6 +40,7 @@ recipeInstructions:
   - "Prep Salad: Add greens, apple slices, cucumber, carrot, sunflower seeds or pecans, and cheese to a large bowl."
   - "Make Dressing: In a small bowl or jar, whisk olive oil, apple cider vinegar, honey, Dijon mustard, salt, and black pepper."
   - "Toss and Serve: Toss salad lightly with dressing right before serving. Do not overdress."
+collection: "Vault-Tec Field Rations"
 ---
 
 ## Overview
