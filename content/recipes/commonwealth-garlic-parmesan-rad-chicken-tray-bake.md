@@ -25,7 +25,7 @@ prepTime: "PT20M"
 cookTime: "PT55M"
 totalTime: "PT75M"
 slot: 8
-category: "Commonwealth Campfire Meals"
+category: "Main Dishes"
 draft: false
 recipeIngredient:
   - "3 lb boneless, skinless chicken thighs"
@@ -49,6 +49,7 @@ recipeInstructions:
   - "Build the Trays: Make spaces between the vegetables and divide the seasoned chicken thighs between the pans. Keep everything in a single layer as much as possible."
   - "Bake: Bake at 400 degrees F for about 45–55 minutes, rotating the pans halfway through, until the chicken reaches at least 185 degrees F internally and the potatoes are fork-tender."
   - "Finish: Broil one pan at a time for 1–3 minutes if desired for extra color. Top everything with Parmesan cheese before serving."
+collection: "Commonwealth Campfire Meals"
 ---
 
 ## Overview
