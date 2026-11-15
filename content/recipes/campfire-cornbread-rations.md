@@ -21,7 +21,7 @@ prepTime: "PT5M"
 cookTime: "PT22M"
 totalTime: "PT27M"
 slot: 32
-category: "Campfire Sides"
+category: "Sides & Snacks"
 draft: false
 recipeIngredient:
   - "1 box cornbread mix, such as Jiffy"
@@ -36,6 +36,7 @@ recipeInstructions:
   - "Mix Batter: In a bowl, combine cornbread mix, egg, milk, corn, cheddar, honey, and melted butter. Stir just until combined."
   - "Bake: Pour batter into the prepared dish and bake 18–22 minutes, until golden and set in the center."
   - "Rest and Serve: Let rest 5 minutes before slicing. Serve warm with chowder, stew, or chili."
+collection: "Campfire Sides"
 ---
 
 ## Overview
