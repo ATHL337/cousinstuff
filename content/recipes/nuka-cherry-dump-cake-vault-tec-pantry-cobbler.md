@@ -24,7 +24,7 @@ prepTime: "PT10M"
 cookTime: "PT50M"
 totalTime: "PT1H"
 slot: 28
-category: "Vault-Tec Desserts"
+category: "Desserts & Treats"
 draft: false
 recipeIngredient:
   - "2 cans cherry pie filling, 595 g each (21 oz each)"
@@ -44,6 +44,7 @@ recipeInstructions:
   - "Bake: Bake uncovered for 45–55 minutes, until the cherry filling bubbles around the edges and the top is golden brown."
   - "Rest: Let the cake cool for 10–15 minutes before serving so the filling can thicken slightly."
   - "Serve: Spoon into bowls and serve warm with vanilla ice cream, whipped cream, or whipped topping."
+collection: "Vault-Tec Desserts"
 ---
 
 ## Overview
