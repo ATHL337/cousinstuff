@@ -32,6 +32,8 @@ recipeInstructions:
 - Simmer 90–120 minutes.
 - Strain; season to taste.
 - Cool and store.
+category: "Sauces & Bases"
+summary: "Homemade chicken broth for soups, noodles, sauces, and cozy meals."
 ---
 
 ## Ingredients
