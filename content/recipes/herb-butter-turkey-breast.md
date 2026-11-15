@@ -33,6 +33,9 @@ recipeInstructions:
 - Place turkey in roasting pan.
 - Roast until internal temp reaches 165°F (74°C).
 - Rest 10–15 minutes before slicing.
+category: "Main Dishes"
+description: "Juicy turkey breast with savory herb butter for a special family dinner."
+summary: "Juicy turkey breast with savory herb butter for a special family dinner."
 ---
 
 ## Ingredients
