@@ -2,8 +2,9 @@
 title: "Vault Noodle Bar Shin Black Chicken Ramen"
 slug: "vault-noodle-bar-shin-black-chicken-ramen"
 date: "2026-05-22"
+lastmod: "2026-11-15"
 description: "A brothy, family-friendly ramen bowl built from Shin Ramyun Black, 33% less sodium chicken broth, rotisserie chicken, vegetables, soft-boiled eggs, and optional adult upgrades."
-summary: "Instant ramen upgraded into a full family dinner with rotisserie chicken, boosted broth, vegetables, eggs, and ramen-shop toppings."
+summary: "Instant ramen upgraded into a broth-forward family dinner with rotisserie chicken, vegetables, eggs, nori, scallions, and optional heat by the bowl."
 tags:
   - Fallout
   - Ramen
@@ -23,7 +24,9 @@ prepTime: "PT15M"
 cookTime: "PT15M"
 totalTime: "PT30M"
 slot: null
-category: "Noodle Bar Rations"
+subtitle: "Build-a-Bowl Comfort Rations"
+collection: "Noodle Bar Rations"
+category: "Soups & Noodles"
 draft: false
 recipeIngredient:
   - "4 packs Nongshim Shin Ramyun Black"
@@ -37,7 +40,7 @@ recipeIngredient:
   - "1 bunch green onions, sliced"
   - "1 lime, cut into wedges"
   - "Kewpie mayo, optional, 1 tbsp per creamy adult bowl"
-  - "Chili crisp or chili oil, optional, for adult bowls"
+  - "Chili crisp, chili oil, or Sriracha, optional for individual bowls"
   - "Seaweed snacks or nori, optional, torn into strips"
   - "Furikake or sesame seeds, optional"
 recipeInstructions:
@@ -73,95 +76,6 @@ Because ramen packets carry most of the sodium, avoid adding soy sauce unless th
 
 Best default: use **2 spicy packets** in the main pot, then let adults add chili crisp, chili oil, or extra spice at the bowl.
 
-## Ingredients
-
-### Core Bowl
-
-- 4 packs Nongshim Shin Ramyun Black
-- 4 cups 33% less sodium chicken broth
-- 6 cups water
-- 2–3 cups shredded rotisserie chicken
-- 4–6 eggs
-- 1 pack sliced mushrooms
-- 1 bag matchstick carrots
-- 1 bag baby spinach or baby bok choy
-- 1 bunch green onions, sliced
-- 1 lime, cut into wedges
-
-### Optional Bowl Upgrades
-
-- Kewpie mayo
-- Chili crisp or chili oil
-- Seaweed snacks or nori
-- Furikake or sesame seeds
-- Kimchi
-- Frozen potstickers
-
-## Instructions
-
-### 1. Soft-Boil the Eggs
-
-Bring a small pot of water to a boil. Add the eggs carefully.
-
-Cook:
-- **6 minutes** for jammy yolks
-- **8 minutes** for firmer yolks
-
-Move the eggs to cold water, peel, and set aside. Slice in half before serving.
-
-### 2. Prep the Chicken and Toppings
-
-Shred 2–3 cups of rotisserie chicken.
-
-Slice the green onions, cut the lime into wedges, and stage the mushrooms, carrots, and greens.
-
-Set out optional toppings like chili crisp, seaweed snacks, Kewpie mayo, furikake, or sesame seeds.
-
-### 3. Build the Broth
-
-In a large pot, add:
-
-- 4 cups chicken broth
-- 6 cups water
-- All Shin Black broth/base packets
-- 2–3 red spicy packets
-
-Bring to a simmer.
-
-### 4. Add the Vegetables
-
-Add the mushrooms and matchstick carrots.
-
-Simmer for 3–4 minutes.
-
-Add the spinach or bok choy and cook for 1 more minute.
-
-### 5. Cook the Noodles
-
-Add the ramen noodles directly to the simmering broth.
-
-Cook for 3–4 minutes, stirring gently.
-
-Do not overcook. Serve immediately so the noodles stay springy.
-
-### 6. Warm the Chicken
-
-Add the shredded rotisserie chicken during the final 1–2 minutes.
-
-Do not hard-boil it. The chicken is already cooked and only needs to warm through.
-
-### 7. Assemble the Bowls
-
-Each bowl gets:
-
-1. Noodles
-2. Broth
-3. Vegetables
-4. Rotisserie chicken
-5. Egg halves
-6. Green onions
-7. Lime squeeze
-8. Optional toppings
 
 ## Vault Notes
 
@@ -196,6 +110,12 @@ Do not store cooked noodles in the broth unless you are okay with soft leftovers
 - **Fridge:** store broth, chicken, and vegetables separately from leftover noodles if possible.
 - **Reheat broth:** simmer gently on the stove or microwave in short bursts.
 - **Leftover format:** turn broth, chicken, and vegetables into a next-day soup bowl. Add fresh noodles if available.
+
+## November 15, 2026 Family Table
+
+Our family photos from this cook show a generously filled ramen bowl with halved eggs, sliced green onions, nori sheets, vegetables, and a red chili-sauce drizzle. Pan-fried dumplings were served alongside with a savory dipping sauce. These are examples of how we built our bowls, not required ingredients for every serving.
+
+For future photography, use the close-up of the finished bowl as the recipe hero. Keep identifiable family photographs private unless the family explicitly approves publication.
 
 ## Serve With
 
