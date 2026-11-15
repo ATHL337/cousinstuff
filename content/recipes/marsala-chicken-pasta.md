@@ -9,8 +9,8 @@ tags:
 - comfort
 - weeknight
 images:
-- /img/og/recipes/marsala-chicken-pasta.png
-image: /img/recipes/marsala-chicken-pasta.png
+  - "/img/recipes/default.png"
+image: "/img/recipes/default.png"
 servings: 6
 prepTime: PT15M
 cookTime: PT45M
@@ -40,6 +40,9 @@ recipeInstructions:
 - Add cooked pasta and toss to coat.
 - Stir in Parmesan.
 - Garnish with parsley.
+category: "Main Dishes"
+description: "Chicken and pasta with a savory Marsala-inspired sauce."
+summary: "Chicken and pasta with a savory Marsala-inspired sauce."
 ---
 
 ## Ingredients
