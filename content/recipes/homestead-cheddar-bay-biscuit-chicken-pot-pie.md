@@ -22,7 +22,7 @@ servings: 8
 prepTime: "PT30M"
 cookTime: "PT55M"
 totalTime: "PT1H35M"
-category: "Homestead Suppers"
+category: "Casseroles & Bakes"
 draft: false
 recipeIngredient:
   - "4 tbsp (57 g) unsalted butter, for the filling"
@@ -69,6 +69,7 @@ recipeInstructions:
   - "Cut in butter and finish dough: Grate the cold 1/2 cup butter into the flour, or cut it into tiny cubes with a fork. Toss gently. Fold in 1 cup cold buttermilk, then 1 1/2 cups sharp cheddar, stopping when no loose flour remains; do not overmix."
   - "Top and bake: Drop 10–12 generous portions of dough (about 1/4 cup each) across the hot filling, leaving small gaps. Bake at 400°F for 30–35 minutes, checking from 25 minutes, until bubbling and biscuit centers are baked through with no raw dough. Extend in 5-minute increments if necessary."
   - "Finish: Heat the finishing butter with minced garlic briefly until fragrant, then add parsley and Parmesan. Brush the just-baked biscuits; rest 10 minutes before serving."
+collection: "Homestead Suppers"
 ---
 
 ## Overview
