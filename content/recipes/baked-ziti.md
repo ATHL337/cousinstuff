@@ -9,8 +9,8 @@ tags:
 - legacy
 - italian
 images:
-- /img/og/recipes/baked-ziti.png
-image: /img/recipes/baked-ziti.png
+  - "/img/recipes/default.png"- /img/og/recipes/baked-ziti.png
+image: "/img/recipes/default.png"
 servings: 8
 prepTime: PT20M
 cookTime: PT40M
@@ -33,6 +33,9 @@ recipeInstructions:
 - Layer pasta, sauce, ricotta, and mozzarella.
 - Cover with foil and bake at 350°F.
 - Remove foil and bake until bubbly and browned.
+category: "Casseroles & Bakes"
+description: "Baked ziti layered with tomato sauce and melted cheese, sized for a generous family dinner."
+summary: "Baked ziti layered with tomato sauce and melted cheese, sized for a generous family dinner."
 ---
 
 ## Ingredients
