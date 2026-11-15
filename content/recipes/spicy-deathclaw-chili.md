@@ -34,6 +34,9 @@ recipeInstructions:
 - Add tomatoes, beans, and spices.
 - Simmer uncovered 45 minutes.
 - Add salt and heat to taste.
+category: "Soups & Stews"
+description: "Bold, warming chili with a Fallout-inspired kick."
+summary: "Bold, warming chili with a Fallout-inspired kick."
 ---
 
 ## Ingredients
