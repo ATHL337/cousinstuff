@@ -54,7 +54,7 @@ recipeInstructions:
   - "Assemble the Ration: Fold roasted cauliflower into cheese sauce until evenly coated."
   - "Plate: Spoon mac into bowls and top with pulled chicken. Serve warm."
 collection: "Vault Classics"
-summary: "Smoky-sweet pulled chicken layered over creamy cauliflower mac and cheese. High-protein, cut-friendly, and built to fuel six hungry Vault dwellers."
+summary: "Wasteland-inspired macaroni and cheese with pulled chicken for a hearty family meal."
 ---
 
 ## Overview
