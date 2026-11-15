@@ -20,7 +20,7 @@ prepTime: "PT15M"
 cookTime: "PT10M"
 totalTime: "PT25M"
 slot: 6
-category: "Dockside Rations"
+category: "Main Dishes"
 recipeIngredient:
   - "1020 g raw shrimp, peeled + deveined (2.25 lb)"
   - "12 small corn tortillas (2 per serving)"
@@ -44,6 +44,8 @@ recipeInstructions:
   - "Warm Tortillas: Warm tortillas in a dry skillet 20–30 seconds per side (or microwave wrapped in a damp paper towel 20–30 seconds)."
   - "Assemble: Build tacos with shrimp, shredded cabbage, salsa, and a spoon of Greek yogurt. Garnish with cilantro if desired."
   - "Next-Day Lunch Bowls: Pack leftover shrimp over extra cabbage with salsa + yogurt. (Optional: add rice for non-cut days.)"
+collection: "Dockside Rations"
+summary: "Bright citrus-garlic shrimp tacos with a practical family-friendly cooking flow."
 ---
 
 ## Overview
