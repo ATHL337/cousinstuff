@@ -29,7 +29,7 @@ prepTime: "PT15M"
 cookTime: "PT30M"
 totalTime: "PT45M"
 slot: null
-category: "Noodle Bar Rations"
+category: "Soups & Noodles"
 draft: false
 recipeIngredient:
   - "2 lb (32 oz) raw shaved beef steak, two 16-oz packages"
@@ -58,6 +58,7 @@ recipeInstructions:
   - "Cook shaved beef in 2-3 batches directly in the gently simmering broth until fully cooked throughout; use clean utensils for finished meat. Keep any uncooked beef refrigerated."
   - "Divide noodles and cooked beef between bowls; ladle in approximately 1 3/4 to 2 cups hot broth per standard serving. Let everyone choose basil, cilantro, green onions, sprouts, lime, and optional sauces."
   - "With the egg rolls already enjoyed as the appetizer, serve the finished pho bowls. Refrigerate remaining broth, meat, and noodles separately within 2 hours, using shallow containers."
+collection: "Noodle Bar Rations"
 ---
 
 ## Overview
