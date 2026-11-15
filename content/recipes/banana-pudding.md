@@ -10,7 +10,7 @@ tags:
 - Comfort
 - Legacy
 images:
-- /img/og/recipes/banana-pudding.png
+  - "/img/recipes/banana-pudding.png"- /img/og/recipes/banana-pudding.png
 image: /img/recipes/banana-pudding.png
 servings: 8
 prepTime: PT20M
@@ -27,6 +27,8 @@ recipeInstructions:
 - Mix pudding and chill until set.
 - Layer wafers, bananas, pudding, and whipped topping.
 - Chill before serving.
+category: "Desserts & Treats"
+summary: "Classic layered banana pudding. Rotated out of VT-29 to make room for"
 ---
 
 ## Ingredients
