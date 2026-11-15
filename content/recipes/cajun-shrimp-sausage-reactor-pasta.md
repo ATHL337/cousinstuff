@@ -7,7 +7,7 @@ tags:
 - spicy
 - seafood
 images:
-  - "/img/recipes/default.png"- /img/og/recipes/vt33-vault-cajun-shrimp-sausage-reactor-pasta.png
+  - "/img/og/recipes/vault-cajun-shrimp-sausage-reactor-pasta.png"
 image: "/img/recipes/default.png"
 servings: 6
 prepTime: PT10M
@@ -59,7 +59,7 @@ recipeInstructions:
 - 'Optional: sprinkle with extra Cajun seasoning for Vault heat calibration.'
 category: "Main Dishes"
 description: "Shrimp and sausage pasta with a rich, boldly seasoned Cajun-style sauce."
-summary: "Shrimp and sausage pasta with a rich, boldly seasoned Cajun-style sauce."
+summary: "Creamy Cajun-style pasta with shrimp, sausage, and bold seasoning."
 ---
 
 ## Ingredients
