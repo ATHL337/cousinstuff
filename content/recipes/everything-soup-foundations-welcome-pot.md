@@ -1,7 +1,7 @@
 ---
 title: "Everything Soup: Foundation's Welcome Pot"
 date: 2026-11-15
-draft: true
+draft: false
 description: "A Fallout 76 Foundation Settler-inspired, family-favorite chicken and vegetable soup with a savory broth and rosemary-garlic butter."
 tags: ["Fallout", "Chicken", "Soup", "Family Friendly", "Comfort Food", "Dinner", "One Pot", "Foundation"]
 ---
