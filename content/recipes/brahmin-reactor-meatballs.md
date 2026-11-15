@@ -12,7 +12,7 @@ tags:
 - Beef
 - Comfort
 images:
-  - "/img/recipes/brahmin-reactor-meatballs.png"- /img/og/recipes/brahmin-reactor-meatballs.png
+  - "/img/og/recipes/brahmin-reactor-meatballs.png"
 image: /img/recipes/brahmin-reactor-meatballs.png
 servings: 6
 prepTime: PT15M
@@ -42,7 +42,7 @@ recipeInstructions:
   over top, and sprinkle with mozzarella.'
 - 'Finish: Bake 10 more minutes until cheese is melted and bubbling.'
 collection: "Core Rations"
-summary: "High-output, savory beef meatballs baked in rich marinara with melted"
+summary: "Hearty, flavor-packed meatballs for an easy family supper."
 ---
 
 ## Brahmin Reactor Meatballs
