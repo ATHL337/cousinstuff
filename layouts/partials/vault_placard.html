@@ -1,10 +1,13 @@
 {{ $slot := .Params.slot | default 0 }}
-{{ $slotLabel := cond (gt $slot 0) (printf "VT-%02d" $slot) "VT-??" }}
-{{ $subtitle := .Params.subtitle | default "Vault 33 Canon Recipe" }}
+{{ $subtitle := .Params.subtitle | default (.Params.collection | default (.Params.category | default "CousinStuff Family Recipe")) }}
 
 <div class="vt-placard">
   <div class="vt-placard-top">
-    <span class="vt-placard-chip">{{ $slotLabel }}</span>
+    {{ if gt $slot 0 }}
+      <span class="vt-placard-chip">VT-{{ printf "%02d" $slot }}</span>
+    {{ else }}
+      <span class="vt-placard-chip">CS</span>
+    {{ end }}
     <span class="vt-placard-title">{{ .Title }}</span>
   </div>
   <div class="vt-placard-sub">{{ $subtitle }}</div>

@@ -13,10 +13,18 @@
             <span>Prep: {{ partial "duration_label.html" . }}</span>
           {{ end }}
 
+          {{ with .Params.cookTime }}
+            <span>Cook: {{ partial "duration_label.html" . }}</span>
+          {{ end }}
+
           {{ with .Params.totalTime }}
             <span>Total: {{ partial "duration_label.html" . }}</span>
           {{ end }}
         </div>
+
+        {{ with (.Params.summary | default .Params.description) }}
+          <p class="recipe-summary">{{ . }}</p>
+        {{ end }}
 
         {{ with .Params.tags }}
           <div class="chips">
@@ -29,6 +37,7 @@
 
       <div class="no-print" style="display:flex; gap:10px;">
         <button class="accent" type="button" onclick="window.print()">Print</button>
+        <a class="btn secondary" href="#recipe-body">Cook</a>
         <a class="btn secondary" href="/recipes/">Back</a>
       </div>
     </div>
@@ -39,14 +48,24 @@
         class="recipe-photo"
         alt="{{ $.Title }} image"
         src="{{ . | relURL }}"
-        loading="lazy"
+        loading="eager"
         decoding="async"
       />
     {{ end }}
 
-    <div class="card">
+    <div class="card" id="recipe-body">
       {{/* Preferred structured rendering (for Mealie + consistency) */}}
-      {{ if or .Params.recipeIngredient .Params.recipeInstructions }}
+      {{/*
+        Transitional compatibility:
+        - Legacy bodies that already contain both Ingredients and Instructions are displayed
+          once from Markdown; front matter still drives JSON-LD.
+        - Migrated pages without duplicate body sections render from structured arrays.
+        Preserve legacy content until each recipe can be editorially migrated.
+      */}}
+      {{ $hasBodyIngredients := gt (len (findRE "(?im)^##[[:blank:]]+Ingredients[[:blank:]]*$" .RawContent)) 0 }}
+      {{ $hasBodyDirections := gt (len (findRE "(?im)^##[[:blank:]]+(Instructions|Directions)[[:blank:]]*$" .RawContent)) 0 }}
+      {{ $legacyCompleteBody := and $hasBodyIngredients $hasBodyDirections }}
+      {{ if and (or .Params.recipeIngredient .Params.recipeInstructions) (not $legacyCompleteBody) }}
 
         {{ with .Params.recipeIngredient }}
           <h2>Ingredients</h2>
