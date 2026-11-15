@@ -3,7 +3,7 @@ title: "Campfire Cornbread Rations"
 slug: "campfire-cornbread-rations"
 date: "2026-05-26"
 description: "A Fallout-friendly cornbread side made with corn, cheddar, honey, and butter for serving with wasteland soups, stews, and chowders."
-summary: "Simple cornbread mix upgraded with corn, cheddar, honey, and butter into a warm campfire-style side for Fallout-themed dinners."
+summary: "Golden, family-friendly cornbread to serve alongside soups, chili, and hearty mains."
 tags:
   - Fallout
   - Cornbread
@@ -14,7 +14,7 @@ tags:
   - Comfort Food
   - Weeknight
 images:
-  - "/img/recipes/default.png"
+  - "/img/og/recipes/default.png"
 image: "/img/recipes/default.png"
 servings: 6
 prepTime: "PT5M"
