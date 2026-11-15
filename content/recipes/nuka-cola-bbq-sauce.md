@@ -31,6 +31,9 @@ recipeInstructions:
 - Bring to low boil, then reduce heat.
 - Simmer until thickened.
 - Remove from heat and cool before storing.
+category: "Sauces & Bases"
+description: "Sweet and tangy barbecue sauce with a playful Nuka-Cola twist."
+summary: "Sweet and tangy barbecue sauce with a playful Nuka-Cola twist."
 ---
 
 ## Ingredients

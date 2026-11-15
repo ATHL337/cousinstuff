@@ -32,6 +32,9 @@ recipeInstructions:
 - Blend until smooth.
 - Pour into tall glasses.
 - Top generously.
+category: "Desserts & Treats"
+description: "An indulgent, Fallout-inspired milkshake for a fun family treat."
+summary: "An indulgent, Fallout-inspired milkshake for a fun family treat."
 ---
 
 ## Ingredients

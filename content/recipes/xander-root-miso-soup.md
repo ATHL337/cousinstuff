@@ -30,6 +30,8 @@ recipeInstructions:
 - Dissolve miso in a small bowl with warm broth, then stir back into pot.
 - Add tofu/seaweed if using; warm through.
 - Finish with green onions.
+category: "Soups & Noodles"
+summary: "A warming miso-style soup with a Wasteland pantry twist."
 ---
 
 ## Ingredients

@@ -23,7 +23,7 @@ prepTime: "PT20M"
 cookTime: "PT1H50M"
 totalTime: "PT2H10M"
 slot: 11
-category: "Wasteland BBQ"
+category: "Main Dishes"
 draft: false
 recipeIngredient:
   - "1.6 kg bone-in beef chuck roast (about 3.5–3.75 lb)"
@@ -65,6 +65,7 @@ recipeInstructions:
   - "Toast the Buns: Brush slider buns with melted butter if using. Toast in the oven, on a griddle, or in a skillet until lightly golden."
   - "Assemble: Pile BBQ beef onto each slider bun. Top with Tato Slaw, pickles, crispy fried onions, or extra barbecue sauce."
   - "Serve: Serve warm with corn, chips, beans, watermelon, iced tea, root beer, or a cold Texas beer for adults."
+collection: "Wasteland BBQ"
 ---
 
 ## Overview

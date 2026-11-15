@@ -39,6 +39,9 @@ recipeInstructions:
 - Simmer covered 1½–2 hours.
 - Add potatoes and cook until tender.
 - Adjust seasoning.
+category: "Soups & Stews"
+description: "A warm, substantial stew inspired by Appalachia's radstag provisions."
+summary: "A warm, substantial stew inspired by Appalachia's radstag provisions."
 ---
 
 ## Ingredients

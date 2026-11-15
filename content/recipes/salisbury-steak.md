@@ -36,6 +36,9 @@ recipeInstructions:
 - Thicken with flour slurry.
 - Return patties to gravy.
 - Simmer 20–25 minutes.
+category: "Main Dishes"
+description: "Tender Salisbury steak with savory gravy for an old-fashioned family dinner."
+summary: "Tender Salisbury steak with savory gravy for an old-fashioned family dinner."
 ---
 
 ## Ingredients

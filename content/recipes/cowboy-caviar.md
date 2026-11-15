@@ -32,6 +32,8 @@ recipeInstructions:
 - Mix all ingredients.
 - Chill 10 minutes if possible.
 - Serve as dip or side.
+category: "Sides & Snacks"
+summary: "A colorful, scoopable bean-and-vegetable side for parties and cookouts."
 ---
 
 ## Ingredients

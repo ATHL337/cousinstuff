@@ -35,6 +35,9 @@ recipeInstructions:
 - Fold in chocolate chips.
 - Scoop onto lined baking sheets.
 - Bake at 350°F until edges are golden.
+category: "Desserts & Treats"
+description: "Chocolate chip cookies with crisp edges and soft, comforting centers."
+summary: "Chocolate chip cookies with crisp edges and soft, comforting centers."
 ---
 
 ## Ingredients

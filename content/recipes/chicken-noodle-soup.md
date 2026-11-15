@@ -35,6 +35,9 @@ recipeInstructions:
 - Simmer 5 minutes.
 - Adjust salt and pepper.
 - Serve hot.
+category: "Soups & Noodles"
+description: "Classic chicken noodle soup with vegetables and a mild, savory broth."
+summary: "Classic chicken noodle soup with vegetables and a mild, savory broth."
 ---
 
 ## Ingredients

@@ -9,7 +9,7 @@ tags:
 - comfort
 - specialty
 images:
-- /img/og/recipes/brahmin-fries.png
+  - "/img/og/recipes/brahmin-fries.png"
 image: /img/recipes/brahmin-fries.png
 servings: 6
 prepTime: PT15M
@@ -31,6 +31,9 @@ recipeInstructions:
 - Add cheese and protein.
 - Return to oven until melted.
 - Top with sour cream and onions.
+category: "Sides & Snacks"
+description: "Crispy, loaded fries with hearty toppings for a satisfying Wasteland-style side."
+summary: "Crispy loaded fries with indulgent toppings, ready for a Wasteland-style side."
 ---
 
 ## Ingredients

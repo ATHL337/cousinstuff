@@ -35,6 +35,9 @@ recipeInstructions:
 - Form into a loaf in a baking dish.
 - Mix glaze ingredients and spread on top.
 - Bake at 350°F until cooked through.
+category: "Main Dishes"
+description: "Classic, comforting meatloaf for a dependable family dinner."
+summary: "Classic, comforting meatloaf for a dependable family dinner."
 ---
 
 ## Ingredients

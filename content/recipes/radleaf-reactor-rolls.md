@@ -20,7 +20,7 @@ prepTime: "PT25M"
 cookTime: "PT25M"
 totalTime: "PT50M"
 slot: 12
-category: "Surface Rations"
+category: "Sides & Snacks"
 recipeIngredient:
   - "2 tbsp canola oil"
   - "1 tsp sesame oil"
@@ -53,6 +53,8 @@ recipeInstructions:
 
   - "Air Fryer Finish (Optional): Brush lightly with glaze and air fry at 380°F (193°C) for 4–6 minutes until edges crisp."
 
+collection: "Surface Rations"
+summary: "Flavor-packed rolls to serve with Wasteland soups, stews, and family suppers."
 ---
 
 ## Overview

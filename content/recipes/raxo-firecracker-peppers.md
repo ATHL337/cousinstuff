@@ -1,5 +1,5 @@
 ---
-category: Pre-War Field Notes
+category: "Main Dishes"
 cookTime: PT35M
 date: 2026-08-19
 description: A Fallout-inspired Galician family supper of overnight-marinated garlic pork loin, crispy fries, blistered peppers, and crusty bread.
@@ -57,6 +57,7 @@ tags:
 - Pre-War Field Notes
 title: Raxo & Firecracker Peppers
 totalTime: PT55M
+collection: "Pre-War Field Notes"
 ---
 
 ## Overview

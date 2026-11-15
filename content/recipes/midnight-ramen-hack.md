@@ -32,6 +32,9 @@ recipeInstructions:
 - Add cheese if desired.
 - Top with upgrades.
 - Eat directly from the pot.
+category: "Soups & Noodles"
+description: "A fast pantry ramen upgrade for late nights or easy comfort food."
+summary: "A fast pantry ramen upgrade for late nights or easy comfort food."
 ---
 
 ## Ingredients

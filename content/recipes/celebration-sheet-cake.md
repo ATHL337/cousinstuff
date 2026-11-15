@@ -43,6 +43,9 @@ recipeInstructions:
 - Gradually add powdered sugar and cream.
 - Spread generously once cake cools.
 - Add toppings if desired.
+category: "Desserts & Treats"
+description: "A tender, crowd-size sheet cake built for birthdays, gatherings, and shared celebrations."
+summary: "A tender, crowd-size sheet cake built for birthdays, gatherings, and shared celebrations."
 ---
 
 ## Ingredients

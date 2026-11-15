@@ -21,7 +21,7 @@ servings: 12
 prepTime: "PT15M"
 cookTime: "PT1H"
 totalTime: "PT1H35M"
-category: "Sugar Rations"
+category: "Desserts & Treats"
 draft: false
 recipeIngredient:
   - "1 can (29 oz / 822 g) pure pumpkin purée, not pumpkin pie filling"
@@ -44,6 +44,7 @@ recipeInstructions:
   - "Cover with butter: Distribute very thin slices of chilled butter edge to edge over the cake mix, covering as much of the powder as possible. Scatter pecans over the top if using."
   - "Bake: Bake uncovered for about 55–65 minutes, checking at 50 minutes. The top should be golden, no large patches of loose dry cake mix should remain, and the pumpkin layer should be set with only a slight jiggle in the center. If the top browns too quickly, loosely tent with foil."
   - "Cool and serve: Rest on a wire rack at least 20 minutes so the custard firms up. Scoop warm into 12 portions and offer vanilla ice cream or whipped cream, if desired."
+collection: "Sugar Rations"
 ---
 
 ## Overview

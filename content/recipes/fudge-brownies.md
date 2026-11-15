@@ -34,6 +34,9 @@ recipeInstructions:
 - Stir in flour, cocoa, and salt.
 - Spread in lined pan.
 - Bake at 350°F until set but soft in the center.
+category: "Desserts & Treats"
+description: "Rich chocolate brownies with a dense, fudgy bite."
+summary: "Rich chocolate brownies with a dense, fudgy bite."
 ---
 
 ## Ingredients

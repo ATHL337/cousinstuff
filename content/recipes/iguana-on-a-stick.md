@@ -21,7 +21,7 @@ prepTime: PT15M
 cookTime: PT12M
 totalTime: PT27M
 slot: 2
-category: Core Rations
+category: "Main Dishes"
 recipeIngredient:
 - 2 lb pork shoulder or pork loin, cut into 1.5-inch chunks
 - 1/4 cup olive oil
@@ -50,6 +50,8 @@ recipeInstructions:
 - Rest 3 minutes before serving.
 - 'Optional: brush lightly with leftover warmed marinade for shine (boil marinade
   first if reused).'
+collection: "Core Rations"
+summary: "A Fallout-inspired handheld skewer recipe made for a real home kitchen."
 ---
 
 ## Iguana-on-a-Stick  

@@ -1,16 +1,45 @@
 {{ define "main" }}
-  <h1>Recipes</h1>
-  <div class="card no-print">
-    <input id="searchInput" type="search" placeholder="Search recipes..." />
-    {{ with .Site.Taxonomies.tags }}
-      <div class="chips">
-        {{ range $tag, $pages := . }}
-          <a class="chip" href="/tags/{{ $tag | urlize }}/">{{ $tag }}</a>
-        {{ end }}
+<section class="recipes-directory" aria-labelledby="recipe-directory-title">
+  <header class="recipes-directory__header">
+    <p class="recipes-directory__eyebrow">CousinStuff • Family Recipe Registry</p>
+    <h1 id="recipe-directory-title">Find something good to cook</h1>
+    <p>Real meals, tested traditions, and Wasteland-inspired family favorites. Find dinner by dish, ingredient, or cooking time.</p>
+  </header>
+
+  <div class="card recipes-directory__filters no-print" role="search" aria-label="Find a recipe">
+    <label for="searchInput">Search the cookbook</label>
+    <input id="searchInput" type="search" placeholder="Chicken, ramen, pot pie, one-pot..." autocomplete="off" />
+    <div class="recipes-directory__controls">
+      <div>
+        <label for="categoryFilter">Food category</label>
+        <select id="categoryFilter">
+          <option value="">All categories</option>
+        </select>
       </div>
-    {{ end }}
+      <div>
+        <label for="timeFilter">Total time</label>
+        <select id="timeFilter">
+          <option value="">Any time</option>
+          <option value="30">30 minutes or less</option>
+          <option value="60">1 hour or less</option>
+          <option value="90">90 minutes or less</option>
+        </select>
+      </div>
+      <div>
+        <label for="sortFilter">Sort by</label>
+        <select id="sortFilter">
+          <option value="title">Recipe name (A–Z)</option>
+          <option value="recent">Recently added</option>
+          <option value="quick">Fastest first</option>
+        </select>
+      </div>
+      <button type="button" id="clearRecipeFilters" class="secondary">Clear</button>
+    </div>
+    <p class="recipes-directory__count" id="recipeCount" role="status" aria-live="polite">Loading the cookbook…</p>
   </div>
 
-  <div id="recipeList" class="grid" style="margin-top:14px;"></div>
-  <script src="/js/search.js" defer></script>
+  <div id="recipeList" class="recipes-directory__grid" aria-label="Recipes"></div>
+  <noscript><p>Enable JavaScript to search and filter the collection. The <a href="/registry/">Vault Registry</a> remains accessible without it.</p></noscript>
+</section>
+<script src="/js/search.js" defer></script>
 {{ end }}
