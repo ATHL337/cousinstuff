@@ -36,6 +36,9 @@ recipeInstructions:
 - Mix flour, milk, salt, and pepper into a thick batter.
 - Drop spoonfuls of dough into simmering broth.
 - Cover and cook until dumplings puff and set.
+category: "Soups & Stews"
+description: "Tender chicken and soft dumplings in a warm, comforting family meal."
+summary: "Tender chicken and soft dumplings in a warm, comforting family meal."
 ---
 
 ## Ingredients
