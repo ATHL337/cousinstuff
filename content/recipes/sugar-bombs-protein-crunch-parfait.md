@@ -31,6 +31,7 @@ recipeInstructions:
   filled.'
 - 'Finish: Drizzle honey or syrup on top and sprinkle granola or extra cereal.'
 - 'Chill (Optional): Refrigerate 10–15 minutes for a firmer texture.'
+summary: "A playful layered parfait with breakfast-inspired crunch."
 ---
 
 ## Sugar Bombs Protein Crunch Parfait
