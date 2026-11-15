@@ -9,7 +9,7 @@ tags:
 - legacy
 - italian
 images:
-  - "/img/recipes/default.png"- /img/og/recipes/baked-ziti.png
+  - "/img/recipes/default.png"
 image: "/img/recipes/default.png"
 servings: 8
 prepTime: PT20M
@@ -35,7 +35,7 @@ recipeInstructions:
 - Remove foil and bake until bubbly and browned.
 category: "Casseroles & Bakes"
 description: "Baked ziti layered with tomato sauce and melted cheese, sized for a generous family dinner."
-summary: "Baked ziti layered with tomato sauce and melted cheese, sized for a generous family dinner."
+summary: "Cheesy baked ziti with layered sauce and melted cheese, designed to feed a family or a crowd."
 ---
 
 ## Ingredients
