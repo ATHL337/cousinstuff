@@ -27,7 +27,7 @@ prepTime: "PT20M"
 cookTime: "PT30M"
 totalTime: "PT55M"
 slot: 3
-category: "Core Rations"
+category: "Main Dishes"
 draft: false
 recipeIngredient:
   - "2 lb ground beef, preferably 85/15"
@@ -76,6 +76,7 @@ recipeInstructions:
   - "Rest the Mini Meatloaves: Let the finished mini loaves rest for 5–10 minutes before serving so the juices settle."
   - "Mix the Blood Pack Cherry Fizz: Combine cherry juice, lemon-lime soda, lime slices, and ice just before serving."
   - "Serve: Plate one glazed mini meatloaf per person with mashed potatoes and scorched green beans. Serve the Blood Pack Cherry Fizz cold."
+collection: "Core Rations"
 ---
 
 ## Overview
