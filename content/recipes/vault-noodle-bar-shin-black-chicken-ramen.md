@@ -17,8 +17,8 @@ tags:
   - Protein Boost
   - Weeknight
 images:
-  - "/img/recipes/default.png"
-image: "/img/recipes/default.png"
+  - "/img/recipes/vault-noodle-bar-shin-black-chicken-ramen.jpg"
+image: "/img/recipes/vault-noodle-bar-shin-black-chicken-ramen.jpg"
 servings: 5
 prepTime: "PT15M"
 cookTime: "PT15M"
