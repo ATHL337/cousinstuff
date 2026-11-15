@@ -36,6 +36,9 @@ recipeInstructions:
 - Cover with more sauce and mozzarella.
 - Cover with foil.
 - Bake until bubbly and cooked through.
+category: "Casseroles & Bakes"
+description: "Baked manicotti with a rich, savory filling and generous sauce."
+summary: "Baked manicotti with a rich, savory filling and generous sauce."
 ---
 
 ## Ingredients
